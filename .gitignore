@@ -1,0 +1,10 @@
+# Operating System
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+.nova/
+
+# Node.js
+node_modules/
