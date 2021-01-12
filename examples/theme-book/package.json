@@ -1,17 +1,17 @@
 {
-  "name": "@unisite/unisite.blackcater.org",
+  "name": "@unisite-example/theme-book",
   "version": "1.0.0",
-  "description": "Source code of website for unisite's documentation",
+  "description": "An example for @unisite/theme-book",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:blackcater/unisite.git",
-    "directory": "site"
+    "directory": "examples/theme-book"
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@unisite/theme-doc": "*"
+    "@unisite/theme-book": "*"
   }
 }

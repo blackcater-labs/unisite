@@ -1,6 +1,16 @@
 {
   "name": "@unisite/core-utils",
   "version": "1.0.0",
+  "description": "Utils for core packages.",
   "main": "index.js",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "repository": "git@github.com:blackcater/unisite.git",
+    "directory": "packages/unisite-core-utils"
+  },
+  "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": ">=2.30.0"
+  }
 }

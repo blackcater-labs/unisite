@@ -1,12 +1,12 @@
 {
-  "name": "@unisite/unisite.blackcater.org",
+  "name": "@unisite-example/theme-doc",
   "version": "1.0.0",
-  "description": "Source code of website for unisite's documentation",
+  "description": "An example for @unisite/theme-doc",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:blackcater/unisite.git",
-    "directory": "site"
+    "directory": "examples/theme-doc"
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
