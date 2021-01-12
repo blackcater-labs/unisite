@@ -11,6 +11,8 @@
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": ">=2.30.0"
+    "gatsby": ">=2.30.0",
+    "react": ">=16.14.0",
+    "react-dom": ">=16.11.0"
   }
 }

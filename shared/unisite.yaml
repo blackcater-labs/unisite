@@ -1,0 +1,10 @@
+# Configuration for Unisite.
+
+# Domain
+#domain:
+
+# Theme
+#theme: @unisite/theme-blog
+
+# Environment Variables
+#envs:

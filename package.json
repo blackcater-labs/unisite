@@ -24,12 +24,19 @@
     "examples/*",
     "site"
   ],
-  "dependencies": {
-    "gatsby": "^2.30.1"
+  "scripts": {
+    "dev:site": "",
+    "dev:example:blog": "",
+    "dev:example:doc": "",
+    "dev:example:book": "",
+    "build:site": "",
+    "deploy:site": "",
+    "clean": "rimraf {.,site}/node_modules {packages,examples}/*/node_modules"
   },
   "devDependencies": {
     "lerna": "^3.22.1",
     "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.1.3"
   }
 }

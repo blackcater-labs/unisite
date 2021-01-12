@@ -1,5 +1,5 @@
 {
-  "name": "@unisite-example/theme-blog",
+  "name": "@unisite/example-theme-blog",
   "version": "1.0.0",
   "description": "An example for @unisite/theme-blog",
   "main": "index.js",
@@ -11,7 +11,5 @@
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "@unisite/theme-blog": "*"
-  }
+  "dependencies": {}
 }

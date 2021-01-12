@@ -8,3 +8,9 @@
 
 # Node.js
 node_modules/
+
+# Unisite
+.unisite/
+
+# Logs
+*.log
