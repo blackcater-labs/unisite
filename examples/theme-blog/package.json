@@ -11,5 +11,13 @@
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "serve": "gatsby develop"
+  },
+  "dependencies": {
+    "@unisite/theme-blog": "^1.0.0",
+    "gatsby": "latest",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  }
 }

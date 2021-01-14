@@ -13,6 +13,6 @@
   "peerDependencies": {
     "gatsby": ">=2.30.0",
     "react": ">=16.14.0",
-    "react-dom": ">=16.11.0"
+    "react-dom": ">=16.14.0"
   }
 }

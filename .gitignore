@@ -9,8 +9,15 @@
 # Node.js
 node_modules/
 
+# TypeScript
+lib/
+
 # Unisite
 .unisite/
+
+# Gatsby
+.cache/
+public/
 
 # Logs
 *.log
