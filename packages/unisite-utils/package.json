@@ -16,6 +16,7 @@
     "clean": "rimraf lib"
   },
   "dependencies": {
+    "@types/fs-extra": "^9.0.6",
     "@types/js-yaml": "^4.0.0",
     "fs-extra": "^9.0.1",
     "js-yaml": "^4.0.0",

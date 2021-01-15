@@ -5,6 +5,7 @@
 .vscode/
 .idea/
 .nova/
+.graphqlconfig
 
 # Node.js
 node_modules/
