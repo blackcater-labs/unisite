@@ -1,107 +1,44 @@
-import { existsSync, readFile, statSync } from "fs";
+import fs from "fs";
 import path from "path";
-import { defaults } from "lodash";
 import yaml from "js-yaml";
-
-export interface LoadOptions {
-  relativePath?: string;
-  rootPath?: string;
-  shouldSkip?: (path: string) => boolean;
-  registers?: Map<string, (path: string) => Promise<unknown>>;
-}
-
-export const defaultRegisters = new Map();
-
-defaultRegisters.set("yaml", registerYAML);
-defaultRegisters.set("yml", registerYAML);
-defaultRegisters.set("js", registerJS);
-defaultRegisters.set("json", registerJSON);
+import { Path, ConfigPathOptions } from "../path";
 
 const CACHE: Map<string, unknown> = new Map();
 
-/**
- * Load config file
- *
- * @param module
- * @param options
- */
-export async function load(module: string, options: LoadOptions): unknown {
-  if (CACHE.has(module)) return Promise.resolve(CACHE.get(module));
+export function load(module: string, options?: ConfigPathOptions): unknown {
+  if (CACHE.has(module)) return CACHE.get(module);
 
-  const { relativePath, rootPath, shouldSkip, registers } = defaults(options, {
-    relativePath: ".",
-    rootPath: process.cwd(),
-    shouldSkip: () => false,
-    registers: defaultRegisters,
-  });
-  const extensions = [...registers.keys()];
-  let root = rootPath;
-  let fileDir = path.resolve(root, relativePath);
+  const filePath = Path.config(module, options);
 
-  while (root !== "/") {
-    if (!shouldSkip(root)) {
-      for (const ext of extensions) {
-        const filePath = path.resolve(fileDir, `${module}.${ext}`);
-        const register = registers.get(ext);
+  if (!filePath) return undefined;
 
-        if (existsSync(filePath) && statSync(filePath).isFile()) {
-          const data = await register(filePath);
+  const data = parse(filePath);
 
-          CACHE.set(module, data);
+  CACHE.set(module, data);
 
-          return data;
-        }
-      }
-    }
-    root = path.resolve(rootPath, "..");
-    fileDir = path.resolve(root, relativePath);
-  }
-
-  return undefined;
+  return data;
 }
 
-async function registerJS(path: string): Promise<unknown> {
-  return new Promise<unknown>((resolve) => {
-    try {
-      resolve(require(path));
-    } catch (err) {
-      resolve(undefined);
-    }
-  });
+function parse(filePath: string): unknown {
+  const ext = path.extname(filePath);
+  const parserMap: { [key: string]: (path: string) => unknown } = {
+    ".yaml": parseYAML,
+    ".yml": parseYAML,
+    ".json": parseJSON,
+    ".js": parseJS,
+  };
+
+  return parserMap[ext]?.(filePath);
 }
 
-async function registerJSON(path: string): Promise<unknown> {
-  return new Promise<unknown>((resolve) => {
-    readFile(path, (err, data) => {
-      if (err) {
-        return resolve(undefined);
-      }
-
-      const content = data.toString("utf8");
-
-      try {
-        resolve(JSON.parse(content));
-      } catch (err) {
-        resolve(undefined);
-      }
-    });
-  });
+function parseJS(filePath: string): unknown {
+  return require(filePath);
 }
 
-async function registerYAML(path: string): Promise<unknown> {
-  return new Promise<unknown>((resolve) => {
-    readFile(path, (err, data) => {
-      if (err) {
-        return resolve(undefined);
-      }
+function parseJSON(filePath: string): unknown {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
 
-      const content = data.toString("utf8");
-
-      try {
-        resolve(yaml.load(content));
-      } catch (err) {
-        resolve(undefined);
-      }
-    });
-  });
+function parseYAML(filePath: string): unknown {
+  return yaml.load(fs.readFileSync(filePath, "utf8"));
 }

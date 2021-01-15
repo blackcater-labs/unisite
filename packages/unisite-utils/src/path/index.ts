@@ -1,12 +1,17 @@
-import { getRoot } from "./getRoot";
+import { getRootPath } from "./getRootPath";
+import { getConfigPath, ConfigPathOptions } from "./getConfigPath";
+
+export { ConfigPathOptions };
 
 export interface Path {
-  getRoot: () => string;
+  root: () => string;
+  config: (module: string, options?: ConfigPathOptions) => string;
 }
 
 /**
  * Path
  */
 export const Path: Path = {
-  getRoot,
+  root: getRootPath,
+  config: getConfigPath,
 };
