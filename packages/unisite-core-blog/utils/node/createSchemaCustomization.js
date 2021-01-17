@@ -1,15 +1,36 @@
 module.exports = ({ actions }) => {
-  const { createTypes } = actions;
+  const { createFieldExtension, createTypes } = actions;
+
+  createFieldExtension({
+    name: "def",
+    args: { value: "String!" },
+    extend({ value }) {
+      return {
+        resolve(source, args, context, info) {
+          const defaultValue = JSON.parse(value);
+          const data = context.defaultFieldResolver(
+            source,
+            args,
+            context,
+            info
+          );
+
+          return data === null || data === undefined ? defaultValue : data;
+        },
+      };
+    },
+  });
 
   // https://www.jetbrains.com/help/webstorm/using-language-injections.html#inject_language
+  // language=graphql
   createTypes(`
     type Tag implements Node @nodeInterface {
         id: ID!
         tid: String!
         name: String!
         # link
-        columns: [Column!]! @link(by: "tags.tid", from: "tid")
-        posts: [Post!]! @link(by: "tags.tid", from: "tid")
+        columns: [Column!]! @link(by: "tags.tid", from: "tid") @def(value: "[]")
+        posts: [Post!]! @link(by: "tags.tid", from: "tid") @def(value: "[]")
     }
     
     type Column implements Node @nodeInterface {
@@ -19,9 +40,9 @@ module.exports = ({ actions }) => {
         description: String
         cover: File!
         # link
-        tags: [Tag!]! @link(by: "tid")
-        authors: [User!]! @link(by: "uid")
-        posts: [MdxColumnPost!]! @link(by: "column.cid", from: "cid")
+        tags: [Tag!]! @link(by: "tid") @def(value: "[]")
+        authors: [User!]! @link(by: "uid") @def(value: "[]")
+        posts: [MdxColumnPost!]! @link(by: "column.cid", from: "cid") @def(value: "[]")
     }
     
     interface User @nodeInterface {
@@ -65,15 +86,15 @@ module.exports = ({ actions }) => {
         uplay_url: String
         wegame_url: String
         # link
-        columns: [Column!]! @link(by: "authors.uid", from: "uid")
-        posts: [Post!]! @link(by: "authors.uid", from: "uid")
+        columns: [Column!]! @link(by: "authors.uid", from: "uid") @def(value: "[]")
+        posts: [Post!]! @link(by: "authors.uid", from: "uid") @def(value: "[]")
     }
     
     type Writer implements Node & User {
         # link
-        groups: [Group!]! @link(by: "uid")
-        posts: [Post!]! @link(by: "authors.uid", from: "uid")
-        columns: [Column!]! @link(by: "authors.uid", from: "uid")
+        groups: [Group!]! @link(by: "uid") @def(value: "[]")
+        posts: [Post!]! @link(by: "authors.uid", from: "uid") @def(value: "[]")
+        columns: [Column!]! @link(by: "authors.uid", from: "uid") @def(value: "[]")
         
         ## User
         id: ID!
@@ -119,9 +140,9 @@ module.exports = ({ actions }) => {
     
     type Group implements Node & User {
         # link
-        members: [User!]! @link(by: "uid", from: "uid")
-        columns: [Column!]! @link(by: "authors.uid", from: "uid")
-        posts: [Post!]! @link(by: "authors.uid", from: "uid")
+        members: [User!]! @link(by: "uid", from: "uid") @def(value: "[]")
+        columns: [Column!]! @link(by: "authors.uid", from: "uid") @def(value: "[]")
+        posts: [Post!]! @link(by: "authors.uid", from: "uid") @def(value: "[]")
     
         ## User
         id: ID!
@@ -169,11 +190,12 @@ module.exports = ({ actions }) => {
         id: ID!
         title: String!
         excerpt: String
+        draft: Boolean @def(value: "false")
         published_at: Date! @dateformat
-        updated_at: Date! @dateformat
+        updated_at: Date @dateformat
         # link
-        tags: [Tag!]! @link(by: "tid")
-        authors: [User!]! @link(by: "uid")
+        tags: [Tag!]! @link(by: "tid") @def(value: "[]")
+        authors: [User!]! @link(by: "uid") @def(value: "[]")
     }
 
     interface BlogPost {
@@ -188,11 +210,12 @@ module.exports = ({ actions }) => {
         ## Post
         title: String!
         excerpt: String
+        draft: Boolean @def(value: "false")
         published_at: Date! @dateformat
-        updated_at: Date! @dateformat
+        updated_at: Date @dateformat
         # link
-        tags: [Tag!]! @link(by: "tid")
-        authors: [User!]! @link(by: "uid")
+        tags: [Tag!]! @link(by: "tid") @def(value: "[]")
+        authors: [User!]! @link(by: "uid") @def(value: "[]")
 
         ## BlogPost
         _EMPTY_: String
@@ -202,11 +225,12 @@ module.exports = ({ actions }) => {
         ## Post
         title: String!
         excerpt: String
+        draft: Boolean @def(value: "false")
         published_at: Date! @dateformat
-        updated_at: Date! @dateformat
+        updated_at: Date @dateformat
         # link
-        tags: [Tag!]! @link(by: "tid")
-        authors: [User!]! @link(by: "uid")
+        tags: [Tag!]! @link(by: "tid") @def(value: "[]")
+        authors: [User!]! @link(by: "uid") @def(value: "[]")
 
         ## ColumnPost
         column: Column! @link(by: "cid")

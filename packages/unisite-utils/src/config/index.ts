@@ -1,7 +1,7 @@
 import { get } from "./get";
 
 export interface Config {
-  get: (module: string, keyPath: string, defaultValue?: unknown) => unknown;
+  get: (module: string, keyPath?: string, defaultValue?: unknown) => unknown;
 }
 
 /**

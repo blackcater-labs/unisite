@@ -19,11 +19,13 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@unisite/utils": "^1.0.0",
+    "chalk": "^4.1.0",
     "gatsby-plugin-mdx": "^1.8.0",
     "gatsby-plugin-sharp": "^2.12.0",
     "gatsby-plugin-typescript": "^2.10.0",
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-transformer-sharp": "^2.10.0",
+    "joi": "^17.3.0",
     "lodash": "^4.17.20"
   }
 }

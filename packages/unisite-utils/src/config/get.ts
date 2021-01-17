@@ -4,10 +4,10 @@ import { Path } from "../path";
 
 export function get(
   module: string,
-  keyPath: string,
+  keyPath?: string,
   defaultValue?: unknown
 ): unknown {
   const data = load(module, { rootDir: Path.root() });
 
-  return _get(data, keyPath, defaultValue);
+  return !keyPath ? data : _get(data, keyPath, defaultValue);
 }
