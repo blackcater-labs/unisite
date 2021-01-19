@@ -1,0 +1,13 @@
+- id: blackcater
+  name: "Elon Tang"
+  avatar: "./user/blackcater.png"
+  description: "Completion is more important than perfection!"
+  email: "blackcater2015@gmail.com"
+  website_url: "https://www.blackcater.com"
+  github_url: "https://www.github.com/blackcater"
+- id: gatsby
+  name: "Gatsby Team"
+  avatar: "./user/gatsby.png"
+  members:
+    - blackcater
+  website_url: "https://www.gatsbyjs.com/"
