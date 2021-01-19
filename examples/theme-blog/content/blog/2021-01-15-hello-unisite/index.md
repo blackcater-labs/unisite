@@ -1,7 +1,8 @@
 ---
 title: "Hello UNISITE!"
-excerpt: "In this article, I will teach you how to use unisite to quickly build your own blog."
-banner: "./banner.jpg"
+cover: "./banner.jpg"
+author: "blackcater"
+published_at: "2021-01-15"
 ---
 
 # Hello UNISITE!

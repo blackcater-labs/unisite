@@ -11,12 +11,24 @@ module.exports = (options) => {
         resolve: "gatsby-source-filesystem",
         options: {
           name: contentName,
-          path: path.resolve(Path.root(), contentPath),
+          path: `${path.resolve(Path.root(), contentPath)}/`,
         },
       },
       {
         resolve: "gatsby-plugin-mdx",
-        options: { extensions: [`.mdx`, `.md`] },
+        options: {
+          extensions: [`.mdx`, `.md`],
+          gatsbyRemarkPlugins: [
+            {
+              resolve: "gatsby-remark-images",
+              options: {
+                maxWidth: 960,
+                quality: 90,
+                linkImagesToOriginal: false,
+              },
+            },
+          ],
+        },
       },
       "gatsby-transformer-sharp",
       "gatsby-plugin-sharp",

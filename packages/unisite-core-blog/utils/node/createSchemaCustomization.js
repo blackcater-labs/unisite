@@ -1,3 +1,8 @@
+const _ = require("lodash");
+const { format: formatDate, formatDistanceToNow } = require("date-fns");
+const localeDate = require("date-fns/locale");
+const mdx = require("@mdx-js/mdx");
+
 module.exports = ({ actions }) => {
   const { createFieldExtension, createTypes } = actions;
 
@@ -16,6 +21,75 @@ module.exports = ({ actions }) => {
           );
 
           return data === null || data === undefined ? defaultValue : data;
+        },
+      };
+    },
+  });
+
+  createFieldExtension({
+    name: "slugify",
+    extend() {
+      return {
+        resolve(source) {
+          return source.slug ? source.slug : _.kebabCase(source.title);
+        },
+      };
+    },
+  });
+
+  createFieldExtension({
+    name: "datefns",
+    extend() {
+      return {
+        resolve(source, args, context, info) {
+          const dateStr = context.defaultFieldResolver(
+            source,
+            args,
+            context,
+            info
+          );
+          const date = new Date(dateStr);
+          const { format, distance } = args || {};
+          const { locale, ...options } = _.cloneDeep(distance || {});
+
+          if (locale) {
+            options.locale = localeDate[locale.replace(/[-_]/gim, "")];
+          }
+
+          return format
+            ? formatDate(date, format)
+            : distance
+            ? formatDistanceToNow(date, options)
+            : formatDate(date, "yyyy-MM-dd");
+        },
+      };
+    },
+  });
+
+  createFieldExtension({
+    name: "mdx",
+    extend() {
+      return {
+        resolve: async (source, args, context, info) => {
+          console.log("source:", source);
+
+          return await mdx(source);
+        },
+      };
+    },
+  });
+
+  createFieldExtension({
+    name: "mdxpassthrough",
+    args: { field: "String!" },
+    extend({ field }) {
+      return {
+        resolve: async (source, args, context, info) => {
+          const type = info.schema.getType(`Mdx`);
+          const mdxNode = context.nodeModel.getNodeById({ id: source.parent });
+          const resolver = type.getFields()[field].resolve;
+
+          return await resolver(mdxNode, args, context, { fieldName: field });
         },
       };
     },
@@ -198,48 +272,65 @@ module.exports = ({ actions }) => {
     interface Post @nodeInterface {
         id: ID!
         title: String!
-        excerpt: String
+        cover: File @fileByRelativePath
+        published_at(format: String, distance: JSON): Date @datefns
+        updated_at(format: String, distance: JSON): Date @datefns
+        slug: String! @slugify
         draft: Boolean! @def(value: "false")
-        banner: File @fileByRelativePath
-        published_at: Date @dateformat
-        updated_at: Date @dateformat
+        # mdx
+        body: String! @mdxpassthrough(field: "body")
+        rawBody: String @mdxpassthrough(field: "rawBody")
+        excerpt(pruneLength: Int = 140, truncate: Boolean = false): String! @mdxpassthrough(field: "excerpt")
+        headings(depth: HeadingsMdx): [MdxHeadingMdx!] @mdxpassthrough(field: "headings")
+        tableOfContents(maxDepth: Int): JSON! @mdxpassthrough(field: "tableOfContents")
+        timeToRead: Int! @mdxpassthrough(field: "timeToRead")
+        wordCount: MdxWordCount! @mdxpassthrough(field: "wordCount")
         # link
         tags: [Tag!]! @def(value: "[]") @link(by: "tid")
         authors: [User!]! @def(value: "[]") @link(by: "uid")
     }
 
-    interface BlogPost {
-        _EMPTY_: String
+    type MdxBlogPost implements Node & Post {
+        ## Post
+        title: String!
+        cover: File @fileByRelativePath
+        published_at(format: String, distance: JSON): Date @datefns
+        updated_at(format: String, distance: JSON): Date @datefns
+        slug: String! @slugify
+        draft: Boolean! @def(value: "false")
+        # mdx
+        body: String! @mdxpassthrough(field: "body")
+        rawBody: String @mdxpassthrough(field: "rawBody")
+        excerpt(pruneLength: Int = 140, truncate: Boolean = false): String! @mdxpassthrough(field: "excerpt")
+        headings(depth: HeadingsMdx): [MdxHeadingMdx!] @mdxpassthrough(field: "headings")
+        tableOfContents(maxDepth: Int): JSON! @mdxpassthrough(field: "tableOfContents")
+        timeToRead: Int! @mdxpassthrough(field: "timeToRead")
+        wordCount: MdxWordCount! @mdxpassthrough(field: "wordCount")
+        # link
+        tags: [Tag!]! @def(value: "[]") @link(by: "tid")
+        authors: [User!]! @def(value: "[]") @link(by: "uid")
     }
 
     interface ColumnPost {
         column: Column! @link(by: "cid")
     }
     
-    type MdxBlogPost implements Node & Post & BlogPost {
-        ## Post
-        title: String!
-        excerpt: String
-        draft: Boolean! @def(value: "false")
-        banner: File @fileByRelativePath
-        published_at: Date @dateformat
-        updated_at: Date @dateformat
-        # link
-        tags: [Tag!]! @def(value: "[]") @link(by: "tid")
-        authors: [User!]! @def(value: "[]") @link(by: "uid")
-
-        ## BlogPost
-        _EMPTY_: String
-    }
-    
     type MdxColumnPost implements Node & Post & ColumnPost {
         ## Post
         title: String!
-        excerpt: String
+        cover: File @fileByRelativePath
+        published_at(format: String, distance: JSON): Date @datefns
+        updated_at(format: String, distance: JSON): Date @datefns
+        slug: String! @slugify
         draft: Boolean! @def(value: "false")
-        banner: File @fileByRelativePath
-        published_at: Date @dateformat
-        updated_at: Date @dateformat
+        # mdx
+        body: String! @mdxpassthrough(field: "body")
+        rawBody: String @mdxpassthrough(field: "rawBody")
+        excerpt(pruneLength: Int = 140, truncate: Boolean = false): String! @mdxpassthrough(field: "excerpt")
+        headings(depth: HeadingsMdx): [MdxHeadingMdx!] @mdxpassthrough(field: "headings")
+        tableOfContents(maxDepth: Int): JSON! @mdxpassthrough(field: "tableOfContents")
+        timeToRead: Int! @mdxpassthrough(field: "timeToRead")
+        wordCount: MdxWordCount! @mdxpassthrough(field: "wordCount")
         # link
         tags: [Tag!]! @def(value: "[]") @link(by: "tid")
         authors: [User!]! @def(value: "[]") @link(by: "uid")

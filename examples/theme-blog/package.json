@@ -12,12 +12,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "serve": "gatsby develop"
+    "clean": "rimraf .cache public",
+    "serve": "npm run clean && gatsby develop"
   },
   "dependencies": {
     "@unisite/theme-blog": "^1.0.0",
     "gatsby": "latest",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }
