@@ -1,5 +1,5 @@
 module.exports = () => {
   return {
-    plugins: ["@unisite/ui", "@unisite/core-blog"],
+    plugins: ["@unisite/core-blog", "@unisite/ui"],
   };
 };

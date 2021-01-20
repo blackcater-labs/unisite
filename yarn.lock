@@ -1251,6 +1251,11 @@
   resolved "https://registry.npmjs.org/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
+"@icon-park/react@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/@icon-park/react/-/react-1.2.2.tgz#a8cb2550a3cffe1bf2c7a73088b565d74f7ada18"
+  integrity sha512-i6ejLLuobUZvRQ5xm85hsJ2gMN1VMsj9VR11IhUaRwlogvaGLyIRR5YK3ACT106ryICao2o9B7CtP4ZnmzLCnQ==
+
 "@jest/types@^25.5.0":
   version "25.5.0"
   resolved "https://registry.npmjs.org/@jest/types/-/types-25.5.0.tgz#4d6a4793f7b9599fc3680877b856a97dbccf2a9d"

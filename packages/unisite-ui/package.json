@@ -16,6 +16,7 @@
     "react-dom": ">=16.14.0"
   },
   "dependencies": {
+    "@icon-park/react": "^1.2.2",
     "autoprefixer": "^10.2.1",
     "gatsby-plugin-postcss": "^3.5.0",
     "postcss": "^8.2.4",
