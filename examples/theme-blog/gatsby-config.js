@@ -1,3 +1,5 @@
 module.exports = {
-  plugins: ["@unisite/theme-blog"],
+  plugins: [
+    "@unisite/theme-blog",
+  ],
 };
