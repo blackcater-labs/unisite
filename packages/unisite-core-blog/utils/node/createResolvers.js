@@ -7,9 +7,11 @@ module.exports = ({ createResolvers }) => {
           return context.nodeModel.runQuery(
             {
               query: {
-                tags: {
-                  elemMatch: {
-                    tid: { eq: source.tid },
+                filter: {
+                  tags: {
+                    elemMatch: {
+                      tid: { eq: source.tid },
+                    },
                   },
                 },
               },
@@ -17,6 +19,27 @@ module.exports = ({ createResolvers }) => {
               firstOnly: false,
             },
             { connectionType: "Column" }
+          );
+        },
+      },
+      posts: {
+        type: ["Post!"],
+        resolve(source, args, context) {
+          return context.nodeModel.runQuery(
+            {
+              query: {
+                filter: {
+                  tags: {
+                    elemMatch: {
+                      tid: { eq: source.tid },
+                    },
+                  },
+                },
+              },
+              type: "Post",
+              firstOnly: false,
+            },
+            { connectionType: "Post" }
           );
         },
       },
@@ -29,9 +52,11 @@ module.exports = ({ createResolvers }) => {
           return context.nodeModel.runQuery(
             {
               query: {
-                members: {
-                  elemMatch: {
-                    uid: { eq: source.uid },
+                filter: {
+                  members: {
+                    elemMatch: {
+                      uid: { eq: source.uid },
+                    },
                   },
                 },
               },
@@ -48,9 +73,11 @@ module.exports = ({ createResolvers }) => {
           return context.nodeModel.runQuery(
             {
               query: {
-                authors: {
-                  elemMatch: {
-                    uid: { eq: source.uid },
+                filter: {
+                  authors: {
+                    elemMatch: {
+                      uid: { eq: source.uid },
+                    },
                   },
                 },
               },
@@ -58,6 +85,27 @@ module.exports = ({ createResolvers }) => {
               firstOnly: false,
             },
             { connectionType: "Column" }
+          );
+        },
+      },
+      posts: {
+        type: ["Post!"],
+        resolve(source, args, context) {
+          return context.nodeModel.runQuery(
+            {
+              query: {
+                filter: {
+                  authors: {
+                    elemMatch: {
+                      uid: { eq: source.uid },
+                    },
+                  },
+                },
+              },
+              type: "Post",
+              firstOnly: false,
+            },
+            { connectionType: "Post" }
           );
         },
       },
@@ -69,9 +117,11 @@ module.exports = ({ createResolvers }) => {
           return context.nodeModel.runQuery(
             {
               query: {
-                authors: {
-                  elemMatch: {
-                    uid: { eq: source.uid },
+                filter: {
+                  authors: {
+                    elemMatch: {
+                      uid: { eq: source.uid },
+                    },
                   },
                 },
               },
@@ -79,6 +129,27 @@ module.exports = ({ createResolvers }) => {
               firstOnly: false,
             },
             { connectionType: "Column" }
+          );
+        },
+      },
+      posts: {
+        type: ["Post!"],
+        resolve(source, args, context) {
+          return context.nodeModel.runQuery(
+            {
+              query: {
+                filter: {
+                  authors: {
+                    elemMatch: {
+                      uid: { eq: source.uid },
+                    },
+                  },
+                },
+              },
+              type: "Post",
+              firstOnly: false,
+            },
+            { connectionType: "Post" }
           );
         },
       },

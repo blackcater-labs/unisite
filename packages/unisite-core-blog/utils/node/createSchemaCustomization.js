@@ -104,7 +104,7 @@ module.exports = ({ actions }) => {
         name: String!
         # link
         columns: [Column!] @def(value: "[]")
-        posts: [Post!] @def(value: "[]") @link(by: "tags.tid", from: "tid")
+        posts: [Post!] @def(value: "[]")
     }
     
     type Column implements Node @nodeInterface {
@@ -116,7 +116,7 @@ module.exports = ({ actions }) => {
         # link
         tags: [Tag!] @def(value: "[]") @link(by: "tid")
         authors: [User!] @def(value: "[]") @link(by: "uid")
-        posts: [MdxColumnPost!] @def(value: "[]") @link(by: "column.cid", from: "cid")
+        posts: [MdxColumnPost!] @link(by: "column.cid", from: "cid")
     }
     
     interface User @nodeInterface {
@@ -164,14 +164,14 @@ module.exports = ({ actions }) => {
         wegame_url: String
         # link
         columns: [Column!] @def(value: "[]")
-        posts: [Post!] @def(value: "[]") @link(by: "authors.uid", from: "uid")
+        posts: [Post!] @def(value: "[]")
     }
     
     type Writer implements Node & User {
         # link
         groups: [Group!] @def(value: "[]")
         columns: [Column!] @def(value: "[]")
-        posts: [Post!] @def(value: "[]") @link(by: "authors.uid", from: "uid")
+        posts: [Post!] @def(value: "[]")
         
         ## User
         id: ID!
@@ -222,7 +222,7 @@ module.exports = ({ actions }) => {
         # link
         members: [User!] @def(value: "[]") @link(by: "uid")
         columns: [Column!] @def(value: "[]")
-        posts: [Post!] @def(value: "[]") @link(by: "authors.uid", from: "uid")
+        posts: [Post!] @def(value: "[]")
     
         ## User
         id: ID!
