@@ -10,6 +10,9 @@
 # Node.js
 node_modules/
 
+# Yarn@2
+.yarn/
+
 # TypeScript
 lib/
 

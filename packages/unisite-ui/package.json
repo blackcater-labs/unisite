@@ -10,6 +10,10 @@
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
   "peerDependencies": {
     "gatsby": ">=2.30.0",
     "react": ">=16.14.0",
@@ -17,9 +21,18 @@
   },
   "dependencies": {
     "@icon-park/react": "^1.2.2",
-    "autoprefixer": "^10.2.1",
-    "gatsby-plugin-postcss": "^3.5.0",
+    "autoprefixer": "^10.2.3",
+    "gatsby-plugin-postcss": "^3.6.0",
     "postcss": "^8.2.4",
     "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.14",
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/react": "^6.1.14",
+    "babel-loader": "^8.2.2",
+    "storybook": "^6.1.14"
   }
 }

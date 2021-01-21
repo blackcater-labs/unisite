@@ -1,5 +1,14 @@
 module.exports = () => {
   return {
-    plugins: ["@unisite/core-blog", "@unisite/ui"],
+    plugins: [
+      {
+        resolve: require.resolve("@unisite/core-blog"),
+        options: {},
+      },
+      {
+        resolve: require.resolve("@unisite/ui"),
+        options: {},
+      },
+    ],
   };
 };

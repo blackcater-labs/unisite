@@ -1,13 +1,25 @@
 {
   "name": "unisite",
   "version": "0.0.1",
-  "description": "Cli for unisite.",
+  "description": "Gatsby + Themes = Unisite.️",
   "main": "index.js",
   "repository": {
     "type": "git",
     "repository": "git@github.com:blackcater/unisite.git",
     "directory": "packages/unisite"
   },
+  "homepage": "https://unisite.blackcater.org",
+  "keywords": [
+    "unisite",
+    "react",
+    "gatsby",
+    "gatsby-themes",
+    "tailwindcss",
+    "blog",
+    "documentation",
+    "book",
+    "blackcater"
+  ],
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT"
 }

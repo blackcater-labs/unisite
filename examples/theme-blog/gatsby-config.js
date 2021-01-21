@@ -1,5 +1,8 @@
 module.exports = {
   plugins: [
-    "@unisite/theme-blog",
+    {
+      resolve: require.resolve("@unisite/theme-blog"),
+      options: {},
+    },
   ],
 };

@@ -12,6 +12,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@unisite/theme-book": "1.0.0"
+    "@unisite/theme-book": "^1.0.0"
   }
 }
