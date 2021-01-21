@@ -2914,6 +2914,26 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
+"@storybook/addon-storysource@^6.1.14":
+  version "6.1.14"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-storysource/download/@storybook/addon-storysource-6.1.14.tgz#694e0f0f5f9cd643cd98820aaba309464adfaffe"
+  integrity sha1-aU4PD1+c1kPNmIIKq6MJRkrfr/4=
+  dependencies:
+    "@storybook/addons" "6.1.14"
+    "@storybook/api" "6.1.14"
+    "@storybook/client-logger" "6.1.14"
+    "@storybook/components" "6.1.14"
+    "@storybook/router" "6.1.14"
+    "@storybook/source-loader" "6.1.14"
+    "@storybook/theming" "6.1.14"
+    core-js "^3.0.1"
+    estraverse "^4.2.0"
+    loader-utils "^2.0.0"
+    prettier "~2.0.5"
+    prop-types "^15.7.2"
+    react-syntax-highlighter "^13.5.0"
+    regenerator-runtime "^0.13.7"
+
 "@storybook/addon-toolbars@6.1.14":
   version "6.1.14"
   resolved "https://registry.npm.taobao.org/@storybook/addon-toolbars/download/@storybook/addon-toolbars-6.1.14.tgz#d28c9f8e980fcb542645c833a20183b4e0d07425"
@@ -4629,19 +4649,7 @@ atob@^2.1.2:
   resolved "https://registry.npm.taobao.org/atob/download/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha1-bZUX654DDSQ2ZmZR6GvZ9vE1M8k=
 
-autoprefixer@^10.2.3:
-  version "10.2.3"
-  resolved "https://registry.npm.taobao.org/autoprefixer/download/autoprefixer-10.2.3.tgz#2834b55b75cfc10fa80c66000a66dc94b7136804"
-  integrity sha1-KDS1W3XPwQ+oDGYACmbclLcTaAQ=
-  dependencies:
-    browserslist "^4.16.1"
-    caniuse-lite "^1.0.30001178"
-    colorette "^1.2.1"
-    fraction.js "^4.0.13"
-    normalize-range "^0.1.2"
-    postcss-value-parser "^4.1.0"
-
-autoprefixer@^9.7.2, autoprefixer@^9.8.4:
+autoprefixer@^9, autoprefixer@^9.7.2, autoprefixer@^9.8.4, autoprefixer@^9.8.6:
   version "9.8.6"
   resolved "https://registry.npm.taobao.org/autoprefixer/download/autoprefixer-9.8.6.tgz#3b73594ca1bf9266320c5acf1588d74dea74210f"
   integrity sha1-O3NZTKG/kmYyDFrPFYjXTep0IQ8=
@@ -5789,7 +5797,7 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001173, caniuse-lite@^1.0.30001178:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001173:
   version "1.0.30001178"
   resolved "https://registry.npm.taobao.org/caniuse-lite/download/caniuse-lite-1.0.30001178.tgz?cache=0&sync_timestamp=1610863463141&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcaniuse-lite%2Fdownload%2Fcaniuse-lite-1.0.30001178.tgz#3ad813b2b2c7d585b0be0a2440e1e233c6eabdbc"
   integrity sha1-OtgTsrLH1YWwvgokQOHiM8bqvbw=
@@ -9121,11 +9129,6 @@ forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.npm.taobao.org/forwarded/download/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
-
-fraction.js@^4.0.13:
-  version "4.0.13"
-  resolved "https://registry.npm.taobao.org/fraction.js/download/fraction.js-4.0.13.tgz#3c1c315fa16b35c85fffa95725a36fa729c69dfe"
-  integrity sha1-PBwxX6FrNchf/6lXJaNvpynGnf4=
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -14984,13 +14987,13 @@ postcss-functions@^3:
     postcss "^6.0.9"
     postcss-value-parser "^3.3.0"
 
-postcss-js@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.npm.taobao.org/postcss-js/download/postcss-js-3.0.3.tgz#2f0bd370a2e8599d45439f6970403b5873abda33"
-  integrity sha1-LwvTcKLoWZ1FQ59pcEA7WHOr2jM=
+postcss-js@^2:
+  version "2.0.3"
+  resolved "https://registry.npm.taobao.org/postcss-js/download/postcss-js-2.0.3.tgz#a96f0f23ff3d08cec7dc5b11bf11c5f8077cdab9"
+  integrity sha1-qW8PI/89CM7H3FsRvxHF+Ad82rk=
   dependencies:
     camelcase-css "^2.0.1"
-    postcss "^8.1.6"
+    postcss "^7.0.18"
 
 postcss-load-config@^2.0.0:
   version "2.1.2"
@@ -15147,12 +15150,13 @@ postcss-modules-values@^3.0.0:
     icss-utils "^4.0.0"
     postcss "^7.0.6"
 
-postcss-nested@^5.0.1:
-  version "5.0.3"
-  resolved "https://registry.npm.taobao.org/postcss-nested/download/postcss-nested-5.0.3.tgz?cache=0&sync_timestamp=1607404794319&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-nested%2Fdownload%2Fpostcss-nested-5.0.3.tgz#2f46d77a06fc98d9c22344fd097396f5431386db"
-  integrity sha1-L0bXegb8mNnCI0T9CXOW9UMThts=
+postcss-nested@^4:
+  version "4.2.3"
+  resolved "https://registry.npm.taobao.org/postcss-nested/download/postcss-nested-4.2.3.tgz?cache=0&sync_timestamp=1607404794319&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-nested%2Fdownload%2Fpostcss-nested-4.2.3.tgz#c6f255b0a720549776d220d00c4b70cd244136f6"
+  integrity sha1-xvJVsKcgVJd20iDQDEtwzSRBNvY=
   dependencies:
-    postcss-selector-parser "^6.0.4"
+    postcss "^7.0.32"
+    postcss-selector-parser "^6.0.2"
 
 postcss-normalize-charset@^4.0.1:
   version "4.0.1"
@@ -15312,7 +15316,25 @@ postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
   resolved "https://registry.npm.taobao.org/postcss-value-parser/download/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha1-RD9qIM7WSBor2k+oUypuVdeJoss=
 
-postcss@^6.0.1, postcss@^6.0.23, postcss@^6.0.9, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6, postcss@^8.1.6, postcss@^8.2.1, postcss@^8.2.4:
+postcss@^6.0.1, postcss@^6.0.23, postcss@^6.0.9:
+  version "6.0.23"
+  resolved "https://registry.npm.taobao.org/postcss/download/postcss-6.0.23.tgz?cache=0&sync_timestamp=1610186273182&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
+  integrity sha1-YcgswyisYOZ3ZF+XkFTrmLwOMyQ=
+  dependencies:
+    chalk "^2.4.1"
+    source-map "^0.6.1"
+    supports-color "^5.4.0"
+
+postcss@^7, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.18, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.5, postcss@^7.0.6:
+  version "7.0.35"
+  resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.35.tgz?cache=0&sync_timestamp=1610186273182&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
+  integrity sha1-0r4AuZj38hHYonaXQHny6SuXDiQ=
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
+postcss@^8.2.1:
   version "8.2.4"
   resolved "https://registry.npm.taobao.org/postcss/download/postcss-8.2.4.tgz?cache=0&sync_timestamp=1610186273182&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss%2Fdownload%2Fpostcss-8.2.4.tgz#20a98a39cf303d15129c2865a9ec37eda0031d04"
   integrity sha1-IKmKOc8wPRUSnChlqew37aADHQQ=
@@ -18078,7 +18100,7 @@ supports-color@^2.0.0:
   resolved "https://registry.npm.taobao.org/supports-color/download/supports-color-2.0.0.tgz?cache=0&sync_timestamp=1608033349725&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsupports-color%2Fdownload%2Fsupports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
   integrity sha1-U10EXOa2Nj+kARcIRimZXp3zJMc=
 
-supports-color@^5.3.0:
+supports-color@^5.3.0, supports-color@^5.4.0:
   version "5.5.0"
   resolved "https://registry.npm.taobao.org/supports-color/download/supports-color-5.5.0.tgz?cache=0&sync_timestamp=1608033349725&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsupports-color%2Fdownload%2Fsupports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
   integrity sha1-4uaaRKyHcveKHsCzW2id9lMO/I8=
@@ -18167,12 +18189,13 @@ table@^5.2.3:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
-tailwindcss@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.npm.taobao.org/tailwindcss/download/tailwindcss-2.0.2.tgz#28e1573d29dd4547b26782facb05bcfaa92be366"
-  integrity sha1-KOFXPSndRUeyZ4L6ywW8+qkr42Y=
+tailwindcss@2.0.1-compat:
+  version "2.0.1-compat"
+  resolved "https://registry.npm.taobao.org/tailwindcss/download/tailwindcss-2.0.1-compat.tgz#2f57e9e4e848587bfc67ed92ee0de0882c3d0673"
+  integrity sha1-L1fp5OhIWHv8Z+2S7g3giCw9BnM=
   dependencies:
     "@fullhuman/postcss-purgecss" "^3.0.0"
+    autoprefixer "^9"
     bytes "^3.0.0"
     chalk "^4.1.0"
     color "^3.1.3"
@@ -18184,9 +18207,10 @@ tailwindcss@^2.0.2:
     modern-normalize "^1.0.0"
     node-emoji "^1.8.1"
     object-hash "^2.0.3"
+    postcss "^7"
     postcss-functions "^3"
-    postcss-js "^3.0.3"
-    postcss-nested "^5.0.1"
+    postcss-js "^2"
+    postcss-nested "^4"
     postcss-selector-parser "^6.0.4"
     postcss-value-parser "^4.1.0"
     pretty-hrtime "^1.0.3"
