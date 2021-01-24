@@ -105,6 +105,7 @@ module.exports = ({ actions }) => {
         # link
         columns: [Column!] @def(value: "[]")
         posts: [Post!] @def(value: "[]")
+        postCount: Int!
     }
     
     type Column implements Node @nodeInterface {

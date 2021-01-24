@@ -43,6 +43,29 @@ module.exports = ({ createResolvers }) => {
           );
         },
       },
+      postCount: {
+        type: "Int!",
+        resolve: async (source, args, context) => {
+          const posts = await context.nodeModel.runQuery(
+            {
+              query: {
+                filter: {
+                  tags: {
+                    elemMatch: {
+                      tid: { eq: source.tid },
+                    },
+                  },
+                },
+              },
+              type: "Post",
+              firstOnly: false,
+            },
+            { connectionType: "Post" }
+          );
+
+          return (posts || []).length;
+        },
+      },
     },
     Column: {},
     Writer: {
