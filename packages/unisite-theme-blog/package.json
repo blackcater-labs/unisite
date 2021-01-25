@@ -1,6 +1,6 @@
 {
   "name": "@unisite/theme-blog",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A theme for blog.",
   "main": "index.js",
   "repository": {
@@ -16,7 +16,7 @@
     "react-dom": ">=16.14.0"
   },
   "dependencies": {
-    "@unisite/core-blog": "^1.0.0",
-    "@unisite/ui": "^1.0.0"
+    "@unisite/core-blog": "^0.0.1",
+    "@unisite/ui": "^0.0.1"
   }
 }

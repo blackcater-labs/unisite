@@ -1,6 +1,6 @@
 {
   "name": "@unisite/ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Theme and ui components for unisite.",
   "main": "index.js",
   "repository": {
