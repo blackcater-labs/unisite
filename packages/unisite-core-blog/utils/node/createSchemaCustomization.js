@@ -1,6 +1,4 @@
 const _ = require("lodash");
-const { format: formatDate, formatDistanceToNow } = require("date-fns");
-const localeDate = require("date-fns/locale");
 const mdx = require("@mdx-js/mdx");
 
 module.exports = ({ actions }) => {
@@ -32,35 +30,6 @@ module.exports = ({ actions }) => {
       return {
         resolve(source) {
           return source.slug ? source.slug : _.kebabCase(source.title);
-        },
-      };
-    },
-  });
-
-  createFieldExtension({
-    name: "datefns",
-    extend() {
-      return {
-        resolve(source, args, context, info) {
-          const dateStr = context.defaultFieldResolver(
-            source,
-            args,
-            context,
-            info
-          );
-          const date = new Date(dateStr);
-          const { format, distance } = args || {};
-          const { locale, ...options } = _.cloneDeep(distance || {});
-
-          if (locale) {
-            options.locale = localeDate[locale.replace(/[-_]/gim, "")];
-          }
-
-          return format
-            ? formatDate(date, format)
-            : distance
-            ? formatDistanceToNow(date, options)
-            : formatDate(date, "yyyy-MM-dd");
         },
       };
     },
@@ -274,8 +243,8 @@ module.exports = ({ actions }) => {
         id: ID!
         title: String!
         cover: File @fileByRelativePath
-        published_at(format: String, distance: JSON): Date @datefns
-        updated_at(format: String, distance: JSON): Date @datefns
+        published_at(format: String, distance: JSON): Date @dateformat
+        updated_at(format: String, distance: JSON): Date @dateformat
         slug: String! @slugify
         draft: Boolean! @def(value: "false")
         # mdx
@@ -295,8 +264,8 @@ module.exports = ({ actions }) => {
         ## Post
         title: String!
         cover: File @fileByRelativePath
-        published_at(format: String, distance: JSON): Date @datefns
-        updated_at(format: String, distance: JSON): Date @datefns
+        published_at(format: String, distance: JSON): Date @dateformat
+        updated_at(format: String, distance: JSON): Date @dateformat
         slug: String! @slugify
         draft: Boolean! @def(value: "false")
         # mdx
@@ -320,8 +289,8 @@ module.exports = ({ actions }) => {
         ## Post
         title: String!
         cover: File @fileByRelativePath
-        published_at(format: String, distance: JSON): Date @datefns
-        updated_at(format: String, distance: JSON): Date @datefns
+        published_at(format: String, distance: JSON): Date @dateformat
+        updated_at(format: String, distance: JSON): Date @dateformat
         slug: String! @slugify
         draft: Boolean! @def(value: "false")
         # mdx

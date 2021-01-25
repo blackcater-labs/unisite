@@ -20,7 +20,6 @@
     "@mdx-js/react": "^1.6.22",
     "@unisite/utils": "^1.0.0",
     "chalk": "^4.1.0",
-    "date-fns": "^2.16.1",
     "gatsby-plugin-mdx": "^1.8.0",
     "gatsby-plugin-sharp": "^2.12.0",
     "gatsby-plugin-typescript": "^2.10.0",

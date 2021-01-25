@@ -33,9 +33,9 @@ module.exports = (
       tags: Joi.array().items(Joi.string().required()),
       column: Joi.string(),
       published_at: Joi.alternatives().conditional("draft", {
-        is: Joi.bool().falsy(),
-        then: Joi.string().required(),
-        otherwise: Joi.string(),
+        is: true,
+        then: Joi.string(),
+        otherwise: Joi.string().required(),
       }),
       updated_at: Joi.string(),
       slug: Joi.string(),

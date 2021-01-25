@@ -2,7 +2,7 @@
 column: "markdown-tutorial"
 title: "Basic Syntax"
 author: "blackcater"
-published_at: 2021-01-21
+draft: true
 tags:
   - "markdown"
   - "tutorial"
