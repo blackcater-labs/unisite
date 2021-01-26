@@ -2,7 +2,7 @@ const { join } = require("path");
 const defaults = require("lodash/defaults");
 const slice = require("lodash/slice");
 const kebabCase = require("lodash/kebabCase");
-const { getPosts, getTags } = require("./queries");
+const { getPosts, getTags, getColumns } = require("./queries");
 
 // create detail pages
 function createDetailPages(arr = [], createPage, options) {
@@ -145,13 +145,14 @@ async function createTagPages({ graphql, createPage }) {
   const tagPostListTemplate = require.resolve(
     "../../src/templates/tag-post-list.tsx"
   );
-  const tags = await getTags({ graphql });
 
   createPage({
     path: "/tags",
     component: tagAllTemplate,
     context: {},
   });
+
+  const tags = await getTags({ graphql });
 
   for (const tag of tags) {
     const posts = await getPosts({
@@ -173,15 +174,54 @@ async function createTagPages({ graphql, createPage }) {
   }
 }
 
+// create column pages
+async function createColumnPages({ graphql, createPage }) {
+  const columnAllTemplate = require.resolve("../../src/templates/columns.tsx");
+  const columnDetailTemplate = require.resolve(
+    "../../src/templates/column.tsx"
+  );
+  const columnPostListTemplate = require.resolve(
+    "../../src/templates/column-post-list.tsx"
+  );
+
+  createPage({
+    path: "/columns",
+    component: columnAllTemplate,
+    context: {},
+  });
+
+  const columns = await getColumns({ graphql });
+
+  for (const column of columns) {
+    const posts = await getPosts({
+      graphql,
+      type: "column",
+      filter: { column: { id: { eq: column.id } } },
+    });
+
+    createPage({
+      path: join("/column", kebabCase(column.cid)),
+      component: columnDetailTemplate,
+      context: { id: column.id },
+    });
+
+    createPaginPages(posts, createPage, {
+      pageSize: 10,
+      pathPrefix: join("/column", kebabCase(column.cid)),
+      component: columnPostListTemplate,
+      contextPaginBuilder: (data) => ({
+        posts: data.map((item) => item.id),
+      }),
+    });
+  }
+}
+
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions;
 
-  await getPosts({ graphql });
-
   await createPostPages({ graphql, createPage });
   await createTagPages({ graphql, createPage });
-  // column 所有页
-  // column 详情页
+  await createColumnPages({ graphql, createPage });
   // author post 列表页
   // archive 页
   // search 页

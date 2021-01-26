@@ -3,7 +3,13 @@ const merge = require("lodash/merge");
 const get = require("lodash/get");
 const { isProd } = require("../../env");
 
-module.exports = async function getPosts({ graphql, filter, sort, edges }) {
+module.exports = async function getPosts({
+  graphql,
+  type,
+  edges,
+  filter,
+  sort,
+}) {
   const draftFilter = isProd ? { draft: { ne: true } } : {};
   const defaultSort = {
     fields: [new EnumType("published_at"), new EnumType("updated_at")],
@@ -19,13 +25,19 @@ module.exports = async function getPosts({ graphql, filter, sort, edges }) {
       }
     : { nodes: { id: true } };
 
+  type =
+    type === "column"
+      ? "allMdxColumnPost"
+      : type === "blog"
+      ? "allMdxBlogPost"
+      : "allPost";
   filter = merge(filter || {}, draftFilter);
   sort = merge(sort || {}, defaultSort);
 
   const query = j2q(
     {
       query: {
-        allPost: {
+        [type]: {
           __args: { filter, sort },
           ...fields,
         },
@@ -35,7 +47,9 @@ module.exports = async function getPosts({ graphql, filter, sort, edges }) {
   );
   const raw = await graphql(query);
 
+  console.log(query);
+
   return edges
-    ? get(raw, "data.allPost.edges")
-    : get(raw, "data.allPost.nodes");
+    ? get(raw, `data.${type}.edges`)
+    : get(raw, `data.${type}.nodes`);
 };
