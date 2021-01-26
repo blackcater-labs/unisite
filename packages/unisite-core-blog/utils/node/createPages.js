@@ -2,7 +2,7 @@ const { join } = require("path");
 const defaults = require("lodash/defaults");
 const slice = require("lodash/slice");
 const kebabCase = require("lodash/kebabCase");
-const { getPosts, getTags, getColumns } = require("./queries");
+const { getPosts, getTags, getColumns, getUsers } = require("./queries");
 
 // create detail pages
 function createDetailPages(arr = [], createPage, options) {
@@ -216,13 +216,56 @@ async function createColumnPages({ graphql, createPage }) {
   }
 }
 
+// create user pages
+async function createUserPages({ graphql, createPage }) {
+  const userAllTemplate = require.resolve("../../src/templates/users.tsx");
+  const userPostListTemplate = require.resolve(
+    "../../src/templates/user-post-list.tsx"
+  );
+
+  createPage({
+    path: "/users",
+    component: userAllTemplate,
+    context: {},
+  });
+
+  const users = await getUsers({ graphql });
+
+  for (const user of users) {
+    const posts = await getPosts({
+      graphql,
+      filter: { authors: { elemMatch: { id: { eq: user.id } } } },
+    });
+
+    createPaginPages(posts, createPage, {
+      pageSize: 10,
+      pathPrefix: join("/user", kebabCase(user.uid)),
+      component: userPostListTemplate,
+      map: {
+        0: { path: join("/user", kebabCase(user.uid)) },
+      },
+      contextPaginBuilder: (data) => ({
+        posts: data.map((item) => item.id),
+      }),
+    });
+  }
+}
+
+// create archive pages
+async function createArchivePages({ createPage }) {
+  createPage({
+    path: "/archives",
+    component: require.resolve("../../src/templates/archives.tsx"),
+    context: {},
+  });
+}
+
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions;
 
   await createPostPages({ graphql, createPage });
   await createTagPages({ graphql, createPage });
   await createColumnPages({ graphql, createPage });
-  // author post 列表页
-  // archive 页
-  // search 页
+  await createUserPages({ graphql, createPage });
+  await createArchivePages({ graphql, createPage });
 };

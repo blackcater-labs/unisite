@@ -47,8 +47,6 @@ module.exports = async function getPosts({
   );
   const raw = await graphql(query);
 
-  console.log(query);
-
   return edges
     ? get(raw, `data.${type}.edges`)
     : get(raw, `data.${type}.nodes`);
