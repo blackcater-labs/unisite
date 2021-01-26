@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Core package for @unisite/theme-blog",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "repository": "git@github.com:blackcater/unisite.git",
