@@ -1,7 +1,8 @@
 const { join } = require("path");
-const get = require("lodash/get");
 const defaults = require("lodash/defaults");
 const slice = require("lodash/slice");
+const kebabCase = require("lodash/kebabCase");
+const { getPosts, getTags } = require("./queries");
 
 // create detail pages
 function createDetailPages(arr = [], createPage, options) {
@@ -108,47 +109,11 @@ function createPaginPages(arr, createPage, options) {
 
 // create post pages
 async function createPostPages({ graphql, createPage }) {
-  const draftFilter =
-    process.env.NODE_ENV === "production"
-      ? ", filter: {draft: {ne: true}}"
-      : "";
   const postTemplate = require.resolve("../../src/templates/post.tsx");
   const postListTemplate = require.resolve("../../src/templates/post-list.tsx");
+  const posts = await getPosts({ graphql, edges: true });
 
-  // language=graphql
-  const posts = await graphql(`
-      query AllPostQuery {
-        allPost(sort: { fields: [published_at, updated_at], order: DESC }${draftFilter}) {
-          edges {
-            node {
-              id
-              slug
-            }
-            previous {
-              id
-            }
-            next {
-              id
-            }
-          }
-        }
-      }
-    `);
-  const edges = get(posts, "data.allPost.edges");
-
-  createPaginPages(edges, createPage, {
-    pageSize: 10,
-    pathPrefix: "/list",
-    component: postListTemplate,
-    map: {
-      0: { path: "/" },
-    },
-    contextPaginBuilder: (data) => ({
-      posts: data.map((item) => item.id),
-    }),
-  });
-
-  createDetailPages(edges, createPage, {
+  createDetailPages(posts, createPage, {
     pathPrefix: "/post",
     pathBuilder: ({ node }) => node?.slug || "",
     component: postTemplate,
@@ -160,14 +125,61 @@ async function createPostPages({ graphql, createPage }) {
       nextPath: next ? join("/post", next.slug || "") : null,
     }),
   });
+
+  createPaginPages(posts, createPage, {
+    pageSize: 10,
+    pathPrefix: "/list",
+    component: postListTemplate,
+    map: {
+      0: { path: "/" },
+    },
+    contextPaginBuilder: (data) => ({
+      posts: data.map((item) => item.id),
+    }),
+  });
+}
+
+// create tag pages
+async function createTagPages({ graphql, createPage }) {
+  const tagAllTemplate = require.resolve("../../src/templates/tags.tsx");
+  const tagPostListTemplate = require.resolve(
+    "../../src/templates/tag-post-list.tsx"
+  );
+  const tags = await getTags({ graphql });
+
+  createPage({
+    path: "/tags",
+    component: tagAllTemplate,
+    context: {},
+  });
+
+  for (const tag of tags) {
+    const posts = await getPosts({
+      graphql,
+      filter: { tags: { elemMatch: { id: { eq: tag.id } } } },
+    });
+
+    createPaginPages(posts, createPage, {
+      pageSize: 10,
+      pathPrefix: join("/tag", kebabCase(tag.tid)),
+      component: tagPostListTemplate,
+      map: {
+        0: { path: join("/tag", kebabCase(tag.tid)) },
+      },
+      contextPaginBuilder: (data) => ({
+        posts: data.map((item) => item.id),
+      }),
+    });
+  }
 }
 
 module.exports = async ({ actions, graphql }, options) => {
   const { createPage } = actions;
 
+  await getPosts({ graphql });
+
   await createPostPages({ graphql, createPage });
-  // tag 所有页
-  // tag post 列表页，分页
+  await createTagPages({ graphql, createPage });
   // column 所有页
   // column 详情页
   // author post 列表页

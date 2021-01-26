@@ -1,4 +1,4 @@
-const _ = require("lodash");
+const kebabCase = require("lodash/kebabCase");
 const mdx = require("@mdx-js/mdx");
 
 module.exports = ({ actions }) => {
@@ -29,7 +29,7 @@ module.exports = ({ actions }) => {
     extend() {
       return {
         resolve(source) {
-          return source.slug ? source.slug : _.kebabCase(source.title);
+          return source.slug ? source.slug : kebabCase(source.title);
         },
       };
     },
