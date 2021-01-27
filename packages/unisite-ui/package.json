@@ -21,8 +21,13 @@
   },
   "dependencies": {
     "@icon-park/react": "^1.2.2",
+    "antd": "^4.11.2",
     "autoprefixer": "^9.8.6",
+    "babel-plugin-import": "^1.13.3",
+    "gatsby-plugin-less": "^4.6.0",
     "gatsby-plugin-postcss": "^3.6.0",
+    "less": "^4.1.0",
+    "lodash": "^4.17.20",
     "postcss": "^7.0.35",
     "tailwindcss": "2.0.1-compat"
   },

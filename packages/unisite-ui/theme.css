@@ -1,0 +1,61 @@
+html[theme="dark"] {
+  --unisite-bg-color-base: #1e1e1e;
+  --unisite-hover-bg-color: rgba(59, 117, 251, 0.3);
+  --unisite-white: #262626;
+  --unisite-white-fade: rgba(38, 38, 38, 0.75);
+  --unisite-black: #fff;
+  --unisite-primary-blue: #3b75fb;
+  --unisite-secondary-blue: rgba(59, 117, 251, 0.3);
+  --unisite-label-color: #f3f3f3;
+  --unisite-label-color-secondary: #949494;
+  --unisite-label-color-tertiary: #9a9a9a;
+  --unisite-danger-color: #ff4c6d;
+  --unisite-danger-color-secondary: #ffe8ec;
+  --unisite-star-color: #f5a623;
+  --unisite-star-color-secondary: #ffebca;
+  --unisite-disabled-opacity: 0.2;
+  --unisite-dragging-label-color-menu: #fff;
+  --unisite-shadow-color-base: rgba(59, 117, 251, 0.2);
+  --unisite-sider-divider-color: #303030;
+  --unisite-dark-divider-color: #3a3a3a;
+  --unisite-dark-divider-color-secondary: hsla(0, 0%, 100%, 0.2);
+  --unisite-dark-box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.32),
+    0 9px 28px 0 rgba(0, 0, 0, 0.2), 0 12px 48px 16px rgba(0, 0, 0, 0.12);
+  --unisite-mark-theme-color: #edd13c;
+  --unisite-mark-highlight-color: rgba(236, 217, 119, 0.18);
+  --unisite-mark-highlight-hover-color: #674d25;
+  --unisite-mark-tips-color: #dc930f;
+  --unisite-mark-shadow: 0px 2px 12px 5px rgba(8, 35, 48, 0.05);
+  --unisite-mark-shadow-secondary: 0px 5px 30px 5px rgba(0, 0, 0, 0.08);
+  --unisite-mark-shadow-tertiary: 0px 15px 50px rgba(0, 0, 0, 0.2);
+  --unisite-mark-highlight-mix-blend-mode: screen;
+}
+
+html {
+  --unisite-bg-color-base: #f2f3fa;
+  --unisite-hover-bg-color: #f2f3fa;
+  --unisite-white: #fff;
+  --unisite-white-fade: hsla(0, 0%, 100%, 0.75);
+  --unisite-black: #000;
+  --unisite-primary-blue: #3b75fb;
+  --unisite-secondary-blue: #dde7ff;
+  --unisite-label-color: #1c2a39;
+  --unisite-label-color-secondary: #858f9a;
+  --unisite-label-color-tertiary: #a9b1bb;
+  --unisite-danger-color: #ff4c6d;
+  --unisite-danger-color-secondary: #ffe8ec;
+  --unisite-star-color: #f5a623;
+  --unisite-star-color-secondary: #ffebca;
+  --unisite-disabled-opacity: 0.2;
+  --unisite-dragging-label-color-menu: #fff;
+  --unisite-shadow-color-base: rgba(59, 117, 251, 0.2);
+  --unisite-sider-divider-color: #eaeaea;
+  --unisite-mark-theme-color: #ffd600;
+  --unisite-mark-highlight-color: #fff3ad;
+  --unisite-mark-highlight-hover-color: #ffdead;
+  --unisite-mark-tips-color: orange;
+  --unisite-mark-shadow: 0px 2px 12px 5px rgba(8, 35, 48, 0.05);
+  --unisite-mark-shadow-secondary: 0px 5px 30px 5px rgba(8, 35, 48, 0.08);
+  --unisite-mark-shadow-tertiary: 0px 15px 50px rgba(36, 46, 51, 0.2);
+  --unisite-mark-highlight-mix-blend-mode: multiply;
+}

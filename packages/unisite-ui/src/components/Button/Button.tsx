@@ -1,15 +1,8 @@
-// @ts-ignore
 import React from "react";
-import * as PropTypes from "prop-types";
-import { InferProps } from "prop-types";
+import { Button, ButtonProps } from "antd";
 
-function Button({ children }: InferProps<typeof Button.propTypes>) {
-  return <button>{children}</button>;
-}
-
-Button.propTypes = {
-  type: PropTypes.string,
-  children: PropTypes.element,
+const UButton: React.FC<ButtonProps> = (props) => {
+  return <Button {...props} />;
 };
 
-export default Button;
+export default UButton;

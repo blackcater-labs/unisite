@@ -1,3 +1,4 @@
+const themeVars = require("./antd-theme");
 const {
   plugins: postCssPlugins,
   ...postCssConfig
@@ -9,6 +10,15 @@ module.exports = () => {
       {
         resolve: require.resolve("gatsby-plugin-postcss"),
         options: { ...postCssConfig, postCssPlugins },
+      },
+      {
+        resolve: require.resolve("gatsby-plugin-less"),
+        options: {
+          lessOptions: {
+            javascriptEnabled: true,
+            modifyVars: themeVars,
+          },
+        },
       },
     ],
   };

@@ -1,0 +1,23 @@
+{
+  "plugins": [
+    ["import", { "libraryName": "antd", "style": true }, "antd"],
+    [
+      "import",
+      {
+        "libraryName": "@icon-park/react",
+        "libraryDirectory": "lib/icons",
+        "camel2DashComponentName": false
+      },
+      "@icon-park/react"
+    ],
+    [
+      "import",
+      {
+        "libraryName": "lodash",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      },
+      "lodash"
+    ]
+  ]
+}
