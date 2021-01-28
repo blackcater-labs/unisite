@@ -1,11 +1,16 @@
 import React from "react";
-import { Button, ButtonProps } from "antd";
+import { Button as AButton, ButtonProps as AButtonProps } from "antd";
+import { prefixCls } from "../_utils";
 
-type UButtonProps = ButtonProps;
+const prefix = prefixCls("btn");
 
-const UButton: React.FC<UButtonProps> = (props) => {
-  return <Button {...props} />;
+type ButtonProps = AButtonProps;
+
+const Button: React.FC<ButtonProps> = (props) => {
+  console.log("props:", props);
+
+  return <AButton {...props} prefixCls={prefix} />;
 };
 
-export { UButtonProps };
-export default UButton;
+export { ButtonProps };
+export default Button;

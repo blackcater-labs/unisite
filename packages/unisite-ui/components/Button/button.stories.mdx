@@ -1,18 +1,56 @@
-import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import { Meta, Canvas, Story } from "@storybook/addon-docs/blocks";
 
 import Button from "./Button";
 
-<Meta title="basic/button" />
+<Meta title="Components/Button" />
 
 # Button
 
-## Types
+## Type
 
 <Canvas>
-  <Button>Default</Button>
-  <Button type="dashed">Dashed</Button>
-  <Button type="primary">Primary</Button>
-  <Button type="link">Link</Button>
-  <Button type="text">Text</Button>
-  <Button>Very very long text contents</Button>
+  <Story name="Type">
+    <div className="-mt-4 space-x-4 space-y-4">
+      <Button>Default</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="primary">Primary</Button>
+      <Button type="link">Link</Button>
+      <Button type="text">Text</Button>
+      <Button>Very very long text contents</Button>
+    </div>
+  </Story>
+</Canvas>
+
+## Size
+
+<Canvas>
+  <Story name="Size">
+    <h4>Small</h4>
+    <div className=" space-x-4 space-y-4">
+      <Button>Default</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="primary">Primary</Button>
+      <Button type="link">Link</Button>
+      <Button type="text">Text</Button>
+      <Button>Very very long text contents</Button>
+    </div>
+    <h4>Default</h4>
+    <div className="space-x-4 space-y-4">
+      <Button>Default</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="primary">Primary</Button>
+      <Button type="link">Link</Button>
+      <Button type="text">Text</Button>
+      <Button>Very very long text contents</Button>
+    </div>
+    <h4>Large</h4>
+    <div className="space-x-4 space-y-4">
+      <Button>Large</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="primary">Primary</Button>
+      <Button type="link">Link</Button>
+      <Button type="text">Text</Button>
+      <Button>Very very long text contents</Button>
+    </div>
+  </Story>
 </Canvas>

@@ -1,9 +1,7 @@
-const themeVars = require("../antd-theme");
-
 module.exports = {
   stories: [
-    "../src/**/*.stories.{md,mdx}",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../{docs,components}/**/*.stories.{md,mdx}",
+    "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-links",
@@ -11,12 +9,6 @@ module.exports = {
     "@storybook/addon-storysource",
   ],
   babel: async (options) => {
-    // babel-plugin-import antd
-    options.plugins.push([
-      "import",
-      { libraryName: "antd", style: true },
-      "antd",
-    ]);
     // babel-plugin-import @icon-park/react
     options.plugins.push([
       "import",
@@ -50,7 +42,7 @@ module.exports = {
         {
           loader: "less-loader",
           options: {
-            lessOptions: { javascriptEnabled: true, modifyVars: themeVars },
+            lessOptions: { javascriptEnabled: true, modifyVars: {} },
           },
         },
       ],

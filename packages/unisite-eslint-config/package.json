@@ -1,17 +1,19 @@
 {
-  "name": "@unisite/ui-themes",
+  "name": "@unisite/eslint-config",
   "version": "0.0.1",
-  "description": "Many preset tailwindcss themes.",
-  "main": "index.js",
+  "description": "Configuration for eslint.",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "repository": "git@github.com:blackcater/unisite.git",
-    "directory": "packages/unisite-ui-themes"
+    "directory": "packages/unisite-eslint-config"
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
   "scripts": {},
-  "peerDependencies": {},
+  "peerDependencies": {
+    "eslint": "^7.18.0"
+  },
   "dependencies": {},
   "devDependencies": {}
 }
