@@ -1,0 +1,17 @@
+{
+  "name": "@unisite/ui-themes",
+  "version": "0.0.1",
+  "description": "Theme and ui components for unisite.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "repository": "git@github.com:blackcater/unisite.git",
+    "directory": "packages/unisite-ui"
+  },
+  "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
+  "license": "MIT",
+  "scripts": {},
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
