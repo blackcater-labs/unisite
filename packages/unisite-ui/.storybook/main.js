@@ -1,7 +1,13 @@
+const path = require("path");
+
+function resolvePath(relativePath = "") {
+  return path.resolve(__dirname, "..", relativePath);
+}
+
 module.exports = {
   stories: [
     "../{docs,components}/**/*.stories.{md,mdx}",
-    "../components/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../components/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-links",
@@ -47,6 +53,13 @@ module.exports = {
         },
       ],
     });
+
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      "@": resolvePath(),
+      "@components": resolvePath("components"),
+      "@styles": resolvePath("styles"),
+    };
 
     return config;
   },

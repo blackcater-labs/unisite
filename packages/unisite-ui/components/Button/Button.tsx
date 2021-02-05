@@ -12,5 +12,5 @@ const Button: React.FC<ButtonProps> = (props) => {
   return <AButton {...props} prefixCls={prefix} />;
 };
 
-export { ButtonProps };
+export type { ButtonProps };
 export default Button;
