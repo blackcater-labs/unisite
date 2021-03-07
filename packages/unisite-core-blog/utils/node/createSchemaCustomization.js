@@ -67,7 +67,7 @@ module.exports = ({ actions }) => {
   // https://www.jetbrains.com/help/webstorm/using-language-injections.html#inject_language
   // language=graphql
   createTypes(`
-    type Tag implements Node @nodeInterface {
+    type Tag implements Node {
         id: ID!
         tid: String!
         name: String!
@@ -77,7 +77,7 @@ module.exports = ({ actions }) => {
         postCount: Int!
     }
     
-    type Column implements Node @nodeInterface {
+    type Column implements Node {
         id: ID!
         cid: String!
         name: String!
@@ -88,8 +88,8 @@ module.exports = ({ actions }) => {
         authors: [User!] @def(value: "[]") @link(by: "uid")
         posts: [MdxColumnPost!] @link(by: "column.cid", from: "cid")
     }
-    
-    interface User @nodeInterface {
+
+    interface User implements Node {
         id: ID!
         uid: String!
         name: String!
@@ -239,7 +239,7 @@ module.exports = ({ actions }) => {
         wegame_url: String
     }
 
-    interface Post @nodeInterface {
+    interface Post implements Node {
         id: ID!
         title: String!
         cover: File @fileByRelativePath

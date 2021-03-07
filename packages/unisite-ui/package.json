@@ -18,8 +18,8 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "react": ">=16.14.0",
-    "react-dom": ">=16.14.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "dependencies": {
     "@icon-park/react": "^1.2.2",

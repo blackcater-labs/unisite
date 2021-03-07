@@ -1,5 +1,4 @@
 import React from "react";
-import { UButton } from "@unisite/ui/src/components";
 
 export default function PostListPage(): React.ReactElement {
   return (
@@ -7,7 +6,6 @@ export default function PostListPage(): React.ReactElement {
       <h1 className="font-serif font-bold text-2xl mt-4 mb-2 md:text-4xl">
         post list page 2
       </h1>
-      <UButton type="primary">UButton</UButton>
     </div>
   );
 }
