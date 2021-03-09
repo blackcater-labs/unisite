@@ -16,7 +16,6 @@
     "react-dom": "^17.0.0"
   },
   "dependencies": {
-    "@unisite/core-blog": "^0.0.1",
-    "@unisite/ui": "^0.0.1"
+    "@unisite/core-blog": "^0.0.1"
   }
 }
