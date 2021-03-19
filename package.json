@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev:site": "",
-    "dev:example:blog": "cd examples/theme-blog && npm run serve",
+    "dev:example:blog": "npm -C examples/theme-blog run serve",
     "dev:example:doc": "",
     "dev:example:book": "",
     "build:site": "",

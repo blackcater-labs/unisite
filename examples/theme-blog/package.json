@@ -8,16 +8,13 @@
     "url": "git@github.com:blackcater/unisite.git",
     "directory": "examples/theme-blog"
   },
-  "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
-  "license": "MIT",
-  "private": true,
   "scripts": {
     "clean": "rimraf .cache public",
     "serve": "npm run clean && gatsby develop"
   },
   "dependencies": {
     "@unisite/theme-blog": "^0.0.1",
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
