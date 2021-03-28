@@ -1,5 +1,5 @@
 const { jsonToGraphQLQuery: j2q } = require("json-to-graphql-query");
-const get = require("lodash/get");
+const { get } = require("lodash");
 
 module.exports = async function getUsers({ graphql }) {
   const query = j2q({

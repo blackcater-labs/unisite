@@ -1,7 +1,6 @@
 const { jsonToGraphQLQuery: j2q, EnumType } = require("json-to-graphql-query");
-const merge = require("lodash/merge");
-const get = require("lodash/get");
-const { isProd } = require("../../env");
+const { merge, get } = require("lodash");
+const { isProd } = require("../../../env");
 
 module.exports = async function getPosts({
   graphql,
