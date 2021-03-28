@@ -8,14 +8,14 @@ module.exports = (options) => {
   return {
     plugins: [
       {
-        resolve: require.resolve("gatsby-source-filesystem"),
+        resolve: "gatsby-source-filesystem",
         options: {
           name: contentName,
           path: `${path.resolve(Path.root(), contentPath)}/`,
         },
       },
       {
-        resolve: require.resolve("gatsby-plugin-mdx"),
+        resolve: "gatsby-plugin-mdx",
         options: {
           extensions: [`.mdx`, `.md`],
           gatsbyRemarkPlugins: [
@@ -30,18 +30,10 @@ module.exports = (options) => {
           ],
         },
       },
-      {
-        resolve: require.resolve("gatsby-transformer-sharp"),
-        options: {},
-      },
-      {
-        resolve: require.resolve("gatsby-plugin-sharp"),
-        options: {},
-      },
-      {
-        resolve: require.resolve("gatsby-plugin-typescript"),
-        options: {},
-      },
+      // "gatsby-plugin-image",
+      "gatsby-plugin-sharp",
+      "gatsby-transformer-sharp",
+      "gatsby-plugin-typescript",
     ],
   };
 };

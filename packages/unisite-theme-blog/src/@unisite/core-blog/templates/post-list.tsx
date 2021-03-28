@@ -35,6 +35,32 @@ export const query = graphql`
       nodes {
         id
         title
+        excerpt
+        slug
+        published_at(formatString: "yyyy年MM月DD日")
+        updated_at(formatString: "yyyy年MM月DD日")
+        authors {
+          id
+          uid
+          name
+          avatar {
+            childImageSharp {
+              fixed(width: 80, height: 80) {
+                ...GatsbyImageSharpFixed_withWebp
+              }
+            }
+          }
+        }
+        tags {
+          tid
+          name
+        }
+        ... on MdxColumnPost {
+          column {
+            cid
+            name
+          }
+        }
       }
     }
   }
