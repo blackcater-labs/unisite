@@ -8,6 +8,7 @@ module.exports = (
   const { createNode, createParentChildLink } = actions;
 
   if (node.internal.type !== `Mdx`) {
+    console.log("type:", node.internal.type, node.internal.mediaType);
     return;
   }
 

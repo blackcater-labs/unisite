@@ -1,6 +1,6 @@
 {
   "name": "@unisite/prettier-config",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Configuration for prettier.",
   "main": "lib/index.js",
   "repository": {

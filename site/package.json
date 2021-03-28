@@ -1,6 +1,6 @@
 {
   "name": "@unisite/unisite.blackcater.org",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Source code of website for unisite's documentation",
   "main": "index.js",
   "repository": {
@@ -12,6 +12,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@unisite/theme-doc": "^0.0.1"
+    "@unisite/theme-doc": "^0.0.0"
   }
 }

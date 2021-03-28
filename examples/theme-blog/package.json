@@ -1,6 +1,6 @@
 {
   "name": "@unisite/example-theme-blog",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "An example for @unisite/theme-blog",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "serve": "npm run clean && gatsby develop"
   },
   "dependencies": {
-    "@unisite/theme-blog": "^0.0.1",
+    "@unisite/theme-blog": "^0.0.0",
     "gatsby": "^3.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

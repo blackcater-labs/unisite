@@ -1,4 +1,4 @@
-- id: markdown
-  name: markdown
-- id: tutorial
-  name: tutorial
+- id: "markdown"
+  name: "markdown"
+- id: "tutorial"
+  name: "tutorial"

@@ -1,8 +1,8 @@
-- id: markdown-tutorial
+- id: "markdown-tutorial"
   name: "Markdown Tutorial"
-  cover: "./column/markdown-tutorial/cover.jpg"
+  cover: "column/markdown-tutorial/cover.png"
   tags:
-    - markdown
-    - tutorial
+    - "markdown"
+    - "tutorial"
   authors:
-    - blackcater
+    - "blackcater"

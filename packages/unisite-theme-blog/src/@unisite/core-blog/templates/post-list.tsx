@@ -1,11 +1,43 @@
 import React from "react";
+import { graphql } from "gatsby";
 
-export default function PostListPage(): React.ReactElement {
+import DefaultLayout from "../../../layouts/DefaultLayout";
+import PostCard from "../../../components/PostCard";
+
+import type { PageProps } from "../../../utils";
+
+type PageData = {};
+type PageContext = {};
+type PostListPageProps = PageProps<PageData, PageContext>;
+
+function PostListPage(props: PostListPageProps): React.ReactElement {
+  console.log("props:", props);
+
   return (
-    <div className="container mx-auto">
-      <h1 className="font-serif font-bold text-2xl mt-4 mb-2 md:text-4xl">
-        post list page 2
-      </h1>
-    </div>
+    <DefaultLayout>
+      <div className="max-w-6xl mx-auto grid grid-cols-12">
+        <div className="col-start-1 col-span-7 space-y-8">
+          <PostCard />
+          <PostCard />
+          <PostCard />
+        </div>
+        <div className="col-start-9 col-span-4">
+          <nav className="sticky top-0"></nav>
+        </div>
+      </div>
+    </DefaultLayout>
   );
 }
+
+export const query = graphql`
+  query PostListQuery($posts: [String!]!) {
+    allPost(filter: { id: { in: $posts } }) {
+      nodes {
+        id
+        title
+      }
+    }
+  }
+`;
+
+export default PostListPage;

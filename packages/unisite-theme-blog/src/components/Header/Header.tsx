@@ -1,7 +1,11 @@
 import React from "react";
 
-function Header() {
-  return <div>header</div>;
-}
+type HeaderProps = {};
+type HeaderFC = React.FC<HeaderProps>;
 
+const Header: HeaderFC = () => {
+  return <div>header</div>;
+};
+
+export type { HeaderProps };
 export default Header;

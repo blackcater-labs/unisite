@@ -1,6 +1,6 @@
 {
   "name": "@unisite/core-blog",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Core package for @unisite/theme-blog",
   "main": "index.js",
   "types": "index.d.ts",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@unisite/utils": "^0.0.1",
+    "@unisite/utils": "^0.0.0",
     "chalk": "^4.1.0",
     "gatsby-plugin-mdx": "^2.1.0",
     "gatsby-plugin-sharp": "^3.1.1",

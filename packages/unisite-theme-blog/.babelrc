@@ -1,0 +1,26 @@
+{
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      { "targets": { "browsers": [">0.25%", "not dead"] } }
+    ]
+  ],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "lodash",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "@icon-park/react",
+        "libraryDirectory": "lib/icons",
+        "camel2DashComponentName": false
+      }
+    ]
+  ]
+}

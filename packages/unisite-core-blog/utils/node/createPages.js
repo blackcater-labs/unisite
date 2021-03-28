@@ -134,7 +134,7 @@ async function createPostPages({ graphql, createPage }) {
       0: { path: "/" },
     },
     contextPaginBuilder: (data) => ({
-      posts: data.map((item) => item.id),
+      posts: data.map((item) => item?.node?.id),
     }),
   });
 }

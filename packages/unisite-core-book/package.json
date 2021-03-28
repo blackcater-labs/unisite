@@ -1,6 +1,6 @@
 {
   "name": "@unisite/core-book",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Core package for @unisite/theme-book",
   "main": "index.js",
   "repository": {
