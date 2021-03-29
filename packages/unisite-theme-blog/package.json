@@ -28,6 +28,7 @@
     "gatsby-plugin-postcss": "^4.1.0",
     "lodash": "^4.17.21",
     "postcss": "^8.2.8",
+    "react-use": "^17.2.1",
     "tailwindcss": "^2.0.4"
   }
 }

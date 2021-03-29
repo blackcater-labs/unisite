@@ -35,7 +35,7 @@ const PostCard: PostCardFC = ({
   const author = authors?.[0];
 
   return (
-    <div className="max-w-2xl px-8 py-6 mx-auto transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm hover:shadow-md dark:bg-gray-800">
+    <div className="w-full px-8 py-6 transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm hover:shadow-md dark:bg-gray-800">
       <div className="flex items-center justify-between">
         <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
         <span>{dateValue}</span>
