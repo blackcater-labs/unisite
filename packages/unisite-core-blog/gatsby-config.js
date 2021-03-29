@@ -30,7 +30,7 @@ module.exports = (options) => {
           ],
         },
       },
-      // "gatsby-plugin-image",
+      "gatsby-plugin-image",
       "gatsby-plugin-sharp",
       "gatsby-transformer-sharp",
       "gatsby-plugin-typescript",
