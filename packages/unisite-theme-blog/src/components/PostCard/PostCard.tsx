@@ -1,31 +1,53 @@
 import React from "react";
+import cls from "classnames";
+import Image from "gatsby-image";
 import { ArrowRight } from "@icon-park/react";
 
-type PostCardProps = {};
+type PostCardProps = {
+  draft: boolean;
+  title: string;
+  excerpt: string;
+  slug: string;
+  published_at?: string;
+  updated_at?: string;
+  authors?: { id: string; uid: string; name: string; avatar: any }[];
+  tags?: { tid: string; name: string }[];
+  column?: { cid: string; name: string };
+};
 type PostCardFC = React.FC<PostCardProps>;
 
-const PostCard: PostCardFC = () => {
+const PostCard: PostCardFC = ({
+  draft,
+  title,
+  excerpt,
+  published_at,
+  updated_at,
+  authors,
+  column,
+}) => {
+  const dateLabel = draft ? "草稿中" : updated_at ? "更新于" : "发表于";
+  const dateColor = draft
+    ? "text-gray-500"
+    : updated_at
+    ? "text-yellow-500"
+    : "text-green-500";
+  const dateValue = draft ? "" : updated_at || published_at;
+  const author = authors?.[0];
+
   return (
     <div className="max-w-2xl px-8 py-6 mx-auto transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm hover:shadow-md dark:bg-gray-800">
       <div className="flex items-center justify-between">
-        <span className="text-sm text-green-500 dark:text-gray-400">
-          更新于
-        </span>
-        <span>3月29日</span>
+        <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
+        <span>{dateValue}</span>
       </div>
       <div className="mt-2">
         <a
           href="#"
           className="text-2xl text-gray-900 font-medium hover:underline hover:text-opacity-80 dark:text-white dark:hover:text-gray-200"
         >
-          落霞与孤雁齐飞，秋水共长天一色
+          {title}
         </a>
-        <p className="mt-2 text-gray-700 dark:text-gray-300">
-          大江东去，浪淘尽，千古风流人物。 故垒西边，人道是，三国周郎赤壁。
-          乱石穿空，惊涛拍岸，卷起千堆雪。 江山如画，一时多少豪杰。
-          遥想公瑾当年，小乔初嫁了，雄姿英发。 羽扇纶巾，谈笑间，樯橹灰飞烟灭。
-          故国神游，多情应笑我，早生华发。 人生如梦，一尊还酹江月。
-        </p>
+        <p className="mt-2 text-gray-700 dark:text-gray-300">{excerpt}</p>
       </div>
       <div className="flex items-center justify-between mt-4">
         <a
@@ -36,22 +58,24 @@ const PostCard: PostCardFC = () => {
           <ArrowRight theme="two-tone" />
         </a>
         <div className="flex items-center">
-          <img
-            className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
-            src="https://cdn.dribbble.com/users/1787150/avatars/normal/0e0a38312a4e1d094d0c69af4317db44.png"
+          <Image
+            className="hidden w-10 h-10 mr-2 rounded-full sm:block"
+            fixed={author?.avatar?.childImageSharp?.fixed}
             alt="avatar"
           />
           <a className="font-medium text-gray-700 cursor-pointer dark:text-gray-200">
-            苏轼
+            {author?.name}
           </a>
         </div>
       </div>
-      <div className="flex flex-row items-center bg-gray-100 mt-4 p-3 rounded-lg shadow-inner">
-        <span className="text-sm text-gray-500">关联专栏：</span>
-        <span className="text-gray-900 font-medium cursor-pointer hover:underline hover:text-opacity-80">
-          《Markdown Tutorial》
-        </span>
-      </div>
+      {column ? (
+        <div className="flex flex-row items-center bg-gray-100 mt-4 p-3 rounded-lg shadow-inner">
+          <span className="text-sm text-gray-500">关联专栏：</span>
+          <span className="text-gray-900 font-medium cursor-pointer hover:underline hover:text-opacity-80">
+            《{column.name}》
+          </span>
+        </div>
+      ) : null}
     </div>
   );
 };

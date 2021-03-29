@@ -6,20 +6,28 @@ import PostCard from "../../../components/PostCard";
 
 import type { PageProps } from "../../../utils";
 
-type PageData = {};
-type PageContext = {};
+type PageData = {
+  allPost: {
+    nodes: any[];
+  };
+};
+type PageContext = {
+  posts?: string[];
+};
 type PostListPageProps = PageProps<PageData, PageContext>;
 
 function PostListPage(props: PostListPageProps): React.ReactElement {
-  console.log("props:", props);
+  const posts = props.data.allPost?.nodes || [];
+
+  console.log("posts:", posts);
 
   return (
     <DefaultLayout>
       <div className="max-w-6xl mx-auto grid grid-cols-12">
         <div className="col-start-1 col-span-7 space-y-8">
-          <PostCard />
-          <PostCard />
-          <PostCard />
+          {posts.map((post) => (
+            <PostCard {...post} key={post.id} />
+          ))}
         </div>
         <div className="col-start-9 col-span-4">
           <nav className="sticky top-0"></nav>
@@ -34,6 +42,7 @@ export const query = graphql`
     allPost(filter: { id: { in: $posts } }) {
       nodes {
         id
+        draft
         title
         excerpt
         slug
@@ -45,7 +54,7 @@ export const query = graphql`
           name
           avatar {
             childImageSharp {
-              fixed(width: 80, height: 80) {
+              fixed(width: 40, height: 40) {
                 ...GatsbyImageSharpFixed_withWebp
               }
             }
