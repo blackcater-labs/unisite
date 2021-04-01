@@ -3,6 +3,8 @@ import cls from "classnames";
 import Image from "gatsby-image";
 import { ArrowRight } from "@icon-park/react";
 
+import Button from "../Button";
+
 type PostCardProps = {
   draft: boolean;
   title: string;
@@ -50,13 +52,10 @@ const PostCard: PostCardFC = ({
         <p className="mt-2 text-gray-700 dark:text-gray-300">{excerpt}</p>
       </div>
       <div className="flex items-center justify-between mt-4">
-        <a
-          href="#"
-          className="flex flex-row items-center px-4 py-2 bg-gray-900 text-gray-50 text-sm rounded-lg focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:ring-opacity-80 transition ease-in duration-300 dark:text-blue-400"
-        >
+        <Button>
           <span className="mr-1">立即阅读</span>
           <ArrowRight theme="two-tone" />
-        </a>
+        </Button>
         <div className="flex items-center">
           <Image
             className="hidden w-10 h-10 mr-2 rounded-full sm:block"
