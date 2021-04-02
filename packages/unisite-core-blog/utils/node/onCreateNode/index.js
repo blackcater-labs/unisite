@@ -1,4 +1,5 @@
 const createMdxPostNode = require("./createMdxPostNode");
+const createCategoryNodes = require("./createCategoryNodes");
 const createUserNodes = require("./createUserNodes");
 const createTagNodes = require("./createTagNodes");
 const createColumnNodes = require("./createColumnNodes");
@@ -7,6 +8,10 @@ module.exports = async function onCreateNode(api, options) {
   const { node, getNode } = api;
 
   if (node.internal.mediaType === "text/yaml") {
+    if (node.name === options.categoryConfigFileName) {
+      await createCategoryNodes(api, options);
+    }
+
     if (node.name === options.userConfigFileName) {
       await createUserNodes(api, options);
     }

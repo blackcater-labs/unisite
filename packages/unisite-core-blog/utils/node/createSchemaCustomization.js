@@ -67,6 +67,16 @@ module.exports = ({ actions }) => {
   // https://www.jetbrains.com/help/webstorm/using-language-injections.html#inject_language
   // language=graphql
   createTypes(`
+    type Category implements Node {
+        id: ID!
+        cid: String!
+        name: String!
+        # link
+        columns: [Column!] @def(value: "[]")
+        posts: [Post!] @def(value: "[]")
+        postCount: Int!
+    }
+
     type Tag implements Node {
         id: ID!
         tid: String!
@@ -76,7 +86,7 @@ module.exports = ({ actions }) => {
         posts: [Post!] @def(value: "[]")
         postCount: Int!
     }
-    
+
     type Column implements Node {
         id: ID!
         cid: String!
@@ -84,6 +94,7 @@ module.exports = ({ actions }) => {
         description: String
         cover: File @fileByRelativePath
         # link
+        categories: [Category!] @def(value: "[]") @link(by: "cid")
         tags: [Tag!] @def(value: "[]") @link(by: "tid")
         authors: [User!] @def(value: "[]") @link(by: "uid")
         posts: [MdxColumnPost!] @link(by: "column.cid", from: "cid")
@@ -256,6 +267,7 @@ module.exports = ({ actions }) => {
         timeToRead: Int! @mdxpassthrough(field: "timeToRead")
         wordCount: MdxWordCount! @mdxpassthrough(field: "wordCount")
         # link
+        categories: [Category!] @def(value: "[]") @link(by: "cid")
         tags: [Tag!]! @def(value: "[]") @link(by: "tid")
         authors: [User!]! @def(value: "[]") @link(by: "uid")
     }
@@ -277,6 +289,7 @@ module.exports = ({ actions }) => {
         timeToRead: Int! @mdxpassthrough(field: "timeToRead")
         wordCount: MdxWordCount! @mdxpassthrough(field: "wordCount")
         # link
+        categories: [Category!] @def(value: "[]") @link(by: "cid")
         tags: [Tag!]! @def(value: "[]") @link(by: "tid")
         authors: [User!]! @def(value: "[]") @link(by: "uid")
     }
@@ -302,6 +315,7 @@ module.exports = ({ actions }) => {
         timeToRead: Int! @mdxpassthrough(field: "timeToRead")
         wordCount: MdxWordCount! @mdxpassthrough(field: "wordCount")
         # link
+        categories: [Category!] @def(value: "[]") @link(by: "cid")
         tags: [Tag!]! @def(value: "[]") @link(by: "tid")
         authors: [User!]! @def(value: "[]") @link(by: "uid")
 

@@ -1,5 +1,72 @@
 module.exports = ({ createResolvers }) => {
   createResolvers({
+    Category: {
+      columns: {
+        type: ["Column!"],
+        resolve(source, args, context) {
+          return context.nodeModel.runQuery(
+            {
+              query: {
+                filter: {
+                  categories: {
+                    elemMatch: {
+                      cid: { eq: source.cid },
+                    },
+                  },
+                },
+              },
+              type: "Column",
+              firstOnly: false,
+            },
+            { connectionType: "Column" }
+          );
+        },
+      },
+      posts: {
+        type: ["Post!"],
+        resolve(source, args, context) {
+          return context.nodeModel.runQuery(
+            {
+              query: {
+                filter: {
+                  categories: {
+                    elemMatch: {
+                      cid: { eq: source.cid },
+                    },
+                  },
+                },
+              },
+              type: "Post",
+              firstOnly: false,
+            },
+            { connectionType: "Post" }
+          );
+        },
+      },
+      postCount: {
+        type: "Int!",
+        resolve: async (source, args, context) => {
+          const posts = await context.nodeModel.runQuery(
+            {
+              query: {
+                filter: {
+                  categories: {
+                    elemMatch: {
+                      cid: { eq: source.cid },
+                    },
+                  },
+                },
+              },
+              type: "Post",
+              firstOnly: false,
+            },
+            { connectionType: "Post" }
+          );
+
+          return (posts || []).length;
+        },
+      },
+    },
     Tag: {
       columns: {
         type: ["Column!"],

@@ -6,22 +6,30 @@ module.exports = async function createMdxNode(
   options
 ) {
   const { createNode, createParentChildLink } = actions;
-  const { author, authors, ...restFields } = node.frontmatter || {};
+  const { author, authors, category, categories, ...restFields } =
+    node.frontmatter || {};
   const authorSet = new Set(authors || []);
+  const categorySet = new Set(categories || []);
 
   if (author) {
     authorSet.add(author);
   }
 
+  if (category) {
+    categorySet.add(category);
+  }
+
   const fields = {
     ...restFields,
     authors: [...authorSet.values()],
+    categories: [...categorySet.values()],
   };
   const schema = Joi.object({
     title: Joi.string().required(),
     cover: Joi.string(),
     author: Joi.string(),
     authors: Joi.array().items(Joi.string().required()),
+    categories: Joi.array().items(Joi.string().required()),
     tags: Joi.array().items(Joi.string().required()),
     column: Joi.string(),
     published_at: Joi.alternatives().conditional("draft", {

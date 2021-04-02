@@ -7,14 +7,11 @@ const schema = Joi.array()
     Joi.object({
       id: Joi.string().required(),
       name: Joi.string().required(),
-      cover: Joi.string(),
-      tags: Joi.array().items(Joi.string().required()),
-      authors: Joi.array().items(Joi.string().required()),
     })
   )
   .unique((a, b) => a.id === b.id);
 
-module.exports = async function createColumnNodes(
+module.exports = async function createCategoryNodes(
   {
     actions,
     node,
@@ -27,31 +24,24 @@ module.exports = async function createColumnNodes(
   options
 ) {
   const { createNode, createParentChildLink } = actions;
-  const rawColumns = load(await loadNodeContent(node));
-  const { value: columns, error } = schema.validate(rawColumns);
+  const rawCategories = load(await loadNodeContent(node));
+  const { value: categories, error } = schema.validate(rawCategories);
 
   if (error) {
     reporter.panic(
-      chalk.red.bold("Configuration of column is invalid") +
+      chalk.red.bold("Configuration of category is invalid") +
         `\n    ${error.name} ${error.message}`
     );
     return;
   }
 
-  for (const column of columns) {
-    const { id, category, categories, ...rest } = column;
-    const categorySet = new Set(categories || []);
-
-    if (category) {
-      categorySet.add(category);
-    }
-
+  for (const category of categories) {
+    const { id, ...rest } = category;
     const data = {
       ...rest,
       cid: id,
-      categories: [...categorySet.values()],
     };
-    const nodeId = createNodeId(`${data.cid} >>> Column`);
+    const nodeId = createNodeId(`${data.cid} >>> Category`);
 
     createNode({
       ...data,
@@ -59,10 +49,10 @@ module.exports = async function createColumnNodes(
       parent: node.id,
       children: [],
       internal: {
-        type: "Column",
+        type: "Category",
         contentDigest: createContentDigest(data),
         content: JSON.stringify(data),
-        description: "Column implementation of the Node interface",
+        description: "Category implementation of the Node interface",
       },
     });
 

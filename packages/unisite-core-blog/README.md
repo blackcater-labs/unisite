@@ -62,7 +62,7 @@ In default, the information of `Category` can be configured in `category.yaml` f
 
 ### `Tag`
 
-The `Post`, `Column` and `Category` can have more than one `Tag`.
+The `Post` and `Column` can have more than one `Tag`.
 
 In default, the information of `Tag` can be configured in `tag.yaml` file. For example:
 
@@ -96,18 +96,19 @@ In default, the information of `Column` can be configured in `column.yaml` file.
 
 ### `Post`
 
-The `Post` can have more than one `Tag` and `User`. But it can nore have more than one `Column` and `Category`.
+The `Post` can have more than one `Tag`, `User` and `Categories`. But it can't have more than one `Column`.
 
 In default, the information of `Post` can be configured in `.md` or `.mdx` files' front-matter. For example:
 
 ```md
 ---
+categories:
+  - "frontend"
 tags:
   - "markdown"
 authors:
   - "blackcater"
 column: "markdown-tutorial"
-category: "frontend"
 ---
 
 # Post Title
