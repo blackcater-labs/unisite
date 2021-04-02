@@ -29,8 +29,8 @@ module.exports = async function createMdxNode(
     cover: Joi.string(),
     author: Joi.string(),
     authors: Joi.array().items(Joi.string().required()),
-    categories: Joi.array().items(Joi.string().required()),
-    tags: Joi.array().items(Joi.string().required()),
+    categories: Joi.array().items(Joi.string()),
+    tags: Joi.array().items(Joi.string()),
     column: Joi.string(),
     published_at: Joi.alternatives().conditional("draft", {
       is: true,
