@@ -1,7 +1,5 @@
 module.exports = {
-  purge: [
-    "node_modules/@unisite/theme-blog/src/**.*.{ts,tsx,js,jsx,html,css,less}",
-  ],
+  purge: [],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
