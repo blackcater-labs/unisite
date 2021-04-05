@@ -5,8 +5,9 @@ import React, {
   cloneElement,
   useRef,
 } from "react";
-import { CSSTransition } from "react-transition-group";
 import { useClickAway } from "react-use";
+
+import Transition from "../Transition";
 
 type DropdownProps = {
   trigger: React.ReactElement;
@@ -29,21 +30,17 @@ const Dropdown: DropdownFC = ({ trigger, children }) => {
   return (
     <div className="relative" ref={ref}>
       {triggerNode}
-      <CSSTransition
-        in={show}
-        timeout={150}
-        classNames={{
-          enter: "transform scale-95 opacity-0",
-          enterActive:
-            "transition duration-150 ease-out transform scale-100 opacity-100",
-          exit: "",
-          exitActive:
-            "transition duration-150 ease-out transform scale-95 opacity-0",
-        }}
-        unmountOnExit
+      <Transition
+        show={show}
+        enter="transition duration-150 ease-out transform"
+        enterFrom="scale-95 opacity-0"
+        enterTo="scale-100 opacity-100"
+        leave="transition duration-150 ease-out transform"
+        leaveFrom="scale-100 opacity-100"
+        leaveTo="scale-95 opacity-0"
       >
-        <div className="absolute right-0 z-20">{children}</div>
-      </CSSTransition>
+        <div className="absolute -left-2 z-20">{children}</div>
+      </Transition>
     </div>
   );
 };
