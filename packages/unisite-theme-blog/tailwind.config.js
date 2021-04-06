@@ -205,6 +205,21 @@ module.exports = {
           "monospace",
         ],
       },
+      animation: {
+        bounce2: "bounce2 1s infinite",
+      },
+      keyframes: {
+        bounce2: {
+          "0%, 100%": {
+            transform: "translateX(-25%)",
+            animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
+          },
+          "50%": {
+            transform: "none",
+            animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
+          },
+        },
+      },
     },
   },
   variants: {

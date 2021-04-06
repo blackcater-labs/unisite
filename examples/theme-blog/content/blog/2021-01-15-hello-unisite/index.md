@@ -2,6 +2,7 @@
 title: "Hello UNISITE!"
 cover: "./banner.jpg"
 author: "blackcater"
+category: "opensource"
 published_at: "2021-01-15"
 ---
 

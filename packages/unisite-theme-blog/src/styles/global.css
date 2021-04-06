@@ -4,6 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: theme("colors.gray.100");
+    border-radius: 100vh;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.gray.200");
+    border-radius: 100vh;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme("colors.gray.300");
+  }
+}
+
 html,
 body {
   @apply bg-gray-50;

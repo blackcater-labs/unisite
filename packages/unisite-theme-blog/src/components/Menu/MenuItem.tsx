@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { FC2 } from "../types";
+import type { FC2 } from "../../types";
 
 type MenuItemProps = {
   title?: React.ReactChild;

@@ -11,6 +11,10 @@
       "site"
     ]
   },
+  "resolutions": {
+    "postcss": "^8.2.8",
+    "gatsby-plugin-postcss": "^4.2.0"
+  },
   "scripts": {
     "dev:site": "",
     "dev:example:blog": "npm -C examples/theme-blog run serve",
