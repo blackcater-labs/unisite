@@ -1,8 +1,5 @@
 {
-  "name": "@unisite/unisite.blackcater.org",
-  "version": "0.0.0",
-  "description": "Source code of website for unisite's documentation",
-  "main": "index.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:blackcater/unisite.git",
@@ -10,7 +7,6 @@
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "@unisite/theme-doc": "^0.0.0"
   }

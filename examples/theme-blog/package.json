@@ -1,8 +1,5 @@
 {
-  "name": "@unisite/example-theme-blog",
-  "version": "0.0.0",
-  "description": "An example for @unisite/theme-blog",
-  "main": "index.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:blackcater/unisite.git",
@@ -10,7 +7,6 @@
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "clean": "rimraf .cache public",
     "serve": "npm run clean && gatsby develop"

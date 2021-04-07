@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { get } from "lodash";
 import { Right as IconRight } from "@icon-park/react";
+import { useHoverDirty } from "react-use";
 
 type CategoryNavProps = {};
 
@@ -28,6 +29,8 @@ const CategoryNav: CategoryNavFC = () => {
     ),
     "allCategory.nodes"
   );
+  const moreRef = useRef(null);
+  const isHover = useHoverDirty(moreRef);
 
   console.log("cates:", cates);
 
@@ -52,11 +55,15 @@ const CategoryNav: CategoryNavFC = () => {
               </span>
             </div>
           ))}
-          <div>
-            <div className="flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100">
-              <span className="text-sm text-gray-700">更多</span>
-              <IconRight className="animate-bounce2" size="16" />
-            </div>
+          <div
+            ref={moreRef}
+            className="flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100"
+          >
+            <span className="text-sm text-gray-700">更多</span>
+            <IconRight
+              className={isHover ? "animate-bounce-r" : ""}
+              size="16"
+            />
           </div>
         </div>
       </div>

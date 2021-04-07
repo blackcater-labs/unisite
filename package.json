@@ -11,10 +11,6 @@
       "site"
     ]
   },
-  "resolutions": {
-    "postcss": "^8.2.8",
-    "gatsby-plugin-postcss": "^4.2.0"
-  },
   "scripts": {
     "dev:site": "",
     "dev:example:blog": "npm -C examples/theme-blog run serve",
@@ -26,6 +22,7 @@
     "clean:cache": "rimraf {.,.site}/{.cache,public} {packages,examples}/*/{.cache,public}"
   },
   "devDependencies": {
+    "@unisite/core-blog": "workspace:*",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",

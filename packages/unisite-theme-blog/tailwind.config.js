@@ -206,16 +206,16 @@ module.exports = {
         ],
       },
       animation: {
-        bounce2: "bounce2 1s infinite",
+        "bounce-r": "bounce-r 1s infinite",
       },
       keyframes: {
-        bounce2: {
+        "bounce-r": {
           "0%, 100%": {
-            transform: "translateX(-25%)",
+            transform: "none",
             animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
           },
           "50%": {
-            transform: "none",
+            transform: "translateX(25%)",
             animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
           },
         },

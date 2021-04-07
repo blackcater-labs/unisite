@@ -1,8 +1,5 @@
 {
-  "name": "@unisite/example-theme-book",
-  "version": "0.0.0",
-  "description": "An example for @unisite/theme-book",
-  "main": "index.js",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:blackcater/unisite.git",
@@ -10,7 +7,6 @@
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
-  "private": true,
   "dependencies": {
     "@unisite/theme-book": "^0.0.0"
   }
