@@ -3,6 +3,7 @@ import cls from "classnames";
 import Image from "gatsby-image";
 import { ArrowRight } from "@icon-park/react";
 
+import Card from "../Card";
 import Button from "../Button";
 
 type PostCardProps = {
@@ -37,7 +38,7 @@ const PostCard: PostCardFC = ({
   const author = authors?.[0];
 
   return (
-    <div className="w-full px-8 py-6 transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm hover:shadow-md dark:bg-gray-800">
+    <Card>
       <div className="flex items-center justify-between">
         <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
         <span>{dateValue}</span>
@@ -75,7 +76,7 @@ const PostCard: PostCardFC = ({
           </span>
         </div>
       ) : null}
-    </div>
+    </Card>
   );
 };
 

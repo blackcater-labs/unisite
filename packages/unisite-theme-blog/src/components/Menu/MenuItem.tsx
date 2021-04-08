@@ -1,4 +1,5 @@
 import React from "react";
+import cls from "classnames";
 
 import type { FC2 } from "../../types";
 
@@ -11,14 +12,21 @@ type MenuItemFC = FC2<MenuItemProps>;
 
 const MenuItem: MenuItemFC = ({ title, content, avatar }) => {
   return (
-    <div className="px-3 py-2 flex flex-row w-60 rounded-lg cursor-pointer hover:bg-gray-100 hover:shadow-inner">
+    <div className="px-3 py-2 flex flex-row rounded-lg cursor-pointer hover:bg-gray-100">
       {avatar ? (
         <div className="flex-shrink-0 mt-1 mr-2 w-8 h-8 bg-gray-200 rounded-md">
           {avatar}
         </div>
       ) : null}
-      <div>
-        <div className="text-base text-gray-900 font-medium">{title}</div>
+      <div className="flex flex-col">
+        <div
+          className={cls("text-base text-gray-900 font-medium", {
+            "w-48": avatar,
+            "w-52": !avatar && content,
+          })}
+        >
+          {title}
+        </div>
         {content ? (
           <div className="text-sm text-gray-500">{content}</div>
         ) : null}

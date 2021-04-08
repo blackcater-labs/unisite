@@ -1,15 +1,27 @@
 import React from "react";
+import cls from "classnames";
 
-type ButtonProps = {};
-type ButtonFC = React.FC<ButtonProps>;
+import IconButton from "./IconButton";
 
-const Button: ButtonFC = ({ children }) => {
+type ButtonProps = { className?: string };
+type ButtonFC = React.FC<ButtonProps> & {
+  Icon: typeof IconButton;
+};
+
+const Button: ButtonFC = ({ className, children }) => {
   return (
-    <button className="flex flex-row items-center px-4 py-2 bg-gray-900 text-gray-50 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:ring-opacity-80 transition ease-in duration-300 ">
+    <button
+      className={cls([
+        className,
+        "flex flex-row items-center px-4 py-2 bg-gray-900 text-gray-50 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:ring-opacity-80 transition ease-in duration-300",
+      ])}
+    >
       {children}
     </button>
   );
 };
+
+Button.Icon = IconButton;
 
 export type { ButtonProps };
 export default Button;

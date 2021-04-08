@@ -5,6 +5,7 @@ import DefaultLayout from "../../../layouts/DefaultLayout";
 import PostCard from "../../../components/PostCard";
 
 import type { PageProps } from "../../../utils";
+import { SearchCard, StatisticCard } from "../../../components/Aside";
 
 type PageData = {
   allPost: {
@@ -19,8 +20,6 @@ type PostListPageProps = PageProps<PageData, PageContext>;
 function PostListPage(props: PostListPageProps): React.ReactElement {
   const posts = props.data.allPost?.nodes || [];
 
-  console.log("posts:", posts);
-
   return (
     <DefaultLayout>
       <div className="max-w-6xl mx-auto py-8 grid grid-cols-12">
@@ -30,7 +29,10 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
           ))}
         </div>
         <div className="col-start-9 col-span-4">
-          <nav className="sticky top-0"></nav>
+          <nav className="sticky top-0 space-y-8">
+            <SearchCard />
+            <StatisticCard />
+          </nav>
         </div>
       </div>
     </DefaultLayout>

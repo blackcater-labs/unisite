@@ -39,7 +39,7 @@ const Dropdown: DropdownFC = ({ trigger, children }) => {
         leaveFrom="scale-100 opacity-100"
         leaveTo="scale-95 opacity-0"
       >
-        <div className="absolute -left-2 z-20">{children}</div>
+        <div className="absolute left-0 z-20">{children}</div>
       </Transition>
     </div>
   );
