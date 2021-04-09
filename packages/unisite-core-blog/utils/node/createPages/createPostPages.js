@@ -11,7 +11,7 @@ module.exports = async function createPostPages({ actions, graphql }, options) {
   const posts = await getPosts({ graphql, edges: true });
 
   createDetailPages(posts, createPage, {
-    pathPrefix: "/post",
+    pathPrefix: options.postPrefix,
     pathBuilder: ({ node }) => node?.slug || "",
     component: postTemplate,
     contextBuilder: ({ node, previous, next }) => ({
@@ -25,7 +25,7 @@ module.exports = async function createPostPages({ actions, graphql }, options) {
 
   createPaginPages(posts, createPage, {
     pageSize: 10,
-    pathPrefix: "/list",
+    pathPrefix: options.postListPrefix,
     component: postListTemplate,
     map: {
       0: { path: "/" },

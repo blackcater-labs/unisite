@@ -16,7 +16,7 @@ module.exports = async function createCategoryPages(
   );
 
   createPage({
-    path: "/category",
+    path: options.categoryListPrefix,
     component: categoryAllTemplate,
     context: {},
   });
@@ -31,10 +31,10 @@ module.exports = async function createCategoryPages(
 
     createPaginPages(posts, createPage, {
       pageSize: 10,
-      pathPrefix: join("/category", kebabCase(category.tid)),
+      pathPrefix: join(options.categoryPrefix, kebabCase(category.tid)),
       component: categoryPostListTemplate,
       map: {
-        0: { path: join("/category", kebabCase(category.tid)) },
+        0: { path: join(options.categoryPrefix, kebabCase(category.tid)) },
       },
       contextPaginBuilder: (data) => ({
         posts: data.map((item) => item.id),

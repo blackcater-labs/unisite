@@ -11,7 +11,7 @@ module.exports = async function createUserPages({ actions, graphql }, options) {
   );
 
   createPage({
-    path: "/users",
+    path: options.userListPrefix,
     component: userAllTemplate,
     context: {},
   });
@@ -26,10 +26,10 @@ module.exports = async function createUserPages({ actions, graphql }, options) {
 
     createPaginPages(posts, createPage, {
       pageSize: 10,
-      pathPrefix: join("/user", kebabCase(user.uid)),
+      pathPrefix: join(options.userPrefix, kebabCase(user.uid)),
       component: userPostListTemplate,
       map: {
-        0: { path: join("/user", kebabCase(user.uid)) },
+        0: { path: join(options.userPrefix, kebabCase(user.uid)) },
       },
       contextPaginBuilder: (data) => ({
         posts: data.map((item) => item.id),

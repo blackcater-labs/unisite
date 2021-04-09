@@ -19,7 +19,7 @@ module.exports = async function createColumnPages(
   );
 
   createPage({
-    path: "/columns",
+    path: options.columnListPrefix,
     component: columnAllTemplate,
     context: {},
   });
@@ -34,14 +34,14 @@ module.exports = async function createColumnPages(
     });
 
     createPage({
-      path: join("/column", kebabCase(column.cid)),
+      path: join(options.columnPrefix, kebabCase(column.cid)),
       component: columnDetailTemplate,
       context: { id: column.id },
     });
 
     createPaginPages(posts, createPage, {
       pageSize: 10,
-      pathPrefix: join("/column", kebabCase(column.cid)),
+      pathPrefix: join(options.columnPrefix, kebabCase(column.cid)),
       component: columnPostListTemplate,
       contextPaginBuilder: (data) => ({
         posts: data.map((item) => item.id),

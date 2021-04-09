@@ -10,6 +10,9 @@ exports.createSchemaCustomization = require("./utils/node/createSchemaCustomizat
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createResolvers
 exports.createResolvers = require("./utils/node/createResolvers");
 
+// https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#sourceNodes
+exports.sourceNodes = require("./utils/node/sourceNodes");
+
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#onCreateNode
 exports.onCreateNode = require("./utils/node/onCreateNode");
 

@@ -1,10 +1,13 @@
 import React from "react";
 import cls from "classnames";
+import { Link } from "gatsby";
 import Image from "gatsby-image";
 import { ArrowRight } from "@icon-park/react";
 
 import Card from "../Card";
 import Button from "../Button";
+
+import { useColumnPath, usePostPath, useUserPath } from "../../utils";
 
 type PostCardProps = {
   draft: boolean;
@@ -23,6 +26,7 @@ const PostCard: PostCardFC = ({
   draft,
   title,
   excerpt,
+  slug,
   published_at,
   updated_at,
   authors,
@@ -36,6 +40,9 @@ const PostCard: PostCardFC = ({
     : "text-green-500";
   const dateValue = draft ? "" : updated_at || published_at;
   const author = authors?.[0];
+  const postPath = usePostPath(slug);
+  const userPath = useUserPath(author?.uid || "");
+  const columnPath = useColumnPath(column?.cid || "");
 
   return (
     <Card>
@@ -44,36 +51,44 @@ const PostCard: PostCardFC = ({
         <span>{dateValue}</span>
       </div>
       <div className="mt-2">
-        <a
-          href="#"
+        <Link
           className="text-2xl text-gray-900 font-medium hover:underline hover:text-opacity-80 dark:text-white dark:hover:text-gray-200"
+          to={postPath}
         >
           {title}
-        </a>
+        </Link>
         <p className="mt-2 text-gray-700 dark:text-gray-300">{excerpt}</p>
       </div>
       <div className="flex items-center justify-between mt-4">
-        <Button>
-          <span className="mr-1">立即阅读</span>
-          <ArrowRight theme="two-tone" />
-        </Button>
+        <Link to={postPath}>
+          <Button>
+            <span className="mr-1">立即阅读</span>
+            <ArrowRight theme="two-tone" />
+          </Button>
+        </Link>
         <div className="flex items-center">
           <Image
             className="hidden w-10 h-10 mr-2 rounded-full sm:block"
             fixed={author?.avatar?.childImageSharp?.fixed}
             alt="avatar"
           />
-          <a className="font-medium text-gray-700 cursor-pointer dark:text-gray-200">
+          <Link
+            className="font-medium text-gray-700 cursor-pointer dark:text-gray-200"
+            to={userPath}
+          >
             {author?.name}
-          </a>
+          </Link>
         </div>
       </div>
       {column ? (
         <div className="flex flex-row items-center bg-gray-100 mt-4 p-3 rounded-lg shadow-inner">
           <span className="text-sm text-gray-500">关联专栏：</span>
-          <span className="text-gray-900 font-medium cursor-pointer hover:underline hover:text-opacity-80">
+          <Link
+            className="text-gray-900 font-medium cursor-pointer hover:underline hover:text-opacity-80"
+            to={columnPath}
+          >
             《{column.name}》
-          </span>
+          </Link>
         </div>
       ) : null}
     </Card>

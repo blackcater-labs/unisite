@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import PostCard from "../../../components/PostCard";
 import { SearchCard, StatisticCard, AdCard } from "../../../components/Aside";
-import Key from "../../../components/Key";
 import type { PageProps } from "../../../utils";
 
 type PageData = {

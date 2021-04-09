@@ -13,7 +13,7 @@ const AdCard: AdCardFC = () => {
         <a href="">
           <img
             className="w-full h-full object-cover"
-            src="https://pic.leetcode-cn.com/1617775622-PWkWON-侧边栏广告 8.png"
+            src="https://pic.leetcode-cn.com/1617775622-PWkWON-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%B9%BF%E5%91%8A%208.png"
             alt="leetcode"
           />
         </a>

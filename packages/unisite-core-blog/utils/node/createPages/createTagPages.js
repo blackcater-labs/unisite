@@ -11,7 +11,7 @@ module.exports = async function createTagPages({ actions, graphql }, options) {
   );
 
   createPage({
-    path: "/tags",
+    path: options.tagListPrefix,
     component: tagAllTemplate,
     context: {},
   });
@@ -26,10 +26,10 @@ module.exports = async function createTagPages({ actions, graphql }, options) {
 
     createPaginPages(posts, createPage, {
       pageSize: 10,
-      pathPrefix: join("/tag", kebabCase(tag.tid)),
+      pathPrefix: join(options.tagPrefix, kebabCase(tag.tid)),
       component: tagPostListTemplate,
       map: {
-        0: { path: join("/tag", kebabCase(tag.tid)) },
+        0: { path: join(options.tagPrefix, kebabCase(tag.tid)) },
       },
       contextPaginBuilder: (data) => ({
         posts: data.map((item) => item.id),

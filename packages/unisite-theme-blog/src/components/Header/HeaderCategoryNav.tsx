@@ -11,7 +11,7 @@ type HeaderCategoryNavFC = React.FC<HeaderCategoryNavProps>;
 function useStaticData() {
   const data = useStaticQuery(
     graphql`
-      query {
+      query useHeaderCategoryNavDataQuery {
         allCategory(
           limit: 8
           filter: { postCount: { gt: 0 } }

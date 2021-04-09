@@ -322,5 +322,19 @@ module.exports = ({ actions }) => {
         ## ColumnPost
         column: Column! @link(by: "cid")
     }
+
+    type UnisiteCoreBlogConfig implements Node {
+        tagPrefix: String!
+        tagListPrefix: String!
+        userPrefix: String!
+        userListPrefix: String!
+        columnPrefix: String!
+        columnListPrefix: String!
+        categoryPrefix: String!
+        categoryListPrefix: String!
+        postPrefix: String!
+        postListPrefix: String!
+        archiveListPrefix: String!
+    }
   `);
 };

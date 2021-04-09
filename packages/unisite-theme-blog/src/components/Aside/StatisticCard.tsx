@@ -1,8 +1,14 @@
 import React from "react";
 import { get } from "lodash";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 import Card from "../Card";
+
+import {
+  useArchiveListPath,
+  useColumnListPath,
+  useTagListPath,
+} from "../../utils";
 
 type StatisticCardProps = {};
 
@@ -10,7 +16,7 @@ type StatisticCardFC = React.FC<StatisticCardProps>;
 
 function useStatisticData() {
   const data = useStaticQuery(graphql`
-    query {
+    query useStatisticDataQuery {
       allPost {
         totalCount
       }
@@ -31,26 +37,38 @@ function useStatisticData() {
 
 const StatisticCard: StatisticCardFC = () => {
   const { postCount, columnCount, tagCount } = useStatisticData();
+  const archiveListPath = useArchiveListPath();
+  const columnListPath = useColumnListPath();
+  const tagListPath = useTagListPath();
 
   return (
     <Card>
       <div className="-mx-8 flex flex-row justify-evenly">
-        <a className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100">
+        <Link
+          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100"
+          to={archiveListPath}
+        >
           <span className="text-gray-900 text-2xl font-medium">
             {postCount}
           </span>
           <span className="text-gray-700 text-sm">博客</span>
-        </a>
-        <a className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100">
+        </Link>
+        <Link
+          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100"
+          to={columnListPath}
+        >
           <span className="text-gray-900 text-2xl font-medium">
             {columnCount}
           </span>
           <span className="text-gray-700 text-sm">专栏</span>
-        </a>
-        <a className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100">
+        </Link>
+        <Link
+          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100"
+          to={tagListPath}
+        >
           <span className="text-gray-900 text-2xl font-medium">{tagCount}</span>
           <span className="text-gray-700 text-sm">标签</span>
-        </a>
+        </Link>
       </div>
     </Card>
   );
