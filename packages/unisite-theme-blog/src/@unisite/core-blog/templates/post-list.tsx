@@ -3,9 +3,8 @@ import { graphql } from "gatsby";
 
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import PostCard from "../../../components/PostCard";
-
+import { SearchCard, StatisticCard, AdCard } from "../../../components/Aside";
 import type { PageProps } from "../../../utils";
-import { SearchCard, StatisticCard } from "../../../components/Aside";
 
 type PageData = {
   allPost: {
@@ -29,9 +28,10 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
           ))}
         </div>
         <div className="col-start-9 col-span-4">
-          <nav className="sticky top-0 space-y-8">
+          <nav className="space-y-8">
             <SearchCard />
             <StatisticCard />
+            <AdCard />
           </nav>
         </div>
       </div>
