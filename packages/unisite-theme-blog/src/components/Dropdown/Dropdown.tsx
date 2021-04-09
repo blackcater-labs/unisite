@@ -1,26 +1,16 @@
-import React, {
-  useCallback,
-  useMemo,
-  useState,
-  cloneElement,
-  useRef,
-} from "react";
+import React, { useCallback, useState, useRef } from "react";
 import { useClickAway } from "react-use";
 
 import Transition from "../Transition";
 
 type DropdownProps = {
-  trigger: React.ReactElement;
+  overlay?: React.ReactElement;
 };
 type DropdownFC = React.FC<DropdownProps>;
 
-const Dropdown: DropdownFC = ({ trigger, children }) => {
+const Dropdown: DropdownFC = ({ overlay, children }) => {
   const [show, setShow] = useState(false);
   const toggleShow = useCallback(() => setShow((show) => !show), []);
-  const triggerNode = useMemo(
-    () => cloneElement(trigger, { onClick: toggleShow }),
-    [trigger, toggleShow]
-  );
 
   const ref = useRef(null);
   useClickAway(ref, () => {
@@ -29,7 +19,9 @@ const Dropdown: DropdownFC = ({ trigger, children }) => {
 
   return (
     <div className="relative" ref={ref}>
-      {triggerNode}
+      <div className="inline-block" onClick={toggleShow}>
+        {children}
+      </div>
       <Transition
         show={show}
         enter="transition duration-150 ease-out transform"
@@ -39,7 +31,7 @@ const Dropdown: DropdownFC = ({ trigger, children }) => {
         leaveFrom="scale-100 opacity-100"
         leaveTo="scale-95 opacity-0"
       >
-        <div className="absolute left-0 z-20">{children}</div>
+        <div className="absolute left-0 z-20">{overlay}</div>
       </Transition>
     </div>
   );
