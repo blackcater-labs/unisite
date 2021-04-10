@@ -27,7 +27,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
       <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-12">
         <div className="col-start-1 col-span-8 space-y-8">
           <Card>
-            <div className="-mt-8">
+            <div className="gatsby-typography -mt-8">
               <MDXRenderer>{post.body!}</MDXRenderer>
             </div>
           </Card>

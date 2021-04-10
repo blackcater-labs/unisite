@@ -1,0 +1,47 @@
+.gatsby-typography {
+  position: relative;
+}
+
+.gatsby-typography h1 {
+  @apply text-gray-900;
+  margin: 2.25rem 0 1.5rem;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+.gatsby-typography h2 {
+  @apply text-gray-900;
+  margin: 2rem 0 1.25rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.gatsby-typography h3 {
+}
+
+.gatsby-typography h4 {
+}
+
+.gatsby-typography h5 {
+}
+
+.gatsby-typography h6 {
+}
+
+.gatsby-typography p {
+  margin-bottom: 1.5rem;
+}
+
+.gatsby-typography .gatsby-highlight {
+  margin-bottom: 1.5rem;
+}
+
+.gatsby-typography ul {
+  margin: 0 0 1.5rem 1.25rem;
+  list-style: disc;
+}
+
+.gatsby-typography ul.contains-task-list {
+  margin: 0 0 1.5rem 0;
+  list-style: none;
+}
