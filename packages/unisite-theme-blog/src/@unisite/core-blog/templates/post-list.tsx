@@ -21,7 +21,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
 
   return (
     <DefaultLayout>
-      <div className="max-w-6xl mx-auto py-8 grid grid-cols-12">
+      <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-12">
         <div className="col-start-1 col-span-7 space-y-8">
           {posts.map((post) => (
             <PostCard {...post} key={post.id} />
