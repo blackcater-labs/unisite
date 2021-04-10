@@ -1,7 +1,17 @@
+export type Category = {
+  id: string;
+  cid: string;
+  name: string;
+  columns: Column[];
+  posts: Post[];
+  postCount: number;
+};
+
 export type Tag = {
   id: string;
   tid: string;
   name: string;
+  description: string;
   columns: Column[];
   posts: Post[];
   postCount: number;
@@ -13,6 +23,7 @@ export type Column = {
   name: string;
   description: string;
   cover: any;
+  categories: Category[];
   tags: Tag[];
   authors: User[];
   posts: ColumnPost[];
@@ -80,8 +91,6 @@ export type Post = {
   id: string;
   title: string;
   cover: any;
-  tags: Tag[];
-  authors: User[];
   published_at: string;
   updated_at: string;
   slug: string;
@@ -89,14 +98,31 @@ export type Post = {
   body: string;
   rawBody: string;
   excerpt: string;
-  headings: object[];
-  tableOfContents: object[];
+  headings: any[];
+  tableOfContents: any;
   timeToRead: number;
-  wordCount: any;
+  wordCount: number;
+  categories: Category[];
+  tags: Tag[];
+  author: User[];
 };
 
 export type BlogPost = Post & {};
 
 export type ColumnPost = Post & {
   column: Column;
+};
+
+export type UnisiteCoreBlogConfig = {
+  tagPrefix: string;
+  tagListPrefix: string;
+  userPrefix: string;
+  userListPrefix: string;
+  columnPrefix: string;
+  columnListPrefix: string;
+  categoryPrefix: string;
+  categoryListPrefix: string;
+  postPrefix: string;
+  postListPrefix: string;
+  archiveListPrefix: string;
 };

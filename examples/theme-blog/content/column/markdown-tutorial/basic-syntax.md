@@ -1,86 +1,79 @@
 ---
 column: "markdown-tutorial"
-title: "Basic Syntax"
+title: "基础语法"
 author: "blackcater"
 draft: true
 tags:
   - "markdown"
-  - "tutorial"
 ---
 
-# Basic Syntax
-
-Here’s an overview of Markdown syntax that you can use anywhere on GitHub.com or in your own text files.
+# 基础语法
 
 ## Headers
 
 ```markdown
-# This is an <h1> tag
+# Heading 1
 
-## This is an <h2> tag
+### Heading 3
 
-###### This is an <h6> tag
+###### Heading 6
 ```
 
-## Emphasis
+## JavaScript
 
-```markdown
-_This text will be italic_
-_This will also be italic_
-
-**This text will be bold**
-**This will also be bold**
-
-_You **can** combine them_
+```js
+/**
+ * @param {number} n
+ */
+function fibonacci(n) {
+  if (n === 1) return 1;
+  if (n === 2) return 2;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
 ```
 
-## Lists
+## Diff JavaScript
 
-### Unordered
-
-```markdown
-- Item 1
-- Item 2
-  - Item 2a
-  - Item 2b
+```diff-js
+@@ -4,6 +4,5 @@
+- let foo = bar.baz([1, 2, 3]);
+- foo = foo + 1;
++ const foo = bar.baz([1, 2, 3]) + 1;
+  console.log(`foo: ${foo}`);
 ```
 
-### Ordered
+## TypeScript
 
-```markdown
-1. Item 1
-1. Item 2
-1. Item 3
-   1. Item 3a
-   1. Item 3b
+```ts
+const str: string = "hello world";
+
+console.log(str + "!");
 ```
 
-## Images
-
-```markdown
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
+```tsx{2}
+function Foo(props: FooProps): React.ReactElement {
+  return <Bar visible />;
+}
 ```
 
-## Links
+## Golang
 
-```markdown
-http://github.com - automatic!
-[GitHub](http://github.com)
+```go{numberLines: true}
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("hello world")
+}
 ```
 
-## Blockquotes
+## Rust
 
-```markdown
-As Kanye West said:
-
-> We're living the future so
-> the present is our past.
-```
-
-## Inline code
-
-```markdown
-I think you should use an
-`<addr>` element here instead.
+```rust
+fn main() {
+    // Get result
+    let x = 5 + /* 90 + */ 5;
+    println!("Is `x` 10 or 100? x = {}", x);
+}
 ```

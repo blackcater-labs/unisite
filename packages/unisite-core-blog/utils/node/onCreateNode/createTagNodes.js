@@ -7,6 +7,7 @@ const schema = Joi.array()
     Joi.object({
       id: Joi.string().required(),
       name: Joi.string().required(),
+      description: Joi.string(),
     })
   )
   .unique((a, b) => a.id === b.id);

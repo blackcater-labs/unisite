@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { get } from "lodash";
 import { Right as IconRight } from "@icon-park/react";
-import { useHoverDirty } from "react-use";
 
 import { useCategoryPath, useCategoryListPath } from "../../utils";
 
@@ -69,8 +68,6 @@ function NavItem({ cid, name, postCount }: NavItemProps) {
 
 const HeaderCategoryNav: HeaderCategoryNavFC = () => {
   const { categories, totalPostCount, totalCategoryCount } = useStaticData();
-  const moreRef = useRef(null);
-  const isHover = useHoverDirty(moreRef);
 
   if (!totalCategoryCount) return null;
 
@@ -94,15 +91,11 @@ const HeaderCategoryNav: HeaderCategoryNavFC = () => {
           ))}
           {totalCategoryCount < 8 ? (
             <Link
-              ref={moreRef}
-              className="flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100"
+              className="group flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100"
               to={categoryListPath}
             >
               <span className="text-sm text-gray-700">更多</span>
-              <IconRight
-                className={isHover ? "animate-bounce-r" : ""}
-                size="16"
-              />
+              <IconRight className="group-hover:animate-bounce-r" size="16" />
             </Link>
           ) : null}
         </div>

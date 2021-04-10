@@ -1,5 +1,4 @@
 const kebabCase = require("lodash/kebabCase");
-const mdx = require("@mdx-js/mdx");
 
 module.exports = ({ actions }) => {
   const { createFieldExtension, createTypes } = actions;
@@ -29,20 +28,11 @@ module.exports = ({ actions }) => {
     extend() {
       return {
         resolve(source) {
-          return source.slug ? source.slug : kebabCase(source.title);
-        },
-      };
-    },
-  });
+          const date = source.published_at;
 
-  createFieldExtension({
-    name: "mdx",
-    extend() {
-      return {
-        resolve: async (source, args, context, info) => {
-          console.log("source:", source);
-
-          return await mdx(source);
+          return source.slug
+            ? source.slug
+            : kebabCase(date ? `${date}-${source.title}` : source.title);
         },
       };
     },
@@ -81,6 +71,7 @@ module.exports = ({ actions }) => {
         id: ID!
         tid: String!
         name: String!
+        description: String
         # link
         columns: [Column!] @def(value: "[]")
         posts: [Post!] @def(value: "[]")

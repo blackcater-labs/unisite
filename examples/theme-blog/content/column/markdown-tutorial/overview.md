@@ -1,21 +1,18 @@
 ---
 column: "markdown-tutorial"
-title: "Overview"
+title: "前言"
 author: "blackcater"
 published_at: "2021-01-20"
 tags:
   - "markdown"
-  - "tutorial"
 ---
 
-# Overview
+# 前言
 
-Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.
+Markdown 是一种用于书写文档的轻量且简单的语法规则。
 
-**What you will learn:**
+通过本片专栏，你将会学会:
 
-- How the Markdown format makes styled collaborative editing easy
-- How Markdown differs from traditional formatting approaches
-- How to use Markdown to format text
-- How to leverage GitHub’s automatic Markdown rendering
-- How to apply GitHub’s unique Markdown extensions
+- 基本语法规则
+- 高级语法规则
+- 扩展语法规则

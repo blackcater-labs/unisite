@@ -1,8 +1,7 @@
 - id: "markdown-tutorial"
-  name: "Markdown Tutorial"
+  name: "Markdown 语法指南"
   cover: "column/markdown-tutorial/cover.png"
   tags:
     - "markdown"
-    - "tutorial"
   authors:
     - "blackcater"

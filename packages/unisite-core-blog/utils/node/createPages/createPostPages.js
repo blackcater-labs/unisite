@@ -1,4 +1,3 @@
-const { join } = require("path");
 const { createDetailPages, createPaginPages } = require("./utils");
 const { getPosts } = require("./queries");
 
@@ -17,9 +16,7 @@ module.exports = async function createPostPages({ actions, graphql }, options) {
     contextBuilder: ({ node, previous, next }) => ({
       id: node.id,
       previousId: previous?.id,
-      previousPath: previous ? join("/post", previous.slug || "") : null,
       nextId: next?.id,
-      nextPath: next ? join("/post", next.slug || "") : null,
     }),
   });
 

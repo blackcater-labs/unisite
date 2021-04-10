@@ -40,7 +40,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
 }
 
 export const query = graphql`
-  query PostListQuery($posts: [String!]!) {
+  query PostListPageQuery($posts: [String!]!) {
     allPost(filter: { id: { in: $posts } }) {
       nodes {
         id

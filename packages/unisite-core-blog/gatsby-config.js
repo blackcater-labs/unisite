@@ -27,6 +27,14 @@ module.exports = (options) => {
                 linkImagesToOriginal: false,
               },
             },
+            {
+              resolve: "gatsby-remark-autolink-headers",
+              options: { icon: false },
+            },
+            {
+              resolve: `gatsby-remark-prismjs`,
+              options: {},
+            },
           ],
         },
       },

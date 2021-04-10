@@ -55,13 +55,16 @@ importers:
       gatsby-plugin-mdx: ^2.2.0
       gatsby-plugin-sharp: ^3.2.0
       gatsby-plugin-typescript: ^3.2.0
+      gatsby-remark-autolink-headers: ^3.2.0
       gatsby-remark-images: ^4.2.0
+      gatsby-remark-prismjs: ^4.2.0
       gatsby-source-filesystem: ^3.2.0
       gatsby-transformer-sharp: ^3.2.0
       joi: ^17.4.0
       js-yaml: ^4.0.0
       json-to-graphql-query: ^2.0.0
       lodash: ^4.17.21
+      prismjs: ^1.23.0
     dependencies:
       '@mdx-js/mdx': 1.6.22
       '@mdx-js/react': 1.6.22
@@ -70,13 +73,16 @@ importers:
       gatsby-plugin-mdx: 2.2.0_20907dfa5e7456b3e10ff58769a7061d
       gatsby-plugin-sharp: 3.2.0
       gatsby-plugin-typescript: 3.2.0
+      gatsby-remark-autolink-headers: 3.2.0
       gatsby-remark-images: 4.2.0_gatsby-plugin-sharp@3.2.0
+      gatsby-remark-prismjs: 4.2.0_prismjs@1.23.0
       gatsby-source-filesystem: 3.2.0
       gatsby-transformer-sharp: 3.2.0_gatsby-plugin-sharp@3.2.0
       joi: 17.4.0
       js-yaml: 4.0.0
       json-to-graphql-query: 2.0.0
       lodash: 4.17.21
+      prismjs: 1.23.0
 
   packages/unisite-core-book:
     specifiers: {}
@@ -89,9 +95,12 @@ importers:
 
   packages/unisite-theme-blog:
     specifiers:
+      '@codesandbox/sandpack-react': ^0.0.3
       '@icon-park/react': ^1.3.1
+      '@mdx-js/react': ^1.6.22
       '@types/classnames': ^2.2.11
       '@types/lodash': ^4.14.168
+      '@types/mdx-js__react': ^1.5.3
       '@types/react-transition-group': ^4.4.1
       '@unisite/core-blog': ^0.0.0
       autoprefixer: ^10.2.5
@@ -106,9 +115,12 @@ importers:
       react-use: ^17.2.1
       tailwindcss: ^2.0.4
     dependencies:
+      '@codesandbox/sandpack-react': 0.0.3
       '@icon-park/react': 1.3.3
+      '@mdx-js/react': 1.6.22
       '@types/classnames': 2.2.11
       '@types/lodash': 4.14.168
+      '@types/mdx-js__react': 1.5.3
       '@types/react-transition-group': 4.4.1
       '@unisite/core-blog': link:../unisite-core-blog
       autoprefixer: 10.2.5_postcss@8.2.9
@@ -474,8 +486,6 @@ packages:
       '@babel/helper-annotate-as-pure': 7.12.13
       '@babel/helper-wrap-function': 7.13.0
       '@babel/types': 7.13.14
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@babel/helper-replace-supers/7.13.12:
@@ -521,8 +531,6 @@ packages:
       '@babel/template': 7.12.13
       '@babel/traverse': 7.13.13
       '@babel/types': 7.13.14
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@babel/helpers/7.13.10:
@@ -577,8 +585,6 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-remap-async-to-generator': 7.13.0
       '@babel/plugin-syntax-async-generators': 7.8.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@babel/plugin-proposal-async-generator-functions/7.13.8_@babel+core@7.13.14:
@@ -590,8 +596,6 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-remap-async-to-generator': 7.13.0
       '@babel/plugin-syntax-async-generators': 7.8.4_@babel+core@7.13.14
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@babel/plugin-proposal-class-properties/7.13.0:
@@ -748,7 +752,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.13.0
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.13.0_@babel+core@7.12.9
     dev: false
@@ -1153,8 +1157,6 @@ packages:
       '@babel/helper-module-imports': 7.13.12
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-remap-async-to-generator': 7.13.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@babel/plugin-transform-async-to-generator/7.13.0_@babel+core@7.13.14:
@@ -1166,8 +1168,6 @@ packages:
       '@babel/helper-module-imports': 7.13.12
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-remap-async-to-generator': 7.13.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /@babel/plugin-transform-block-scoped-functions/7.12.13:
@@ -2158,6 +2158,214 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
+  /@code-hike/classer/0.0.0-e48fa74:
+    resolution: {integrity: sha1-FyQ8qE1a8wPFHmKzeOjbZeAc0/Q=, tarball: '@code-hike/classer/download/@code-hike/classer-0.0.0-e48fa74.tgz'}
+    peerDependencies:
+      react: '>=16.8'
+    dev: false
+
+  /@codemirror/autocomplete/0.18.3:
+    resolution: {integrity: sha1-bHWQTBFW5NmgDla5o+VZ3aYUnh4=, tarball: '@codemirror/autocomplete/download/@codemirror/autocomplete-0.18.3.tgz'}
+    dependencies:
+      '@codemirror/language': 0.18.1
+      '@codemirror/state': 0.18.5
+      '@codemirror/text': 0.18.0
+      '@codemirror/tooltip': 0.18.4
+      '@codemirror/view': 0.18.6
+      lezer-tree: 0.13.2
+    dev: false
+
+  /@codemirror/closebrackets/0.18.0:
+    resolution: {integrity: sha1-S9fpIn7W6Q5ZD6bSidNLDAZcuM8=, tarball: '@codemirror/closebrackets/download/@codemirror/closebrackets-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/language': 0.18.1
+      '@codemirror/rangeset': 0.18.0
+      '@codemirror/state': 0.18.5
+      '@codemirror/text': 0.18.0
+      '@codemirror/view': 0.18.6
+    dev: false
+
+  /@codemirror/commands/0.18.1:
+    resolution: {integrity: sha1-KGahWTa3qz/zARLrGIeg4B/vYgU=, tarball: '@codemirror/commands/download/@codemirror/commands-0.18.1.tgz'}
+    dependencies:
+      '@codemirror/language': 0.18.1
+      '@codemirror/matchbrackets': 0.18.0
+      '@codemirror/state': 0.18.5
+      '@codemirror/text': 0.18.0
+      '@codemirror/view': 0.18.6
+      lezer-tree: 0.13.2
+    dev: false
+
+  /@codemirror/comment/0.18.0:
+    resolution: {integrity: sha1-9C47qqy+tX8i9KPqvlc4s9K8ofc=, tarball: '@codemirror/comment/download/@codemirror/comment-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/state': 0.18.5
+      '@codemirror/text': 0.18.0
+      '@codemirror/view': 0.18.6
+    dev: false
+
+  /@codemirror/gutter/0.18.0:
+    resolution: {integrity: sha1-tvs0D3zHtO0aZ2h+FFSJs+2TCY0=, tarball: '@codemirror/gutter/download/@codemirror/gutter-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/rangeset': 0.18.0
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+    dev: false
+
+  /@codemirror/highlight/0.18.3:
+    resolution: {integrity: sha1-UOJoYw8RPDIqLcl8n2jXGTT//LA=, tarball: '@codemirror/highlight/download/@codemirror/highlight-0.18.3.tgz'}
+    dependencies:
+      '@codemirror/language': 0.18.1
+      '@codemirror/rangeset': 0.18.0
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+      lezer-tree: 0.13.2
+      style-mod: 4.0.0
+    dev: false
+
+  /@codemirror/history/0.18.1:
+    resolution: {integrity: sha1-hTzeSxOLFyI11Y+UWHHw/Ai3MQo=, tarball: '@codemirror/history/download/@codemirror/history-0.18.1.tgz'}
+    dependencies:
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+    dev: false
+
+  /@codemirror/lang-css/0.18.0:
+    resolution: {integrity: sha1-+C59OL2E2o/6cxiPeiaKugDmNzc=, tarball: '@codemirror/lang-css/download/@codemirror/lang-css-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/autocomplete': 0.18.3
+      '@codemirror/highlight': 0.18.3
+      '@codemirror/language': 0.18.1
+      '@codemirror/state': 0.18.5
+      lezer-css: 0.13.1
+    dev: false
+
+  /@codemirror/lang-html/0.18.0:
+    resolution: {integrity: sha1-dCxgzirYCvUfIKQId/H+xMfv8rg=, tarball: '@codemirror/lang-html/download/@codemirror/lang-html-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/autocomplete': 0.18.3
+      '@codemirror/highlight': 0.18.3
+      '@codemirror/lang-css': 0.18.0
+      '@codemirror/lang-javascript': 0.18.0
+      '@codemirror/language': 0.18.1
+      '@codemirror/state': 0.18.5
+      lezer-html: 0.13.4
+      lezer-tree: 0.13.2
+    dev: false
+
+  /@codemirror/lang-javascript/0.18.0:
+    resolution: {integrity: sha1-4He2YBoHbhtEccBv/Ct33OiBXA4=, tarball: '@codemirror/lang-javascript/download/@codemirror/lang-javascript-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/autocomplete': 0.18.3
+      '@codemirror/highlight': 0.18.3
+      '@codemirror/language': 0.18.1
+      '@codemirror/lint': 0.18.1
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+      lezer-javascript: 0.13.3
+    dev: false
+
+  /@codemirror/language/0.18.1:
+    resolution: {integrity: sha1-I2gjJCKGBsSuW2qffNCkuf3/g90=, tarball: '@codemirror/language/download/@codemirror/language-0.18.1.tgz'}
+    dependencies:
+      '@codemirror/state': 0.18.5
+      '@codemirror/text': 0.18.0
+      '@codemirror/view': 0.18.6
+      lezer: 0.13.4
+      lezer-tree: 0.13.2
+    dev: false
+
+  /@codemirror/lint/0.18.1:
+    resolution: {integrity: sha1-71UC07wn6vI8Zw+oiL0j0JtZr1U=, tarball: '@codemirror/lint/download/@codemirror/lint-0.18.1.tgz'}
+    dependencies:
+      '@codemirror/panel': 0.18.1
+      '@codemirror/state': 0.18.5
+      '@codemirror/tooltip': 0.18.4
+      '@codemirror/view': 0.18.6
+      crelt: 1.0.5
+    dev: false
+
+  /@codemirror/matchbrackets/0.18.0:
+    resolution: {integrity: sha1-ZKSTCQ2ULeGfFantPLD6Ge1V8Ys=, tarball: '@codemirror/matchbrackets/download/@codemirror/matchbrackets-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/language': 0.18.1
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+      lezer-tree: 0.13.2
+    dev: false
+
+  /@codemirror/panel/0.18.1:
+    resolution: {integrity: sha1-shec37fXwpE7poLWHQDt/xYM+tA=, tarball: '@codemirror/panel/download/@codemirror/panel-0.18.1.tgz'}
+    dependencies:
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+    dev: false
+
+  /@codemirror/rangeset/0.18.0:
+    resolution: {integrity: sha1-izvsAMHO6MPbOCenUqdoGerS36s=, tarball: '@codemirror/rangeset/download/@codemirror/rangeset-0.18.0.tgz'}
+    dependencies:
+      '@codemirror/state': 0.18.5
+    dev: false
+
+  /@codemirror/state/0.18.5:
+    resolution: {integrity: sha1-25NvgMQPMp+4A70oTLtapVba+4g=, tarball: '@codemirror/state/download/@codemirror/state-0.18.5.tgz'}
+    dependencies:
+      '@codemirror/text': 0.18.0
+    dev: false
+
+  /@codemirror/text/0.18.0:
+    resolution: {integrity: sha1-pKmIYpiczvVUXnMLJpE21STGp8c=, tarball: '@codemirror/text/download/@codemirror/text-0.18.0.tgz'}
+    dev: false
+
+  /@codemirror/tooltip/0.18.4:
+    resolution: {integrity: sha1-mBvAzteSxnVBSO28H2AJLz+lQgc=, tarball: '@codemirror/tooltip/download/@codemirror/tooltip-0.18.4.tgz'}
+    dependencies:
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+    dev: false
+
+  /@codemirror/view/0.18.6:
+    resolution: {integrity: sha1-NZjnJljjezDjJg5OYjqBWZtnqaA=, tarball: '@codemirror/view/download/@codemirror/view-0.18.6.tgz'}
+    dependencies:
+      '@codemirror/rangeset': 0.18.0
+      '@codemirror/state': 0.18.5
+      '@codemirror/text': 0.18.0
+      style-mod: 4.0.0
+      w3c-keyname: 2.2.4
+    dev: false
+
+  /@codesandbox/sandpack-client/0.0.3:
+    resolution: {integrity: sha1-5wrblU6EF/EyZAcQKKIJ3v6FBTo=, tarball: '@codesandbox/sandpack-client/download/@codesandbox/sandpack-client-0.0.3.tgz'}
+    dependencies:
+      codesandbox-import-utils: 1.3.8
+      lodash.isequal: 4.5.0
+    dev: false
+
+  /@codesandbox/sandpack-react/0.0.3:
+    resolution: {integrity: sha1-eSFnEiMlwkx6TrW+Mn7ZJIJBmw4=, tarball: '@codesandbox/sandpack-react/download/@codesandbox/sandpack-react-0.0.3.tgz'}
+    peerDependencies:
+      react: ^16.8.0 || ^17
+      react-dom: ^16.8.0 || ^17
+    dependencies:
+      '@code-hike/classer': 0.0.0-e48fa74
+      '@codemirror/closebrackets': 0.18.0
+      '@codemirror/commands': 0.18.1
+      '@codemirror/comment': 0.18.0
+      '@codemirror/gutter': 0.18.0
+      '@codemirror/highlight': 0.18.3
+      '@codemirror/history': 0.18.1
+      '@codemirror/lang-css': 0.18.0
+      '@codemirror/lang-html': 0.18.0
+      '@codemirror/lang-javascript': 0.18.0
+      '@codemirror/language': 0.18.1
+      '@codemirror/matchbrackets': 0.18.0
+      '@codemirror/state': 0.18.5
+      '@codemirror/view': 0.18.6
+      '@codesandbox/sandpack-client': 0.0.3
+      codesandbox-import-utils: 1.3.8
+      prism-react-renderer: 1.2.0
+    dev: false
+
   /@endemolshinegroup/cosmiconfig-typescript-loader/3.0.2_cosmiconfig@6.0.0:
     resolution: {integrity: sha1-7qRjWCjd43KDiwkJaT69mq/uwi0=, tarball: '@endemolshinegroup/cosmiconfig-typescript-loader/download/@endemolshinegroup/cosmiconfig-typescript-loader-3.0.2.tgz'}
     engines: {node: '>=10.0.0'}
@@ -2830,8 +3038,6 @@ packages:
       p-map: 4.0.0
       pacote: 11.3.1
       semver: 7.3.5
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@lerna/bootstrap/4.0.0:
@@ -2998,8 +3204,6 @@ packages:
       validate-npm-package-name: 3.0.0
       whatwg-url: 8.5.0
       yargs-parser: 20.2.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@lerna/describe-ref/4.0.0:
@@ -3191,8 +3395,6 @@ packages:
       npm-package-arg: 8.1.2
       npm-registry-fetch: 9.0.0
       npmlog: 4.1.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@lerna/npm-install/4.0.0:
@@ -3220,8 +3422,6 @@ packages:
       npmlog: 4.1.2
       pify: 5.0.0
       read-package-json: 3.0.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@lerna/npm-run-script/4.0.0:
@@ -3354,8 +3554,6 @@ packages:
       p-pipe: 3.1.0
       pacote: 11.3.1
       semver: 7.3.5
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@lerna/pulse-till-done/4.0.0:
@@ -3993,6 +4191,12 @@ packages:
       '@types/unist': 2.0.3
     dev: false
 
+  /@types/mdx-js__react/1.5.3:
+    resolution: {integrity: sha1-L4WKsO5fxgtkLzdk75AB/gUw/kM=, tarball: '@types/mdx-js__react/download/@types/mdx-js__react-1.5.3.tgz'}
+    dependencies:
+      '@types/react': 17.0.3
+    dev: false
+
   /@types/minimatch/3.0.4:
     resolution: {integrity: sha1-8Owl2/Lw5LGGRzE6wDETTKWySyE=, tarball: '@types/minimatch/download/@types/minimatch-3.0.4.tgz'}
 
@@ -4422,8 +4626,6 @@ packages:
     engines: {node: '>= 6.0.0'}
     dependencies:
       debug: 4.3.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /agentkeepalive/4.1.4:
@@ -4433,8 +4635,6 @@ packages:
       debug: 4.3.1
       depd: 1.1.2
       humanize-ms: 1.2.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /aggregate-error/3.1.0:
@@ -5207,6 +5407,11 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
+  /binaryextensions/2.3.0:
+    resolution: {integrity: sha1-HSacv35iQ+qIaqQUU8NlHMvhPCI=, tarball: binaryextensions/download/binaryextensions-2.3.0.tgz}
+    engines: {node: '>=0.8'}
+    dev: false
+
   /bindings/1.5.0:
     resolution: {integrity: sha1-EDU8npRTNLwFEabZCzj7x8nFBN8=, tarball: bindings/download/bindings-1.5.0.tgz}
     dependencies:
@@ -5828,6 +6033,15 @@ packages:
     resolution: {integrity: sha1-ovSEN6LKqaIkNueUvwceyeYc7fY=, tarball: cli-width/download/cli-width-3.0.0.tgz}
     engines: {node: '>= 10'}
 
+  /clipboard/2.0.8:
+    resolution: {integrity: sha1-/8bBA90pZ6gwBfP2GXaqRlWkzbo=, tarball: clipboard/download/clipboard-2.0.8.tgz}
+    dependencies:
+      good-listener: 1.2.2
+      select: 1.1.2
+      tiny-emitter: 2.1.0
+    dev: false
+    optional: true
+
   /clipboardy/2.3.0:
     resolution: {integrity: sha1-PCkDZQxo5GqRs4iYW8J3QofbopA=, tarball: clipboardy/download/clipboardy-2.3.0.tgz}
     engines: {node: '>=8'}
@@ -5898,6 +6112,18 @@ packages:
   /code-point-at/1.1.0:
     resolution: {integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=, tarball: code-point-at/download/code-point-at-1.1.0.tgz}
     engines: {node: '>=0.10.0'}
+
+  /codesandbox-import-util-types/1.3.7:
+    resolution: {integrity: sha1-emCX4kinVCTROwa3Q2jNdr0rPhA=, tarball: codesandbox-import-util-types/download/codesandbox-import-util-types-1.3.7.tgz}
+    dev: false
+
+  /codesandbox-import-utils/1.3.8:
+    resolution: {integrity: sha1-VXZ4ZDnF8369P+5XUeBgJ6Ht74Q=, tarball: codesandbox-import-utils/download/codesandbox-import-utils-1.3.8.tgz}
+    dependencies:
+      codesandbox-import-util-types: 1.3.7
+      istextorbinary: 2.2.1
+      lz-string: 1.4.4
+    dev: false
 
   /collapse-white-space/1.0.6:
     resolution: {integrity: sha1-5jYpwAFmZXkgYNu+t5xCI50sUoc=, tarball: collapse-white-space/download/collapse-white-space-1.0.6.tgz}
@@ -6324,6 +6550,10 @@ packages:
 
   /create-require/1.1.1:
     resolution: {integrity: sha1-wdfo8eX2z8n/ZfnNNS03NIdWwzM=, tarball: create-require/download/create-require-1.1.1.tgz}
+    dev: false
+
+  /crelt/1.0.5:
+    resolution: {integrity: sha1-V8DVKvjIWeNUus4Yg+suHrGCu5Q=, tarball: crelt/download/crelt-1.0.5.tgz}
     dev: false
 
   /cross-fetch/3.1.1:
@@ -6883,6 +7113,11 @@ packages:
     resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=, tarball: delayed-stream/download/delayed-stream-1.0.0.tgz}
     engines: {node: '>=0.4.0'}
 
+  /delegate/3.2.0:
+    resolution: {integrity: sha1-tmtxwxWFIuirV0T3INjKDCr1kWY=, tarball: delegate/download/delegate-3.2.0.tgz}
+    dev: false
+    optional: true
+
   /delegates/1.0.0:
     resolution: {integrity: sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=, tarball: delegates/download/delegates-1.0.0.tgz}
 
@@ -7219,6 +7454,11 @@ packages:
       jsbn: 0.1.1
       safer-buffer: 2.1.2
     dev: true
+
+  /editions/1.3.4:
+    resolution: {integrity: sha1-NmLLWSNHwxaOuOSYoP9zJx1n9Qs=, tarball: editions/download/editions-1.3.4.tgz}
+    engines: {node: '>=0.8'}
+    dev: false
 
   /ee-first/1.1.1:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=, tarball: ee-first/download/ee-first-1.1.1.tgz}
@@ -8798,6 +9038,21 @@ packages:
       - utf-8-validate
     dev: false
 
+  /gatsby-remark-autolink-headers/3.2.0:
+    resolution: {integrity: sha1-76GQFmL61N3HukDJE94ggJtD0II=, tarball: gatsby-remark-autolink-headers/download/gatsby-remark-autolink-headers-3.2.0.tgz}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      gatsby: ^3.0.0-next.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+    dependencies:
+      '@babel/runtime': 7.13.10
+      github-slugger: 1.3.0
+      lodash: 4.17.21
+      mdast-util-to-string: 1.1.0
+      unist-util-visit: 1.4.1
+    dev: false
+
   /gatsby-remark-images/4.2.0_gatsby-plugin-sharp@3.2.0:
     resolution: {integrity: sha1-yKNMXpvqR0J/9tZabstSUGaFvf4=, tarball: gatsby-remark-images/download/gatsby-remark-images-4.2.0.tgz}
     engines: {node: '>=12.13.0'}
@@ -8817,6 +9072,19 @@ packages:
       query-string: 6.14.1
       unist-util-select: 1.5.0
       unist-util-visit-parents: 2.1.2
+    dev: false
+
+  /gatsby-remark-prismjs/4.2.0_prismjs@1.23.0:
+    resolution: {integrity: sha1-OkCgJGZz0g/auZsJfI6/GTyGztI=, tarball: gatsby-remark-prismjs/download/gatsby-remark-prismjs-4.2.0.tgz}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      gatsby: ^3.0.0-next.0
+      prismjs: ^1.15.0
+    dependencies:
+      '@babel/runtime': 7.13.10
+      parse-numeric-range: 0.0.2
+      prismjs: 1.23.0
+      unist-util-visit: 1.4.1
     dev: false
 
   /gatsby-source-filesystem/3.2.0:
@@ -9374,6 +9642,13 @@ packages:
       pinkie-promise: 2.0.1
     dev: false
 
+  /good-listener/1.2.2:
+    resolution: {integrity: sha1-1TswzfkxPf+33JoNR3CWqm0UXFA=, tarball: good-listener/download/good-listener-1.2.2.tgz}
+    dependencies:
+      delegate: 3.2.0
+    dev: false
+    optional: true
+
   /got/10.7.0:
     resolution: {integrity: sha1-YoidvNbMoyzWoVTMLQxolRIdCR8=, tarball: got/download/got-10.7.0.tgz}
     engines: {node: '>=10'}
@@ -9917,8 +10192,6 @@ packages:
       '@tootallnate/once': 1.1.2
       agent-base: 6.0.2
       debug: 4.3.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /http-proxy-middleware/0.19.1_debug@4.3.1:
@@ -9970,8 +10243,6 @@ packages:
     dependencies:
       agent-base: 6.0.2
       debug: 4.3.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /human-signals/1.1.1:
@@ -10782,6 +11053,15 @@ packages:
     resolution: {integrity: sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=, tarball: isstream/download/isstream-0.1.2.tgz}
     dev: true
 
+  /istextorbinary/2.2.1:
+    resolution: {integrity: sha1-pSMaCO9t0ismjQiVCEz41Ytb7FM=, tarball: istextorbinary/download/istextorbinary-2.2.1.tgz}
+    engines: {node: '>=0.12'}
+    dependencies:
+      binaryextensions: 2.3.0
+      editions: 1.3.4
+      textextensions: 2.6.0
+    dev: false
+
   /isurl/1.0.0:
     resolution: {integrity: sha1-sn9PSfPNqj6kSgpbfzRi5u3DnWc=, tarball: isurl/download/isurl-1.0.0.tgz}
     engines: {node: '>= 4'}
@@ -11082,8 +11362,6 @@ packages:
       '@lerna/version': 4.0.0
       import-local: 3.0.2
       npmlog: 4.1.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /levn/0.4.1:
@@ -11094,6 +11372,34 @@ packages:
       type-check: 0.4.0
     dev: false
 
+  /lezer-css/0.13.1:
+    resolution: {integrity: sha1-JyWCr3YWMYp+C2Qy/flDw1SZyWs=, tarball: lezer-css/download/lezer-css-0.13.1.tgz}
+    dependencies:
+      lezer: 0.13.4
+    dev: false
+
+  /lezer-html/0.13.4:
+    resolution: {integrity: sha1-sRwCaIH+CfkKfln6S8UC/aCk3kI=, tarball: lezer-html/download/lezer-html-0.13.4.tgz}
+    dependencies:
+      lezer: 0.13.4
+    dev: false
+
+  /lezer-javascript/0.13.3:
+    resolution: {integrity: sha1-zfcvynd/JKZkWLgAcR7LeAhee0Y=, tarball: lezer-javascript/download/lezer-javascript-0.13.3.tgz}
+    dependencies:
+      lezer: 0.13.4
+    dev: false
+
+  /lezer-tree/0.13.2:
+    resolution: {integrity: sha1-APRnEwmxXCexMfY35DDOLU1fcGU=, tarball: lezer-tree/download/lezer-tree-0.13.2.tgz}
+    dev: false
+
+  /lezer/0.13.4:
+    resolution: {integrity: sha1-8DlqNEfHqPQDkWI/P0ek2VVZxC8=, tarball: lezer/download/lezer-0.13.4.tgz}
+    dependencies:
+      lezer-tree: 0.13.2
+    dev: false
+
   /libnpmaccess/4.0.1:
     resolution: {integrity: sha1-F+hC4DvvdZhUrfbrbC7eMueCY58=, tarball: libnpmaccess/download/libnpmaccess-4.0.1.tgz}
     engines: {node: '>=10'}
@@ -11102,8 +11408,6 @@ packages:
       minipass: 3.1.3
       npm-package-arg: 8.1.2
       npm-registry-fetch: 9.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /libnpmpublish/4.0.0:
@@ -11115,8 +11419,6 @@ packages:
       npm-registry-fetch: 9.0.0
       semver: 7.3.5
       ssri: 8.0.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /lines-and-columns/1.1.6:
@@ -11273,6 +11575,10 @@ packages:
 
   /lodash.get/4.4.2:
     resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=, tarball: lodash.get/download/lodash.get-4.4.2.tgz}
+    dev: false
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=, tarball: lodash.isequal/download/lodash.isequal-4.5.0.tgz}
     dev: false
 
   /lodash.ismatch/4.4.0:
@@ -11455,6 +11761,11 @@ packages:
       es5-ext: 0.10.53
     dev: false
 
+  /lz-string/1.4.4:
+    resolution: {integrity: sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=, tarball: lz-string/download/lz-string-1.4.4.tgz}
+    hasBin: true
+    dev: false
+
   /make-dir/1.3.0:
     resolution: {integrity: sha1-ecEDO4BRW9bSTsmTPoYMp17ifww=, tarball: make-dir/download/make-dir-1.3.0.tgz}
     engines: {node: '>=4'}
@@ -11499,8 +11810,6 @@ packages:
       promise-retry: 2.0.1
       socks-proxy-agent: 5.0.0
       ssri: 8.0.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /map-age-cleaner/0.1.3:
@@ -11774,8 +12083,6 @@ packages:
     dependencies:
       micromark: 2.11.4
       vfile-message: 2.0.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /micromark-extension-mdx-jsx/0.3.3:
@@ -11785,8 +12092,6 @@ packages:
       micromark: 2.11.4
       micromark-extension-mdx-expression: 0.3.2
       vfile-message: 2.0.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /micromark-extension-mdx-md/0.1.1:
@@ -11800,8 +12105,6 @@ packages:
       micromark-extension-mdx-expression: 0.3.2
       micromark-extension-mdx-jsx: 0.3.3
       micromark-extension-mdx-md: 0.1.1
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /micromark-extension-mdxjs-esm/0.3.1:
@@ -11810,8 +12113,6 @@ packages:
       micromark: 2.11.4
       micromark-extension-mdx-expression: 0.3.2
       vfile-message: 2.0.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /micromark-extension-mdxjs/0.3.0:
@@ -11824,8 +12125,6 @@ packages:
       micromark-extension-mdx-jsx: 0.3.3
       micromark-extension-mdx-md: 0.1.1
       micromark-extension-mdxjs-esm: 0.3.1
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /micromark/2.11.4:
@@ -11833,8 +12132,6 @@ packages:
     dependencies:
       debug: 4.3.1
       parse-entities: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /micromatch/3.1.10:
@@ -12467,8 +12764,6 @@ packages:
       minipass-json-stream: 1.0.1
       minizlib: 2.1.2
       npm-package-arg: 8.1.2
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /npm-run-path/2.0.2:
@@ -12955,8 +13250,6 @@ packages:
       rimraf: 3.0.2
       ssri: 8.0.1
       tar: 6.1.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /pako/1.0.11:
@@ -13067,6 +13360,10 @@ packages:
       nlcst-to-string: 2.0.4
       unist-util-modify-children: 2.0.0
       unist-util-visit-children: 1.1.4
+    dev: false
+
+  /parse-numeric-range/0.0.2:
+    resolution: {integrity: sha1-tPCdQTx6282Yf26SM8e0shDJOOQ=, tarball: parse-numeric-range/download/parse-numeric-range-0.0.2.tgz}
     dev: false
 
   /parse-path/4.0.3:
@@ -13825,6 +14122,18 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
+  /prism-react-renderer/1.2.0:
+    resolution: {integrity: sha1-WtT5DD5EcGlCbIpToOr95gkJzfQ=, tarball: prism-react-renderer/download/prism-react-renderer-1.2.0.tgz}
+    peerDependencies:
+      react: '>=0.14.9'
+    dev: false
+
+  /prismjs/1.23.0:
+    resolution: {integrity: sha1-07OWf31yRAaQSXZSqdQP8EYGfzM=, tarball: prismjs/download/prismjs-1.23.0.tgz}
+    optionalDependencies:
+      clipboard: 2.0.8
+    dev: false
+
   /probe-image-size/6.0.0:
     resolution: {integrity: sha1-SoWxnVr04pqN59U6mqA29v0C9fQ=, tarball: probe-image-size/download/probe-image-size-6.0.0.tgz}
     dependencies:
@@ -14510,8 +14819,6 @@ packages:
       mdast-util-mdx: 0.1.1
       micromark-extension-mdx: 0.2.1
       micromark-extension-mdxjs: 0.3.0
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /remark-mdxjs/2.0.0-next.8:
@@ -14922,6 +15229,11 @@ packages:
     resolution: {integrity: sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=, tarball: select-hose/download/select-hose-2.0.0.tgz}
     dev: false
 
+  /select/1.1.2:
+    resolution: {integrity: sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=, tarball: select/download/select-1.1.2.tgz}
+    dev: false
+    optional: true
+
   /selfsigned/1.10.8:
     resolution: {integrity: sha1-DRcgi30Swz+OrIXEGDXyf8PYGjA=, tarball: selfsigned/download/selfsigned-1.10.8.tgz}
     dependencies:
@@ -15301,8 +15613,6 @@ packages:
       agent-base: 6.0.2
       debug: 4.3.1
       socks: 2.6.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /socks/2.6.0:
@@ -15811,6 +16121,10 @@ packages:
       webpack: 5.30.0
     dev: false
 
+  /style-mod/4.0.0:
+    resolution: {integrity: sha1-l+fC1otZKXXyynpj0N1vys/jWgE=, tarball: style-mod/download/style-mod-4.0.0.tgz}
+    dev: false
+
   /style-to-object/0.3.0:
     resolution: {integrity: sha1-sbeQ0gWZHMeDgBlnIUl57hmnbkY=, tarball: style-to-object/download/style-to-object-0.3.0.tgz}
     dependencies:
@@ -16081,6 +16395,11 @@ packages:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=, tarball: text-table/download/text-table-0.2.0.tgz}
     dev: false
 
+  /textextensions/2.6.0:
+    resolution: {integrity: sha1-1+SrE/5U4y4IhzvkDVG3QimwD8Q=, tarball: textextensions/download/textextensions-2.6.0.tgz}
+    engines: {node: '>=0.8'}
+    dev: false
+
   /throttle-debounce/3.0.1:
     resolution: {integrity: sha1-MvlNhN+olPeGyaHykOemRbahmrs=, tarball: throttle-debounce/download/throttle-debounce-3.0.1.tgz}
     engines: {node: '>=10'}
@@ -16124,6 +16443,11 @@ packages:
   /timsort/0.3.0:
     resolution: {integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=, tarball: timsort/download/timsort-0.3.0.tgz}
     dev: false
+
+  /tiny-emitter/2.1.0:
+    resolution: {integrity: sha1-HRpW7fxRxD6GPLtTgqcjMONVVCM=, tarball: tiny-emitter/download/tiny-emitter-2.1.0.tgz}
+    dev: false
+    optional: true
 
   /tinycolor2/1.4.2:
     resolution: {integrity: sha1-P2pNEHGtB2dtf6Ry4frECnGdiAM=, tarball: tinycolor2/download/tinycolor2-1.4.2.tgz}
@@ -16944,6 +17268,10 @@ packages:
       is-buffer: 2.0.5
       unist-util-stringify-position: 2.0.3
       vfile-message: 2.0.4
+    dev: false
+
+  /w3c-keyname/2.2.4:
+    resolution: {integrity: sha1-St5pFvYpAiTNvR24rEnqsD0O72s=, tarball: w3c-keyname/download/w3c-keyname-2.2.4.tgz}
     dev: false
 
   /watchpack/2.1.1:

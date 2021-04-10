@@ -24,12 +24,15 @@
     "gatsby-plugin-mdx": "^2.2.0",
     "gatsby-plugin-sharp": "^3.2.0",
     "gatsby-plugin-typescript": "^3.2.0",
+    "gatsby-remark-autolink-headers": "^3.2.0",
     "gatsby-remark-images": "^4.2.0",
+    "gatsby-remark-prismjs": "^4.2.0",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "joi": "^17.4.0",
     "js-yaml": "^4.0.0",
     "json-to-graphql-query": "^2.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "prismjs": "^1.23.0"
   }
 }
