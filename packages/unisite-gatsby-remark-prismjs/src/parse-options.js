@@ -1,26 +1,27 @@
-const rangeParser = require(`parse-numeric-range`)
+const rangeParser = require(`parse-numeric-range`);
 
-module.exports = language => {
+module.exports = (language) => {
   if (!language) {
-    return ``
+    return ``;
   }
   if (language.split(`{`).length > 1) {
-    const [splitLanguage, ...options] = language.split(`{`)
-    let highlightLines = []
-    let outputLines = []
-    let showLineNumbersLocal = false
-    let numberLinesStartAt
-    let promptUserLocal
-    let promptHostLocal
+    const [splitLanguage, ...options] = language.split(`{`);
+    let customOptions = {};
+    let highlightLines = [];
+    let outputLines = [];
+    let showLineNumbersLocal = false;
+    let numberLinesStartAt;
+    let promptUserLocal;
+    let promptHostLocal;
     // Options can be given in any order and are optional
 
-    options.forEach(option => {
-      option = option.slice(0, -1)
-      const splitOption = option.replace(/ /g, ``).split(`:`)
+    options.forEach((option) => {
+      option = option.slice(0, -1);
+      const splitOption = option.replace(/ /g, ``).split(`:`);
 
       // Test if the option is for line highlighting
       if (splitOption.length === 1 && rangeParser(option).length > 0) {
-        highlightLines = rangeParser(option).filter(n => n > 0)
+        highlightLines = rangeParser(option).filter((n) => n > 0);
       }
       // Test if the option is for line numbering
       // Option must look like `numberLines: true` or `numberLines: <integer>`
@@ -32,22 +33,25 @@ module.exports = language => {
         (splitOption[1].trim() === `true` ||
           Number.isInteger(parseInt(splitOption[1].trim(), 10)))
       ) {
-        showLineNumbersLocal = true
+        showLineNumbersLocal = true;
         numberLinesStartAt =
           splitOption[1].trim() === `true`
             ? 1
-            : parseInt(splitOption[1].trim(), 10)
+            : parseInt(splitOption[1].trim(), 10);
       }
       if (splitOption.length === 2 && splitOption[0] === `promptHost`) {
-        promptHostLocal = splitOption[1]
+        promptHostLocal = splitOption[1];
       }
       if (splitOption.length === 2 && splitOption[0] === `promptUser`) {
-        promptUserLocal = splitOption[1]
+        promptUserLocal = splitOption[1];
       }
       if (splitOption.length === 2 && splitOption[0] === `outputLines`) {
-        outputLines = rangeParser(splitOption[1].trim()).filter(n => n > 0)
+        outputLines = rangeParser(splitOption[1].trim()).filter((n) => n > 0);
       }
-    })
+      if (splitOption.length === 2 && splitOption[0]) {
+        customOptions[splitOption[0]] = splitOption[1];
+      }
+    });
 
     return {
       splitLanguage,
@@ -57,8 +61,9 @@ module.exports = language => {
       outputLines,
       promptUserLocal,
       promptHostLocal,
-    }
+      customOptions,
+    };
   }
 
-  return { splitLanguage: language }
-}
+  return { splitLanguage: language };
+};
