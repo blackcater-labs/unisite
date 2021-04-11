@@ -1,7 +1,7 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 
-import { Highlight } from "../components/MDX";
+import { Aside, Highlight, Example } from "../components/MDX";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -14,7 +14,9 @@ const DefaultLayout: DefaultLayoutFC = ({ children }) => {
     <MDXProvider
       components={{
         //  Extended Components
+        Aside,
         Highlight,
+        Example,
       }}
     >
       <Header />

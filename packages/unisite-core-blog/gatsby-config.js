@@ -22,10 +22,13 @@ module.exports = (options) => {
             {
               resolve: "gatsby-remark-images",
               options: {
-                maxWidth: 960,
-                quality: 90,
-                linkImagesToOriginal: false,
+                maxWidth: 1280,
+                disableBgImageOnAlpha: true,
               },
+            },
+            {
+              resolve: "gatsby-remark-copy-linked-files",
+              options: {},
             },
             {
               resolve: "gatsby-remark-autolink-headers",

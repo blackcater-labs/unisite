@@ -1,13 +1,28 @@
 import React from "react";
+import cls from "classnames";
 
-type HighlightProps = {};
+import { prefix } from "./_utils";
+
+type HighlightProps = {
+  className?: string;
+  color?: string;
+};
 
 type HighlightFC = React.FC<HighlightProps>;
 
-const Highlight: HighlightFC = ({ children, ...props }) => {
-  console.log("Highlight props:", props);
-
-  return <div>{children}</div>;
+const Highlight: HighlightFC = ({ className, color = "gray", children }) => {
+  return (
+    <span
+      className={cls([
+        className,
+        prefix("highlight"),
+        `bg-${color}-100`,
+        "mx-0.5 p-0.5",
+      ])}
+    >
+      {children}
+    </span>
+  );
 };
 
 export type { HighlightProps };

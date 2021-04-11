@@ -56,6 +56,7 @@ importers:
       gatsby-plugin-sharp: ^3.2.0
       gatsby-plugin-typescript: ^3.2.0
       gatsby-remark-autolink-headers: ^3.2.0
+      gatsby-remark-copy-linked-files: ^3.2.0
       gatsby-remark-images: ^4.2.0
       gatsby-remark-prismjs: ^4.2.0
       gatsby-source-filesystem: ^3.2.0
@@ -74,6 +75,7 @@ importers:
       gatsby-plugin-sharp: 3.2.0
       gatsby-plugin-typescript: 3.2.0
       gatsby-remark-autolink-headers: 3.2.0
+      gatsby-remark-copy-linked-files: 3.2.0
       gatsby-remark-images: 4.2.0_gatsby-plugin-sharp@3.2.0
       gatsby-remark-prismjs: 4.2.0_prismjs@1.23.0
       gatsby-source-filesystem: 3.2.0
@@ -7332,7 +7334,7 @@ packages:
     dependencies:
       domelementtype: 2.2.0
       domhandler: 4.1.0
-      entities: 2.1.0
+      entities: 2.2.0
     dev: false
 
   /dom-walk/0.1.2:
@@ -9053,6 +9055,22 @@ packages:
       unist-util-visit: 1.4.1
     dev: false
 
+  /gatsby-remark-copy-linked-files/3.2.0:
+    resolution: {integrity: sha1-rt+3wFwIM/y56AcSegi+EBZUUDs=, tarball: gatsby-remark-copy-linked-files/download/gatsby-remark-copy-linked-files-3.2.0.tgz}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      gatsby: ^3.0.0-next.0
+    dependencies:
+      '@babel/runtime': 7.13.10
+      cheerio: 1.0.0-rc.5
+      fs-extra: 8.1.0
+      is-relative-url: 3.0.0
+      lodash: 4.17.21
+      path-is-inside: 1.0.2
+      probe-image-size: 6.0.0
+      unist-util-visit: 1.4.1
+    dev: false
+
   /gatsby-remark-images/4.2.0_gatsby-plugin-sharp@3.2.0:
     resolution: {integrity: sha1-yKNMXpvqR0J/9tZabstSUGaFvf4=, tarball: gatsby-remark-images/download/gatsby-remark-images-4.2.0.tgz}
     engines: {node: '>=12.13.0'}
@@ -10124,7 +10142,7 @@ packages:
       domelementtype: 2.2.0
       domhandler: 4.1.0
       domutils: 2.5.1
-      entities: 2.1.0
+      entities: 2.2.0
     dev: false
 
   /http-cache-semantics/3.8.1:

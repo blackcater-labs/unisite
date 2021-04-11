@@ -17,23 +17,40 @@
 }
 
 .gatsby-typography h3 {
+  @apply text-gray-900;
+  margin: 1.75rem 0 1rem;
+  font-size: 1.75rem;
+  font-weight: 500;
 }
 
 .gatsby-typography h4 {
+  @apply text-gray-900;
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .gatsby-typography h5 {
+  @apply text-gray-900;
+  margin: 1.25rem 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .gatsby-typography h6 {
+  @apply text-gray-900;
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .gatsby-typography p {
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem;
 }
 
-.gatsby-typography .gatsby-highlight {
-  margin-bottom: 1.5rem;
+.gatsby-typography ol {
+  margin: 0 0 1.5rem 1.25rem;
+  list-style: decimal;
 }
 
 .gatsby-typography ul {
@@ -44,4 +61,35 @@
 .gatsby-typography ul.contains-task-list {
   margin: 0 0 1.5rem 0;
   list-style: none;
+}
+
+.gatsby-typography hr {
+  margin: 3rem 0;
+}
+
+.gatsby-typography details {
+  margin: 0 0 1.5rem;
+  position: relative;
+  padding: 0 0 0 1rem;
+}
+
+.gatsby-typography details > summary {
+  margin: 0 0 0.25rem -1rem;
+}
+
+.gatsby-typography details > summary:focus {
+  outline: none;
+}
+
+.gatsby-typography details > :last-child {
+  margin-bottom: 0;
+}
+
+.gatsby-typography .gatsby-highlight {
+  margin: 0 0 1.5rem;
+}
+
+/* Docs Extensions */
+.Docs--aside > :last-child {
+  margin-bottom: 0;
 }
