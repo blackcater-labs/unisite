@@ -2,6 +2,38 @@
   position: relative;
 }
 
+.gatsby-typography h1,
+.gatsby-typography h2,
+.gatsby-typography h3,
+.gatsby-typography h4,
+.gatsby-typography h5,
+.gatsby-typography h6 {
+  position: relative;
+}
+
+.gatsby-typography h1 > a[class~="anchor"],
+.gatsby-typography h2 > a[class~="anchor"],
+.gatsby-typography h3 > a[class~="anchor"],
+.gatsby-typography h4 > a[class~="anchor"],
+.gatsby-typography h5 > a[class~="anchor"],
+.gatsby-typography h6 > a[class~="anchor"] {
+  position: absolute;
+  top: 50%;
+  left: -1.25rem;
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.gatsby-typography h1:hover > a[class~="anchor"],
+.gatsby-typography h2:hover > a[class~="anchor"],
+.gatsby-typography h3:hover > a[class~="anchor"],
+.gatsby-typography h4:hover > a[class~="anchor"],
+.gatsby-typography h5:hover > a[class~="anchor"],
+.gatsby-typography h6:hover > a[class~="anchor"] {
+  opacity: 1;
+}
+
 .gatsby-typography h1 {
   @apply text-gray-900;
   margin: 2.25rem 0 1.5rem;
@@ -46,6 +78,29 @@
 
 .gatsby-typography p {
   margin: 0 0 1.5rem;
+}
+
+.gatsby-typography a {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gatsby-typography a > span {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.gatsby-typography a:hover > span.i-icon {
+  opacity: 0.8;
+}
+
+.gatsby-typography a > span.i-icon {
+  @apply bg-none;
+  margin-left: 0.125rem;
+  text-decoration: none;
+  border: none;
+  opacity: 0.5;
 }
 
 .gatsby-typography blockquote {
@@ -139,8 +194,13 @@
 }
 
 /* Docs Extensions */
+
+/* Docs--aside */
 .gatsby-typography .Docs--aside > * {
   margin-bottom: 0.75rem;
+}
+.gatsby-typography .Docs--aside > .Docs--aside-header {
+  margin-bottom: 0.25rem;
 }
 .gatsby-typography .Docs--aside > :last-child {
   margin-bottom: 0;

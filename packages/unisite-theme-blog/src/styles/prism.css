@@ -47,7 +47,7 @@ code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
   margin: 0;
-  padding: 2rem 1rem 1rem;
+  padding: 1rem;
   overflow: auto;
 }
 
@@ -68,6 +68,39 @@ pre[class*="language-"]::before {
   text-shadow: none;
   border-bottom-left-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
+}
+
+pre[class~="language-markdown"],
+pre[class~="language-md"],
+pre[class~="language-diff-markdown"],
+pre[class~="language-diff-md"],
+pre[class~="language-javascript"],
+pre[class~="language-js"],
+pre[class~="language-diff-javascript"],
+pre[class~="language-diff-js"],
+pre[class~="language-jsx"],
+pre[class~="language-diff-jsx"],
+pre[class~="language-typescript"],
+pre[class~="language-ts"],
+pre[class~="language-diff-typescript"],
+pre[class~="language-diff-ts"],
+pre[class~="language-tsx"],
+pre[class~="language-diff-tsx"],
+pre[class~="language-html"],
+pre[class~="language-diff-html"],
+pre[class~="language-css"],
+pre[class~="language-diff-css"],
+pre[class~="language-go"],
+pre[class~="language-diff-go"],
+pre[class~="language-rust"],
+pre[class~="language-diff-rust"],
+pre[class~="language-c"],
+pre[class~="language-diff-c"],
+pre[class~="language-cpp"],
+pre[class~="language-diff-cpp"],
+pre[class~="language-java"],
+pre[class~="language-diff-java"] {
+  padding-top: 2rem;
 }
 
 pre[class~="language-markdown"]::before,

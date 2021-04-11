@@ -31,7 +31,13 @@ const Aside: AsideFC = ({
         "mb-6 px-4 py-3 border-l-4 rounded-md",
       ])}
     >
-      {header ? <div className="mb-1 text-sm font-bold">{header}</div> : null}
+      {header ? (
+        <div
+          className={cls([prefix("aside-header"), "mb-1 text-sm font-bold"])}
+        >
+          {header}
+        </div>
+      ) : null}
       {children}
     </div>
   );
