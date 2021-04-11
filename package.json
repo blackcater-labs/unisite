@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@unisite/core-blog": "workspace:*",
+    "@unisite/gatsby-remark-prismjs": "workspace:*",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",

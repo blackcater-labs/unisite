@@ -47,14 +47,12 @@ module.exports = (options) => {
               },
             },
             {
-              resolve: "gatsby-remark-code-frontmatter",
-              options: {},
-            },
-            {
               resolve: "@unisite/gatsby-remark-prismjs",
               options: {},
             },
           ],
+          rehypePlugins: [require("rehype-katex")],
+          remarkPlugins: [require("remark-math")],
         },
       },
       // "gatsby-plugin-image",
