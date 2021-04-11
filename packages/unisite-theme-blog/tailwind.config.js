@@ -207,6 +207,8 @@ module.exports = {
         ],
         mono: [
           '"JetBrains Mono"',
+          '"Cascadia Mono"',
+          '"FiraCode Mono"',
           "ui-monospace",
           "SFMono-Regular",
           "Menlo",

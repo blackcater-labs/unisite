@@ -1,3 +1,4 @@
+export * from "./overrides";
 export { default as Highlight } from "./Highlight";
 export type { HighlightProps } from "./Highlight";
 export { default as Example } from "./Example";

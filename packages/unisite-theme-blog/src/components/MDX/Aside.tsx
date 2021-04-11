@@ -5,13 +5,22 @@ import { prefix } from "./_utils";
 
 type AsideProps = {
   className?: string;
+  color?: string;
   type?: string;
   header?: string;
 };
 
 type AsideFC = React.FC<AsideProps>;
 
-const Aside: AsideFC = ({ className, type = "gray", header, children }) => {
+const Aside: AsideFC = ({
+  className,
+  color,
+  type = "gray",
+  header,
+  children,
+}) => {
+  type = color || type;
+
   return (
     <div
       className={cls([
