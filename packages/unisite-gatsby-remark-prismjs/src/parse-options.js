@@ -17,10 +17,13 @@ module.exports = (language) => {
 
     options.forEach((option) => {
       option = option.slice(0, -1);
-      const splitOption = option.replace(/ /g, ``).split(`:`);
+      let [left, right] = option.split(`:`);
+
+      left = left.replace(/ /g, "");
+      right = right ? right.trim() : right;
 
       // Test if the option is for line highlighting
-      if (splitOption.length === 1 && rangeParser(option).length > 0) {
+      if (!right && rangeParser(option).length > 0) {
         highlightLines = rangeParser(option).filter((n) => n > 0);
       }
       // Test if the option is for line numbering
@@ -28,28 +31,26 @@ module.exports = (language) => {
       // Otherwise we disable line numbering
 
       if (
-        splitOption.length === 2 &&
-        splitOption[0] === `numberLines` &&
-        (splitOption[1].trim() === `true` ||
-          Number.isInteger(parseInt(splitOption[1].trim(), 10)))
+        !!right &&
+        left === `numberLines` &&
+        (right === `true` ||
+          Number.isInteger(parseInt(right.replace(/ /g, ``), 10)))
       ) {
         showLineNumbersLocal = true;
         numberLinesStartAt =
-          splitOption[1].trim() === `true`
-            ? 1
-            : parseInt(splitOption[1].trim(), 10);
+          right === `true` ? 1 : parseInt(right.replace(/ /g, ``), 10);
       }
-      if (splitOption.length === 2 && splitOption[0] === `promptHost`) {
-        promptHostLocal = splitOption[1];
+      if (!!right && left === `promptHost`) {
+        promptHostLocal = right;
       }
-      if (splitOption.length === 2 && splitOption[0] === `promptUser`) {
-        promptUserLocal = splitOption[1];
+      if (!!right && left === `promptUser`) {
+        promptUserLocal = right;
       }
-      if (splitOption.length === 2 && splitOption[0] === `outputLines`) {
-        outputLines = rangeParser(splitOption[1].trim()).filter((n) => n > 0);
+      if (!!right && left === `outputLines`) {
+        outputLines = rangeParser(right).filter((n) => n > 0);
       }
-      if (splitOption.length === 2 && splitOption[0]) {
-        customOptions[splitOption[0]] = splitOption[1];
+      if (!!right && left) {
+        customOptions[left.trim()] = right;
       }
     });
 

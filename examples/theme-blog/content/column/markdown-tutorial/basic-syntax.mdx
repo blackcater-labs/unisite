@@ -64,11 +64,27 @@ Vite 是新型的前端构建工具，速度远胜于 Webpack。
 
 数学公式可以行内 $a^2 + b^2 = c^2$ 。
 
+```mermaid
+graph TD
+A[Hard] -->|Text| B(Round)
+B --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
+```
+
 当然你也可以写块级公式：
 
 $$
 a^2 + b^2 = c^2
 $$
+
+```shell{outputLines: 2-3,5}{header: Publiuh with Workers CLI}
+wrangler publish
+Publishing...
+  Ok!
+wrangler Deploy
+  Ok!
+```
 
 ```markdown{filename: hello.md}
 # Heading 1

@@ -180,6 +180,11 @@
   margin: 0 0 1.5rem;
 }
 
+/* Prismjs */
+.gatsby-typography .gatsby-highlight {
+  margin-bottom: 1.5rem;
+}
+
 /* Katex */
 .gatsby-typography .math-display {
   margin: 0 0 1.5rem;
@@ -188,7 +193,54 @@
   margin: 0;
 }
 
+/* Mermaid */
+.gatsby-typography .mermaid {
+  margin: 0 0 1.5rem;
+}
+
 /* Docs Extensions */
+
+/* Docs--code-block */
+.gatsby-typography .Docs--code-block {
+  position: relative;
+}
+
+.gatsby-typography .Docs--code-block > .Docs--code-block__header {
+  @apply text-gray-900 text-sm font-bold font-mono bg-gray-200;
+  padding: 0.25rem 1rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.gatsby-typography
+  .Docs--code-block
+  > .Docs--code-block__header
+  + .Docs--code-block__content {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.gatsby-typography .Docs--code-block > .i-icon {
+  @apply text-gray-700 rounded-md;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  right: 0.5rem;
+  bottom: 1rem;
+  cursor: pointer;
+}
+
+.gatsby-typography .Docs--code-block > .i-icon.i-icon-check-small {
+  @apply text-green-700;
+}
+
+.gatsby-typography .Docs--code-block > .i-icon:hover {
+  @apply bg-gray-100;
+}
 
 /* Docs--aside */
 .gatsby-typography .Docs--aside > * {

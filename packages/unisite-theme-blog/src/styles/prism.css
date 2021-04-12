@@ -1,7 +1,3 @@
-.gatsby-highlight {
-  margin-bottom: 1.5rem;
-}
-
 code[class*="language-"],
 pre[class*="language-"] {
   @apply text-gray-900 bg-gray-50;
@@ -54,7 +50,7 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   @apply border border-gray-200;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   position: relative;
 }
 
@@ -286,6 +282,7 @@ pre[class*="language-"].line-numbers > code {
 }
 
 .line-numbers .line-numbers-rows {
+  @apply border-r border-gray-500;
   position: absolute;
   pointer-events: none;
   top: 2rem;
@@ -293,8 +290,6 @@ pre[class*="language-"].line-numbers > code {
   left: 0 !important;
   width: 2rem !important;
   letter-spacing: -1px;
-  border-right: 1px solid #999;
-
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -307,8 +302,8 @@ pre[class*="language-"].line-numbers > code {
 }
 
 .line-numbers-rows > span:before {
+  @apply text-gray-500;
   content: counter(linenumber);
-  color: #999;
   display: block;
   padding-right: 0.8em;
   text-align: right;
@@ -331,4 +326,39 @@ pre > code > .token.inserted:not(.prefix) {
   @apply bg-green-100 bg-opacity-50;
   color: inherit;
   display: block;
+}
+
+/* Plugin:Command Line */
+.command-line-prompt {
+  border: none;
+  display: block;
+  float: left;
+  font-size: 100%;
+  letter-spacing: -1px;
+  margin-right: 1em;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.command-line-prompt > span:before {
+  @apply text-gray-500;
+  content: " ";
+  display: block;
+  padding-right: 0;
+}
+
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
 }

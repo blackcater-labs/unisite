@@ -28,6 +28,7 @@
     "gatsby-remark-autolink-headers": "^3.2.0",
     "gatsby-remark-copy-linked-files": "^3.2.0",
     "gatsby-remark-images": "^4.2.0",
+    "gatsby-remark-mermaid": "^2.1.0",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "joi": "^17.4.0",
@@ -36,6 +37,7 @@
     "katex": "^0.13.2",
     "lodash": "^4.17.21",
     "prismjs": "^1.23.0",
+    "puppeteer": "^8.0.0",
     "rehype-katex": "^3.1.0",
     "remark-math": "^3.0.1"
   }

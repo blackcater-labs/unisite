@@ -47,6 +47,10 @@ module.exports = (options) => {
               },
             },
             {
+              resolve: "gatsby-remark-mermaid",
+              options: {},
+            },
+            {
               resolve: "@unisite/gatsby-remark-prismjs",
               options: {},
             },

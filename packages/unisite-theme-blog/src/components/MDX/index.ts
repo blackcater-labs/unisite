@@ -1,4 +1,6 @@
 export * from "./overrides";
+export { default as CodeBlock } from "./CodeBlock";
+export type { CodeBlockProps } from "./CodeBlock";
 export { default as Highlight } from "./Highlight";
 export type { HighlightProps } from "./Highlight";
 export { default as Example } from "./Example";
