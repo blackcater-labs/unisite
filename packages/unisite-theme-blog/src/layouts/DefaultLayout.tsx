@@ -27,10 +27,11 @@ const DefaultLayout: DefaultLayoutFC = ({ children }) => {
         pre: CodeBlock,
         hr: Divider,
         //  Extended Components
+        Link,
+        Tag,
         Aside,
         Highlight,
         Example,
-        Tag,
       }}
     >
       <Header />

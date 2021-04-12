@@ -80,26 +80,6 @@
   margin: 0 0 1.5rem;
 }
 
-.gatsby-typography a {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-}
-.gatsby-typography a > span {
-  font-weight: 500;
-  text-decoration: underline;
-}
-.gatsby-typography a:hover > span.i-icon {
-  opacity: 0.8;
-}
-.gatsby-typography a > span.i-icon {
-  @apply bg-none;
-  margin-left: 0.125rem;
-  text-decoration: none;
-  border: none;
-  opacity: 0.5;
-}
-
 .gatsby-typography kbd {
   @apply border border-b-2 border-gray-500;
   display: inline-flex;
@@ -172,12 +152,22 @@
 }
 
 .gatsby-typography details {
+  @apply border border-gray-100 rounded-md;
+  overflow: hidden;
   margin: 0 0 1.5rem;
   position: relative;
-  padding: 0 0 0 1rem;
 }
 .gatsby-typography details > summary {
-  margin: 0 0 0.25rem -1rem;
+  @apply bg-gray-100;
+  padding: 0 0.75rem;
+}
+.gatsby-typography details[open] {
+  @apply border-gray-200;
+  padding: 0 2rem 1rem 2rem;
+}
+.gatsby-typography details[open] > summary {
+  @apply bg-gray-200;
+  margin: 0 -2rem 1rem -2rem;
 }
 .gatsby-typography details > summary:focus {
   outline: none;
@@ -187,10 +177,6 @@
 }
 .gatsby-typography details > :last-child {
   margin-bottom: 0;
-}
-
-.gatsby-typography .gatsby-highlight {
-  margin: 0 0 1.5rem;
 }
 
 /* Prismjs */
@@ -217,14 +203,12 @@
 .gatsby-typography .Docs--code-block {
   position: relative;
 }
-
 .gatsby-typography .Docs--code-block > .Docs--code-block__header {
   @apply text-gray-900 text-sm font-bold font-mono bg-gray-200;
   padding: 0.25rem 1rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
-
 .gatsby-typography
   .Docs--code-block
   > .Docs--code-block__header
@@ -232,7 +216,6 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
 .gatsby-typography .Docs--code-block > .i-icon {
   @apply text-gray-700 rounded-md;
   display: inline-flex;
@@ -246,11 +229,9 @@
   bottom: 1rem;
   cursor: pointer;
 }
-
 .gatsby-typography .Docs--code-block > .i-icon.i-icon-check-small {
   @apply text-green-700;
 }
-
 .gatsby-typography .Docs--code-block > .i-icon:hover {
   @apply bg-gray-100;
 }
@@ -269,6 +250,9 @@
 /* Docs--example */
 .gatsby-typography .Docs--example {
   margin: 0 0 1.5rem;
+}
+.gatsby-typography .Docs--example > :last-child {
+  margin-bottom: 0;
 }
 
 /* Docs--tag */
@@ -313,4 +297,25 @@
 }
 .gatsby-typography .Docs--tag.Docs--tag-orange {
   @apply text-orange-700 border-orange-200 bg-orange-50;
+}
+
+/* Docs--link */
+.gatsby-typography .Docs--link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+.gatsby-typography .Docs--link > .Docs--link__content {
+  @apply bg-gray-100 hover:bg-gray-200;
+  text-decoration: underline;
+}
+.gatsby-typography .Docs--link:hover > .Docs--link__icon {
+  opacity: 0.8;
+}
+.gatsby-typography .Docs--link > .Docs--link__icon {
+  @apply bg-none;
+  margin-left: 0.125rem;
+  text-decoration: none;
+  border: none;
+  opacity: 0.5;
 }

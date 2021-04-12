@@ -10,26 +10,11 @@ type TagProps = {
 
 type TagFC = React.FC<TagProps>;
 
-const ColorMap: Record<string, string> = {
-  default: "",
-};
-
-const Tag: TagFC = ({ className, color = "default", children }) => {
-  console.log("tag color:", color);
-
-  return (
-    <span
-      className={cls([
-        className,
-        prefix("tag"),
-        prefix(`tag-${color}`),
-        ColorMap[color] || "",
-      ])}
-    >
-      {children}
-    </span>
-  );
-};
+const Tag: TagFC = ({ className, color = "default", children }) => (
+  <span className={cls([className, prefix("tag"), prefix(`tag-${color}`)])}>
+    {children}
+  </span>
+);
 
 export type { TagProps };
 export default Tag;

@@ -11,3 +11,5 @@ export { default as Tag } from "./Tag";
 export type { TagProps } from "./Tag";
 export { default as Divider } from "./Divider";
 export type { DividerProps } from "./Divider";
+export { default as Link } from "./Link";
+export type { LinkProps } from "./Link";
