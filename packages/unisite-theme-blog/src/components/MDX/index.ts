@@ -7,3 +7,7 @@ export { default as Example } from "./Example";
 export type { ExampleProps } from "./Example";
 export { default as Aside } from "./Aside";
 export type { AsideProps } from "./Aside";
+export { default as Tag } from "./Tag";
+export type { TagProps } from "./Tag";
+export { default as Divider } from "./Divider";
+export type { DividerProps } from "./Divider";

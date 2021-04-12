@@ -5,9 +5,11 @@ import {
   Link,
   Blockquote,
   CodeBlock,
+  Divider,
   Aside,
   Highlight,
   Example,
+  Tag,
 } from "../components/MDX";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -23,10 +25,12 @@ const DefaultLayout: DefaultLayoutFC = ({ children }) => {
         a: Link,
         blockquote: Blockquote,
         pre: CodeBlock,
+        hr: Divider,
         //  Extended Components
         Aside,
         Highlight,
         Example,
+        Tag,
       }}
     >
       <Header />

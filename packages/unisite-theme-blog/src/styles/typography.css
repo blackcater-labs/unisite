@@ -100,6 +100,19 @@
   opacity: 0.5;
 }
 
+.gatsby-typography kbd {
+  @apply border border-b-2 border-gray-500;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  transform: scale(0.9);
+}
+
 .gatsby-typography blockquote {
   position: relative;
   margin: 0 0 1.5rem;
@@ -251,4 +264,53 @@
 }
 .gatsby-typography .Docs--aside > :last-child {
   margin-bottom: 0;
+}
+
+/* Docs--example */
+.gatsby-typography .Docs--example {
+  margin: 0 0 1.5rem;
+}
+
+/* Docs--tag */
+.gatsby-typography .Docs--tag {
+  @apply text-gray-700 border border-gray-200 bg-gray-50 rounded;
+  margin: 0 0.125rem;
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+}
+.gatsby-typography .Docs--tag.Docs--tag-red {
+  @apply text-red-700 border-red-200 bg-red-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-pink {
+  @apply text-pink-700 border-pink-200 bg-pink-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-grape {
+  @apply text-grape-700 border-grape-200 bg-grape-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-violet {
+  @apply text-violet-700 border-violet-200 bg-violet-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-indigo {
+  @apply text-indigo-700 border-indigo-200 bg-indigo-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-blue {
+  @apply text-blue-700 border-blue-200 bg-blue-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-cyan {
+  @apply text-cyan-700 border-cyan-200 bg-cyan-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-teal {
+  @apply text-teal-700 border-teal-200 bg-teal-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-green {
+  @apply text-green-700 border-green-200 bg-green-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-lime {
+  @apply text-lime-700 border-lime-200 bg-lime-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-yellow {
+  @apply text-yellow-700 border-yellow-200 bg-yellow-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-orange {
+  @apply text-orange-700 border-orange-200 bg-orange-50;
 }
