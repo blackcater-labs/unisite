@@ -10,15 +10,7 @@ type ExampleProps = {
 type ExampleFC = React.FC<ExampleProps>;
 
 const Example: ExampleFC = ({ className, children }) => (
-  <div
-    className={cls([
-      className,
-      prefix("example"),
-      "p-4 border border-gray-200 rounded-lg",
-    ])}
-  >
-    {children}
-  </div>
+  <div className={cls([className, prefix("example")])}>{children}</div>
 );
 
 export type { ExampleProps };

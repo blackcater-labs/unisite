@@ -249,7 +249,9 @@
 
 /* Docs--example */
 .gatsby-typography .Docs--example {
+  @apply border border-gray-200 rounded-lg;
   margin: 0 0 1.5rem;
+  padding: 1rem;
 }
 .gatsby-typography .Docs--example > :last-child {
   margin-bottom: 0;
@@ -318,4 +320,22 @@
   text-decoration: none;
   border: none;
   opacity: 0.5;
+}
+
+/* Docs--table */
+.gatsby-typography .Docs--table {
+  @apply border border-gray-100 rounded-lg;
+  margin: 0 0 1.5rem;
+  overflow: hidden;
+}
+.gatsby-typography .Docs--table table {
+  width: 100%;
+}
+.gatsby-typography .Docs--table table th {
+  @apply border-b-2 border-gray-100 bg-gray-100;
+  padding: 0.5rem 1rem;
+}
+.gatsby-typography .Docs--table table td {
+  @apply border-t border-gray-100;
+  padding: 0.25rem 1rem;
 }
