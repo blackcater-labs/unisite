@@ -153,7 +153,6 @@ importers:
       babel-plugin-import: ^1.13.3
       babel-preset-gatsby: ^1.2.0
       classnames: ^2.3.1
-      gatsby-plugin-image: ^1.2.1
       gatsby-plugin-postcss: ^4.2.0
       lodash: ^4.17.21
       postcss: ^8.2.10
@@ -174,7 +173,6 @@ importers:
       babel-plugin-import: 1.13.3
       babel-preset-gatsby: 1.2.0
       classnames: 2.3.1
-      gatsby-plugin-image: 1.2.1
       gatsby-plugin-postcss: 4.2.0_postcss@8.2.10
       lodash: 4.17.21
       postcss: 8.2.10
@@ -9087,32 +9085,6 @@ packages:
     dependencies:
       '@babel/runtime': 7.13.10
       regex-escape: 3.4.10
-    dev: false
-
-  /gatsby-plugin-image/1.2.1:
-    resolution: {integrity: sha1-afIgwGWT47NdGjoiY40RPtnY82g=, tarball: gatsby-plugin-image/download/gatsby-plugin-image-1.2.1.tgz}
-    peerDependencies:
-      gatsby: ^3.0.0-next.0
-      gatsby-plugin-sharp: ^3.0.0-next.0
-      gatsby-source-filesystem: ^3.0.0-next.0
-      react: ^16.9.0 || ^17.0.0
-      react-dom: ^16.9.0 || ^17.0.0
-    dependencies:
-      '@babel/code-frame': 7.12.13
-      '@babel/parser': 7.13.13
-      '@babel/traverse': 7.13.13
-      babel-jsx-utils: 1.1.0
-      babel-plugin-remove-graphql-queries: 3.2.0
-      camelcase: 5.3.1
-      chokidar: 3.5.1
-      common-tags: 1.8.0
-      fs-extra: 8.1.0
-      gatsby-core-utils: 2.2.0
-      objectFitPolyfill: 2.3.5
-      prop-types: 15.7.2
-    transitivePeerDependencies:
-      - '@babel/core'
-      - supports-color
     dev: false
 
   /gatsby-plugin-image/1.2.1_a6a42a61fd9c2b6b0d17c1d850195072:

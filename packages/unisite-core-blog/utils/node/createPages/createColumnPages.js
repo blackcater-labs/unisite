@@ -14,9 +14,6 @@ module.exports = async function createColumnPages(
   const columnDetailTemplate = require.resolve(
     "../../../src/templates/column.tsx"
   );
-  const columnPostListTemplate = require.resolve(
-    "../../../src/templates/column-post-list.tsx"
-  );
 
   createPage({
     path: options.columnListPrefix,
@@ -36,16 +33,7 @@ module.exports = async function createColumnPages(
     createPage({
       path: join(options.columnPrefix, kebabCase(column.cid)),
       component: columnDetailTemplate,
-      context: { id: column.id },
-    });
-
-    createPaginPages(posts, createPage, {
-      pageSize: 10,
-      pathPrefix: join(options.columnPrefix, kebabCase(column.cid)),
-      component: columnPostListTemplate,
-      contextPaginBuilder: (data) => ({
-        posts: data.map((item) => item.id),
-      }),
+      context: { id: column.id, posts: posts.map((post) => post.id) },
     });
   }
 };
