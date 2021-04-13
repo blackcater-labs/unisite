@@ -26,10 +26,7 @@ module.exports = (options) => {
                 disableBgImageOnAlpha: true,
               },
             },
-            {
-              resolve: "gatsby-remark-copy-linked-files",
-              options: {},
-            },
+            "gatsby-remark-copy-linked-files",
             {
               resolve: "gatsby-remark-autolink-headers",
               options: {
@@ -46,14 +43,9 @@ module.exports = (options) => {
 </svg>`,
               },
             },
-            {
-              resolve: "gatsby-remark-mermaid",
-              options: {},
-            },
-            {
-              resolve: "@unisite/gatsby-remark-prismjs",
-              options: {},
-            },
+            "gatsby-remark-mermaid",
+            "@unisite/gatsby-remark-prismjs",
+            "gatsby-remark-responsive-iframe",
           ],
           rehypePlugins: [require("rehype-katex")],
           remarkPlugins: [require("remark-math")],

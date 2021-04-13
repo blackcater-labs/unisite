@@ -2,216 +2,199 @@
 column: "markdown-tutorial"
 title: "基础语法"
 author: "blackcater"
-draft: true
+published_at: "2021-04-13"
 tags:
   - "markdown"
 ---
 
 # 基础语法
 
-本篇文章，你讲学会 Markdown 的基础语法，这些语法基本可以满足你日常文章书写要求。
-
-| Syntax    | Description |   Test Text |
-| :-------- | :---------: | ----------: |
-| Header    |    Title    | Here's this |
-| Paragraph |    Text     |    And more |
-
-<details open>
-  <summary>名人名言</summary>
-
-<Highlight color="cyan">金无足赤，人无完人。</Highlight>
-
-</details>
-
-Press <kbd>⌘</kbd> <kbd>F</kbd> (Command-F) to. <kbd>Cmd+F</kbd>
-
-<Example>
-
-[百度](https://www.baidu.com) <Link href="https://www.baidu.com" showIcon>百度</Link>
-
-</Example>
-
-<Example>
-
-<Tag>标签</Tag>
-
-<Tag color="red">标签</Tag>
-
-<Tag color="pink">标签</Tag>
-
-<Tag color="grape">标签</Tag>
-
-<Tag color="violet">标签</Tag>
-
-<Tag color="indigo">标签</Tag>
-
-<Tag color="blue">标签</Tag>
-
-<Tag color="cyan">标签</Tag>
-
-<Tag color="teal">标签</Tag>
-
-<Tag color="green">标签</Tag>
-
-<Tag color="lime">标签</Tag>
-
-<Tag color="yellow">标签</Tag>
-
-<Tag color="orange">标签</Tag>
-
-</Example>
-
-<Aside color="green" header="说明">
-
-请勿过多的使用该方法，过多的调用，可能会导致 CPU 过热，从而最终导致计算机崩溃。
-
-</Aside>
-
-> A goal without a plan is just a wish.
-
-> If you want to get fancy with it you can use
-> [links](https://example.com) and `<code/>`, and
-> really just about any another inline Markdown.
->
-> Multiple paragraphs can be added as well. And of
->
-> course you can use **bold** or _italics_. And
->
-> don’t forget to `<cite/>`.
->
-> <cite>Adam Schwartz</cite>
-
-<Aside type="yellow" header="⚡️">
-
-Vite 是新型的前端构建工具，速度远胜于 Webpack。
-
-Vite 是新型的前端构建工具，速度远胜于 Webpack。
-
-</Aside>
-
-- [ ] 任务 1
-- [x] 任务 2
-- [ ] 任务 3
-
-<details>
-  <summary>你知道什么？</summary>
-<Example>
-
-## Heading
-
-1. A numbered
-2. list
-
-- With some
-- Sub bullets
-
-</Example>
-</details>
+本篇文章，你将学会 Markdown 的基础语法，这些语法基本可以满足你日常文章书写要求。
 
 ---
 
-## Headers
+## 标题
 
-数学公式可以行内 $a^2 + b^2 = c^2$ 。
-
-```mermaid
-graph TD
-A[Hard] -->|Text| B(Round)
-B --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-当然你也可以写块级公式：
-
-$$
-a^2 + b^2 = c^2
-$$
-
-| Syntax    | Description |   Test Text |
-| :-------- | :---------: | ----------: |
-| Header    |    Title    | Here's this |
-| Paragraph |    Text     |    And more |
-
-```shell{outputLines: 2-3,5}{header: Publiuh with Workers CLI}
-wrangler publish
-Publishing...
-  Ok!
-wrangler Deploy
-  Ok!
-```
-
-```markdown{filename: hello.md}
-# Heading 1
-
-### Heading 3
-
-###### Heading 6
-```
+支持 `<h1>` ~ `<h6>` 共 6 个等级。
 
 ```markdown
-# Heading 1
+# 等级 1
 
-### Heading 3
+## 等级 2
 
-###### Heading 6
+### 等级 3
+
+#### 等级 4
+
+##### 等级 5
+
+###### 等级 6
 ```
 
-## JavaScript
+<details>
+  <summary>效果预览</summary>
 
-```js
-/**
- * @param {number} n
- */
-function fibonacci(n) {
-  if (n === 1) return 1;
-  if (n === 2) return 2;
-  return fibonacci(n - 1) + fibonacci(n - 2);
-}
+<Example>
+
+# 等级 1
+
+## 等级 2
+
+### 等级 3
+
+#### 等级 4
+
+##### 等级 5
+
+###### 等级 6
+
+</Example>
+
+</details>
+
+## 文本
+
+```markdown
+_This will also be italic_
+
+**This text will be bold**
+
+_You **can** combine them_
 ```
 
-## Diff JavaScript
+<details open>
+  <summary>效果预览</summary>
 
-```diff-js
-@@ -4,6 +4,5 @@
-- let foo = bar.baz([1, 2, 3]);
-- foo = foo + 1;
-+ const foo = bar.baz([1, 2, 3]) + 1;
-  console.log(`foo: ${foo}`);
+<Example>
+
+_This text will be italic_
+
+**This will also be bold**
+
+_You **can** combine them_
+
+</Example>
+
+</details>
+
+## 列表
+
+### 无序列表
+
+```markdown
+- Item 1
+- Item 2
+  - Item 2a
+  - Item 2b
 ```
 
-## TypeScript
+<details open>
+  <summary>效果预览</summary>
 
-```ts
-const str: string = "hello world";
+<Example>
 
-console.log(str + "!");
+- Item 1
+- Item 2
+- Item 2a
+- Item 2b
+
+</Example>
+
+</details>
+
+### 有序列表
+
+```markdown
+1. Item 1
+1. Item 2
+1. Item 3
 ```
 
-```tsx{2}
-function Foo(props: FooProps): React.ReactElement {
-  return <Bar visible />;
-}
+<details open>
+  <summary>效果预览</summary>
+
+<Example>
+
+1. Item 1
+1. Item 2
+1. Item 3
+
+</Example>
+
+</details>
+
+## 链接
+
+```markdown
+[Google](https://www.google.com/)
 ```
 
-## Golang
+<details open>
+  <summary>效果预览</summary>
 
-```go{numberLines: true}
-package main
+<Example>
 
-import "fmt"
+[Google](https://www.google.com/)
 
-func main() {
-  fmt.Println("hello world")
-}
+</Example>
+
+</details>
+
+## 图片
+
+```markdown
+![Octocat](./assets/Octocat.png)
 ```
 
-## Rust
+<details open>
+  <summary>效果预览</summary>
 
-```rust
-fn main() {
-    // Get result
-    let x = 5 + /* 90 + */ 5;
-    println!("Is `x` 10 or 100? x = {}", x);
-}
+<Example>
+
+![Octocat](./assets/Octocat.png)
+
+</Example>
+
+</details>
+
+## 引述
+
+```markdown
+As Shakespeare said:
+
+> Do not, for one repulse, give up the purpose that you resolved to effect.
+>
+> <cite>William Shakespeare</cite>
 ```
+
+<details open>
+  <summary>效果预览</summary>
+
+<Example>
+
+As Shakespeare said:
+
+> Do not, for one repulse, give up the purpose that you resolved to effect.
+>
+> <cite>William Shakespeare</cite>
+
+</Example>
+
+</details>
+
+## 行内代码
+
+```markdown
+I think you should use an `<addr>` element here instead.
+```
+
+<details open>
+  <summary>效果预览</summary>
+
+<Example>
+
+I think you should use an `<addr>` element here instead.
+
+</Example>
+
+</details>

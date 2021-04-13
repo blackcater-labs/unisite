@@ -1,8 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import Card from "../../../components/Card";
+import { MDXCard } from "../../../components/MDXContent";
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import type { PageProps } from "../../../utils";
 import type { BlogPost } from "../../../types";
@@ -26,11 +25,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
     <DefaultLayout>
       <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-12">
         <div className="col-start-1 col-span-8 space-y-8">
-          <Card>
-            <div className="gatsby-typography -mt-8">
-              <MDXRenderer>{post.body!}</MDXRenderer>
-            </div>
-          </Card>
+          <MDXCard>{post.body!}</MDXCard>
         </div>
         <div className="col-start-10 col-span-3">
           <nav className="space-y-8">
