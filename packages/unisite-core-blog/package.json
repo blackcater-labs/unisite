@@ -23,7 +23,7 @@
     "@unisite/utils": "workspace:*",
     "chalk": "^4.1.0",
     "gatsby-plugin-mdx": "^2.2.0",
-    "gatsby-plugin-sharp": "^3.2.0",
+    "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-plugin-typescript": "^3.2.0",
     "gatsby-remark-autolink-headers": "^3.2.0",
     "gatsby-remark-copy-linked-files": "^3.2.0",
