@@ -59,10 +59,16 @@ module.exports = (options) => {
           remarkPlugins: [require("remark-math")],
         },
       },
-      // "gatsby-plugin-image",
+      "gatsby-plugin-image",
       "gatsby-plugin-sharp",
       "gatsby-transformer-sharp",
       "gatsby-plugin-typescript",
+      {
+        resolve: "gatsby-plugin-compile-es6-packages",
+        options: {
+          modules: ["gatsby-plugin-image"],
+        },
+      },
     ],
   };
 };

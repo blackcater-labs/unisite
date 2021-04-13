@@ -22,6 +22,8 @@
     "@unisite/gatsby-remark-prismjs": "workspace:*",
     "@unisite/utils": "workspace:*",
     "chalk": "^4.1.0",
+    "gatsby-plugin-compile-es6-packages": "^2.1.0",
+    "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-mdx": "^2.2.0",
     "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-plugin-typescript": "^3.2.0",

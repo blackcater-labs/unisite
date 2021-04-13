@@ -1,7 +1,7 @@
 import React from "react";
 import cls from "classnames";
 import { Link } from "gatsby";
-import Image from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { ArrowRight } from "@icon-park/react";
 
 import Card from "../Card";
@@ -67,9 +67,9 @@ const PostCard: PostCardFC = ({
           </Button>
         </Link>
         <div className="flex items-center">
-          <Image
+          <GatsbyImage
             className="hidden w-10 h-10 mr-2 rounded-full sm:block"
-            fixed={author?.avatar?.childImageSharp?.fixed}
+            image={getImage(author?.avatar)!}
             alt="avatar"
           />
           <Link

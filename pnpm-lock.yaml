@@ -55,6 +55,8 @@ importers:
       '@unisite/gatsby-remark-prismjs': workspace:*
       '@unisite/utils': workspace:*
       chalk: ^4.1.0
+      gatsby-plugin-compile-es6-packages: ^2.1.0
+      gatsby-plugin-image: ^1.2.1
       gatsby-plugin-mdx: ^2.2.0
       gatsby-plugin-sharp: ^3.2.1
       gatsby-plugin-typescript: ^3.2.0
@@ -79,6 +81,8 @@ importers:
       '@unisite/gatsby-remark-prismjs': link:../unisite-gatsby-remark-prismjs
       '@unisite/utils': link:../unisite-utils
       chalk: 4.1.0
+      gatsby-plugin-compile-es6-packages: 2.1.0
+      gatsby-plugin-image: 1.2.1_a6a42a61fd9c2b6b0d17c1d850195072
       gatsby-plugin-mdx: 2.2.0_20907dfa5e7456b3e10ff58769a7061d
       gatsby-plugin-sharp: 3.2.1
       gatsby-plugin-typescript: 3.2.0
@@ -146,7 +150,7 @@ importers:
       babel-plugin-import: ^1.13.3
       babel-preset-gatsby: ^1.2.0
       classnames: ^2.3.1
-      gatsby-image: ^3.2.0
+      gatsby-plugin-image: ^1.2.1
       gatsby-plugin-postcss: ^4.2.0
       lodash: ^4.17.21
       postcss: ^8.2.10
@@ -166,7 +170,7 @@ importers:
       babel-plugin-import: 1.13.3
       babel-preset-gatsby: 1.2.0
       classnames: 2.3.1
-      gatsby-image: 3.2.0
+      gatsby-plugin-image: 1.2.1
       gatsby-plugin-postcss: 4.2.0_postcss@8.2.10
       lodash: 4.17.21
       postcss: 8.2.10
@@ -278,6 +282,8 @@ packages:
       resolve: 1.20.0
       semver: 5.7.1
       source-map: 0.5.7
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/core/7.12.9:
@@ -300,6 +306,8 @@ packages:
       resolve: 1.20.0
       semver: 5.7.1
       source-map: 0.5.7
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/core/7.13.14:
@@ -388,6 +396,8 @@ packages:
       '@babel/helper-optimise-call-expression': 7.12.13
       '@babel/helper-replace-supers': 7.13.12
       '@babel/helper-split-export-declaration': 7.12.13
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/helper-create-class-features-plugin/7.13.11_@babel+core@7.13.14:
@@ -401,6 +411,8 @@ packages:
       '@babel/helper-optimise-call-expression': 7.12.13
       '@babel/helper-replace-supers': 7.13.12
       '@babel/helper-split-export-declaration': 7.12.13
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/helper-create-regexp-features-plugin/7.12.17:
     resolution: {integrity: sha1-oqyH6eMZJprGVbjUQV6U041mPLc=, tarball: '@babel/helper-create-regexp-features-plugin/download/@babel/helper-create-regexp-features-plugin-7.12.17.tgz'}
@@ -476,6 +488,8 @@ packages:
     dependencies:
       '@babel/traverse': 7.13.13
       '@babel/types': 7.13.14
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/helper-member-expression-to-functions/7.13.12:
     resolution: {integrity: sha1-3+No8m1CagcpnY1lE4IXaCFubXI=, tarball: '@babel/helper-member-expression-to-functions/download/@babel/helper-member-expression-to-functions-7.13.12.tgz'}
@@ -498,6 +512,8 @@ packages:
       '@babel/template': 7.12.13
       '@babel/traverse': 7.13.13
       '@babel/types': 7.13.14
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/helper-optimise-call-expression/7.12.13:
     resolution: {integrity: sha1-XALRcbTIYVsecWP4iMHIHDCiquo=, tarball: '@babel/helper-optimise-call-expression/download/@babel/helper-optimise-call-expression-7.12.13.tgz'}
@@ -525,6 +541,8 @@ packages:
       '@babel/helper-optimise-call-expression': 7.12.13
       '@babel/traverse': 7.13.13
       '@babel/types': 7.13.14
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/helper-simple-access/7.13.12:
     resolution: {integrity: sha1-3WxTivthgZ0gWgEsMXkqOcel6vY=, tarball: '@babel/helper-simple-access/download/@babel/helper-simple-access-7.13.12.tgz'}
@@ -561,6 +579,8 @@ packages:
       '@babel/template': 7.12.13
       '@babel/traverse': 7.13.13
       '@babel/types': 7.13.14
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/highlight/7.13.10:
     resolution: {integrity: sha1-qLKmYUj1sn1maxXYF3Q0enMdUtE=, tarball: '@babel/highlight/download/@babel/highlight-7.13.10.tgz'}
@@ -621,6 +641,8 @@ packages:
     dependencies:
       '@babel/helper-create-class-features-plugin': 7.13.11
       '@babel/helper-plugin-utils': 7.13.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-proposal-class-properties/7.13.0_@babel+core@7.13.14:
@@ -631,6 +653,8 @@ packages:
       '@babel/core': 7.13.14
       '@babel/helper-create-class-features-plugin': 7.13.11_@babel+core@7.13.14
       '@babel/helper-plugin-utils': 7.13.0
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-proposal-dynamic-import/7.13.8:
     resolution: {integrity: sha1-h2ofaWbh3sMy6MlFGv2jvrzfLh0=, tarball: '@babel/plugin-proposal-dynamic-import/download/@babel/plugin-proposal-dynamic-import-7.13.8.tgz'}
@@ -831,6 +855,8 @@ packages:
     dependencies:
       '@babel/helper-create-class-features-plugin': 7.13.11
       '@babel/helper-plugin-utils': 7.13.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-proposal-private-methods/7.13.0_@babel+core@7.13.14:
@@ -841,6 +867,8 @@ packages:
       '@babel/core': 7.13.14
       '@babel/helper-create-class-features-plugin': 7.13.11_@babel+core@7.13.14
       '@babel/helper-plugin-utils': 7.13.0
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-proposal-unicode-property-regex/7.12.13:
     resolution: {integrity: sha1-vr3lEzm+gpwXqqrO0YZB3rYrObo=, tarball: '@babel/plugin-proposal-unicode-property-regex/download/@babel/plugin-proposal-unicode-property-regex-7.12.13.tgz'}
@@ -1203,6 +1231,8 @@ packages:
       '@babel/helper-replace-supers': 7.13.12
       '@babel/helper-split-export-declaration': 7.12.13
       globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-transform-classes/7.13.0_@babel+core@7.13.14:
@@ -1218,6 +1248,8 @@ packages:
       '@babel/helper-replace-supers': 7.13.12
       '@babel/helper-split-export-declaration': 7.12.13
       globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-transform-computed-properties/7.13.0:
     resolution: {integrity: sha1-hFxui5u1U3ax+guS7wvcjqBmRO0=, tarball: '@babel/plugin-transform-computed-properties/download/@babel/plugin-transform-computed-properties-7.13.0.tgz'}
@@ -1387,6 +1419,8 @@ packages:
       '@babel/helper-module-transforms': 7.13.14
       '@babel/helper-plugin-utils': 7.13.0
       babel-plugin-dynamic-import-node: 2.3.3
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-transform-modules-amd/7.13.0_@babel+core@7.13.14:
@@ -1398,6 +1432,8 @@ packages:
       '@babel/helper-module-transforms': 7.13.14
       '@babel/helper-plugin-utils': 7.13.0
       babel-plugin-dynamic-import-node: 2.3.3
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-transform-modules-commonjs/7.13.8:
     resolution: {integrity: sha1-ewGtfC3PInWwb6F4HgDRPUILPhs=, tarball: '@babel/plugin-transform-modules-commonjs/download/@babel/plugin-transform-modules-commonjs-7.13.8.tgz'}
@@ -1408,6 +1444,8 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-simple-access': 7.13.12
       babel-plugin-dynamic-import-node: 2.3.3
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-transform-modules-commonjs/7.13.8_@babel+core@7.13.14:
@@ -1420,6 +1458,8 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-simple-access': 7.13.12
       babel-plugin-dynamic-import-node: 2.3.3
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-transform-modules-systemjs/7.13.8:
     resolution: {integrity: sha1-bQZu4r/zx7PWC/KN7Baa2ZODGuM=, tarball: '@babel/plugin-transform-modules-systemjs/download/@babel/plugin-transform-modules-systemjs-7.13.8.tgz'}
@@ -1431,6 +1471,8 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-validator-identifier': 7.12.11
       babel-plugin-dynamic-import-node: 2.3.3
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-transform-modules-systemjs/7.13.8_@babel+core@7.13.14:
@@ -1444,6 +1486,8 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-validator-identifier': 7.12.11
       babel-plugin-dynamic-import-node: 2.3.3
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-transform-modules-umd/7.13.0:
     resolution: {integrity: sha1-ij2WqX0ZlwW5/QIVgAgq+BwG5ws=, tarball: '@babel/plugin-transform-modules-umd/download/@babel/plugin-transform-modules-umd-7.13.0.tgz'}
@@ -1452,6 +1496,8 @@ packages:
     dependencies:
       '@babel/helper-module-transforms': 7.13.14
       '@babel/helper-plugin-utils': 7.13.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-transform-modules-umd/7.13.0_@babel+core@7.13.14:
@@ -1462,6 +1508,8 @@ packages:
       '@babel/core': 7.13.14
       '@babel/helper-module-transforms': 7.13.14
       '@babel/helper-plugin-utils': 7.13.0
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-transform-named-capturing-groups-regex/7.12.13:
     resolution: {integrity: sha1-IhNyWl9bu+NktQw7pZmMlZnFydk=, tarball: '@babel/plugin-transform-named-capturing-groups-regex/download/@babel/plugin-transform-named-capturing-groups-regex-7.12.13.tgz'}
@@ -1502,6 +1550,8 @@ packages:
     dependencies:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-replace-supers': 7.13.12
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/plugin-transform-object-super/7.12.13_@babel+core@7.13.14:
@@ -1512,6 +1562,8 @@ packages:
       '@babel/core': 7.13.14
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-replace-supers': 7.13.12
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-transform-parameters/7.13.0:
     resolution: {integrity: sha1-j6dgPjCX+cC3yhpIIbwvtS6eUAc=, tarball: '@babel/plugin-transform-parameters/download/@babel/plugin-transform-parameters-7.13.0.tgz'}
@@ -1790,6 +1842,8 @@ packages:
       '@babel/helper-create-class-features-plugin': 7.13.11_@babel+core@7.13.14
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/plugin-syntax-typescript': 7.12.13_@babel+core@7.13.14
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/plugin-transform-unicode-escapes/7.12.13:
     resolution: {integrity: sha1-hAztO4FtO1En3R0S3O3F3q0aXnQ=, tarball: '@babel/plugin-transform-unicode-escapes/download/@babel/plugin-transform-unicode-escapes-7.12.13.tgz'}
@@ -2051,6 +2105,8 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
       '@babel/helper-validator-option': 7.12.17
       '@babel/plugin-transform-typescript': 7.13.0_@babel+core@7.13.14
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@babel/runtime-corejs3/7.13.10:
@@ -2087,6 +2143,8 @@ packages:
       '@babel/types': 7.13.14
       debug: 4.3.1
       globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
 
   /@babel/types/7.13.14:
     resolution: {integrity: sha1-w1pKuxXHzUWidG14qzKONiy6zg0=, tarball: '@babel/types/download/@babel/types-7.13.14.tgz'}
@@ -2335,6 +2393,8 @@ packages:
       js-yaml: 3.14.1
       minimatch: 3.0.4
       strip-json-comments: 3.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@fullhuman/postcss-purgecss/3.1.3:
@@ -3656,6 +3716,8 @@ packages:
       unified: 9.2.0
       unist-builder: 2.0.3
       unist-util-visit: 2.0.3
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@mdx-js/react/1.6.22:
@@ -4585,6 +4647,8 @@ packages:
     engines: {node: '>= 6.0.0'}
     dependencies:
       debug: 4.3.1
+    transitivePeerDependencies:
+      - supports-color
 
   /agentkeepalive/4.1.4:
     resolution: {integrity: sha1-2SgCikhiyxFxjlUieHLoQqRMlFs=, tarball: agentkeepalive/download/agentkeepalive-4.1.4.tgz}
@@ -5009,6 +5073,10 @@ packages:
     resolution: {integrity: sha1-lD1H4QwLcEqkInXiDt83ImSJib4=, tarball: axobject-query/download/axobject-query-2.2.0.tgz}
     dev: false
 
+  /babel-jsx-utils/1.1.0:
+    resolution: {integrity: sha1-MEzk/ODIbL7uhJVRpF607RA2OBo=, tarball: babel-jsx-utils/download/babel-jsx-utils-1.1.0.tgz}
+    dev: false
+
   /babel-loader/8.2.2_b74f0fb204bbf880165b1fc35f8d96c6:
     resolution: {integrity: sha1-k2POhMEMmkDmx1N0jhRBtgyKC4E=, tarball: babel-loader/download/babel-loader-8.2.2.tgz}
     engines: {node: '>= 8.9'}
@@ -5139,6 +5207,14 @@ packages:
       '@babel/helper-define-polyfill-provider': 0.1.5_@babel+core@7.13.14
     transitivePeerDependencies:
       - supports-color
+
+  /babel-plugin-remove-graphql-queries/3.2.0:
+    resolution: {integrity: sha1-Y+BE7h0plnmpuBgPaxEaN2m3p50=, tarball: babel-plugin-remove-graphql-queries/download/babel-plugin-remove-graphql-queries-3.2.0.tgz}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+      gatsby: ^3.0.0-next.0
+    dev: false
 
   /babel-plugin-remove-graphql-queries/3.2.0_@babel+core@7.13.14:
     resolution: {integrity: sha1-Y+BE7h0plnmpuBgPaxEaN2m3p50=, tarball: babel-plugin-remove-graphql-queries/download/babel-plugin-remove-graphql-queries-3.2.0.tgz}
@@ -7090,6 +7166,7 @@ packages:
       supports-color:
         optional: true
     dependencies:
+      ms: 2.1.2
       supports-color: 6.1.0
     dev: false
 
@@ -8129,6 +8206,8 @@ packages:
       table: 6.0.9
       text-table: 0.2.0
       v8-compile-cache: 2.3.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /espree/7.3.1:
@@ -8438,6 +8517,8 @@ packages:
       yauzl: 2.10.0
     optionalDependencies:
       '@types/yauzl': 2.9.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /extsprintf/1.3.0:
@@ -8820,7 +8901,7 @@ packages:
     dev: false
 
   /fs-extra/8.1.0:
-    resolution: {integrity: sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=, tarball: fs-extra/download/fs-extra-8.1.0.tgz}
+    resolution: {integrity: sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=, tarball: fs-extra/download/fs-extra-8.1.0.tgz?cache=0&sync_timestamp=1611110039897&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-extra%2Fdownload%2Ffs-extra-8.1.0.tgz}
     engines: {node: '>=6 <7 || >=8'}
     dependencies:
       graceful-fs: 4.2.6
@@ -8873,7 +8954,7 @@ packages:
     optional: true
 
   /fsevents/2.3.2:
-    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, tarball: fsevents/download/fsevents-2.3.2.tgz}
+    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, tarball: fsevents/download/fsevents-2.3.2.tgz?cache=0&sync_timestamp=1612537044236&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffsevents%2Fdownload%2Ffsevents-2.3.2.tgz}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     optional: true
 
@@ -8955,15 +9036,6 @@ packages:
       '@babel/runtime': 7.13.10
     dev: false
 
-  /gatsby-image/3.2.0:
-    resolution: {integrity: sha1-uXJKL0VZET5HiHeQTfl7KsoCI1g=, tarball: gatsby-image/download/gatsby-image-3.2.0.tgz}
-    engines: {node: '>=12.13.0'}
-    dependencies:
-      '@babel/runtime': 7.13.10
-      object-fit-images: 3.2.4
-      prop-types: 15.7.2
-    dev: false
-
   /gatsby-legacy-polyfills/1.2.0:
     resolution: {integrity: sha1-/amzufazQKT9/dl46EsIR736t5w=, tarball: gatsby-legacy-polyfills/download/gatsby-legacy-polyfills-1.2.0.tgz}
     dependencies:
@@ -8998,6 +9070,69 @@ packages:
       glob: 7.1.6
       lodash: 4.17.21
       micromatch: 4.0.2
+    dev: false
+
+  /gatsby-plugin-compile-es6-packages/2.1.0:
+    resolution: {integrity: sha1-62Bo2JNv2LQEcW5HuCHQm/Blavc=, tarball: gatsby-plugin-compile-es6-packages/download/gatsby-plugin-compile-es6-packages-2.1.0.tgz}
+    peerDependencies:
+      gatsby: '>2.0.0-alpha'
+    dependencies:
+      '@babel/runtime': 7.13.10
+      regex-escape: 3.4.10
+    dev: false
+
+  /gatsby-plugin-image/1.2.1:
+    resolution: {integrity: sha1-afIgwGWT47NdGjoiY40RPtnY82g=, tarball: gatsby-plugin-image/download/gatsby-plugin-image-1.2.1.tgz}
+    peerDependencies:
+      gatsby: ^3.0.0-next.0
+      gatsby-plugin-sharp: ^3.0.0-next.0
+      gatsby-source-filesystem: ^3.0.0-next.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+    dependencies:
+      '@babel/code-frame': 7.12.13
+      '@babel/parser': 7.13.13
+      '@babel/traverse': 7.13.13
+      babel-jsx-utils: 1.1.0
+      babel-plugin-remove-graphql-queries: 3.2.0
+      camelcase: 5.3.1
+      chokidar: 3.5.1
+      common-tags: 1.8.0
+      fs-extra: 8.1.0
+      gatsby-core-utils: 2.2.0
+      objectFitPolyfill: 2.3.5
+      prop-types: 15.7.2
+    transitivePeerDependencies:
+      - '@babel/core'
+      - supports-color
+    dev: false
+
+  /gatsby-plugin-image/1.2.1_a6a42a61fd9c2b6b0d17c1d850195072:
+    resolution: {integrity: sha1-afIgwGWT47NdGjoiY40RPtnY82g=, tarball: gatsby-plugin-image/download/gatsby-plugin-image-1.2.1.tgz}
+    peerDependencies:
+      gatsby: ^3.0.0-next.0
+      gatsby-plugin-sharp: ^3.0.0-next.0
+      gatsby-source-filesystem: ^3.0.0-next.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+    dependencies:
+      '@babel/code-frame': 7.12.13
+      '@babel/parser': 7.13.13
+      '@babel/traverse': 7.13.13
+      babel-jsx-utils: 1.1.0
+      babel-plugin-remove-graphql-queries: 3.2.0
+      camelcase: 5.3.1
+      chokidar: 3.5.1
+      common-tags: 1.8.0
+      fs-extra: 8.1.0
+      gatsby-core-utils: 2.2.0
+      gatsby-plugin-sharp: 3.2.1
+      gatsby-source-filesystem: 3.2.0
+      objectFitPolyfill: 2.3.5
+      prop-types: 15.7.2
+    transitivePeerDependencies:
+      - '@babel/core'
+      - supports-color
     dev: false
 
   /gatsby-plugin-mdx/2.2.0_20907dfa5e7456b3e10ff58769a7061d:
@@ -9065,6 +9200,8 @@ packages:
       gatsby-telemetry: 2.2.0
       globby: 11.0.3
       lodash: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /gatsby-plugin-postcss/4.2.0_postcss@8.2.10:
@@ -10499,6 +10636,8 @@ packages:
     dependencies:
       agent-base: 6.0.2
       debug: 4.3.1
+    transitivePeerDependencies:
+      - supports-color
 
   /human-signals/1.1.1:
     resolution: {integrity: sha1-xbHNFPUK6uCatsWf5jujOV/k36M=, tarball: human-signals/download/human-signals-1.1.1.tgz}
@@ -13106,10 +13245,6 @@ packages:
       define-property: 0.2.5
       kind-of: 3.2.2
 
-  /object-fit-images/3.2.4:
-    resolution: {integrity: sha1-bCmdOP3yB3RuXS1Gwod/byXRW1I=, tarball: object-fit-images/download/object-fit-images-3.2.4.tgz}
-    dev: false
-
   /object-hash/2.1.1:
     resolution: {integrity: sha1-lEfQJ5tPz4DP8yWb9modxzr6vgk=, tarball: object-hash/download/object-hash-2.1.1.tgz}
     engines: {node: '>= 6'}
@@ -13192,6 +13327,10 @@ packages:
       define-properties: 1.1.3
       es-abstract: 1.18.0
       has: 1.0.3
+    dev: false
+
+  /objectFitPolyfill/2.3.5:
+    resolution: {integrity: sha1-voyDBkqr+k6IeA93bCATxIzh90U=, tarball: objectFitPolyfill/download/objectFitPolyfill-2.3.5.tgz}
     dev: false
 
   /obuf/1.1.2:
@@ -15036,6 +15175,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.13.10
 
+  /regex-escape/3.4.10:
+    resolution: {integrity: sha1-tFr+x6bnk7eGrRk9w9GLRrWuCOY=, tarball: regex-escape/download/regex-escape-3.4.10.tgz}
+    dev: false
+
   /regex-not/1.0.2:
     resolution: {integrity: sha1-H07OJ+ALC2XgJHpoEOaoXYOldSw=, tarball: regex-not/download/regex-not-1.0.2.tgz}
     engines: {node: '>=0.10.0'}
@@ -15132,6 +15275,8 @@ packages:
       is-alphabetical: 1.0.4
       remark-parse: 8.0.3
       unified: 9.2.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /remark-mdx/2.0.0-next.9:
@@ -15150,6 +15295,8 @@ packages:
       '@babel/plugin-proposal-object-rest-spread': 7.10.4_@babel+core@7.10.5
       '@babel/plugin-syntax-jsx': 7.10.4_@babel+core@7.10.5
       '@mdx-js/util': 2.0.0-next.8
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /remark-parse/6.0.3:
@@ -15900,6 +16047,8 @@ packages:
       '@types/component-emitter': 1.2.10
       component-emitter: 1.3.0
       debug: 4.3.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /socket.io/3.1.1:
@@ -16055,26 +16204,30 @@ packages:
   /spdx-license-ids/3.0.7:
     resolution: {integrity: sha1-6cGKQQ5e1+EkQqVJ+9ivp2cDjWU=, tarball: spdx-license-ids/download/spdx-license-ids-3.0.7.tgz}
 
-  /spdy-transport/3.0.0:
+  /spdy-transport/3.0.0_supports-color@6.1.0:
     resolution: {integrity: sha1-ANSGOmQArXXfkzYaFghgXl3NzzE=, tarball: spdy-transport/download/spdy-transport-3.0.0.tgz}
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.1_supports-color@6.1.0
       detect-node: 2.0.5
       hpack.js: 2.1.6
       obuf: 1.1.2
       readable-stream: 3.6.0
       wbuf: 1.7.3
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
-  /spdy/4.0.2:
+  /spdy/4.0.2_supports-color@6.1.0:
     resolution: {integrity: sha1-t09GYgOj7aRSwCSSuR+56EonZ3s=, tarball: spdy/download/spdy-4.0.2.tgz}
     engines: {node: '>=6.0.0'}
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.1_supports-color@6.1.0
       handle-thing: 2.0.1
       http-deceiver: 1.2.7
       select-hose: 2.0.0
-      spdy-transport: 3.0.0
+      spdy-transport: 3.0.0_supports-color@6.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /split-on-first/1.1.0:
@@ -17707,7 +17860,7 @@ packages:
       serve-index: 1.9.1
       sockjs: 0.3.21
       sockjs-client: 1.5.1
-      spdy: 4.0.2
+      spdy: 4.0.2_supports-color@6.1.0
       strip-ansi: 3.0.1
       supports-color: 6.1.0
       url: 0.11.0
