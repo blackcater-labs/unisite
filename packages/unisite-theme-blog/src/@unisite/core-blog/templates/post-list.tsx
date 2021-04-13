@@ -45,9 +45,11 @@ export const query = graphql`
           name
           avatar {
             childImageSharp {
-              fixed(width: 80, height: 80) {
-                ...GatsbyImageSharpFixed_withWebp
-              }
+              gatsbyImageData(
+                width: 40
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }

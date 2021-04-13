@@ -34,6 +34,12 @@ module.exports = (options) => {
       "gatsby-plugin-sharp",
       "gatsby-transformer-sharp",
       "gatsby-plugin-typescript",
+      {
+        resolve: "gatsby-plugin-compile-es6-packages",
+        options: {
+          modules: ["gatsby-plugin-image"],
+        },
+      },
     ],
   };
 };
