@@ -1,6 +1,7 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 
+import components from "../components";
 import {
   Link,
   Divider,
@@ -34,6 +35,7 @@ const DefaultLayout: DefaultLayoutFC = ({ children }) => {
         Aside,
         Highlight,
         Example,
+        ...components,
       }}
     >
       <Header />

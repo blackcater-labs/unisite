@@ -135,7 +135,7 @@ function fancyAlert(arg) {
 ### 命令行优化
 
 ````markdown
-```shell{outputLines:3-5}
+```shell{outputLines:2-4}
 npm install -g CAZ
 node_modules/caz/bin/caz.js
 + caz@0.6.0
@@ -148,7 +148,7 @@ added 63 packages from 64 contributors in 3.006s
 
 <Example>
 
-```shell{outputLines:3-5}
+```shell{outputLines:2-4}
 npm install -g CAZ
 node_modules/caz/bin/caz.js
 + caz@0.6.0
@@ -162,7 +162,7 @@ added 63 packages from 64 contributors in 3.006s
 ### 文件头
 
 ````markdown
-```shell{header: Install CAZ}{outputLines:3-5}
+```shell{header: Install CAZ}{outputLines:2-4}
 npm install -g CAZ
 node_modules/caz/bin/caz.js
 + caz@0.6.0
@@ -175,7 +175,7 @@ added 63 packages from 64 contributors in 3.006s
 
 <Example>
 
-```shell{header: Install CAZ}{outputLines:3-5}
+```shell{header: Install CAZ}{outputLines:2-4}
 npm install -g CAZ
 node_modules/caz/bin/caz.js
 + caz@0.6.0

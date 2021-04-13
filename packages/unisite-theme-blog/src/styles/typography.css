@@ -208,6 +208,7 @@
   padding: 0.25rem 1rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  cursor: pointer;
 }
 .gatsby-typography
   .Docs--code-block
@@ -231,6 +232,13 @@
 }
 .gatsby-typography .Docs--code-block > .i-icon.i-icon-check-small {
   @apply text-green-700;
+}
+.gatsby-typography .Docs--code-block > .i-icon.i-icon-copy {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.gatsby-typography .Docs--code-block:hover > .i-icon.i-icon-copy {
+  opacity: 1;
 }
 .gatsby-typography .Docs--code-block > .i-icon:hover {
   @apply bg-gray-100;

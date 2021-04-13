@@ -87,6 +87,17 @@ export type Group = User & {
   members: User[];
 };
 
+type Heading = {
+  value: string;
+  depth: number;
+};
+
+type TOCItem = {
+  url?: string;
+  title?: string;
+  item: TOCItem[];
+};
+
 export type Post = {
   id: string;
   title: string;
@@ -98,8 +109,8 @@ export type Post = {
   body: string;
   rawBody: string;
   excerpt: string;
-  headings: any[];
-  tableOfContents: any;
+  headings: Heading[];
+  tableOfContents: TOCItem;
   timeToRead: number;
   wordCount: number;
   categories: Category[];
