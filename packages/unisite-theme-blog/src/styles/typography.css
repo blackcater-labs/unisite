@@ -237,11 +237,18 @@
 }
 
 /* Docs--aside */
+.gatsby-typography .Docs--aside {
+  @apply border-l-4 rounded-md;
+  margin: 0 0 1.5rem;
+  padding: 0.75rem 1rem;
+}
 .gatsby-typography .Docs--aside > * {
   margin-bottom: 0.75rem;
 }
 .gatsby-typography .Docs--aside > .Docs--aside-header {
   margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
 }
 .gatsby-typography .Docs--aside > :last-child {
   margin-bottom: 0;
@@ -299,6 +306,12 @@
 }
 .gatsby-typography .Docs--tag.Docs--tag-orange {
   @apply text-orange-700 border-orange-200 bg-orange-50;
+}
+
+/* Docs--highlight */
+.gatsby-typography .Docs--highlight {
+  margin: 0 0.125rem;
+  padding: 0.125rem;
 }
 
 /* Docs--link */

@@ -2,11 +2,11 @@ import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 
 import {
-  Blockquote,
-  Table,
   Link,
-  CodeBlock,
   Divider,
+  Blockquote,
+  CodeBlock,
+  Table,
   Aside,
   Highlight,
   Example,
@@ -24,10 +24,10 @@ const DefaultLayout: DefaultLayoutFC = ({ children }) => {
     <MDXProvider
       components={{
         a: Link,
-        blockquote: Blockquote,
-        table: Table,
-        pre: CodeBlock,
         hr: Divider,
+        blockquote: Blockquote,
+        pre: CodeBlock,
+        table: Table,
         //  Extended Components
         Link,
         Tag,

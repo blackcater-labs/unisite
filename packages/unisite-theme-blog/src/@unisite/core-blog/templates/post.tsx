@@ -62,9 +62,12 @@ export const query = graphql`
       title
       cover {
         childImageSharp {
-          fluid(maxWidth: 1280) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(
+            width: 1280
+            layout: FULL_WIDTH
+            placeholder: TRACED_SVG
+            formats: [AUTO, WEBP]
+          )
         }
       }
       authors {
@@ -73,9 +76,13 @@ export const query = graphql`
         name
         avatar {
           childImageSharp {
-            fixed(width: 40, height: 40) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
+            gatsbyImageData(
+              width: 40
+              height: 40
+              layout: FIXED
+              placeholder: TRACED_SVG
+              formats: [AUTO, WEBP]
+            )
           }
         }
       }

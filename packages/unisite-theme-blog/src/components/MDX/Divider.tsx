@@ -11,7 +11,7 @@ type DividerProps = {
 type DividerFC = FC2<DividerProps>;
 
 const Divider: DividerFC = ({ className }) => (
-  <hr className={cls([className, prefix("divider"), "my-12"])} />
+  <hr className={cls([className, prefix("divider")])} />
 );
 
 export type { DividerProps };

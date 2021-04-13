@@ -12,14 +12,7 @@ type HighlightFC = React.FC<HighlightProps>;
 
 const Highlight: HighlightFC = ({ className, color = "gray", children }) => {
   return (
-    <span
-      className={cls([
-        className,
-        prefix("highlight"),
-        `bg-${color}-100`,
-        "mx-0.5 p-0.5",
-      ])}
-    >
+    <span className={cls([className, prefix("highlight"), `bg-${color}-100`])}>
       {children}
     </span>
   );

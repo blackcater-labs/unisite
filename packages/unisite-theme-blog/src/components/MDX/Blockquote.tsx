@@ -1,12 +1,17 @@
 import React from "react";
+import cls from "classnames";
 import { Quote as IconQuote } from "@icon-park/react";
 
-type BlockquoteProps = {};
+import { prefix } from "./_utils";
+
+type BlockquoteProps = {
+  className?: string;
+};
 
 type BlockquoteFC = React.FC<BlockquoteProps>;
 
-const Blockquote: BlockquoteFC = ({ children }) => (
-  <blockquote>
+const Blockquote: BlockquoteFC = ({ className, children }) => (
+  <blockquote className={cls([className, prefix("blockquote")])}>
     <IconQuote theme="outline" size="16" />
     {children}
   </blockquote>

@@ -1,6 +1,7 @@
 import React from "react";
 import cls from "classnames";
-import { prefix } from "../_utils";
+
+import { prefix } from "./_utils";
 
 type TableProps = {
   className?: string;
