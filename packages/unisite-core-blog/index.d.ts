@@ -87,12 +87,12 @@ export type Group = User & {
   members: User[];
 };
 
-type Heading = {
+export type Heading = {
   value: string;
   depth: number;
 };
 
-type TOCItem = {
+export type TOCItem = {
   url?: string;
   title?: string;
   item: TOCItem[];

@@ -1,8 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import { MDXCard } from "../../../components/MDXContent";
 import DefaultLayout from "../../../layouts/DefaultLayout";
+import { MDXCard } from "../../../components/MDXContent";
+import { SideNav } from "../../../components/SideNav";
 import type { PageProps } from "../../../utils";
 import type { BlogPost } from "../../../types";
 
@@ -28,18 +29,11 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
           <MDXCard>{post.body!}</MDXCard>
         </div>
         <div className="col-start-10 col-span-3">
-          <nav className="space-y-8">
-            <p>haha</p>
-            <p>haha</p>
-            <p>haha</p>
-            <p>haha</p>
-            <p className="sticky top-12">haha2</p>
-            <p>haha</p>
-            <p>haha</p>
-            <p>haha</p>
-            <p>haha</p>
-            <p>haha</p>
-          </nav>
+          <nav className="space-y-8"></nav>
+          <SideNav
+            className="sticky top-0 pt-12"
+            headings={post.headings || []}
+          />
         </div>
       </div>
     </DefaultLayout>
