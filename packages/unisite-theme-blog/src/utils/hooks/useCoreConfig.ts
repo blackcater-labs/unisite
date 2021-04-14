@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import { get } from "lodash";
-
-import type { UnisiteCoreBlogConfig } from "../../types";
+import type { UnisiteCoreBlogConfig } from "@unisite/core-blog";
 
 export function useCoreConfig(): UnisiteCoreBlogConfig {
   const data = useStaticQuery(graphql`

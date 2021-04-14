@@ -1,14 +1,11 @@
 import React, { useCallback, useMemo } from "react";
 import cls from "classnames";
-import GithubSlugger from "github-slugger";
-import type { Heading } from "@unisite/core-blog";
+
+import type { Heading, Heading2 } from "./type";
 
 import type { FC2 } from "../../types";
-import { useAnchorActive } from "./useAnchorActive";
-
-type Heading2 = Heading & {
-  anchor: string;
-};
+import { useHeading2s } from "./useHeading2s";
+import { useAnchorStatus } from "./useAnchorStatus";
 
 type SideNavProps = {
   className?: string;
@@ -17,31 +14,33 @@ type SideNavProps = {
 
 type SideNavFC = FC2<SideNavProps>;
 
-const SideNav: SideNavFC = ({ className, headings }) => {
-  const isMultiH1 = useMemo(
+function useSideNavData(headings: Heading2[]) {
+  const isMultiH1 = useMemo<boolean>(
     () => headings.filter((heading) => heading.depth === 1).length > 1,
     [headings]
   );
-  const items: Heading2[] = useMemo(() => {
-    const slugger = new GithubSlugger();
-    const list: Heading[] = isMultiH1
-      ? headings.filter((heading) => heading.depth < 3)
-      : headings.filter((heading) => heading.depth > 1 && heading.depth < 4);
+  const filterItems = useMemo<Heading2[]>(
+    () =>
+      isMultiH1
+        ? headings.filter((heading) => heading.depth < 3)
+        : headings.filter((heading) => heading.depth > 1 && heading.depth < 4),
+    [headings, isMultiH1]
+  );
 
-    return list.map((heading) => ({
-      ...heading,
-      anchor: slugger.slug(heading.value),
-    }));
-  }, [isMultiH1, headings]);
-  const depth = isMultiH1 ? 1 : 2;
-  const actives = useAnchorActive(items);
+  return {
+    isMultiH1,
+    filterItems,
+    startDepth: isMultiH1 ? 1 : 2,
+  };
+}
+
+const SideNav: SideNavFC = ({ className, headings }) => {
+  const items = useHeading2s(headings);
+  const { filterItems, startDepth } = useSideNavData(items);
+  const anchorStatus = useAnchorStatus(items);
   const handleJumpTo = useCallback((heading: Heading2) => {
-    const $ele = document.querySelector(
-      `a[href="#${encodeURIComponent(heading.anchor)}"]`
-    );
-
+    const $ele = document.querySelector(`a[href="${heading.hash}"]`);
     if (!$ele) return;
-
     const offsetTop = $ele.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
@@ -59,16 +58,16 @@ const SideNav: SideNavFC = ({ className, headings }) => {
     >
       <div className="py-4 text-gray-900 font-bold">导航</div>
       <div className="mb-4 flex-1 overflow-y-auto">
-        {items.map((item) => (
+        {filterItems.map((item) => (
           <div
-            key={`${item.depth}-${item.value}`}
+            key={item.hash}
             className={cls([
               "py-1 cursor-pointer text-sm text-gray-500 hover:text-gray-900 hover:font-medium",
               {
-                "pl-3": item.depth === depth + 1,
-                "pl-6": item.depth === depth + 2,
+                "pl-3": item.depth === startDepth + 1,
+                "pl-6": item.depth === startDepth + 2,
               },
-              actives[`${item.depth}-${item.value}`] ? "text-gray-900" : "",
+              anchorStatus[item.hash] ? "text-gray-900" : "",
             ])}
             onClick={() => handleJumpTo(item)}
           >

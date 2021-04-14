@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import type { Tag } from "@unisite/core-blog";
 
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import { useTagPath } from "../../../utils";
 import type { PageProps } from "../../../utils";
-import type { Tag } from "../../../types";
 
 type PageData = {
   allTag: {

@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import cls from "classnames";
 import { Left as IconLeft, Right as IconRight } from "@icon-park/react";
+import type { BlogPost, Tag } from "@unisite/core-blog";
 
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import Card from "../../../components/Card";
@@ -9,10 +11,8 @@ import SideNav from "../../../components/SideNav";
 import Progress from "../../../components/Progress";
 import BackTop from "../../../components/BackTop";
 import { MDXCard } from "../../../components/MDXContent";
-import type { PageProps } from "../../../utils";
-import type { BlogPost, Tag } from "../../../types";
 import { usePostPath, useTagPath } from "../../../utils";
-import cls from "classnames";
+import type { PageProps } from "../../../utils";
 
 type PageData = {
   post: Partial<BlogPost>;

@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import type { Category } from "@unisite/core-blog";
 
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import { useCategoryPath } from "../../../utils";
 import type { PageProps } from "../../../utils";
-import type { Category } from "../../../types";
 
 type PageData = {
   allCategory: {
