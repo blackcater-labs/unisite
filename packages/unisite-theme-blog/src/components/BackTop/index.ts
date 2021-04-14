@@ -1,2 +1,2 @@
-export { default as BackTop } from "./BackTop";
-export { BackTopProps } from "./BackTop";
+export { default } from "./BackTop";
+export type { BackTopProps } from "./BackTop";

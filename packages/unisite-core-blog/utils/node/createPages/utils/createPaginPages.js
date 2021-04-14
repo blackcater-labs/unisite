@@ -55,6 +55,10 @@ module.exports = function createPaginPages(arr, createPage, options) {
         context: {},
       }
     );
+    const left = i - 1 >= 0 ? i - 1 : null;
+    const leftPath = i - 1 >= 0 ? "" : null;
+    const right = i + 1 < total ? i + 1 : null;
+    const rightPath = i + 1 < total ? "" : null;
 
     createPage({
       path: getPath(i, { pathPrefix, path, pathBuilder }),
@@ -66,10 +70,10 @@ module.exports = function createPaginPages(arr, createPage, options) {
           contextBuilder: contextPaginBuilder,
         }),
         current: i,
-        previous: i - 1 >= 0 ? i - 1 : null,
-        previousPath: i - 1 >= 0 ? "" : null,
-        next: i + 1 < total ? i + 1 : null,
-        nextPath: i + 1 < total ? "" : null,
+        previous: left,
+        previousPath: leftPath,
+        next: right,
+        nextPath: rightPath,
         total,
         pageSize,
       },

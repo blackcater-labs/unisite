@@ -28,3 +28,6 @@ public/
 
 # taskpaper
 *.taskpaper
+
+# env
+*.local

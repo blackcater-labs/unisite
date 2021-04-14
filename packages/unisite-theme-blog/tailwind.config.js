@@ -239,9 +239,20 @@ module.exports = {
         ],
       },
       animation: {
+        "bounce-l": "bounce-l 1s infinite",
         "bounce-r": "bounce-r 1s infinite",
       },
       keyframes: {
+        "bounce-l": {
+          "0%, 100%": {
+            transform: "none",
+            animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
+          },
+          "50%": {
+            transform: "translateX(-25%)",
+            animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
+          },
+        },
         "bounce-r": {
           "0%, 100%": {
             transform: "none",
@@ -255,6 +266,10 @@ module.exports = {
       },
     },
   },
-  variants: { extend: {} },
+  variants: {
+    extend: {
+      animation: ["hover", "group-hover"],
+    },
+  },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };

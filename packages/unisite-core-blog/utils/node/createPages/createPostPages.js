@@ -15,8 +15,8 @@ module.exports = async function createPostPages({ actions, graphql }, options) {
     component: postTemplate,
     contextBuilder: ({ node, previous, next }) => ({
       id: node.id,
-      previousId: previous?.id,
-      nextId: next?.id,
+      previousId: next?.id,
+      nextId: previous?.id,
     }),
   });
 

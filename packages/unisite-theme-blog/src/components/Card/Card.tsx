@@ -1,14 +1,18 @@
 import React from "react";
 import cls from "classnames";
 
-type CardProps = { className?: string };
+type CardProps = {
+  hoverable?: boolean;
+  className?: string;
+};
 type CardFC = React.FC<CardProps>;
 
-const Card: CardFC = ({ className, children }) => {
+const Card: CardFC = ({ hoverable = false, className, children }) => {
   return (
     <div
       className={cls([
-        "w-full px-8 py-6 transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm hover:shadow-md dark:bg-gray-800",
+        "w-full px-8 py-6 transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm dark:bg-gray-800",
+        hoverable ? "hover:shadow-md" : "",
         className,
       ])}
     >

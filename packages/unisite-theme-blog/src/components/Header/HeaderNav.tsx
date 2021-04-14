@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Dropdown from "../Dropdown";
 import Menu from "../Menu";
@@ -13,7 +14,9 @@ const HeaderNav: HeaderNavFC = () => {
     <header className="relative z-50 bg-white">
       <div className="max-w-6xl mx-auto h-16 px-6 relative flex flex-row justify-between items-center">
         <div className="flex flex-row items-center">
-          <div className="mr-4 rounded-xl w-10 h-10 bg-gray-400"></div>
+          <Link to="/">
+            <div className="mr-4 rounded-xl w-10 h-10 bg-gray-400"></div>
+          </Link>
           <div className="space-x-2 flex flex-row items-center">
             <Dropdown
               overlay={

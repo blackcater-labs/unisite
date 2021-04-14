@@ -1,2 +1,2 @@
-export { default as SideNav } from "./SideNav";
+export { default } from "./SideNav";
 export type { SideNavProps } from "./SideNav";

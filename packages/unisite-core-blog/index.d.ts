@@ -115,7 +115,7 @@ export type Post = {
   wordCount: number;
   categories: Category[];
   tags: Tag[];
-  author: User[];
+  authors: User[];
 };
 
 export type BlogPost = Post & {};
