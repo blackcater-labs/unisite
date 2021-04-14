@@ -26,7 +26,10 @@ const SideNav: SideNavFC = ({ className, headings }) => {
 
   return (
     <div
-      className={cls([className, "max-h-screen flex flex-col overflow-hidden"])}
+      className={cls([
+        className,
+        "max-h-(screen-12) flex flex-col overflow-hidden",
+      ])}
     >
       <div className="py-4 text-gray-900 font-bold">导航</div>
       <div className="mb-4 flex-1 overflow-y-auto">

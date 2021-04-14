@@ -76,6 +76,7 @@ importers:
       puppeteer: ^8.0.0
       rehype-katex: ^3.1.0
       remark-math: ^3.0.1
+      smoothscroll-polyfill: ^0.4.4
     dependencies:
       '@mdx-js/mdx': 1.6.22
       '@mdx-js/react': 1.6.22
@@ -103,6 +104,7 @@ importers:
       puppeteer: 8.0.0
       rehype-katex: 3.1.0
       remark-math: 3.0.1
+      smoothscroll-polyfill: 0.4.4
 
   packages/unisite-core-book:
     specifiers: {}
@@ -15978,6 +15980,10 @@ packages:
     resolution: {integrity: sha1-kWBcJdkWUvRmHqacz0XxszHKIbo=, tarball: smart-buffer/download/smart-buffer-4.1.0.tgz}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
     dev: true
+
+  /smoothscroll-polyfill/0.4.4:
+    resolution: {integrity: sha1-OiWRMdxpMObKgAA+HLA7YDtpq/g=, tarball: smoothscroll-polyfill/download/smoothscroll-polyfill-0.4.4.tgz}
+    dev: false
 
   /snake-case/2.1.0:
     resolution: {integrity: sha1-Qb2xtz8w7GagTU4srRt2OH1NbZ8=, tarball: snake-case/download/snake-case-2.1.0.tgz}

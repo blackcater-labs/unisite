@@ -30,10 +30,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
         </div>
         <div className="col-start-10 col-span-3">
           <nav className="space-y-8"></nav>
-          <SideNav
-            className="sticky top-0 pt-12"
-            headings={post.headings || []}
-          />
+          <SideNav className="sticky top-12" headings={post.headings || []} />
         </div>
       </div>
     </DefaultLayout>

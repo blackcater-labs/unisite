@@ -178,6 +178,25 @@ module.exports = {
       },
     },
     extend: {
+      maxHeight: {
+        "(screen-12)": "calc(100vh - 3rem)",
+        "(screen-16)": "calc(100vh - 4rem)",
+        "(screen-20)": "calc(100vh - 5rem)",
+        "(screen-24)": "calc(100vh - 6rem)",
+        "(screen-28)": "calc(100vh - 7rem)",
+        "(screen-32)": "calc(100vh - 8rem)",
+        "(screen-36)": "calc(100vh - 9rem)",
+        "(screen-40)": "calc(100vh - 10rem)",
+        "(screen-44)": "calc(100vh - 11rem)",
+        "(screen-48)": "calc(100vh - 12rem)",
+        "(screen-52)": "calc(100vh - 13rem)",
+        "(screen-56)": "calc(100vh - 14rem)",
+        "(screen-60)": "calc(100vh - 15rem)",
+        "(screen-64)": "calc(100vh - 16rem)",
+        "(screen-72)": "calc(100vh - 18rem)",
+        "(screen-80)": "calc(100vh - 20rem)",
+        "(screen-96)": "calc(100vh - 24rem)",
+      },
       fontFamily: {
         sans: [
           "ui-sans-serif",
@@ -236,8 +255,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {},
-  },
+  variants: { extend: {} },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };
