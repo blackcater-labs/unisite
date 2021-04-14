@@ -7,4 +7,4 @@ tags:
 published_at: "2021-02-01"
 ---
 
-# Vue Tutorial
+> Vue tutorial
