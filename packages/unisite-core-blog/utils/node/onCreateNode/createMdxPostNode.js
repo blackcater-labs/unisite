@@ -52,6 +52,11 @@ module.exports = async function createMdxNode(
   }
 
   const isColumnPost = !!data.column;
+
+  if (isColumnPost) {
+    data.order = data.order ?? 1000;
+  }
+
   const type = isColumnPost ? "MdxColumnPost" : "MdxBlogPost";
   const id = createNodeId(`${node.id} >>> ${type}`);
 

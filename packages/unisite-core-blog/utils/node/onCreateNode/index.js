@@ -33,7 +33,11 @@ module.exports = async function onCreateNode(api, options) {
 
     // 确保 MDX 文件来自于 @unisite/core-blog 中的 gatsby-source-filesystem
     if (fileNode && fileNode.sourceInstanceName === options.contentName) {
-      await createMdxPostNode(api, options);
+      if (fileNode.name && /^\_(.+)\_$/.test(fileNode.name)) {
+        console.log(fileNode);
+      } else {
+        await createMdxPostNode(api, options);
+      }
     }
   }
 };

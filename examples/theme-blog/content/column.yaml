@@ -1,7 +1,17 @@
-- id: "markdown-tutorial"
-  name: "Markdown 语法指南"
-  cover: "column/markdown-tutorial/cover.png"
+- id: "unisite-tutorial"
+  name: "Unisite 使用指南"
+  cover: "column/unisite-tutorial/cover.png"
   tags:
     - "markdown"
   authors:
     - "blackcater"
+  chapters:
+    - title: "Markdown 教程"
+      link: "/"
+      sections:
+        - title: "基础语法"
+          link: "/"
+        - title: "高级语法"
+          link: "/"
+        - title: "扩展语法"
+          link: "/"

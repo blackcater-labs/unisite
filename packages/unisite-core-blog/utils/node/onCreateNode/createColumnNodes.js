@@ -10,6 +10,8 @@ const schema = Joi.array()
       cover: Joi.string(),
       tags: Joi.array().items(Joi.string().required()),
       authors: Joi.array().items(Joi.string().required()),
+      categories: Joi.array().items(Joi.string().required()),
+      chapters: Joi.array().items(Joi.any().required()),
     })
   )
   .unique((a, b) => a.id === b.id);
@@ -39,8 +41,13 @@ module.exports = async function createColumnNodes(
   }
 
   for (const column of columns) {
-    const { id, category, categories, ...rest } = column;
+    const { id, author, authors, category, categories, ...rest } = column;
+    const authorSet = new Set(authors || []);
     const categorySet = new Set(categories || []);
+
+    if (author) {
+      authorSet.add(author);
+    }
 
     if (category) {
       categorySet.add(category);
@@ -49,6 +56,7 @@ module.exports = async function createColumnNodes(
     const data = {
       ...rest,
       cid: id,
+      authors: [...authorSet.values()],
       categories: [...categorySet.values()],
     };
     const nodeId = createNodeId(`${data.cid} >>> Column`);
