@@ -20,8 +20,8 @@ export type Tag = {
 export type Column = {
   id: string;
   cid: string;
-  name: string;
-  description: string;
+  title: string;
+  subTitle?: string;
   cover: any;
   categories: Category[];
   tags: Tag[];
@@ -96,6 +96,17 @@ export type TOCItem = {
   url?: string;
   title?: string;
   item: TOCItem[];
+};
+
+export type Content = {
+  id: string;
+  type: string;
+  body: string;
+  rawBody: string;
+};
+
+export type ColumnContent = Content & {
+  column: Column;
 };
 
 export type Post = {

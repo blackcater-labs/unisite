@@ -157,7 +157,7 @@ export const query = graphql`
     $previousId: String
     $nextId: String
   ) {
-    post: post(id: { eq: $id }) {
+    post(id: { eq: $id }) {
       draft
       title
       cover {

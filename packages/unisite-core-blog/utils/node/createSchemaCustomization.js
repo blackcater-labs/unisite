@@ -81,8 +81,8 @@ module.exports = ({ actions }) => {
     type Column implements Node {
         id: ID!
         cid: String!
-        name: String!
-        description: String
+        title: String!
+        subTitle: String
         cover: File @fileByRelativePath
         chapters: JSON
         # link

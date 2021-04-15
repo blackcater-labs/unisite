@@ -18,7 +18,7 @@ type PostCardProps = {
   updated_at?: string;
   authors?: { id: string; uid: string; name: string; avatar: any }[];
   tags?: { tid: string; name: string }[];
-  column?: { cid: string; name: string };
+  column?: { cid: string; title: string };
 };
 type PostCardFC = React.FC<PostCardProps>;
 
@@ -87,7 +87,7 @@ const PostCard: PostCardFC = ({
             className="text-gray-900 font-medium cursor-pointer hover:underline hover:text-opacity-80"
             to={columnPath}
           >
-            《{column.name}》
+            《{column.title}》
           </Link>
         </div>
       ) : null}

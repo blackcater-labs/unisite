@@ -76,7 +76,7 @@ export const query = graphql`
         ... on MdxColumnPost {
           column {
             cid
-            name
+            title
           }
         }
       }

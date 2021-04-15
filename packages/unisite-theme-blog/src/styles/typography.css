@@ -2,6 +2,11 @@
   position: relative;
 }
 
+.gatsby-typography.gatsby-typography--no-last-margin
+  > :not(h1, h2, h3, h4, h5, h6):last-child {
+  margin-bottom: 0;
+}
+
 .gatsby-typography h1,
 .gatsby-typography h2,
 .gatsby-typography h3,

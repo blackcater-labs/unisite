@@ -10,7 +10,14 @@ type MDXContentProps = {
 const MDXContent = React.forwardRef<HTMLDivElement, MDXContentProps>(
   ({ className, children }, forwardRef) => {
     return (
-      <div ref={forwardRef} className={cls([className, "gatsby-typography"])}>
+      <div
+        ref={forwardRef}
+        className={cls([
+          className,
+          "gatsby-typography",
+          "gatsby-typography--no-last-margin",
+        ])}
+      >
         <MDXRenderer>{children}</MDXRenderer>
       </div>
     );

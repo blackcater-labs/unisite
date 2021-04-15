@@ -6,7 +6,8 @@ const schema = Joi.array()
   .items(
     Joi.object({
       id: Joi.string().required(),
-      name: Joi.string().required(),
+      title: Joi.string().required(),
+      subTitle: Joi.string(),
       cover: Joi.string(),
       tags: Joi.array().items(Joi.string().required()),
       authors: Joi.array().items(Joi.string().required()),

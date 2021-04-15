@@ -1,6 +1,9 @@
 - id: "unisite-tutorial"
-  name: "Unisite 使用指南"
+  title: "Unisite 使用指南"
   cover: "column/unisite-tutorial/cover.png"
+  categories:
+    - "frontend"
+    - "opensource"
   tags:
     - "markdown"
   authors:
