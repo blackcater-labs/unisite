@@ -19,7 +19,6 @@ export function useAnchorStatus(headings: Heading2[]): Record<string, boolean> {
 
       const observer = new IntersectionObserver(
         (entries) => {
-          console.log(heading.value, entries);
           if (!entries[0]) return;
           const { intersectionRatio } = entries[0];
 
