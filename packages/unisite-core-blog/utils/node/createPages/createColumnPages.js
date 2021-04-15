@@ -1,7 +1,6 @@
 const { join } = require("path");
 const { kebabCase } = require("lodash");
-const { createPaginPages } = require("./utils");
-const { getPosts, getColumns } = require("./queries");
+const { getContents, getColumns } = require("./queries");
 
 module.exports = async function createColumnPages(
   { actions, graphql },
@@ -24,7 +23,7 @@ module.exports = async function createColumnPages(
   const columns = await getColumns({ graphql });
 
   for (const column of columns) {
-    const posts = await getPosts({
+    const contents = await getContents({
       graphql,
       type: "column",
       filter: { column: { id: { eq: column.id } } },
@@ -33,7 +32,10 @@ module.exports = async function createColumnPages(
     createPage({
       path: join(options.columnPrefix, kebabCase(column.cid)),
       component: columnDetailTemplate,
-      context: { id: column.id, posts: posts.map((post) => post.id) },
+      context: {
+        id: column.id,
+        contents: contents.map((content) => content.id),
+      },
     });
   }
 };

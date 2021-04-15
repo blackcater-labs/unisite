@@ -9,25 +9,25 @@ module.exports = async function createPostPages({ actions, graphql }, options) {
   );
   const posts = await getPosts({ graphql, edges: true });
 
-  createDetailPages(posts, createPage, {
+  await createDetailPages(posts, createPage, {
     pathPrefix: options.postPrefix,
-    pathBuilder: ({ node }) => node?.slug || "",
+    pathBuilder: async ({ node }) => node?.slug || "",
     component: postTemplate,
-    contextBuilder: ({ node, previous, next }) => ({
+    contextBuilder: async ({ node, previous, next }) => ({
       id: node.id,
       previousId: next?.id,
       nextId: previous?.id,
     }),
   });
 
-  createPaginPages(posts, createPage, {
+  await createPaginPages(posts, createPage, {
     pageSize: 10,
     pathPrefix: options.postListPrefix,
     component: postListTemplate,
     map: {
       0: { path: "/" },
     },
-    contextPaginBuilder: (data) => ({
+    contextPaginBuilder: async (data) => ({
       posts: data.map((item) => item?.node?.id),
     }),
   });

@@ -24,14 +24,14 @@ module.exports = async function createUserPages({ actions, graphql }, options) {
       filter: { authors: { elemMatch: { id: { eq: user.id } } } },
     });
 
-    createPaginPages(posts, createPage, {
+    await createPaginPages(posts, createPage, {
       pageSize: 10,
       pathPrefix: join(options.userPrefix, kebabCase(user.uid)),
       component: userPostListTemplate,
       map: {
         0: { path: join(options.userPrefix, kebabCase(user.uid)) },
       },
-      contextPaginBuilder: (data) => ({
+      contextPaginBuilder: async (data) => ({
         posts: data.map((item) => item.id),
       }),
     });

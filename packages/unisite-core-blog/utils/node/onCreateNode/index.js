@@ -1,5 +1,6 @@
 const defaultOptions = require("../../config/defaultOptions");
 const createMdxPostNode = require("./createMdxPostNode");
+const createMdxContentNode = require("./createMdxContentNode");
 const createCategoryNodes = require("./createCategoryNodes");
 const createUserNodes = require("./createUserNodes");
 const createTagNodes = require("./createTagNodes");
@@ -34,7 +35,9 @@ module.exports = async function onCreateNode(api, options) {
     // 确保 MDX 文件来自于 @unisite/core-blog 中的 gatsby-source-filesystem
     if (fileNode && fileNode.sourceInstanceName === options.contentName) {
       if (fileNode.name && /^\_(.+)\_$/.test(fileNode.name)) {
-        console.log(fileNode);
+        const type = /^\_(.+)\_$/.exec(fileNode.name)[1];
+
+        await createMdxContentNode(type, api, options);
       } else {
         await createMdxPostNode(api, options);
       }

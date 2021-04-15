@@ -11,14 +11,14 @@ module.exports = async function createArchivePages(
   );
   const posts = await getPosts({ graphql, edges: true });
 
-  createPaginPages(posts, createPage, {
+  await createPaginPages(posts, createPage, {
     pageSize: 20,
     pathPrefix: options.archiveListPrefix,
     component: archivePostListTemplate,
     map: {
       0: { path: options.archiveListPrefix },
     },
-    contextPaginBuilder: (data) => ({
+    contextPaginBuilder: async (data) => ({
       posts: data.map((item) => item?.node?.id),
     }),
   });
