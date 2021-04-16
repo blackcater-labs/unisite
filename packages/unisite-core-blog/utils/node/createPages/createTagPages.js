@@ -24,14 +24,15 @@ module.exports = async function createTagPages({ actions, graphql }, options) {
       filter: { tags: { elemMatch: { id: { eq: tag.id } } } },
     });
 
-    createPaginPages(posts, createPage, {
+    await createPaginPages(posts, createPage, {
       pageSize: 10,
       pathPrefix: join(options.tagPrefix, kebabCase(tag.tid)),
       component: tagPostListTemplate,
       map: {
         0: { path: join(options.tagPrefix, kebabCase(tag.tid)) },
       },
-      contextPaginBuilder: (data) => ({
+      contextPaginBuilder: async (data) => ({
+        tag: tag.id,
         posts: data.map((item) => item.id),
       }),
     });

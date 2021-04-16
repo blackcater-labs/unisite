@@ -2,7 +2,7 @@ const { join } = require("path");
 const { defaults, slice } = require("lodash");
 
 // create pagination pages
-module.exports = function createPaginPages(arr, createPage, options) {
+module.exports = async function createPaginPages(arr, createPage, options) {
   const {
     pageSize,
     pathPrefix,
@@ -24,9 +24,9 @@ module.exports = function createPaginPages(arr, createPage, options) {
 
   if (total <= 0) return;
 
-  const getPath = (i, { pathBuilder, path, pathPrefix }) =>
+  const getPath = async (i, { pathBuilder, path, pathPrefix }) =>
     pathBuilder
-      ? pathBuilder(
+      ? await pathBuilder(
           slice(arr, i * pageSize, (i + 1) * pageSize),
           { i, pageSize },
           arr
@@ -37,9 +37,9 @@ module.exports = function createPaginPages(arr, createPage, options) {
       ? pathPrefix
       : join(pathPrefix, `${i}`);
 
-  const getContext = (i, { context, contextBuilder }) =>
+  const getContext = async (i, { context, contextBuilder }) =>
     contextBuilder
-      ? contextBuilder(
+      ? await contextBuilder(
           slice(arr, i * pageSize, (i + 1) * pageSize),
           { i, pageSize },
           arr
@@ -61,14 +61,14 @@ module.exports = function createPaginPages(arr, createPage, options) {
     const rightPath = i + 1 < total ? "" : null;
 
     createPage({
-      path: getPath(i, { pathPrefix, path, pathBuilder }),
+      path: await getPath(i, { pathPrefix, path, pathBuilder }),
       component,
       context: {
-        ...getContext(i, { context, contextBuilder }),
-        ...getContext(i, {
+        ...(await getContext(i, { context, contextBuilder })),
+        ...(await getContext(i, {
           context: paginContext,
           contextBuilder: contextPaginBuilder,
-        }),
+        })),
         current: i,
         previous: left,
         previousPath: leftPath,

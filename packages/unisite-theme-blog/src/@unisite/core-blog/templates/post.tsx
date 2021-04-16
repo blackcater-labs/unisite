@@ -31,7 +31,7 @@ function TagItem({ tid, name }: Tag) {
 
   return (
     <Link
-      className="px-2 py-1 text-sm text-gray-700 bg-gray-100 rounded cursor-pointer hover:shadow"
+      className="px-2 py-0.5 text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer hover:shadow"
       to={tagPath}
     >
       {name}
@@ -75,7 +75,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
           <Card>
             <div className="mb-4 flex items-center justify-between">
               <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
-              <span>{dateValue}</span>
+              <span className="text-sm text-gray-700">{dateValue}</span>
             </div>
             <h1 className="text-gray-900 text-4xl font-medium">{post.title}</h1>
             {tags.length ? (
@@ -141,7 +141,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
             </div>
           </Card>
         </div>
-        <div className="col-start-10 col-span-3">
+        <div className="ml-8 col-start-9 col-span-4">
           <SideNav className="sticky top-12" headings={post.headings || []} />
         </div>
       </div>
@@ -157,7 +157,7 @@ export const query = graphql`
     $previousId: String
     $nextId: String
   ) {
-    post: post(id: { eq: $id }) {
+    post(id: { eq: $id }) {
       draft
       title
       cover {

@@ -2,7 +2,11 @@ const { join } = require("path");
 const { defaults } = require("lodash");
 
 // create detail pages
-module.exports = function createDetailPages(arr = [], createPage, options) {
+module.exports = async function createDetailPages(
+  arr = [],
+  createPage,
+  options
+) {
   const {
     pathPrefix,
     path,
@@ -21,9 +25,10 @@ module.exports = function createDetailPages(arr = [], createPage, options) {
 
   for (const item of arr) {
     createPage({
-      path: join(pathPrefix, pathBuilder ? pathBuilder(item, arr) : path),
+      path: join(pathPrefix, pathBuilder ? await pathBuilder(item, arr) : path),
       component,
-      context: (contextBuilder ? contextBuilder(item, arr) : context) || {},
+      context:
+        (contextBuilder ? await contextBuilder(item, arr) : context) || {},
     });
   }
 };

@@ -29,14 +29,15 @@ module.exports = async function createCategoryPages(
       filter: { categories: { elemMatch: { id: { eq: category.id } } } },
     });
 
-    createPaginPages(posts, createPage, {
+    await createPaginPages(posts, createPage, {
       pageSize: 10,
       pathPrefix: join(options.categoryPrefix, kebabCase(category.cid)),
       component: categoryPostListTemplate,
       map: {
         0: { path: join(options.categoryPrefix, kebabCase(category.cid)) },
       },
-      contextPaginBuilder: (data) => ({
+      contextPaginBuilder: async (data) => ({
+        category: category.id,
         posts: data.map((item) => item.id),
       }),
     });

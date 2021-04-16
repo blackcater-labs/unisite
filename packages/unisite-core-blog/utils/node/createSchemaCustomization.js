@@ -81,9 +81,10 @@ module.exports = ({ actions }) => {
     type Column implements Node {
         id: ID!
         cid: String!
-        name: String!
-        description: String
+        title: String!
+        subTitle: String
         cover: File @fileByRelativePath
+        chapters: JSON
         # link
         categories: [Category!] @def(value: "[]") @link(by: "cid")
         tags: [Tag!] @def(value: "[]") @link(by: "tid")
@@ -240,6 +241,29 @@ module.exports = ({ actions }) => {
         uplay_url: String
         wegame_url: String
     }
+    
+    interface Content implements Node {
+        id: ID!
+        type: String!
+        # mdx
+        body: String! @mdxpassthrough(field: "body")
+        rawBody: String @mdxpassthrough(field: "rawBody")
+    }
+
+    interface ColumnContent {
+        column: Column! @link(by: "cid")
+    }
+    
+    type MdxColumnContent implements Node & Content & ColumnContent {
+        id: ID!
+        type: String!
+        # mdx
+        body: String! @mdxpassthrough(field: "body")
+        rawBody: String @mdxpassthrough(field: "rawBody")
+
+        # ColumnContent
+        column: Column! @link(by: "cid")
+    }
 
     interface Post implements Node {
         id: ID!
@@ -286,6 +310,7 @@ module.exports = ({ actions }) => {
     }
 
     interface ColumnPost {
+        order: Int!
         column: Column! @link(by: "cid")
     }
     
@@ -311,6 +336,7 @@ module.exports = ({ actions }) => {
         authors: [User!]! @def(value: "[]") @link(by: "uid")
 
         ## ColumnPost
+        order: Int!
         column: Column! @link(by: "cid")
     }
 

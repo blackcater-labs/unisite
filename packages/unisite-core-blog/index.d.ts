@@ -17,16 +17,28 @@ export type Tag = {
   postCount: number;
 };
 
+export type Chapter = {
+  title: string;
+  link?: string;
+  sections?: Section[];
+};
+
+export type Section = {
+  title: string;
+  link?: string;
+};
+
 export type Column = {
   id: string;
   cid: string;
-  name: string;
-  description: string;
+  title: string;
+  subTitle?: string;
   cover: any;
   categories: Category[];
   tags: Tag[];
   authors: User[];
   posts: ColumnPost[];
+  chapters: Chapter[];
 };
 
 export type SocialLinks = {
@@ -96,6 +108,17 @@ export type TOCItem = {
   url?: string;
   title?: string;
   item: TOCItem[];
+};
+
+export type Content = {
+  id: string;
+  type: string;
+  body: string;
+  rawBody: string;
+};
+
+export type ColumnContent = Content & {
+  column: Column;
 };
 
 export type Post = {

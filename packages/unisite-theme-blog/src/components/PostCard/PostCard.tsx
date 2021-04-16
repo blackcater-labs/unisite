@@ -18,7 +18,7 @@ type PostCardProps = {
   updated_at?: string;
   authors?: { id: string; uid: string; name: string; avatar: any }[];
   tags?: { tid: string; name: string }[];
-  column?: { cid: string; name: string };
+  column?: { cid: string; title: string };
 };
 type PostCardFC = React.FC<PostCardProps>;
 
@@ -48,7 +48,7 @@ const PostCard: PostCardFC = ({
     <Card>
       <div className="flex items-center justify-between">
         <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
-        <span>{dateValue}</span>
+        <span className="text-sm text-gray-700">{dateValue}</span>
       </div>
       <div className="mt-2">
         <Link
@@ -87,7 +87,7 @@ const PostCard: PostCardFC = ({
             className="text-gray-900 font-medium cursor-pointer hover:underline hover:text-opacity-80"
             to={columnPath}
           >
-            《{column.name}》
+            《{column.title}》
           </Link>
         </div>
       ) : null}
