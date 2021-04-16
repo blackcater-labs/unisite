@@ -15,10 +15,14 @@ type PageData = {
 type PageContext = {
   posts?: string[];
 };
-type PostListPageProps = PageProps<PageData, PageContext>;
+type CategoryPostListPageProps = PageProps<PageData, PageContext>;
 
-function PostListPage(props: PostListPageProps): React.ReactElement {
+function CategoryPostListPage(
+  props: CategoryPostListPageProps
+): React.ReactElement {
   const posts = props.data.allPost?.nodes || [];
+
+  console.log("props:", props);
 
   return (
     <DefaultLayout>
@@ -40,7 +44,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
 }
 
 export const query = graphql`
-  query PostListPageQuery($posts: [String!]!) {
+  query CategoryPostListPageQuery($posts: [String!]!) {
     allPost(
       filter: { id: { in: $posts } }
       sort: { fields: published_at, order: DESC }
@@ -84,4 +88,4 @@ export const query = graphql`
   }
 `;
 
-export default PostListPage;
+export default CategoryPostListPage;
