@@ -5,7 +5,7 @@ type FooterFC = React.FC<FooterProps>;
 
 const Footer: FooterFC = () => {
   return (
-    <footer className="max-w-6xl mx-auto my-8">
+    <footer className="max-w-6xl mx-auto py-8">
       <div>
         <p className="text-center text-gray-800 dark:text-white">
           © blackcater 2021 - All rights reserved

@@ -29,7 +29,10 @@
   }
 }
 
-html,
-body {
+html {
   @apply bg-gray-50;
+}
+
+html.dark {
+  @apply bg-black;
 }

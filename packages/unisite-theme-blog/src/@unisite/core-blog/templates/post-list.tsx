@@ -5,6 +5,7 @@ import { Post } from "@unisite/core-blog";
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import PostCard from "../../../components/PostCard";
 import { SearchCard, StatisticCard } from "../../../components/Aside";
+import ThemeSwitch from "../../../components/ThemeSwitch";
 import type { PageProps } from "../../../utils";
 
 type PageData = {
@@ -33,6 +34,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
             <nav className="space-y-8">
               <SearchCard />
               <StatisticCard />
+              <ThemeSwitch />
             </nav>
           </div>
         </section>

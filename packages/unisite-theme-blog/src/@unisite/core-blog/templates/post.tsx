@@ -71,7 +71,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
         </div>
       ) : null}
       <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-12">
-        <div ref={contentRef} className="col-start-1 col-span-8 space-y-8">
+        <div ref={contentRef} className="col-start-1 col-span-9 space-y-8">
           <Card>
             <div className="mb-4 flex items-center justify-between">
               <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
@@ -141,7 +141,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
             </div>
           </Card>
         </div>
-        <div className="ml-8 col-start-9 col-span-4">
+        <div className="ml-8 col-start-10 col-span-3">
           <SideNav className="sticky top-12" headings={post.headings || []} />
         </div>
       </div>

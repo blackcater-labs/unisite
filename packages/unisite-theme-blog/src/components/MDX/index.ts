@@ -18,3 +18,6 @@ export { default as Aside } from "./Aside";
 export type { AsideProps } from "./Aside";
 export { default as Example } from "./Example";
 export type { ExampleProps } from "./Example";
+
+// Embed Components
+export * from "./embed";

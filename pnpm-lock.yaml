@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@unisite/core-blog': workspace:*
+      '@unisite/gatsby-plugin-dark-mode': workspace:*
       '@unisite/gatsby-remark-prismjs': workspace:*
       lerna: ^4.0.0
       prettier: ^2.2.1
@@ -12,6 +13,7 @@ importers:
       typescript: ^4.2.3
     devDependencies:
       '@unisite/core-blog': link:packages/unisite-core-blog
+      '@unisite/gatsby-plugin-dark-mode': link:packages/unisite-gatsby-plugin-dark-mode
       '@unisite/gatsby-remark-prismjs': link:packages/unisite-gatsby-remark-prismjs
       lerna: 4.0.0
       prettier: 2.2.1
@@ -112,6 +114,19 @@ importers:
   packages/unisite-core-doc:
     specifiers: {}
 
+  packages/unisite-gatsby-plugin-dark-mode:
+    specifiers:
+      '@types/react': ^17.0.3
+      cross-env: ^7.0.3
+      react: ^17.0.2
+      typescript: ^4.2.4
+    dependencies:
+      '@types/react': 17.0.3
+      react: 17.0.2
+    devDependencies:
+      cross-env: 7.0.3
+      typescript: 4.2.4
+
   packages/unisite-gatsby-remark-prismjs:
     specifiers:
       '@babel/cli': ^7.12.1
@@ -142,7 +157,6 @@ importers:
 
   packages/unisite-theme-blog:
     specifiers:
-      '@codesandbox/sandpack-react': ^0.0.3
       '@icon-park/react': ^1.3.3
       '@mdx-js/react': ^1.6.22
       '@tailwindcss/aspect-ratio': ^0.2.0
@@ -150,10 +164,9 @@ importers:
       '@types/github-slugger': ^1.3.0
       '@types/lodash': ^4.14.168
       '@types/mdx-js__react': ^1.5.3
-      '@types/react': ^17.0.3
-      '@types/react-dom': ^17.0.3
       '@types/react-transition-group': ^4.4.1
       '@unisite/core-blog': workspace:*
+      '@unisite/gatsby-plugin-dark-mode': workspace:*
       autoprefixer: ^10.2.5
       babel-plugin-import: ^1.13.3
       babel-preset-gatsby: ^1.2.0
@@ -161,12 +174,12 @@ importers:
       gatsby-plugin-postcss: ^4.3.0
       github-slugger: ^1.3.0
       lodash: ^4.17.21
+      mdx-embed: ^0.0.19
       postcss: ^8.2.10
       react-transition-group: ^4.4.1
       react-use: ^17.2.3
       tailwindcss: ^2.1.1
     dependencies:
-      '@codesandbox/sandpack-react': 0.0.3
       '@icon-park/react': 1.3.3
       '@mdx-js/react': 1.6.22
       '@tailwindcss/aspect-ratio': 0.2.0
@@ -174,10 +187,9 @@ importers:
       '@types/github-slugger': 1.3.0
       '@types/lodash': 4.14.168
       '@types/mdx-js__react': 1.5.3
-      '@types/react': 17.0.3
-      '@types/react-dom': 17.0.3
       '@types/react-transition-group': 4.4.1
       '@unisite/core-blog': link:../unisite-core-blog
+      '@unisite/gatsby-plugin-dark-mode': link:../unisite-gatsby-plugin-dark-mode
       autoprefixer: 10.2.5_postcss@8.2.10
       babel-plugin-import: 1.13.3
       babel-preset-gatsby: 1.2.0
@@ -185,6 +197,7 @@ importers:
       gatsby-plugin-postcss: 4.3.0_postcss@8.2.10
       github-slugger: 1.3.0
       lodash: 4.17.21
+      mdx-embed: 0.0.19_@mdx-js+react@1.6.22
       postcss: 8.2.10
       react-transition-group: 4.4.1
       react-use: 17.2.3
@@ -2169,214 +2182,6 @@ packages:
     resolution: {integrity: sha1-j/cdUQU81e5JgeWlAdgKU2JE9/0=, tarball: '@braintree/sanitize-url/download/@braintree/sanitize-url-3.1.0.tgz'}
     dev: false
 
-  /@code-hike/classer/0.0.0-e48fa74:
-    resolution: {integrity: sha1-FyQ8qE1a8wPFHmKzeOjbZeAc0/Q=, tarball: '@code-hike/classer/download/@code-hike/classer-0.0.0-e48fa74.tgz'}
-    peerDependencies:
-      react: '>=16.8'
-    dev: false
-
-  /@codemirror/autocomplete/0.18.3:
-    resolution: {integrity: sha1-bHWQTBFW5NmgDla5o+VZ3aYUnh4=, tarball: '@codemirror/autocomplete/download/@codemirror/autocomplete-0.18.3.tgz'}
-    dependencies:
-      '@codemirror/language': 0.18.1
-      '@codemirror/state': 0.18.5
-      '@codemirror/text': 0.18.0
-      '@codemirror/tooltip': 0.18.4
-      '@codemirror/view': 0.18.6
-      lezer-tree: 0.13.2
-    dev: false
-
-  /@codemirror/closebrackets/0.18.0:
-    resolution: {integrity: sha1-S9fpIn7W6Q5ZD6bSidNLDAZcuM8=, tarball: '@codemirror/closebrackets/download/@codemirror/closebrackets-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/language': 0.18.1
-      '@codemirror/rangeset': 0.18.0
-      '@codemirror/state': 0.18.5
-      '@codemirror/text': 0.18.0
-      '@codemirror/view': 0.18.6
-    dev: false
-
-  /@codemirror/commands/0.18.1:
-    resolution: {integrity: sha1-KGahWTa3qz/zARLrGIeg4B/vYgU=, tarball: '@codemirror/commands/download/@codemirror/commands-0.18.1.tgz'}
-    dependencies:
-      '@codemirror/language': 0.18.1
-      '@codemirror/matchbrackets': 0.18.0
-      '@codemirror/state': 0.18.5
-      '@codemirror/text': 0.18.0
-      '@codemirror/view': 0.18.6
-      lezer-tree: 0.13.2
-    dev: false
-
-  /@codemirror/comment/0.18.0:
-    resolution: {integrity: sha1-9C47qqy+tX8i9KPqvlc4s9K8ofc=, tarball: '@codemirror/comment/download/@codemirror/comment-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/state': 0.18.5
-      '@codemirror/text': 0.18.0
-      '@codemirror/view': 0.18.6
-    dev: false
-
-  /@codemirror/gutter/0.18.0:
-    resolution: {integrity: sha1-tvs0D3zHtO0aZ2h+FFSJs+2TCY0=, tarball: '@codemirror/gutter/download/@codemirror/gutter-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/rangeset': 0.18.0
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-    dev: false
-
-  /@codemirror/highlight/0.18.3:
-    resolution: {integrity: sha1-UOJoYw8RPDIqLcl8n2jXGTT//LA=, tarball: '@codemirror/highlight/download/@codemirror/highlight-0.18.3.tgz'}
-    dependencies:
-      '@codemirror/language': 0.18.1
-      '@codemirror/rangeset': 0.18.0
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-      lezer-tree: 0.13.2
-      style-mod: 4.0.0
-    dev: false
-
-  /@codemirror/history/0.18.1:
-    resolution: {integrity: sha1-hTzeSxOLFyI11Y+UWHHw/Ai3MQo=, tarball: '@codemirror/history/download/@codemirror/history-0.18.1.tgz'}
-    dependencies:
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-    dev: false
-
-  /@codemirror/lang-css/0.18.0:
-    resolution: {integrity: sha1-+C59OL2E2o/6cxiPeiaKugDmNzc=, tarball: '@codemirror/lang-css/download/@codemirror/lang-css-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/autocomplete': 0.18.3
-      '@codemirror/highlight': 0.18.3
-      '@codemirror/language': 0.18.1
-      '@codemirror/state': 0.18.5
-      lezer-css: 0.13.1
-    dev: false
-
-  /@codemirror/lang-html/0.18.0:
-    resolution: {integrity: sha1-dCxgzirYCvUfIKQId/H+xMfv8rg=, tarball: '@codemirror/lang-html/download/@codemirror/lang-html-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/autocomplete': 0.18.3
-      '@codemirror/highlight': 0.18.3
-      '@codemirror/lang-css': 0.18.0
-      '@codemirror/lang-javascript': 0.18.0
-      '@codemirror/language': 0.18.1
-      '@codemirror/state': 0.18.5
-      lezer-html: 0.13.4
-      lezer-tree: 0.13.2
-    dev: false
-
-  /@codemirror/lang-javascript/0.18.0:
-    resolution: {integrity: sha1-4He2YBoHbhtEccBv/Ct33OiBXA4=, tarball: '@codemirror/lang-javascript/download/@codemirror/lang-javascript-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/autocomplete': 0.18.3
-      '@codemirror/highlight': 0.18.3
-      '@codemirror/language': 0.18.1
-      '@codemirror/lint': 0.18.1
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-      lezer-javascript: 0.13.3
-    dev: false
-
-  /@codemirror/language/0.18.1:
-    resolution: {integrity: sha1-I2gjJCKGBsSuW2qffNCkuf3/g90=, tarball: '@codemirror/language/download/@codemirror/language-0.18.1.tgz'}
-    dependencies:
-      '@codemirror/state': 0.18.5
-      '@codemirror/text': 0.18.0
-      '@codemirror/view': 0.18.6
-      lezer: 0.13.4
-      lezer-tree: 0.13.2
-    dev: false
-
-  /@codemirror/lint/0.18.1:
-    resolution: {integrity: sha1-71UC07wn6vI8Zw+oiL0j0JtZr1U=, tarball: '@codemirror/lint/download/@codemirror/lint-0.18.1.tgz'}
-    dependencies:
-      '@codemirror/panel': 0.18.1
-      '@codemirror/state': 0.18.5
-      '@codemirror/tooltip': 0.18.4
-      '@codemirror/view': 0.18.6
-      crelt: 1.0.5
-    dev: false
-
-  /@codemirror/matchbrackets/0.18.0:
-    resolution: {integrity: sha1-ZKSTCQ2ULeGfFantPLD6Ge1V8Ys=, tarball: '@codemirror/matchbrackets/download/@codemirror/matchbrackets-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/language': 0.18.1
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-      lezer-tree: 0.13.2
-    dev: false
-
-  /@codemirror/panel/0.18.1:
-    resolution: {integrity: sha1-shec37fXwpE7poLWHQDt/xYM+tA=, tarball: '@codemirror/panel/download/@codemirror/panel-0.18.1.tgz'}
-    dependencies:
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-    dev: false
-
-  /@codemirror/rangeset/0.18.0:
-    resolution: {integrity: sha1-izvsAMHO6MPbOCenUqdoGerS36s=, tarball: '@codemirror/rangeset/download/@codemirror/rangeset-0.18.0.tgz'}
-    dependencies:
-      '@codemirror/state': 0.18.5
-    dev: false
-
-  /@codemirror/state/0.18.5:
-    resolution: {integrity: sha1-25NvgMQPMp+4A70oTLtapVba+4g=, tarball: '@codemirror/state/download/@codemirror/state-0.18.5.tgz'}
-    dependencies:
-      '@codemirror/text': 0.18.0
-    dev: false
-
-  /@codemirror/text/0.18.0:
-    resolution: {integrity: sha1-pKmIYpiczvVUXnMLJpE21STGp8c=, tarball: '@codemirror/text/download/@codemirror/text-0.18.0.tgz'}
-    dev: false
-
-  /@codemirror/tooltip/0.18.4:
-    resolution: {integrity: sha1-mBvAzteSxnVBSO28H2AJLz+lQgc=, tarball: '@codemirror/tooltip/download/@codemirror/tooltip-0.18.4.tgz'}
-    dependencies:
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-    dev: false
-
-  /@codemirror/view/0.18.6:
-    resolution: {integrity: sha1-NZjnJljjezDjJg5OYjqBWZtnqaA=, tarball: '@codemirror/view/download/@codemirror/view-0.18.6.tgz'}
-    dependencies:
-      '@codemirror/rangeset': 0.18.0
-      '@codemirror/state': 0.18.5
-      '@codemirror/text': 0.18.0
-      style-mod: 4.0.0
-      w3c-keyname: 2.2.4
-    dev: false
-
-  /@codesandbox/sandpack-client/0.0.3:
-    resolution: {integrity: sha1-5wrblU6EF/EyZAcQKKIJ3v6FBTo=, tarball: '@codesandbox/sandpack-client/download/@codesandbox/sandpack-client-0.0.3.tgz'}
-    dependencies:
-      codesandbox-import-utils: 1.3.8
-      lodash.isequal: 4.5.0
-    dev: false
-
-  /@codesandbox/sandpack-react/0.0.3:
-    resolution: {integrity: sha1-eSFnEiMlwkx6TrW+Mn7ZJIJBmw4=, tarball: '@codesandbox/sandpack-react/download/@codesandbox/sandpack-react-0.0.3.tgz'}
-    peerDependencies:
-      react: ^16.8.0 || ^17
-      react-dom: ^16.8.0 || ^17
-    dependencies:
-      '@code-hike/classer': 0.0.0-e48fa74
-      '@codemirror/closebrackets': 0.18.0
-      '@codemirror/commands': 0.18.1
-      '@codemirror/comment': 0.18.0
-      '@codemirror/gutter': 0.18.0
-      '@codemirror/highlight': 0.18.3
-      '@codemirror/history': 0.18.1
-      '@codemirror/lang-css': 0.18.0
-      '@codemirror/lang-html': 0.18.0
-      '@codemirror/lang-javascript': 0.18.0
-      '@codemirror/language': 0.18.1
-      '@codemirror/matchbrackets': 0.18.0
-      '@codemirror/state': 0.18.5
-      '@codemirror/view': 0.18.6
-      '@codesandbox/sandpack-client': 0.0.3
-      codesandbox-import-utils: 1.3.8
-      prism-react-renderer: 1.2.0
-    dev: false
-
   /@endemolshinegroup/cosmiconfig-typescript-loader/3.0.2_cosmiconfig@6.0.0:
     resolution: {integrity: sha1-7qRjWCjd43KDiwkJaT69mq/uwi0=, tarball: '@endemolshinegroup/cosmiconfig-typescript-loader/download/@endemolshinegroup/cosmiconfig-typescript-loader-3.0.2.tgz'}
     engines: {node: '>=10.0.0'}
@@ -4284,12 +4089,6 @@ packages:
       '@types/react': 17.0.3
     dev: false
 
-  /@types/react-dom/17.0.3:
-    resolution: {integrity: sha1-f983uK+dbUAScTeGW7P/+IcdfuE=, tarball: '@types/react-dom/download/@types/react-dom-17.0.3.tgz?cache=0&sync_timestamp=1616641659275&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact-dom%2Fdownload%2F%40types%2Freact-dom-17.0.3.tgz'}
-    dependencies:
-      '@types/react': 17.0.3
-    dev: false
-
   /@types/react-transition-group/4.4.1:
     resolution: {integrity: sha1-4aPLJ4339H8XtQgrGz2hcXC9RLE=, tarball: '@types/react-transition-group/download/@types/react-transition-group-4.4.1.tgz'}
     dependencies:
@@ -5457,11 +5256,6 @@ packages:
     resolution: {integrity: sha1-dfUC7q+f/eQvyYgpZFvk6na9ni0=, tarball: binary-extensions/download/binary-extensions-2.2.0.tgz}
     engines: {node: '>=8'}
 
-  /binaryextensions/2.3.0:
-    resolution: {integrity: sha1-HSacv35iQ+qIaqQUU8NlHMvhPCI=, tarball: binaryextensions/download/binaryextensions-2.3.0.tgz}
-    engines: {node: '>=0.8'}
-    dev: false
-
   /bindings/1.5.0:
     resolution: {integrity: sha1-EDU8npRTNLwFEabZCzj7x8nFBN8=, tarball: bindings/download/bindings-1.5.0.tgz}
     dependencies:
@@ -6157,18 +5951,6 @@ packages:
     resolution: {integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=, tarball: code-point-at/download/code-point-at-1.1.0.tgz}
     engines: {node: '>=0.10.0'}
 
-  /codesandbox-import-util-types/1.3.7:
-    resolution: {integrity: sha1-emCX4kinVCTROwa3Q2jNdr0rPhA=, tarball: codesandbox-import-util-types/download/codesandbox-import-util-types-1.3.7.tgz}
-    dev: false
-
-  /codesandbox-import-utils/1.3.8:
-    resolution: {integrity: sha1-VXZ4ZDnF8369P+5XUeBgJ6Ht74Q=, tarball: codesandbox-import-utils/download/codesandbox-import-utils-1.3.8.tgz}
-    dependencies:
-      codesandbox-import-util-types: 1.3.7
-      istextorbinary: 2.2.1
-      lz-string: 1.4.4
-    dev: false
-
   /collapse-white-space/1.0.6:
     resolution: {integrity: sha1-5jYpwAFmZXkgYNu+t5xCI50sUoc=, tarball: collapse-white-space/download/collapse-white-space-1.0.6.tgz}
     dev: false
@@ -6592,10 +6374,6 @@ packages:
     resolution: {integrity: sha1-wdfo8eX2z8n/ZfnNNS03NIdWwzM=, tarball: create-require/download/create-require-1.1.1.tgz}
     dev: false
 
-  /crelt/1.0.5:
-    resolution: {integrity: sha1-V8DVKvjIWeNUus4Yg+suHrGCu5Q=, tarball: crelt/download/crelt-1.0.5.tgz}
-    dev: false
-
   /cross-env/7.0.3:
     resolution: {integrity: sha1-hlJkspZ33AFbqEGJGJZd0jL8VM8=, tarball: cross-env/download/cross-env-7.0.3.tgz}
     engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
@@ -6630,7 +6408,7 @@ packages:
     dev: false
 
   /cross-spawn/7.0.3:
-    resolution: {integrity: sha1-9zqFudXUHQRVUcF34ogtSshXKKY=, tarball: cross-spawn/download/cross-spawn-7.0.3.tgz}
+    resolution: {integrity: sha1-9zqFudXUHQRVUcF34ogtSshXKKY=, tarball: cross-spawn/download/cross-spawn-7.0.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcross-spawn%2Fdownload%2Fcross-spawn-7.0.3.tgz}
     engines: {node: '>= 8'}
     dependencies:
       path-key: 3.1.1
@@ -7726,11 +7504,6 @@ packages:
       jsbn: 0.1.1
       safer-buffer: 2.1.2
     dev: true
-
-  /editions/1.3.4:
-    resolution: {integrity: sha1-NmLLWSNHwxaOuOSYoP9zJx1n9Qs=, tarball: editions/download/editions-1.3.4.tgz}
-    engines: {node: '>=0.8'}
-    dev: false
 
   /ee-first/1.1.1:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=, tarball: ee-first/download/ee-first-1.1.1.tgz}
@@ -11402,15 +11175,6 @@ packages:
     resolution: {integrity: sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=, tarball: isstream/download/isstream-0.1.2.tgz}
     dev: true
 
-  /istextorbinary/2.2.1:
-    resolution: {integrity: sha1-pSMaCO9t0ismjQiVCEz41Ytb7FM=, tarball: istextorbinary/download/istextorbinary-2.2.1.tgz}
-    engines: {node: '>=0.12'}
-    dependencies:
-      binaryextensions: 2.3.0
-      editions: 1.3.4
-      textextensions: 2.6.0
-    dev: false
-
   /isurl/1.0.0:
     resolution: {integrity: sha1-sn9PSfPNqj6kSgpbfzRi5u3DnWc=, tarball: isurl/download/isurl-1.0.0.tgz}
     engines: {node: '>= 4'}
@@ -11733,34 +11497,6 @@ packages:
       type-check: 0.4.0
     dev: false
 
-  /lezer-css/0.13.1:
-    resolution: {integrity: sha1-JyWCr3YWMYp+C2Qy/flDw1SZyWs=, tarball: lezer-css/download/lezer-css-0.13.1.tgz}
-    dependencies:
-      lezer: 0.13.4
-    dev: false
-
-  /lezer-html/0.13.4:
-    resolution: {integrity: sha1-sRwCaIH+CfkKfln6S8UC/aCk3kI=, tarball: lezer-html/download/lezer-html-0.13.4.tgz}
-    dependencies:
-      lezer: 0.13.4
-    dev: false
-
-  /lezer-javascript/0.13.3:
-    resolution: {integrity: sha1-zfcvynd/JKZkWLgAcR7LeAhee0Y=, tarball: lezer-javascript/download/lezer-javascript-0.13.3.tgz}
-    dependencies:
-      lezer: 0.13.4
-    dev: false
-
-  /lezer-tree/0.13.2:
-    resolution: {integrity: sha1-APRnEwmxXCexMfY35DDOLU1fcGU=, tarball: lezer-tree/download/lezer-tree-0.13.2.tgz}
-    dev: false
-
-  /lezer/0.13.4:
-    resolution: {integrity: sha1-8DlqNEfHqPQDkWI/P0ek2VVZxC8=, tarball: lezer/download/lezer-0.13.4.tgz}
-    dependencies:
-      lezer-tree: 0.13.2
-    dev: false
-
   /libnpmaccess/4.0.1:
     resolution: {integrity: sha1-F+hC4DvvdZhUrfbrbC7eMueCY58=, tarball: libnpmaccess/download/libnpmaccess-4.0.1.tgz}
     engines: {node: '>=10'}
@@ -11935,10 +11671,6 @@ packages:
 
   /lodash.get/4.4.2:
     resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=, tarball: lodash.get/download/lodash.get-4.4.2.tgz}
-    dev: false
-
-  /lodash.isequal/4.5.0:
-    resolution: {integrity: sha1-QVxEePK8wwEgwizhDtMib30+GOA=, tarball: lodash.isequal/download/lodash.isequal-4.5.0.tgz}
     dev: false
 
   /lodash.ismatch/4.4.0:
@@ -12118,11 +11850,6 @@ packages:
     resolution: {integrity: sha1-Jzi9nw089PhEkMVzbEhpmsYyzaM=, tarball: lru-queue/download/lru-queue-0.1.0.tgz}
     dependencies:
       es5-ext: 0.10.53
-    dev: false
-
-  /lz-string/1.4.4:
-    resolution: {integrity: sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=, tarball: lz-string/download/lz-string-1.4.4.tgz}
-    hasBin: true
     dev: false
 
   /make-dir/1.3.0:
@@ -12339,6 +12066,17 @@ packages:
 
   /mdurl/1.0.1:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=, tarball: mdurl/download/mdurl-1.0.1.tgz}
+    dev: false
+
+  /mdx-embed/0.0.19_@mdx-js+react@1.6.22:
+    resolution: {integrity: sha1-ByIKen86tqqc7R4ced4cmJa+8zc=, tarball: mdx-embed/download/mdx-embed-0.0.19.tgz}
+    peerDependencies:
+      '@mdx-js/mdx': ^1.6.16
+      '@mdx-js/react': ^1.6.16
+      react: ^16.13.1
+      react-dom: ^16.13.1
+    dependencies:
+      '@mdx-js/react': 1.6.22
     dev: false
 
   /meant/1.0.3:
@@ -14510,12 +14248,6 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /prism-react-renderer/1.2.0:
-    resolution: {integrity: sha1-WtT5DD5EcGlCbIpToOr95gkJzfQ=, tarball: prism-react-renderer/download/prism-react-renderer-1.2.0.tgz}
-    peerDependencies:
-      react: '>=0.14.9'
-    dev: false
-
   /prismjs/1.23.0:
     resolution: {integrity: sha1-07OWf31yRAaQSXZSqdQP8EYGfzM=, tarball: prismjs/download/prismjs-1.23.0.tgz}
     optionalDependencies:
@@ -16564,10 +16296,6 @@ packages:
       webpack: 5.30.0
     dev: false
 
-  /style-mod/4.0.0:
-    resolution: {integrity: sha1-l+fC1otZKXXyynpj0N1vys/jWgE=, tarball: style-mod/download/style-mod-4.0.0.tgz}
-    dev: false
-
   /style-to-object/0.3.0:
     resolution: {integrity: sha1-sbeQ0gWZHMeDgBlnIUl57hmnbkY=, tarball: style-to-object/download/style-to-object-0.3.0.tgz}
     dependencies:
@@ -16850,11 +16578,6 @@ packages:
 
   /text-table/0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=, tarball: text-table/download/text-table-0.2.0.tgz}
-    dev: false
-
-  /textextensions/2.6.0:
-    resolution: {integrity: sha1-1+SrE/5U4y4IhzvkDVG3QimwD8Q=, tarball: textextensions/download/textextensions-2.6.0.tgz}
-    engines: {node: '>=0.8'}
     dev: false
 
   /throttle-debounce/3.0.1:
@@ -17723,10 +17446,6 @@ packages:
       is-buffer: 2.0.5
       unist-util-stringify-position: 2.0.3
       vfile-message: 2.0.4
-
-  /w3c-keyname/2.2.4:
-    resolution: {integrity: sha1-St5pFvYpAiTNvR24rEnqsD0O72s=, tarball: w3c-keyname/download/w3c-keyname-2.2.4.tgz}
-    dev: false
 
   /watchpack/2.1.1:
     resolution: {integrity: sha1-6ZYwVQ/KB9+fkKBgVph7qkCmicc=, tarball: watchpack/download/watchpack-2.1.1.tgz?cache=0&sync_timestamp=1612715878017&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fwatchpack%2Fdownload%2Fwatchpack-2.1.1.tgz}

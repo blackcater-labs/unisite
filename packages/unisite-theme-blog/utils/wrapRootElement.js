@@ -1,5 +1,6 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
+import { Tweet, YouTube, CodePen, CodeSandbox, Gist } from "mdx-embed";
 
 import components from "../src/components";
 import {
@@ -12,6 +13,9 @@ import {
   Highlight,
   Example,
   Tag,
+  // Embed
+  Bilibili,
+  NeteaseMusic,
 } from "../src/components/MDX";
 
 export const wrapRootElement = ({ element }) => {
@@ -29,6 +33,14 @@ export const wrapRootElement = ({ element }) => {
         Aside,
         Highlight,
         Example,
+        Bilibili,
+        NeteaseMusic,
+        // Mdx Embed
+        Tweet,
+        YouTube,
+        CodePen,
+        CodeSandbox,
+        Gist,
         ...components,
       }}
     >

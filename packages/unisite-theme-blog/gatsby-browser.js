@@ -1,4 +1,3 @@
-require("@codesandbox/sandpack-react/dist/index.css");
 require("./src/styles/global.css");
 require("./src/styles/typography.css");
 require("./src/styles/prism.css");
