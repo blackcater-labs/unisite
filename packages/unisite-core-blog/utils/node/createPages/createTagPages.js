@@ -32,6 +32,7 @@ module.exports = async function createTagPages({ actions, graphql }, options) {
         0: { path: join(options.tagPrefix, kebabCase(tag.tid)) },
       },
       contextPaginBuilder: async (data) => ({
+        tag: tag.id,
         posts: data.map((item) => item.id),
       }),
     });

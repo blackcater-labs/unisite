@@ -37,6 +37,7 @@ module.exports = async function createCategoryPages(
         0: { path: join(options.categoryPrefix, kebabCase(category.cid)) },
       },
       contextPaginBuilder: async (data) => ({
+        category: category.id,
         posts: data.map((item) => item.id),
       }),
     });

@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Category, Post } from "@unisite/core-blog";
+import { Tag, Post } from "@unisite/core-blog";
 
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import PostCard from "../../../components/PostCard";
@@ -8,32 +8,33 @@ import { SearchCard, StatisticCard } from "../../../components/Aside";
 import type { PageProps } from "../../../utils";
 
 type PageData = {
-  category: Category;
+  tag: Tag;
   posts: {
     nodes: Post[];
   };
 };
 type PageContext = {
-  posts?: string[];
+  tag: string;
+  posts: string[];
 };
-type CategoryPostListPageProps = PageProps<PageData, PageContext>;
+type TagPostListPageProps = PageProps<PageData, PageContext>;
 
-function CategoryPostListPage(
-  props: CategoryPostListPageProps
-): React.ReactElement {
-  const category = props.data.category;
+function TagPostListPage(props: TagPostListPageProps): React.ReactElement {
+  const tag = props.data.tag;
   const posts = props.data.posts?.nodes || [];
+
+  console.log("props:", props);
 
   return (
     <DefaultLayout>
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="mb-8 flex flex-row items-center">
-          <span className="mr-4 text-lg text-gray-900 font-semibold">分类</span>
+          <span className="mr-4 text-lg text-gray-900 font-semibold">标签</span>
           <span className="px-2 py-0.5 text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 hover:shadow rounded">
-            {category.name}
+            #{tag.name}
           </span>
           <span className="ml-4 text-sm text-gray-700">
-            共 {category.postCount} 篇文章
+            共 {tag.postCount} 篇文章
           </span>
         </div>
         <div className="grid grid-cols-12">
@@ -55,9 +56,9 @@ function CategoryPostListPage(
 }
 
 export const query = graphql`
-  query CategoryPostListPageQuery($category: String!, $posts: [String!]!) {
-    category(id: { eq: $category }) {
-      cid
+  query TagPostListPageQuery($tag: String!, $posts: [String!]!) {
+    tag(id: { eq: $tag }) {
+      tid
       name
       postCount
     }
@@ -104,4 +105,4 @@ export const query = graphql`
   }
 `;
 
-export default CategoryPostListPage;
+export default TagPostListPage;

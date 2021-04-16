@@ -8,7 +8,7 @@ import { SearchCard, StatisticCard } from "../../../components/Aside";
 import type { PageProps } from "../../../utils";
 
 type PageData = {
-  allPost: {
+  posts: {
     nodes: Post[];
   };
 };
@@ -18,22 +18,24 @@ type PageContext = {
 type PostListPageProps = PageProps<PageData, PageContext>;
 
 function PostListPage(props: PostListPageProps): React.ReactElement {
-  const posts = props.data.allPost?.nodes || [];
+  const posts = props.data.posts?.nodes || [];
 
   return (
     <DefaultLayout>
-      <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-12">
-        <div className="col-start-1 col-span-8 space-y-8">
-          {posts.map((post) => (
-            <PostCard {...post} key={post.id} />
-          ))}
-        </div>
-        <div className="ml-8 col-start-9 col-span-4">
-          <nav className="space-y-8">
-            <SearchCard />
-            <StatisticCard />
-          </nav>
-        </div>
+      <div className="max-w-6xl mx-auto px-6 py-8">
+        <section className="grid grid-cols-12">
+          <div className="col-start-1 col-span-8 space-y-8">
+            {posts.map((post) => (
+              <PostCard {...post} key={post.id} />
+            ))}
+          </div>
+          <div className="ml-8 col-start-9 col-span-4">
+            <nav className="space-y-8">
+              <SearchCard />
+              <StatisticCard />
+            </nav>
+          </div>
+        </section>
       </div>
     </DefaultLayout>
   );
@@ -41,7 +43,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
 
 export const query = graphql`
   query PostListPageQuery($posts: [String!]!) {
-    allPost(
+    posts: allPost(
       filter: { id: { in: $posts } }
       sort: { fields: published_at, order: DESC }
     ) {
