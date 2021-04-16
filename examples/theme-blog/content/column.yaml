@@ -9,12 +9,20 @@
   authors:
     - "blackcater"
   chapters:
-    - title: "Markdown 教程"
-      link: "/"
+    - title: "章节一：Unisite 初识"
       sections:
-        - title: "基础语法"
+        - title: "01 | 搭建自己的博客"
+        - title: "02 | 搭建自己的文档"
+    - title: "章节二：Unisite 剖析"
+      sections:
+        - title: "03 | GraphQL 浅析"
+        - title: "04 | Gatsby 浅析"
+        - title: "05 | Unsite 运行解密"
+    - title: "附录一：Markdown 支持"
+      sections:
+        - title: "06 | Markdown 基础语法"
           link: "/"
-        - title: "高级语法"
+        - title: "07 | Markdown 高级语法"
           link: "/"
-        - title: "扩展语法"
+        - title: "08 | Markdown 扩展语法"
           link: "/"

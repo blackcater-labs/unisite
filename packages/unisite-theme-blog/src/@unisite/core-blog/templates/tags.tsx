@@ -20,7 +20,7 @@ const TagItem = ({ tid, name }: Tag) => {
   return (
     <div className="m-2 px-3 py-1 inline-flex flex-row items-center bg-gray-200 rounded-md hover:text-gray-900 hover:bg-gray-300">
       <Link className="text-gray-700 text-xl" to={tagPath}>
-        {name}
+        #{name}
       </Link>
     </div>
   );

@@ -17,6 +17,17 @@ export type Tag = {
   postCount: number;
 };
 
+export type Chapter = {
+  title: string;
+  link?: string;
+  sections?: Section[];
+};
+
+export type Section = {
+  title: string;
+  link?: string;
+};
+
 export type Column = {
   id: string;
   cid: string;
@@ -27,6 +38,7 @@ export type Column = {
   tags: Tag[];
   authors: User[];
   posts: ColumnPost[];
+  chapters: Chapter[];
 };
 
 export type SocialLinks = {

@@ -1,13 +1,14 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import type { Column, ColumnContent } from "@unisite/core-blog";
+import type { Category, Tag, Column, ColumnContent } from "@unisite/core-blog";
 
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import Card from "../../../components/Card";
 import { Tabs, TabItem } from "../../../components/Tabs";
 import { MDXCard } from "../../../components/MDXContent";
 import type { PageProps } from "../../../utils";
+import { useCategoryPath, useTagPath } from "../../../utils";
 
 type PageData = {
   column: Column;
@@ -30,6 +31,7 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
   const categories = column.categories || [];
   const tags = column.tags || [];
   const intro = contents.nodes.filter((node) => node.type === "intro")[0]?.body;
+  const chapters = column.chapters;
 
   return (
     <DefaultLayout>
@@ -76,57 +78,120 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
               <MDXCard>{intro}</MDXCard>
             </TabItem>
             <TabItem tab="目录" tabKey="category">
-              <Card>目录信息</Card>
+              <Card>
+                <section>
+                  {(chapters || []).map(({ title, link, sections }, idx) => {
+                    if (link || !sections)
+                      return (
+                        <div
+                          key={idx}
+                          className="px-4 py-2 text-gray-900 hover:bg-gray-100 rounded-md"
+                        >
+                          {link ? (
+                            <Link className="block" to={link}>
+                              {title}
+                            </Link>
+                          ) : (
+                            <div>{title}</div>
+                          )}
+                        </div>
+                      );
+
+                    return (
+                      <div key={idx}>
+                        <div className="mt-6 mb-3 text-2xl text-gray-900 font-semibold">
+                          {title}
+                        </div>
+                        <ul>
+                          {(sections || []).map(({ title, link }, idx) => (
+                            <li
+                              key={idx}
+                              className="px-4 py-2 text-gray-900 hover:bg-gray-100 rounded-md"
+                            >
+                              {link ? (
+                                <Link className="block" to={link}>
+                                  {title}
+                                </Link>
+                              ) : (
+                                <div className="flex flex-row justify-between items-center opacity-50">
+                                  <span>{title}</span>
+                                  <span className="text-xs">待更新</span>
+                                </div>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </section>
+              </Card>
             </TabItem>
             <TabItem tab="留言" tabKey="comment">
-              tab3
+              暂未开放
             </TabItem>
           </Tabs>
         </div>
         <div className="ml-8 col-start-9 col-span-4">
-          <Card className="sticky top-12">
-            <div className="space-y-2">
-              <div className="flex flex-row items-center">
-                <span>发布时间：</span>
-                <div>2019-01-01</div>
-              </div>
-              <div className="flex flex-row items-center">
-                <span>最近更新：</span>
-                <div>2019-01-01</div>
-              </div>
-              <div className="flex flex-row items-center">
-                <span>分类：</span>
-                <div className="space-x-2">
-                  {categories.map((category) => (
-                    <Link
-                      key={category.cid}
-                      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 rounded"
-                      to="/"
-                    >
-                      {category.name}
-                    </Link>
-                  ))}
+          <div className="sticky top-20 space-y-8">
+            <Card>
+              <div className="space-y-2">
+                <div className="flex flex-row items-center">
+                  <span>发布时间：</span>
+                  <div>2019-01-01</div>
+                </div>
+                <div className="flex flex-row items-center">
+                  <span>最近更新：</span>
+                  <div>2019-01-01</div>
+                </div>
+                <div className="flex flex-row items-center">
+                  <span>分类：</span>
+                  <div className="space-x-2">
+                    {categories.map((category) => (
+                      <CategoryItem key={category.cid} {...category} />
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-row items-center">
+                  <span>标签：</span>
+                  <div className="space-x-2">
+                    {tags.map((tag) => (
+                      <TagItem key={tag.tid} {...tag} />
+                    ))}
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-row items-center">
-                <span>标签：</span>
-                <div className="space-x-2">
-                  {tags.map((tag) => (
-                    <Link
-                      key={tag.tid}
-                      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 rounded"
-                      to="/"
-                    >
-                      #{tag.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
     </DefaultLayout>
+  );
+}
+
+function CategoryItem({ cid, name }: Category) {
+  const categoryPath = useCategoryPath(cid);
+
+  return (
+    <Link
+      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 hover:bg-gray-200 hover:shadow rounded"
+      to={categoryPath}
+    >
+      {name}
+    </Link>
+  );
+}
+
+function TagItem({ tid, name }: Tag) {
+  const tagPath = useTagPath(tid);
+
+  return (
+    <Link
+      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 hover:bg-gray-200 hover:shadow rounded"
+      to={tagPath}
+    >
+      #{name}
+    </Link>
   );
 }
 
