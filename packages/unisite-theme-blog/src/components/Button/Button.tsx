@@ -13,7 +13,7 @@ const Button: ButtonFC = ({ className, children }) => {
     <button
       className={cls([
         className,
-        "flex flex-row items-center px-4 py-2 bg-gray-900 text-gray-50 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:ring-opacity-80 transition ease-in duration-300",
+        "flex flex-row items-center px-4 py-2 bg-indigo-900 dark:bg-gray-100 text-gray-100 dark:text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700 focus:ring-opacity-80 transition ease-in duration-300",
       ])}
     >
       {children}

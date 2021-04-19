@@ -52,7 +52,7 @@ const PostCard: PostCardFC = ({
       </div>
       <div className="mt-2">
         <Link
-          className="text-2xl text-gray-900 font-medium hover:underline hover:text-opacity-80 dark:text-white dark:hover:text-gray-200"
+          className="text-2xl text-gray-900 font-medium hover:underline hover:text-opacity-80 dark:text-white dark:hover:text-gray-100"
           to={postPath}
         >
           {title}

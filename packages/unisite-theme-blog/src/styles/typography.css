@@ -290,9 +290,9 @@
 .gatsby-typography .Docs--tag.Docs--tag-pink {
   @apply text-pink-700 border-pink-200 bg-pink-50;
 }
-.gatsby-typography .Docs--tag.Docs--tag-grape {
-  @apply text-grape-700 border-grape-200 bg-grape-50;
-}
+/*.gatsby-typography .Docs--tag.Docs--tag-grape {*/
+/*  @apply text-grape-700 border-grape-200 bg-grape-50;*/
+/*}*/
 .gatsby-typography .Docs--tag.Docs--tag-violet {
   @apply text-violet-700 border-violet-200 bg-violet-50;
 }
