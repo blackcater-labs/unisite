@@ -2,7 +2,7 @@ import React from "react";
 import cls from "classnames";
 import { Sun as IconSun, Moon as IconMoon } from "@icon-park/react";
 // @ts-ignore
-import { ThemeToggler } from "gatsby-plugin-dark-mode";
+import { ThemeToggler } from "@unisite/gatsby-plugin-dark-mode";
 
 type ThemeSwitchProps = {};
 type ThemeSwitchFC = React.FC<ThemeSwitchProps>;
@@ -23,13 +23,13 @@ const ThemeSwitch: ThemeSwitchFC = () => {
           }
 
           return (
-            <div className="inline-flex flex-row items-center p-1 space-x-1 bg-gray-200 rounded-full">
+            <div className="inline-flex flex-row items-center p-1 space-x-1 bg-gray-200 rounded-full dark:bg-true-gray-900">
               <div
                 className={cls([
                   theme === "light"
-                    ? "text-gray-900 font-semibold bg-white shadow"
-                    : "text-gray-700",
-                  "inline-flex flex-row items-center px-2 py-1 text-sm hover:text-gray-900 hover:font-semibold cursor-pointer rounded-full transition duration-300 ease-in-out",
+                    ? "text-gray-900 font-semibold bg-white shadow dark:text-gray-100 dark:bg-true-gray-700"
+                    : "text-gray-700 dark:text-gray-300",
+                  "inline-flex flex-row items-center px-2 py-1 text-sm cursor-pointer rounded-full transition duration-300 ease-in-out",
                 ])}
                 onClick={() => toggleTheme("light")}
               >
@@ -38,9 +38,9 @@ const ThemeSwitch: ThemeSwitchFC = () => {
               <div
                 className={cls([
                   theme === "dark"
-                    ? "text-gray-900 font-semibold bg-white shadow"
-                    : "text-gray-700",
-                  "inline-flex flex-row items-center px-2 py-1 text-sm hover:text-gray-900 hover:font-semibold cursor-pointer rounded-full transition duration-300 ease-in-out",
+                    ? "text-gray-900 font-semibold bg-white shadow dark:text-gray-100 dark:bg-true-gray-700"
+                    : "text-gray-700 dark:text-gray-300",
+                  "inline-flex flex-row items-center px-2 py-1 text-sm cursor-pointer rounded-full transition duration-300 ease-in-out",
                 ])}
                 onClick={() => toggleTheme("dark")}
               >

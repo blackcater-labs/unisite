@@ -293,27 +293,27 @@
 /*.gatsby-typography .Docs--tag.Docs--tag-grape {*/
 /*  @apply text-grape-700 border-grape-200 bg-grape-50;*/
 /*}*/
-.gatsby-typography .Docs--tag.Docs--tag-violet {
-  @apply text-violet-700 border-violet-200 bg-violet-50;
-}
+/*.gatsby-typography .Docs--tag.Docs--tag-violet {*/
+/*  @apply text-violet-700 border-violet-200 bg-violet-50;*/
+/*}*/
 .gatsby-typography .Docs--tag.Docs--tag-indigo {
   @apply text-indigo-700 border-indigo-200 bg-indigo-50;
 }
 .gatsby-typography .Docs--tag.Docs--tag-blue {
   @apply text-blue-700 border-blue-200 bg-blue-50;
 }
-.gatsby-typography .Docs--tag.Docs--tag-cyan {
-  @apply text-cyan-700 border-cyan-200 bg-cyan-50;
-}
+/*.gatsby-typography .Docs--tag.Docs--tag-cyan {*/
+/*  @apply text-cyan-700 border-cyan-200 bg-cyan-50;*/
+/*}*/
 .gatsby-typography .Docs--tag.Docs--tag-teal {
   @apply text-teal-700 border-teal-200 bg-teal-50;
 }
 .gatsby-typography .Docs--tag.Docs--tag-green {
   @apply text-green-700 border-green-200 bg-green-50;
 }
-.gatsby-typography .Docs--tag.Docs--tag-lime {
-  @apply text-lime-700 border-lime-200 bg-lime-50;
-}
+/*.gatsby-typography .Docs--tag.Docs--tag-lime {*/
+/*  @apply text-lime-700 border-lime-200 bg-lime-50;*/
+/*}*/
 .gatsby-typography .Docs--tag.Docs--tag-yellow {
   @apply text-yellow-700 border-yellow-200 bg-yellow-50;
 }

@@ -31,7 +31,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
             ))}
           </div>
           <div className="ml-8 col-start-9 col-span-4">
-            <nav className="space-y-8">
+            <nav className="sticky top-20 space-y-8">
               <SearchCard />
               <StatisticCard />
               <ThemeSwitch />

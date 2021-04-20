@@ -31,7 +31,7 @@ function TagItem({ tid, name }: Tag) {
 
   return (
     <Link
-      className="px-2 py-0.5 text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer hover:shadow"
+      className="px-2 py-0.5 text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 rounded cursor-pointer hover:shadow dark:text-gray-300 dark:bg-true-gray-800 dark:hover:bg-true-gray-700"
       to={tagPath}
     >
       {name}
@@ -75,9 +75,13 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
           <Card>
             <div className="mb-4 flex items-center justify-between">
               <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
-              <span className="text-sm text-gray-700">{dateValue}</span>
+              <span className="text-sm text-gray-700 dark:text-gray-500">
+                {dateValue}
+              </span>
             </div>
-            <h1 className="text-gray-900 text-4xl font-medium">{post.title}</h1>
+            <h1 className="text-gray-900 text-4xl font-medium dark:text-gray-100">
+              {post.title}
+            </h1>
             {tags.length ? (
               <div className="mt-4 flex flex-row items-center">
                 {tags.map((tag) => (
@@ -88,7 +92,9 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
           </Card>
           <MDXCard>{post.body!}</MDXCard>
           <Card>
-            <div className="mb-4 text-xl text-gray-900 font-medium">作者</div>
+            <div className="mb-4 text-xl text-gray-900 font-medium dark:text-gray-100">
+              作者
+            </div>
             <div className="flex flex-row items-center">
               {authors.map((author) => (
                 <div
@@ -100,7 +106,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
                     alt={author.name}
                     image={getImage(author.avatar)!}
                   />
-                  <span className="text-lg text-gray-700 font-medium cursor-pointer hover:underline">
+                  <span className="text-lg text-gray-700 font-medium cursor-pointer hover:underline dark:text-gray-300">
                     {author.name}
                   </span>
                 </div>
@@ -108,13 +114,15 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
             </div>
           </Card>
           <Card>
-            <div className="mb-4 text-xl text-gray-900 font-medium">专栏</div>
+            <div className="mb-4 text-xl text-gray-900 font-medium dark:text-gray-100">
+              专栏
+            </div>
           </Card>
           <Card>
             <div className="grid grid-cols-12">
               {previousPost ? (
                 <Link
-                  className="group pl-2 pr-6 py-1 col-start-1 col-span-6 flex flex-row items-center text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md"
+                  className="group pl-2 pr-6 py-1 col-start-1 col-span-6 flex flex-row items-center text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md dark:text-gray-300 dark:hover:bg-true-gray-800"
                   to={prevPath}
                 >
                   <IconLeft
@@ -127,7 +135,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
               ) : null}
               {nextPost ? (
                 <Link
-                  className="group pl-6 pr-2 py-1 col-start-7 col-span-6 flex flex-row justify-end items-center text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md"
+                  className="group pl-6 pr-2 py-1 col-start-7 col-span-6 flex flex-row justify-end items-center text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md dark:text-gray-300 dark:hover:bg-true-gray-800"
                   to={nextPath}
                 >
                   <div>{nextPost.title}</div>

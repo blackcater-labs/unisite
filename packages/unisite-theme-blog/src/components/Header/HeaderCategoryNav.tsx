@@ -55,11 +55,11 @@ function NavItem({ cid, name, postCount }: NavItemProps) {
 
   return (
     <Link
-      className="flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100"
+      className="flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800"
       to={categoryPath}
     >
-      <span className="text-sm text-gray-700">{name}</span>
-      <span className="flex flex-row justify-center items-center py-0.5 px-1 h-4 text-xs text-white rounded-full bg-gray-700 transform scale-75">
+      <span className="text-sm text-gray-700 dark:text-gray-300">{name}</span>
+      <span className="flex flex-row justify-center items-center py-0.5 px-1 h-4 text-xs text-white rounded-full bg-gray-700 transform scale-75 dark:text-true-gray-900 dark:bg-gray-300">
         {postCount}
       </span>
     </Link>
@@ -74,15 +74,17 @@ const HeaderCategoryNav: HeaderCategoryNavFC = () => {
   const categoryListPath = useCategoryListPath();
 
   return (
-    <div className="sticky top-0 z-40 bg-white shadow-sm">
+    <div className="sticky top-0 z-40 bg-white shadow-sm dark:bg-true-gray-900">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="py-2 flex flex-row items-center border-t overflow-x-auto">
+        <div className="py-2 flex flex-row items-center border-t overflow-x-auto dark:border-true-gray-700">
           <Link
-            className="flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100"
+            className="flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800"
             to="/"
           >
-            <span className="text-sm text-gray-700">全部</span>
-            <span className="flex flex-row justify-center items-center py-0.5 px-1 h-4 text-xs text-white rounded-full bg-gray-700 transform scale-75">
+            <span className="text-sm text-gray-700 dark:text-gray-300">
+              全部
+            </span>
+            <span className="flex flex-row justify-center items-center py-0.5 px-1 h-4 text-xs text-white rounded-full bg-gray-700 transform scale-75 dark:text-true-gray-900 dark:bg-gray-300">
               {totalPostCount}
             </span>
           </Link>
@@ -91,11 +93,16 @@ const HeaderCategoryNav: HeaderCategoryNavFC = () => {
           ))}
           {totalCategoryCount < 8 ? (
             <Link
-              className="group flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100"
+              className="group flex-shrink-0 mr-1 px-3 py-1 flex flex-row items-center rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800"
               to={categoryListPath}
             >
-              <span className="text-sm text-gray-700">更多</span>
-              <IconRight className="group-hover:animate-bounce-r" size="16" />
+              <span className="text-sm text-gray-700 dark:text-gray-300">
+                更多
+              </span>
+              <IconRight
+                className="group-hover:animate-bounce-r dark:text-gray-300"
+                size="16"
+              />
             </Link>
           ) : null}
         </div>

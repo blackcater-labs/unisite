@@ -11,11 +11,11 @@ type HeaderNavFC = React.FC<HeaderNavProps>;
 
 const HeaderNav: HeaderNavFC = () => {
   return (
-    <header className="relative z-50 bg-white">
+    <header className="relative z-50 bg-white dark:bg-true-gray-900">
       <div className="max-w-6xl mx-auto h-16 px-6 relative flex flex-row justify-between items-center">
         <div className="flex flex-row items-center">
           <Link to="/">
-            <div className="mr-4 rounded-xl w-10 h-10 bg-gray-400"></div>
+            <div className="mr-4 rounded-xl w-10 h-10 bg-gray-400 dark:bg-true-gray-700"></div>
           </Link>
           <div className="space-x-2 flex flex-row items-center">
             <Dropdown
@@ -28,7 +28,7 @@ const HeaderNav: HeaderNavFC = () => {
             >
               <span
                 tabIndex={0}
-                className="px-3 py-1 inline-flex flex-row items-center text-gray-700 rounded-md cursor-pointer outline-none hover:bg-gray-100 focus:bg-gray-100"
+                className="px-3 py-1 inline-flex flex-row items-center text-gray-700 rounded-md cursor-pointer outline-none hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-300 dark:hover:bg-true-gray-800 dark:focus:bg-true-gray-800"
               >
                 菜单1
                 <svg
@@ -60,7 +60,7 @@ const HeaderNav: HeaderNavFC = () => {
             >
               <span
                 tabIndex={0}
-                className="px-3 py-1 inline-flex flex-row items-center text-gray-700 rounded-md cursor-pointer outline-none hover:bg-gray-100 focus:bg-gray-100"
+                className="px-3 py-1 inline-flex flex-row items-center text-gray-700 rounded-md cursor-pointer outline-none hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-300 dark:hover:bg-true-gray-800 dark:focus:bg-true-gray-800"
               >
                 菜单2
               </span>
@@ -71,7 +71,7 @@ const HeaderNav: HeaderNavFC = () => {
                   <Menu.Item
                     title="Help"
                     content="你可以在这里找到帮助信息你可以在这里找到帮助信息"
-                    avatar="0"
+                    avatar=" "
                   />
                   <Menu.Divider />
                   <Menu.Item title="help" />
@@ -81,7 +81,7 @@ const HeaderNav: HeaderNavFC = () => {
             >
               <span
                 tabIndex={0}
-                className="px-3 py-1 inline-flex flex-row items-center text-gray-700 rounded-md cursor-pointer outline-none hover:bg-gray-100 focus:bg-gray-100"
+                className="px-3 py-1 inline-flex flex-row items-center text-gray-700 rounded-md cursor-pointer outline-none hover:bg-gray-100 focus:bg-gray-100 dark:text-gray-300 dark:hover:bg-true-gray-800 dark:focus:bg-true-gray-800"
               >
                 菜单3
                 <svg

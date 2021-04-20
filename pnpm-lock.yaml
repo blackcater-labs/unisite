@@ -157,9 +157,11 @@ importers:
 
   packages/unisite-theme-blog:
     specifiers:
+      '@headlessui/react': ^1.0.0
       '@icon-park/react': ^1.3.3
       '@mdx-js/react': ^1.6.22
       '@tailwindcss/aspect-ratio': ^0.2.0
+      '@tailwindcss/ui': ^0.7.2
       '@types/classnames': ^2.2.11
       '@types/github-slugger': ^1.3.0
       '@types/lodash': ^4.14.168
@@ -180,9 +182,11 @@ importers:
       react-use: ^17.2.3
       tailwindcss: ^2.1.1
     dependencies:
+      '@headlessui/react': registry.nlark.com/@headlessui/react/1.0.0
       '@icon-park/react': 1.3.3
       '@mdx-js/react': 1.6.22
       '@tailwindcss/aspect-ratio': 0.2.0
+      '@tailwindcss/ui': registry.nlark.com/@tailwindcss/ui/0.7.2_tailwindcss@2.1.1
       '@types/classnames': 2.2.11
       '@types/github-slugger': 1.3.0
       '@types/lodash': 4.14.168
@@ -16730,6 +16734,10 @@ packages:
       punycode: 2.1.1
     dev: true
 
+  /traverse/0.6.6:
+    resolution: {integrity: sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=, tarball: traverse/download/traverse-0.6.6.tgz}
+    dev: false
+
   /trim-newlines/1.0.0:
     resolution: {integrity: sha1-WIeWa7WCpFA6QetST301ARgVphM=, tarball: trim-newlines/download/trim-newlines-1.0.0.tgz}
     engines: {node: '>=0.10.0'}
@@ -18009,3 +18017,65 @@ packages:
 
   /zwitch/1.0.5:
     resolution: {integrity: sha1-0R1zgf/tFrdC9q97PyI9XNn+mSA=, tarball: zwitch/download/zwitch-1.0.5.tgz}
+
+  registry.nlark.com/@headlessui/react/1.0.0:
+    resolution: {integrity: sha1-ZhtQ6/0lBBq7Rdju3YXnVZBWvK8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@headlessui/react/download/@headlessui/react-1.0.0.tgz}
+    name: '@headlessui/react'
+    version: 1.0.0
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+    dev: false
+
+  registry.nlark.com/@tailwindcss/custom-forms/0.2.1_tailwindcss@2.1.1:
+    resolution: {integrity: sha1-QOXtH/9tKdjtHFCKCyqvjalpYuA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@tailwindcss/custom-forms/download/@tailwindcss/custom-forms-0.2.1.tgz}
+    id: registry.nlark.com/@tailwindcss/custom-forms/0.2.1
+    name: '@tailwindcss/custom-forms'
+    version: 0.2.1
+    peerDependencies:
+      tailwindcss: ^1.0
+    dependencies:
+      lodash: 4.17.21
+      mini-svg-data-uri: registry.nlark.com/mini-svg-data-uri/1.2.3
+      tailwindcss: 2.1.1_02ae6d0a5709fa7b5d38be2fad8eebc6
+      traverse: 0.6.6
+    dev: false
+
+  registry.nlark.com/@tailwindcss/typography/0.2.0_tailwindcss@2.1.1:
+    resolution: {integrity: sha1-tZfINQLjw8ZkGoqqvaIjzUlKs0k=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@tailwindcss/typography/download/@tailwindcss/typography-0.2.0.tgz}
+    id: registry.nlark.com/@tailwindcss/typography/0.2.0
+    name: '@tailwindcss/typography'
+    version: 0.2.0
+    peerDependencies:
+      tailwindcss: ^1.5.0
+    dependencies:
+      tailwindcss: 2.1.1_02ae6d0a5709fa7b5d38be2fad8eebc6
+    dev: false
+
+  registry.nlark.com/@tailwindcss/ui/0.7.2_tailwindcss@2.1.1:
+    resolution: {integrity: sha1-Hwpd30e3W2+JJVPmdBdk01F4KhI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@tailwindcss/ui/download/@tailwindcss/ui-0.7.2.tgz}
+    id: registry.nlark.com/@tailwindcss/ui/0.7.2
+    name: '@tailwindcss/ui'
+    version: 0.7.2
+    peerDependencies:
+      tailwindcss: ^1.8.3
+    dependencies:
+      '@tailwindcss/custom-forms': registry.nlark.com/@tailwindcss/custom-forms/0.2.1_tailwindcss@2.1.1
+      '@tailwindcss/typography': registry.nlark.com/@tailwindcss/typography/0.2.0_tailwindcss@2.1.1
+      hex-rgb: registry.nlark.com/hex-rgb/4.3.0
+      postcss-selector-parser: 6.0.4
+      tailwindcss: 2.1.1_02ae6d0a5709fa7b5d38be2fad8eebc6
+    dev: false
+
+  registry.nlark.com/hex-rgb/4.3.0:
+    resolution: {integrity: sha1-r16XToO7L+/kTVUYKwBOyBjAd3Y=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/hex-rgb/download/hex-rgb-4.3.0.tgz}
+    name: hex-rgb
+    version: 4.3.0
+    engines: {node: '>=6'}
+    dev: false
+
+  registry.nlark.com/mini-svg-data-uri/1.2.3:
+    resolution: {integrity: sha1-4Wuqkq1V3aocLBNXWRKfQZELw58=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/mini-svg-data-uri/download/mini-svg-data-uri-1.2.3.tgz}
+    name: mini-svg-data-uri
+    version: 1.2.3
+    dev: false
