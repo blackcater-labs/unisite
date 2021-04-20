@@ -23,12 +23,7 @@ const Aside: AsideFC = ({
 
   return (
     <div
-      className={cls([
-        className,
-        prefix("aside"),
-        `bg-${type}-50`,
-        `border-${type}-500`,
-      ])}
+      className={cls([className, prefix("aside"), prefix(`aside-${color}`)])}
     >
       {header ? <div className={prefix("aside-header")}>{header}</div> : null}
       {children}

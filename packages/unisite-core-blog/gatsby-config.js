@@ -30,14 +30,15 @@ module.exports = (options) => {
             {
               resolve: "gatsby-remark-autolink-headers",
               options: {
+                isIconAfterHeader: true,
                 icon: `<svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
   <g>
     <rect width="48" height="48" fill="white" fill-opacity="0.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="none" fill-rule="evenodd"/>
     <g transform="translate(6.000000, 5.500000)">
-      <path d="M0,10.5 L36,10.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#333" fill="none" fill-rule="evenodd"/>
-      <path d="M-8,18.5 L28,18.5" transform="translate(10.000000, 18.500000) rotate(90.000000) translate(-10.000000, -18.500000) " stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#333" fill="none" fill-rule="evenodd"/>
-      <path d="M8,18.5 L44,18.5" transform="translate(26.000000, 18.500000) rotate(90.000000) translate(-26.000000, -18.500000) " stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#333" fill="none" fill-rule="evenodd"/>
-      <path d="M0,26.5 L36,26.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#333" fill="none" fill-rule="evenodd"/>
+      <path d="M0,10.5 L36,10.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="currentColor" fill="none" fill-rule="evenodd"/>
+      <path d="M-8,18.5 L28,18.5" transform="translate(10.000000, 18.500000) rotate(90.000000) translate(-10.000000, -18.500000) " stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="currentColor" fill="none" fill-rule="evenodd"/>
+      <path d="M8,18.5 L44,18.5" transform="translate(26.000000, 18.500000) rotate(90.000000) translate(-26.000000, -18.500000) " stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="currentColor" fill="none" fill-rule="evenodd"/>
+      <path d="M0,26.5 L36,26.5" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="currentColor" fill="none" fill-rule="evenodd"/>
     </g>
   </g>
 </svg>`,

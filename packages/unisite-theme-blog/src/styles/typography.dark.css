@@ -1,0 +1,149 @@
+/*
+====================================================
+                    DARK MODE
+====================================================
+*/
+
+html.dark .gatsby-typography {
+  @apply text-gray-300;
+}
+
+html.dark .gatsby-typography h1,
+html.dark .gatsby-typography h2,
+html.dark .gatsby-typography h3,
+html.dark .gatsby-typography h4,
+html.dark .gatsby-typography h5,
+html.dark .gatsby-typography h6 {
+  @apply text-gray-100;
+}
+
+html.dark .gatsby-typography h1 > a[class~="anchor"],
+html.dark .gatsby-typography h2 > a[class~="anchor"],
+html.dark .gatsby-typography h3 > a[class~="anchor"],
+html.dark .gatsby-typography h4 > a[class~="anchor"],
+html.dark .gatsby-typography h5 > a[class~="anchor"],
+html.dark .gatsby-typography h6 > a[class~="anchor"] {
+  @apply text-gray-100;
+}
+
+html.dark .gatsby-typography hr {
+  @apply bg-true-gray-700 h-px border-none;
+}
+
+html.dark .gatsby-typography blockquote::before {
+  @apply bg-true-gray-700;
+}
+html.dark .gatsby-typography blockquote > .i-icon-quote {
+  @apply text-true-gray-700;
+}
+
+html.dark .gatsby-typography details {
+  @apply border-true-gray-800;
+}
+html.dark .gatsby-typography details > summary {
+  @apply bg-true-gray-800;
+}
+html.dark .gatsby-typography details[open] {
+  @apply border-true-gray-700;
+}
+html.dark .gatsby-typography details[open] > summary {
+  @apply bg-true-gray-700;
+}
+
+/* Docs Extensions */
+
+/* Docs--code-block */
+html.dark .gatsby-typography .Docs--code-block > .Docs--code-block__header {
+  @apply text-gray-100 bg-true-gray-800;
+}
+html.dark .gatsby-typography .Docs--code-block > .i-icon {
+  @apply text-gray-300;
+}
+html.dark .gatsby-typography .Docs--code-block > .i-icon.i-icon-check-small {
+  @apply text-green-500;
+}
+html.dark .gatsby-typography .Docs--code-block > .i-icon:hover {
+  @apply bg-true-gray-700;
+}
+
+/* Docs--aside */
+html.dark .gatsby-typography .Docs--aside.Docs--aside-gray {
+  @apply bg-gray-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-red {
+  @apply bg-red-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-orange {
+  @apply bg-orange-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-yellow {
+  @apply bg-yellow-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-green {
+  @apply bg-green-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-teal {
+  @apply bg-teal-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-blue {
+  @apply bg-blue-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-indigo {
+  @apply bg-indigo-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-purple {
+  @apply bg-purple-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside.Docs--aside-pink {
+  @apply bg-pink-400 bg-opacity-10;
+}
+html.dark .gatsby-typography .Docs--aside > .Docs--aside-header {
+  @apply text-gray-100;
+}
+
+/* Docs--example */
+html.dark .gatsby-typography .Docs--example {
+  @apply border-true-gray-700;
+}
+
+/* Docs--tag */
+html.dark .gatsby-typography .Docs--tag {
+  @apply bg-opacity-70;
+}
+
+/* Docs--highlight */
+html.dark .gatsby-typography .Docs--highlight {
+  @apply bg-gray-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-red {
+  @apply bg-red-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-orange {
+  @apply bg-orange-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-yellow {
+  @apply bg-yellow-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-green {
+  @apply bg-green-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-teal {
+  @apply bg-teal-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-blue {
+  @apply bg-blue-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-indigo {
+  @apply bg-indigo-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-purple {
+  @apply bg-purple-400 bg-opacity-30;
+}
+html.dark .gatsby-typography .Docs--highlight.Docs--highlight-pink {
+  @apply bg-pink-400 bg-opacity-30;
+}
+
+/* Docs--link */
+html.dark .gatsby-typography .Docs--link > .Docs--link__content {
+  @apply bg-true-gray-800 hover:bg-true-gray-700;
+}

@@ -1,0 +1,133 @@
+/*
+====================================================
+                    DARK MODE
+====================================================
+*/
+
+html.dark code[class*="language-"],
+html.dark pre[class*="language-"] {
+  @apply text-gray-100 bg-true-gray-800;
+  font-size: 0.875em;
+  text-align: left;
+  text-shadow: 0 1px black;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  white-space: pre;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+html.dark pre[class*="language-"]::-moz-selection,
+html.dark pre[class*="language-"] ::-moz-selection,
+html.dark code[class*="language-"]::-moz-selection,
+html.dark code[class*="language-"] ::-moz-selection {
+  @apply bg-true-gray-500;
+}
+
+html.dark pre[class*="language-"]::selection,
+html.dark pre[class*="language-"] ::selection,
+html.dark code[class*="language-"]::selection,
+html.dark code[class*="language-"] ::selection {
+  @apply bg-true-gray-500;
+}
+
+html.dark :not(pre) > code[class*="language-"],
+html.dark pre[class*="language-"] {
+  @apply border border-true-gray-700;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+html.dark .token.comment,
+html.dark .token.prolog,
+html.dark .token.doctype,
+html.dark .token.cdata {
+  color: hsl(30, 20%, 50%);
+}
+
+html.dark .token.property,
+html.dark .token.tag,
+html.dark .token.boolean,
+html.dark .token.number,
+html.dark .token.constant,
+html.dark .token.symbol {
+  color: hsl(350, 40%, 70%);
+}
+
+html.dark .token.selector,
+html.dark .token.attr-name,
+html.dark .token.string,
+html.dark .token.char,
+html.dark .token.builtin,
+html.dark .token.inserted {
+  color: hsl(75, 70%, 60%);
+}
+
+html.dark .token.operator,
+html.dark .token.entity,
+html.dark .token.url,
+html.dark .language-css .token.string,
+html.dark .style .token.string,
+html.dark .token.variable {
+  color: hsl(40, 90%, 60%);
+  background: none;
+}
+
+html.dark .token.atrule,
+html.dark .token.attr-value,
+html.dark .token.keyword {
+  color: hsl(350, 40%, 70%);
+}
+
+html.dark .token.regex,
+html.dark .token.important {
+  color: #e90;
+}
+
+html.dark .token.important,
+html.dark .token.bold {
+  font-weight: bold;
+}
+html.dark .token.italic {
+  font-style: italic;
+}
+
+html.dark .token.entity {
+  cursor: help;
+}
+
+html.dark .token.deleted {
+  color: red;
+}
+
+/* Plugin:Line Numbers */
+html.dark .line-numbers .line-numbers-rows {
+  @apply border-true-gray-500;
+}
+html.dark .line-numbers-rows > span:before {
+  @apply text-true-gray-500;
+}
+
+/* Plugin:Line Highlight */
+html.dark .gatsby-highlight-code-line {
+  @apply bg-true-gray-700;
+}
+
+/* Plugin:Diff Highlight */
+html.dark pre > code > .token.deleted:not(.prefix) {
+  @apply bg-red-500 bg-opacity-50;
+}
+html.dark pre > code > .token.inserted:not(.prefix) {
+  @apply bg-green-500 bg-opacity-50;
+}
+
+/* Plugin:Command Line */
+html.dark .command-line-prompt > span:before {
+  @apply text-true-gray-500;
+}

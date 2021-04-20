@@ -13,6 +13,7 @@
 .gatsby-typography h4,
 .gatsby-typography h5,
 .gatsby-typography h6 {
+  @apply text-gray-900;
   position: relative;
 }
 
@@ -22,10 +23,6 @@
 .gatsby-typography h4 > a[class~="anchor"],
 .gatsby-typography h5 > a[class~="anchor"],
 .gatsby-typography h6 > a[class~="anchor"] {
-  position: absolute;
-  top: 50%;
-  left: -1.25rem;
-  transform: translate(0, -50%);
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
@@ -40,42 +37,36 @@
 }
 
 .gatsby-typography h1 {
-  @apply text-gray-900;
   margin: 2.25rem 0 1.5rem;
   font-size: 2.25rem;
   font-weight: 500;
 }
 
 .gatsby-typography h2 {
-  @apply text-gray-900;
   margin: 2rem 0 1.25rem;
   font-size: 2rem;
   font-weight: 500;
 }
 
 .gatsby-typography h3 {
-  @apply text-gray-900;
   margin: 1.75rem 0 1rem;
   font-size: 1.75rem;
   font-weight: 500;
 }
 
 .gatsby-typography h4 {
-  @apply text-gray-900;
   margin: 1.5rem 0 0.75rem;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
 .gatsby-typography h5 {
-  @apply text-gray-900;
   margin: 1.25rem 0 0.5rem;
   font-size: 1.25rem;
   font-weight: 500;
 }
 
 .gatsby-typography h6 {
-  @apply text-gray-900;
   margin: 1rem 0 0.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -165,6 +156,7 @@
 .gatsby-typography details > summary {
   @apply bg-gray-100;
   padding: 0 0.75rem;
+  cursor: pointer;
 }
 .gatsby-typography details[open] {
   @apply border-gray-200;
@@ -255,6 +247,36 @@
   margin: 0 0 1.5rem;
   padding: 0.75rem 1rem;
 }
+.gatsby-typography .Docs--aside.Docs--aside-gray {
+  @apply bg-gray-50 border-gray-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-red {
+  @apply bg-red-50 border-red-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-orange {
+  @apply bg-orange-50 border-orange-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-yellow {
+  @apply bg-yellow-50 border-yellow-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-green {
+  @apply bg-green-50 border-green-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-teal {
+  @apply bg-teal-50 border-teal-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-blue {
+  @apply bg-blue-50 border-blue-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-indigo {
+  @apply bg-indigo-50 border-indigo-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-purple {
+  @apply bg-purple-50 border-purple-500;
+}
+.gatsby-typography .Docs--aside.Docs--aside-pink {
+  @apply bg-pink-50 border-pink-500;
+}
 .gatsby-typography .Docs--aside > * {
   margin-bottom: 0.75rem;
 }
@@ -279,52 +301,76 @@
 
 /* Docs--tag */
 .gatsby-typography .Docs--tag {
-  @apply text-gray-700 border border-gray-200 bg-gray-50 rounded;
+  @apply border rounded;
   margin: 0 0.125rem;
   padding: 0.125rem 0.25rem;
   font-size: 0.75rem;
 }
+.gatsby-typography .Docs--tag.Docs--tag-gray {
+  @apply text-gray-700 border-gray-200 bg-gray-50;
+}
 .gatsby-typography .Docs--tag.Docs--tag-red {
   @apply text-red-700 border-red-200 bg-red-50;
 }
-.gatsby-typography .Docs--tag.Docs--tag-pink {
-  @apply text-pink-700 border-pink-200 bg-pink-50;
+.gatsby-typography .Docs--tag.Docs--tag-orange {
+  @apply text-orange-700 border-orange-200 bg-orange-50;
 }
-/*.gatsby-typography .Docs--tag.Docs--tag-grape {*/
-/*  @apply text-grape-700 border-grape-200 bg-grape-50;*/
-/*}*/
-/*.gatsby-typography .Docs--tag.Docs--tag-violet {*/
-/*  @apply text-violet-700 border-violet-200 bg-violet-50;*/
-/*}*/
-.gatsby-typography .Docs--tag.Docs--tag-indigo {
-  @apply text-indigo-700 border-indigo-200 bg-indigo-50;
-}
-.gatsby-typography .Docs--tag.Docs--tag-blue {
-  @apply text-blue-700 border-blue-200 bg-blue-50;
-}
-/*.gatsby-typography .Docs--tag.Docs--tag-cyan {*/
-/*  @apply text-cyan-700 border-cyan-200 bg-cyan-50;*/
-/*}*/
-.gatsby-typography .Docs--tag.Docs--tag-teal {
-  @apply text-teal-700 border-teal-200 bg-teal-50;
+.gatsby-typography .Docs--tag.Docs--tag-yellow {
+  @apply text-yellow-700 border-yellow-200 bg-yellow-50;
 }
 .gatsby-typography .Docs--tag.Docs--tag-green {
   @apply text-green-700 border-green-200 bg-green-50;
 }
-/*.gatsby-typography .Docs--tag.Docs--tag-lime {*/
-/*  @apply text-lime-700 border-lime-200 bg-lime-50;*/
-/*}*/
-.gatsby-typography .Docs--tag.Docs--tag-yellow {
-  @apply text-yellow-700 border-yellow-200 bg-yellow-50;
+.gatsby-typography .Docs--tag.Docs--tag-teal {
+  @apply text-teal-700 border-teal-200 bg-teal-50;
 }
-.gatsby-typography .Docs--tag.Docs--tag-orange {
-  @apply text-orange-700 border-orange-200 bg-orange-50;
+.gatsby-typography .Docs--tag.Docs--tag-blue {
+  @apply text-blue-700 border-blue-200 bg-blue-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-indigo {
+  @apply text-indigo-700 border-indigo-200 bg-indigo-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-purple {
+  @apply text-indigo-700 border-indigo-200 bg-indigo-50;
+}
+.gatsby-typography .Docs--tag.Docs--tag-pink {
+  @apply text-pink-700 border-pink-200 bg-pink-50;
 }
 
 /* Docs--highlight */
 .gatsby-typography .Docs--highlight {
   margin: 0 0.125rem;
   padding: 0.125rem;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-gray {
+  @apply bg-gray-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-red {
+  @apply bg-red-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-orange {
+  @apply bg-orange-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-yellow {
+  @apply bg-yellow-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-green {
+  @apply bg-green-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-teal {
+  @apply bg-teal-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-blue {
+  @apply bg-blue-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-indigo {
+  @apply bg-indigo-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-purple {
+  @apply bg-purple-100;
+}
+.gatsby-typography .Docs--highlight.Docs--highlight-pink {
+  @apply bg-pink-100;
 }
 
 /* Docs--link */

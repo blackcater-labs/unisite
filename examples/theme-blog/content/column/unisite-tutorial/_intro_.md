@@ -2,7 +2,7 @@
 column: "unisite-tutorial"
 ---
 
-<Aside color="cyan">
+<Aside color="blue">
 
 Unisite = Gatsby ❤️ Themes
 
