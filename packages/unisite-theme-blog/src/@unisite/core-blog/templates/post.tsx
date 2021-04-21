@@ -91,6 +91,13 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
             ) : null}
           </Card>
           <MDXCard>{post.body!}</MDXCard>
+        </div>
+        <div className="ml-8 col-start-10 col-span-3">
+          <SideNav className="sticky top-12" headings={post.headings || []} />
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-6 pb-8 grid grid-cols-12">
+        <div className="col-start-1 col-span-9 space-y-8">
           <Card>
             <div className="mb-4 text-xl text-gray-900 font-medium dark:text-gray-100">
               作者
@@ -148,9 +155,6 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
               ) : null}
             </div>
           </Card>
-        </div>
-        <div className="ml-8 col-start-10 col-span-3">
-          <SideNav className="sticky top-12" headings={post.headings || []} />
         </div>
       </div>
       <Progress />

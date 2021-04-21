@@ -1,51 +1,52 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useWindowScroll, useThrottle, useWindowSize } from "react-use";
 
 import type { Heading2 } from "./type";
 
-export function useAnchorStatus(headings: Heading2[]): Record<string, boolean> {
+export function useAnchorStatus(
+  headings: Heading2[],
+  offset: number = 45
+): Record<string, boolean> {
   const [actives, setActives] = useState({});
+  const { y } = useWindowScroll();
+  const { height } = useWindowSize();
+  const tY = useThrottle(y, 300);
+  const [scrollTops, setScrollTops] = useState<[number, number][]>([]);
 
-  useLayoutEffect(() => {
-    if (!IntersectionObserver) return;
+  useEffect(() => {
+    const current = document.documentElement.scrollTop;
 
-    const n = headings.length;
-    const observers: (IntersectionObserver | null)[] = new Array(n).fill(null);
+    setScrollTops(
+      headings.map((heading) => {
+        const $anchor = document.querySelector(`a[href="${heading.hash}"]`)!;
+        if (!$anchor) return [0, 0];
+        const anchorRect = $anchor.getBoundingClientRect();
+        return [
+          current + anchorRect.y - height,
+          current + anchorRect.y - offset,
+        ];
+      })
+    );
+  }, [height, headings, offset]);
 
-    for (let i = 0; i < n; i++) {
-      const heading = headings[i]!;
-      const $ele = document.querySelector(`a[href="${heading.hash}"]`);
-
-      if (!$ele) continue;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (!entries[0]) return;
-          const { intersectionRatio } = entries[0];
-
-          if (intersectionRatio >= 1) {
-            setActives((state) => ({
-              ...state,
-              [heading.hash]: true,
-            }));
-          } else {
-            setActives((state) => ({
-              ...state,
-              [heading.hash]: false,
-            }));
-          }
-        },
-        { threshold: [1] }
-      );
-
-      observer.observe($ele);
-
-      observers[i] = observer;
+  useEffect(() => {
+    let i = 0;
+    for (; i < scrollTops.length; i++) {
+      const [cTop, cBottom] = scrollTops[i]!;
+      if (tY < cTop) {
+        i--;
+        break;
+      } else if (cTop <= tY && tY <= cBottom) {
+        break;
+      }
     }
 
-    return () => {
-      observers.forEach((observer) => observer!.disconnect());
-    };
-  }, [headings, setActives]);
+    if (i < 0 || !headings[i]) {
+      setActives({});
+    } else {
+      setActives({ [headings[i]!.hash]: true });
+    }
+  }, [tY, scrollTops, headings]);
 
   return actives;
 }

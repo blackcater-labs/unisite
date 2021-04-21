@@ -12,6 +12,7 @@
     - title: "章节一：Unisite 初识"
       sections:
         - title: "01 | 搭建自己的博客"
+          link: "/post/2021-04-21-01-搭建自己的博客"
         - title: "02 | 搭建自己的文档"
     - title: "章节二：Unisite 剖析"
       sections:
