@@ -7,7 +7,7 @@ import { useTagPath } from "../../../utils";
 import type { PageProps } from "../../../utils";
 
 type PageData = {
-  allTag: {
+  tags: {
     nodes: Tag[];
   };
 };
@@ -27,7 +27,7 @@ const TagItem = ({ tid, name }: Tag) => {
 };
 
 function TagsPage(props: TagsPageProps): React.ReactElement {
-  const tags = props.data?.allTag?.nodes || [];
+  const tags = props.data?.tags?.nodes || [];
   const totalCount = tags.length;
 
   return (
@@ -51,7 +51,7 @@ function TagsPage(props: TagsPageProps): React.ReactElement {
 
 export const query = graphql`
   query TagsPageQuery {
-    allTag(
+    tags: allTag(
       sort: { fields: postCount, order: DESC }
       filter: { postCount: { gt: 0 } }
     ) {

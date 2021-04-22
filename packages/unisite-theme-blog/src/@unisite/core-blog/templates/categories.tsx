@@ -7,7 +7,7 @@ import { useCategoryPath } from "../../../utils";
 import type { PageProps } from "../../../utils";
 
 type PageData = {
-  allCategory: {
+  categories: {
     nodes: Category[];
   };
 };
@@ -27,7 +27,7 @@ const CategoryItem = ({ cid, name }: Category) => {
 };
 
 function CategoriesPage(props: CategoriesPageProps): React.ReactElement {
-  const categories = props.data?.allCategory?.nodes || [];
+  const categories = props.data?.categories?.nodes || [];
   const totalCount = categories.length;
 
   return (
@@ -51,7 +51,7 @@ function CategoriesPage(props: CategoriesPageProps): React.ReactElement {
 
 export const query = graphql`
   query CategoriesPageQuery {
-    allCategory(
+    categories: allCategory(
       sort: { fields: postCount, order: DESC }
       filter: { postCount: { gt: 0 } }
     ) {
