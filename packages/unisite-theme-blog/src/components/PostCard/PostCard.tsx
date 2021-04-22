@@ -48,7 +48,7 @@ const PostCard: PostCardFC = ({
     <Card>
       <div className="flex items-center justify-between">
         <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
-        <span className="text-sm text-gray-700 dark:text-gray-500">
+        <span className="text-sm text-gray-700 dark:text-true-gray-500">
           {dateValue}
         </span>
       </div>

@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import Card from "../Card";
 
 import {
-  useArchiveListPath,
+  useArchivesPath,
   useColumnListPath,
   useTagListPath,
 } from "../../utils";
@@ -37,7 +37,7 @@ function useStatisticData() {
 
 const StatisticCard: StatisticCardFC = () => {
   const { postCount, columnCount, tagCount } = useStatisticData();
-  const archiveListPath = useArchiveListPath();
+  const archiveListPath = useArchivesPath();
   const columnListPath = useColumnListPath();
   const tagListPath = useTagListPath();
 

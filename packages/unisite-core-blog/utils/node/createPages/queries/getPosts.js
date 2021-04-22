@@ -1,6 +1,5 @@
 const { jsonToGraphQLQuery: j2q, EnumType } = require("json-to-graphql-query");
-const { merge, get } = require("lodash");
-const { isProd } = require("../../../env");
+const { merge, get, defaults } = require("lodash");
 
 module.exports = async function getPosts({
   graphql,
@@ -9,11 +8,6 @@ module.exports = async function getPosts({
   filter,
   sort,
 }) {
-  const draftFilter = isProd ? { draft: { ne: true } } : {};
-  const defaultSort = {
-    fields: [new EnumType("published_at"), new EnumType("updated_at")],
-    order: new EnumType("DESC"),
-  };
   const fields = edges
     ? {
         edges: {
@@ -30,8 +24,11 @@ module.exports = async function getPosts({
       : type === "blog"
       ? "allMdxBlogPost"
       : "allPost";
-  filter = merge(filter || {}, draftFilter);
-  sort = merge(sort || {}, defaultSort);
+  filter = defaults(filter || {}, { draft: { ne: true } });
+  sort = defaults(sort || {}, {
+    fields: new EnumType("date_at"),
+    order: new EnumType("DESC"),
+  });
 
   const query = j2q(
     {

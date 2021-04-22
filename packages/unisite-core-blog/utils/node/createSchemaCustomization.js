@@ -271,6 +271,7 @@ module.exports = ({ actions }) => {
         cover: File @fileByRelativePath
         published_at(format: String, distance: JSON): Date @dateformat
         updated_at(format: String, distance: JSON): Date @dateformat
+        date_at(format: String, distance: JSON): Date @dateformat
         slug: String! @slugify
         draft: Boolean! @def(value: "false")
         # mdx
@@ -293,6 +294,7 @@ module.exports = ({ actions }) => {
         cover: File @fileByRelativePath
         published_at(format: String, distance: JSON): Date @dateformat
         updated_at(format: String, distance: JSON): Date @dateformat
+        date_at(format: String, distance: JSON): Date @dateformat
         slug: String! @slugify
         draft: Boolean! @def(value: "false")
         # mdx
@@ -320,6 +322,7 @@ module.exports = ({ actions }) => {
         cover: File @fileByRelativePath
         published_at(format: String, distance: JSON): Date @dateformat
         updated_at(format: String, distance: JSON): Date @dateformat
+        date_at(format: String, distance: JSON): Date @dateformat
         slug: String! @slugify
         draft: Boolean! @def(value: "false")
         # mdx
@@ -351,7 +354,7 @@ module.exports = ({ actions }) => {
         categoryListPrefix: String!
         postPrefix: String!
         postListPrefix: String!
-        archiveListPrefix: String!
+        archivesPrefix: String!
     }
   `);
 };

@@ -14,7 +14,7 @@ module.exports = (options) =>
     categoryListPrefix: "/categories",
     postPrefix: "/post",
     postListPrefix: "/list",
-    archiveListPrefix: "/archive",
+    archivesPrefix: "/archive",
     categoryConfigFileName: "category",
     userConfigFileName: "user",
     tagConfigFileName: "tag",
