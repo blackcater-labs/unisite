@@ -1,18 +1,25 @@
 import React from "react";
+import { Link } from "gatsby";
 import cls from "classnames";
 
 import type { FC2 } from "../../types";
 
 type MenuItemProps = {
   title?: React.ReactChild;
-  content?: React.ReactChild;
+  subTitle?: React.ReactChild;
   avatar?: React.ReactChild;
+  link?: string;
+  target?: string;
 };
 type MenuItemFC = FC2<MenuItemProps>;
 
-const MenuItem: MenuItemFC = ({ title, content, avatar }) => {
+const MenuItem: MenuItemFC = ({ title, subTitle, avatar, link, target }) => {
   return (
-    <div className="px-3 py-2 flex flex-row rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800">
+    <Link
+      className="px-3 py-2 flex flex-row rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800"
+      to={link || "/"}
+      target={target || "_self"}
+    >
       {avatar ? (
         <div className="flex-shrink-0 mt-1 mr-2 w-8 h-8 bg-gray-200 rounded-md dark:bg-true-gray-700">
           {avatar}
@@ -24,19 +31,19 @@ const MenuItem: MenuItemFC = ({ title, content, avatar }) => {
             "text-base text-gray-900 font-medium dark:text-gray-100",
             {
               "w-48": avatar,
-              "w-52": !avatar && content,
+              "w-52": !avatar && subTitle,
             }
           )}
         >
           {title}
         </div>
-        {content ? (
+        {subTitle ? (
           <div className="text-sm text-gray-500 dark:text-gray-300">
-            {content}
+            {subTitle}
           </div>
         ) : null}
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,4 +1,6 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { get } from "lodash";
 
 import HeaderTip from "./HeaderTip";
 import HeaderNav from "./HeaderNav";
@@ -12,14 +14,28 @@ type HeaderProps = {
 type HeaderFC = React.FC<HeaderProps>;
 
 const Header: HeaderFC = () => {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      unisiteThemeBlogConfig {
+        header {
+          bar
+          nav
+        }
+      }
+    }
+  `);
+  const { bar, nav: items } = get(data, "unisiteThemeBlogConfig.header") || {};
+
+  console.log("data:", data);
+
   return (
     <>
-      <HeaderTip>
+      <HeaderTip closable={bar?.closable}>
         <a className="hover:underline" href="">
-          BLACK LIVES MATTER
+          {bar?.text}
         </a>
       </HeaderTip>
-      <HeaderNav />
+      <HeaderNav items={items} />
       <HeaderCategoryNav />
     </>
   );

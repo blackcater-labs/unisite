@@ -1,16 +1,22 @@
 # Configuration for unisite theme
 themeConfig:
-  nav:
-    - title: "菜单1"
-      items:
-        - title: "help"
-        - title: "help"
-    - title: "菜单2"
-      items:
-        - title: "Help"
-          subTitle: "你可以在这里找到帮助信息你可以在这里找到帮助信息"
-        - title: "help"
-        - title: "help"
+  header:
+    bar:
+      text: "BLACK LIVES MATTER"
+      closable: true
+    nav:
+      - title: "菜单1"
+        items:
+          - title: "help"
+          - title: "help"
+      - title: "菜单2"
+        items:
+          - title: "Help"
+            subTitle: "你可以在这里找到帮助信息你可以在这里找到帮助信息"
+          - title: "help"
+          - title: "help"
+      - title: "归档"
+        link: "/archive"
 
 categories:
   - id: "frontend"
