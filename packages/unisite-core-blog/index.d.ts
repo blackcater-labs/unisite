@@ -127,6 +127,7 @@ export type Post = {
   cover: any;
   published_at: string;
   updated_at: string;
+  date_at: string;
   slug: string;
   draft: boolean;
   body: string;
@@ -158,5 +159,5 @@ export type UnisiteCoreBlogConfig = {
   categoryListPrefix: string;
   postPrefix: string;
   postListPrefix: string;
-  archiveListPrefix: string;
+  archivesPrefix: string;
 };

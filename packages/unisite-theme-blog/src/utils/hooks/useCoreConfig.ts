@@ -16,7 +16,7 @@ export function useCoreConfig(): UnisiteCoreBlogConfig {
         categoryListPrefix
         postPrefix
         postListPrefix
-        archiveListPrefix
+        archivesPrefix
       }
     }
   `);

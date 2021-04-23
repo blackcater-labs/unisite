@@ -16,7 +16,7 @@ module.exports = ({ actions, createContentDigest }, options) => {
     categoryListPrefix: options.categoryListPrefix,
     postPrefix: options.postPrefix,
     postListPrefix: options.postListPrefix,
-    archiveListPrefix: options.archiveListPrefix,
+    archivesPrefix: options.archivesPrefix,
   };
 
   createNode({

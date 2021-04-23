@@ -10,7 +10,7 @@ type TagProps = {
 
 type TagFC = React.FC<TagProps>;
 
-const Tag: TagFC = ({ className, color = "default", children }) => (
+const Tag: TagFC = ({ className, color = "gray", children }) => (
   <span className={cls([className, prefix("tag"), prefix(`tag-${color}`)])}>
     {children}
   </span>

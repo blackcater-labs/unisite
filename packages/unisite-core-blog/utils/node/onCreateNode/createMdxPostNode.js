@@ -57,6 +57,8 @@ module.exports = async function createMdxNode(
     data.order = data.order ?? 1000;
   }
 
+  data.date_at = data.updated_at || data.published_at || "1970-01-01";
+
   const type = isColumnPost ? "MdxColumnPost" : "MdxBlogPost";
   const id = createNodeId(`${node.id} >>> ${type}`);
 

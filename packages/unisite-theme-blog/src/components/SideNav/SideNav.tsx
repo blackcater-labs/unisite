@@ -56,18 +56,22 @@ const SideNav: SideNavFC = ({ className, headings }) => {
         "max-h-(screen-12) flex flex-col overflow-hidden",
       ])}
     >
-      <div className="py-4 text-gray-900 font-bold">导航</div>
+      <div className="py-4 text-gray-900 font-bold dark:text-gray-100">
+        导航
+      </div>
       <div className="mb-4 flex-1 overflow-y-auto">
         {filterItems.map((item) => (
           <div
             key={item.hash}
             className={cls([
-              "py-1 cursor-pointer text-sm text-gray-500 hover:text-gray-900 hover:font-medium",
+              "py-1 cursor-pointer text-sm hover:text-gray-900 hover:font-medium dark:hover:text-gray-100",
               {
                 "pl-3": item.depth === startDepth + 1,
                 "pl-6": item.depth === startDepth + 2,
               },
-              anchorStatus[item.hash] ? "text-gray-900" : "",
+              anchorStatus[item.hash]
+                ? "text-gray-900 dark:text-gray-100"
+                : "text-gray-500 dark:text-true-gray-500",
             ])}
             onClick={() => handleJumpTo(item)}
           >

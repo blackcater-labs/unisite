@@ -15,13 +15,17 @@ const SearchCard: SearchCardFC = () => {
       <div className="flex flex-row items-center">
         <div className="relative flex-1">
           <input
-            className="px-3 py-1 w-full bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 transition ease-in duration-300"
+            className="px-3 py-1 w-full bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 transition ease-in duration-300 dark:text-gray-100 dark:bg-true-gray-800 dark:focus:ring-gray-100"
             placeholder="搜索"
           />
           <Key className="absolute top-1 right-1.5">Cmd+K</Key>
         </div>
         <Button.Icon className="ml-4">
-          <IconSearch theme="outline" size="20" />
+          <IconSearch
+            className="dark:text-gray-900"
+            theme="outline"
+            size="20"
+          />
         </Button.Icon>
       </div>
     </Card>

@@ -1,27 +1,16 @@
 import fs from "fs";
 import path from "path";
 import yaml from "js-yaml";
-import { Path, ConfigPathOptions } from "../path";
 
-const CACHE: Map<string, unknown> = new Map();
-
-export function load(module: string, options?: ConfigPathOptions): unknown {
-  if (CACHE.has(module)) return CACHE.get(module);
-
-  const filePath = Path.config(module, options);
-
+export function load<T extends any>(filePath: string): T | undefined {
   if (!filePath) return undefined;
 
-  const data = parse(filePath);
-
-  CACHE.set(module, data);
-
-  return data;
+  return parse(filePath);
 }
 
-function parse(filePath: string): unknown {
+function parse<T extends any>(filePath: string): T | undefined {
   const ext = path.extname(filePath);
-  const parserMap: { [key: string]: (path: string) => unknown } = {
+  const parserMap: { [key: string]: (path: string) => T } = {
     ".yaml": parseYAML,
     ".yml": parseYAML,
     ".json": parseJSON,
@@ -31,14 +20,14 @@ function parse(filePath: string): unknown {
   return parserMap[ext]?.(filePath);
 }
 
-function parseJS(filePath: string): unknown {
+function parseJS<T extends any>(filePath: string): T {
   return require(filePath);
 }
 
-function parseJSON(filePath: string): unknown {
+function parseJSON<T extends any>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
 
-function parseYAML(filePath: string): unknown {
-  return yaml.load(fs.readFileSync(filePath, "utf8"));
+function parseYAML<T extends any>(filePath: string): T {
+  return yaml.load(fs.readFileSync(filePath, "utf8")) as T;
 }

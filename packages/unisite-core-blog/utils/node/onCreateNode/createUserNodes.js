@@ -1,6 +1,5 @@
 const Joi = require("joi");
 const chalk = require("chalk");
-const { load } = require("js-yaml");
 
 const schema = Joi.array()
   .items(
@@ -45,19 +44,11 @@ const schema = Joi.array()
   .unique((a, b) => a.id === b.id);
 
 module.exports = async function createUserNodes(
-  {
-    actions,
-    node,
-    getNode,
-    loadNodeContent,
-    createContentDigest,
-    createNodeId,
-    reporter,
-  },
+  rawUsers,
+  { actions, node, getNode, createContentDigest, createNodeId, reporter },
   options
 ) {
   const { createNode, createParentChildLink } = actions;
-  const rawUsers = load(await loadNodeContent(node));
   const { value: users, error } = schema.validate(rawUsers);
 
   if (error) {

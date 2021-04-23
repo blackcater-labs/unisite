@@ -17,7 +17,7 @@ const Menu: MenuFC = ({ className, children }) => {
     <div
       className={cls(
         className,
-        "relative flex flex-col px-3 py-4 bg-white shadow-md rounded-xl"
+        "relative flex flex-col px-3 py-4 bg-white shadow-md rounded-xl border border-gray-50 dark:border-true-gray-700 dark:bg-true-gray-900"
       )}
     >
       {children}

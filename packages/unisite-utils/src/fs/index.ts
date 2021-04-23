@@ -1,15 +1,11 @@
 import { existsFileSync } from "./existsFileSync";
 import { existsDirectorySync } from "./existsDirectorySync";
 import { mkdirSync } from "./mkdirSync";
+import { createFileSync } from "./createFileSync";
 
-export interface FS {
-  existsFileSync: (path: string) => boolean;
-  existsDirectorySync: (path: string) => boolean;
-  mkdirSync: (path: string) => void;
-}
-
-export const FS: FS = {
+export const FS = {
   existsFileSync,
   existsDirectorySync,
   mkdirSync,
+  createFileSync,
 };

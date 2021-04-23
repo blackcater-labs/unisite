@@ -12,10 +12,6 @@ module.exports = ({ Joi }) => {
     categoryListPrefix: Joi.string().default("/categories"),
     postPrefix: Joi.string().default("/post"),
     postListPrefix: Joi.string().default("/list"),
-    archiveListPrefix: Joi.string().default("/archive"),
-    categoryConfigFileName: Joi.string().default("category"),
-    userConfigFileName: Joi.string().default("user"),
-    tagConfigFileName: Joi.string().default("tag"),
-    columnConfigFileName: Joi.string().default("column"),
+    archivesPrefix: Joi.string().default("/archive"),
   });
 };

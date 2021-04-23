@@ -1,3 +1,1 @@
-export interface Utils {}
-
-export const Utils: Utils = {};
+export const Utils = {};

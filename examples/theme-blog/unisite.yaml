@@ -1,0 +1,93 @@
+# Configuration for unisite theme
+themeConfig:
+  header:
+    bar:
+      text: "BLACK LIVES MATTER"
+      closable: true
+    nav:
+      - title: "菜单1"
+        items:
+          - title: "help"
+          - title: "help"
+      - title: "菜单2"
+        items:
+          - title: "Help"
+            subTitle: "你可以在这里找到帮助信息你可以在这里找到帮助信息"
+          - title: "help"
+          - title: "help"
+      - title: "归档"
+        link: "/archive"
+
+categories:
+  - id: "frontend"
+    name: "前端"
+  - id: "backend"
+    name: "后端"
+  - id: "mobile"
+    name: "移动端"
+  - id: "opensource"
+    name: "开源"
+  - id: "life"
+    name: "生活"
+
+tags:
+  - id: "markdown"
+    name: "Markdown"
+  - id: "react"
+    name: "React"
+  - id: "vue"
+    name: "Vue"
+  - id: "gatsby"
+    name: "Gatsby"
+  - id: "SSG"
+    name: "SSG"
+    description: "静态站点生成器（Static Side Generator）"
+  - id: "SSR"
+    name: "SSR"
+    description: "服务端渲染（Server Side Rendering）"
+
+users:
+  - id: "blackcater"
+    name: "Elon Tang"
+    avatar: "user/blackcater.png"
+    description: "Completion is more important than perfection!"
+    email: "blackcater2015@gmail.com"
+    website_url: "https://www.blackcater.com"
+    github_url: "https://www.github.com/blackcater"
+  - id: "unisite"
+    name: "Unisite Team"
+    avatar: "content/user/unisite.png"
+    members:
+      - "blackcater"
+    website_url: "https://unisite.blackcater.org"
+
+columns:
+  - id: "unisite-tutorial"
+    title: "Unisite 使用指南"
+    cover: "content/column/unisite-tutorial/cover.png"
+    categories:
+      - "frontend"
+      - "opensource"
+    tags:
+      - "markdown"
+    authors:
+      - "blackcater"
+    chapters:
+      - title: "章节一：Unisite 初识"
+        sections:
+          - title: "01 | 搭建自己的博客"
+            link: "/post/2021-04-21-01-搭建自己的博客"
+          - title: "02 | 搭建自己的文档"
+      - title: "章节二：Unisite 剖析"
+        sections:
+          - title: "03 | GraphQL 浅析"
+          - title: "04 | Gatsby 浅析"
+          - title: "05 | Unsite 运行解密"
+      - title: "附录一：Markdown 支持"
+        sections:
+          - title: "06 | Markdown 基础语法"
+            link: "/"
+          - title: "07 | Markdown 高级语法"
+            link: "/"
+          - title: "08 | Markdown 扩展语法"
+            link: "/"

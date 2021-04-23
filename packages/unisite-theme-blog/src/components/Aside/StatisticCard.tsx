@@ -5,7 +5,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import Card from "../Card";
 
 import {
-  useArchiveListPath,
+  useArchivesPath,
   useColumnListPath,
   useTagListPath,
 } from "../../utils";
@@ -37,7 +37,7 @@ function useStatisticData() {
 
 const StatisticCard: StatisticCardFC = () => {
   const { postCount, columnCount, tagCount } = useStatisticData();
-  const archiveListPath = useArchiveListPath();
+  const archiveListPath = useArchivesPath();
   const columnListPath = useColumnListPath();
   const tagListPath = useTagListPath();
 
@@ -45,29 +45,31 @@ const StatisticCard: StatisticCardFC = () => {
     <Card>
       <div className="-mx-8 flex flex-row justify-evenly">
         <Link
-          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100"
+          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800"
           to={archiveListPath}
         >
-          <span className="text-gray-900 text-2xl font-medium">
+          <span className="text-gray-900 text-2xl font-medium dark:text-gray-100">
             {postCount}
           </span>
-          <span className="text-gray-700 text-sm">博客</span>
+          <span className="text-gray-700 text-sm dark:text-gray-300">博客</span>
         </Link>
         <Link
-          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100"
+          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800"
           to={columnListPath}
         >
-          <span className="text-gray-900 text-2xl font-medium">
+          <span className="text-gray-900 text-2xl font-medium dark:text-gray-100">
             {columnCount}
           </span>
-          <span className="text-gray-700 text-sm">专栏</span>
+          <span className="text-gray-700 text-sm dark:text-gray-300">专栏</span>
         </Link>
         <Link
-          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100"
+          className="w-14 h-14 flex flex-col items-center rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-true-gray-800"
           to={tagListPath}
         >
-          <span className="text-gray-900 text-2xl font-medium">{tagCount}</span>
-          <span className="text-gray-700 text-sm">标签</span>
+          <span className="text-gray-900 text-2xl font-medium dark:text-gray-100">
+            {tagCount}
+          </span>
+          <span className="text-gray-700 text-sm dark:text-gray-300">标签</span>
         </Link>
       </div>
     </Card>

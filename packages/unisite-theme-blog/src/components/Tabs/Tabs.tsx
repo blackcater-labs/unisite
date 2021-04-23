@@ -39,7 +39,7 @@ const Tabs: TabsFC = ({ defaultActiveKey, children }) => {
 
   return (
     <>
-      <div className="inline-flex flex-row items-center p-1 space-x-4 bg-gray-200 rounded-full">
+      <div className="inline-flex flex-row items-center p-1 space-x-4 bg-gray-200 rounded-full dark:bg-true-gray-900">
         {React.Children.map(children, (child) =>
           React.isValidElement(child)
             ? React.cloneElement(child, {

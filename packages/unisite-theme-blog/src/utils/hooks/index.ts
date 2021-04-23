@@ -1,4 +1,4 @@
-export * from "./useArchiveListPath";
+export * from "./useArchivesPath";
 export * from "./useCategoryListPath";
 export * from "./useCategoryPath";
 export * from "./useColumnListPath";

@@ -23,8 +23,6 @@ type PageContext = {
 type ColumnDetailPage = PageProps<PageData, PageContext>;
 
 function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
-  console.log("props:", props);
-
   const { column, contents } = props.data;
   const cover = getImage(column.cover);
   const authors = column.authors || [];
@@ -47,11 +45,13 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
                 </div>
               ) : null}
               <div className="flex flex-1 flex-col">
-                <h1 className="text-4xl text-gray-900 font-semibold">
+                <h1 className="text-4xl text-gray-900 font-semibold dark:text-gray-100">
                   {column.title}
                 </h1>
                 {column.subTitle ? (
-                  <div className="text-gray-700 mt-2">{column.subTitle}</div>
+                  <div className="text-gray-700 mt-2 dark:text-gray-300">
+                    {column.subTitle}
+                  </div>
                 ) : null}
                 <div className="mt-4 flex flex-row items-center">
                   {authors.map((author) => (
@@ -64,7 +64,7 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
                         alt={author.name}
                         image={getImage(author.avatar)!}
                       />
-                      <span className="text-lg text-gray-900 cursor-pointer hover:underline">
+                      <span className="text-lg text-gray-900 cursor-pointer hover:underline dark:text-gray-100">
                         {author.name}
                       </span>
                     </div>
@@ -85,7 +85,7 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
                       return (
                         <div
                           key={idx}
-                          className="px-4 py-2 text-gray-900 hover:bg-gray-100 rounded-md"
+                          className="px-4 py-2 text-gray-900 hover:bg-gray-100 rounded-md dark:text-gray-100 dark:hover:bg-true-gray-800"
                         >
                           {link ? (
                             <Link className="block" to={link}>
@@ -99,14 +99,14 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
 
                     return (
                       <div key={idx}>
-                        <div className="mt-6 mb-3 text-2xl text-gray-900 font-semibold">
+                        <div className="mt-6 mb-3 text-2xl text-gray-900 font-semibold dark:text-gray-100">
                           {title}
                         </div>
                         <ul>
                           {(sections || []).map(({ title, link }, idx) => (
                             <li
                               key={idx}
-                              className="px-4 py-2 text-gray-900 hover:bg-gray-100 rounded-md"
+                              className="px-4 py-2 text-gray-900 hover:bg-gray-100 rounded-md dark:text-gray-100 dark:hover:bg-true-gray-800"
                             >
                               {link ? (
                                 <Link className="block" to={link}>
@@ -128,7 +128,7 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
               </Card>
             </TabItem>
             <TabItem tab="留言" tabKey="comment">
-              暂未开放
+              <span className="dark:text-gray-300">暂未开放</span>
             </TabItem>
           </Tabs>
         </div>
@@ -137,15 +137,15 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
             <Card>
               <div className="space-y-2">
                 <div className="flex flex-row items-center">
-                  <span>发布时间：</span>
-                  <div>2019-01-01</div>
+                  <span className="dark:text-gray-300">发布时间：</span>
+                  <div className="dark:text-gray-100">2019-01-01</div>
                 </div>
                 <div className="flex flex-row items-center">
-                  <span>最近更新：</span>
-                  <div>2019-01-01</div>
+                  <span className="dark:text-gray-300">最近更新：</span>
+                  <div className="dark:text-gray-100">2019-01-01</div>
                 </div>
                 <div className="flex flex-row items-center">
-                  <span>分类：</span>
+                  <span className="dark:text-gray-300">分类：</span>
                   <div className="space-x-2">
                     {categories.map((category) => (
                       <CategoryItem key={category.cid} {...category} />
@@ -153,7 +153,7 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
                   </div>
                 </div>
                 <div className="flex flex-row items-center">
-                  <span>标签：</span>
+                  <span className="dark:text-gray-300">标签：</span>
                   <div className="space-x-2">
                     {tags.map((tag) => (
                       <TagItem key={tag.tid} {...tag} />
@@ -174,7 +174,7 @@ function CategoryItem({ cid, name }: Category) {
 
   return (
     <Link
-      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 hover:bg-gray-200 hover:shadow rounded"
+      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 hover:bg-gray-200 hover:shadow rounded dark:text-true-gray-300 dark:hover:text-true-gray-100 dark:bg-true-gray-800 dark:hover:bg-true-gray-700"
       to={categoryPath}
     >
       {name}
@@ -187,7 +187,7 @@ function TagItem({ tid, name }: Tag) {
 
   return (
     <Link
-      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 hover:bg-gray-200 hover:shadow rounded"
+      className="px-2 py-0.5 text-gray-700 text-sm bg-gray-100 hover:bg-gray-200 hover:shadow rounded dark:text-true-gray-300 dark:hover:text-true-gray-100 dark:bg-true-gray-800 dark:hover:bg-true-gray-700"
       to={tagPath}
     >
       #{name}

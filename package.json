@@ -12,12 +12,8 @@
     ]
   },
   "scripts": {
-    "dev:site": "",
-    "dev:example:blog": "npm -C examples/theme-blog run serve",
-    "dev:example:doc": "",
-    "dev:example:book": "",
-    "build:site": "",
-    "deploy:site": "",
+    "start:blog-example": "npm -C examples/theme-blog run start",
+    "build:blog-example": "npm -C examples/theme-blog run build",
     "clean": "npm run clean:cache && rimraf {.,site}/node_modules {packages,examples}/*/node_modules",
     "clean:cache": "rimraf {.,.site}/{.cache,public} {packages,examples}/*/{.cache,public}"
   },
@@ -25,7 +21,6 @@
     "@unisite/core-blog": "workspace:*",
     "@unisite/gatsby-plugin-dark-mode": "workspace:*",
     "@unisite/gatsby-remark-prismjs": "workspace:*",
-    "lerna": "^4.0.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.2.3"
