@@ -1,5 +1,5 @@
 const path = require("path");
-const { Path } = require("@unisite/utils");
+const { Env, Path } = require("@unisite/utils");
 const defaultOptions = require("./utils/config/defaultOptions");
 
 module.exports = (options) => {
@@ -11,9 +11,15 @@ module.exports = (options) => {
         resolve: "gatsby-source-filesystem",
         options: {
           name: contentName,
-          path: `${path.resolve(Path.root(), contentPath)}/`,
+          path: `${path.resolve(Path.rootPath, contentPath)}/`,
         },
       },
+      Path.configPath
+        ? {
+            resolve: "gatsby-source-filesystem",
+            options: { name: Env.UNISITE_CONTENT_NAME, path: Path.configPath },
+          }
+        : false,
       {
         resolve: "gatsby-plugin-mdx",
         options: {
@@ -21,10 +27,7 @@ module.exports = (options) => {
           gatsbyRemarkPlugins: [
             {
               resolve: "gatsby-remark-images",
-              options: {
-                maxWidth: 1280,
-                disableBgImageOnAlpha: true,
-              },
+              options: { maxWidth: 1280, disableBgImageOnAlpha: true },
             },
             "gatsby-remark-copy-linked-files",
             {
@@ -58,10 +61,8 @@ module.exports = (options) => {
       "gatsby-plugin-typescript",
       {
         resolve: "gatsby-plugin-compile-es6-packages",
-        options: {
-          modules: ["gatsby-plugin-image"],
-        },
+        options: { modules: ["gatsby-plugin-image"] },
       },
-    ],
+    ].filter(Boolean),
   };
 };

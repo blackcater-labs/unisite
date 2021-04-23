@@ -1,3 +1,4 @@
+const { Config, Env } = require("@unisite/utils");
 const defaultOptions = require("../../config/defaultOptions");
 const createMdxPostNode = require("./createMdxPostNode");
 const createMdxContentNode = require("./createMdxContentNode");
@@ -11,22 +12,16 @@ module.exports = async function onCreateNode(api, options) {
 
   const { node, getNode } = api;
 
-  if (node.internal.mediaType === "text/yaml") {
-    if (node.name === options.categoryConfigFileName) {
-      await createCategoryNodes(api, options);
-    }
+  if (
+    node.internal.mediaType === "text/yaml" &&
+    node.sourceInstanceName === Env.UNISITE_CONTENT_NAME
+  ) {
+    const config = Config.get() ?? {};
 
-    if (node.name === options.userConfigFileName) {
-      await createUserNodes(api, options);
-    }
-
-    if (node.name === options.tagConfigFileName) {
-      await createTagNodes(api, options);
-    }
-
-    if (node.name === options.columnConfigFileName) {
-      await createColumnNodes(api, options);
-    }
+    await createCategoryNodes(config.categories ?? [], api, options);
+    await createTagNodes(config.tags ?? [], api, options);
+    await createUserNodes(config.users ?? [], api, options);
+    await createColumnNodes(config.columns ?? [], api, options);
   }
 
   if (node.internal.type === "Mdx") {

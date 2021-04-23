@@ -9,7 +9,9 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf .cache public",
-    "serve": "npm run clean && gatsby develop"
+    "start": "npm run dev",
+    "dev": "npm run clean && gatsby develop",
+    "build": "npm run clean && gatsby build"
   },
   "dependencies": {
     "@unisite/theme-blog": "workspace:*",

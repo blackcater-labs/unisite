@@ -8,10 +8,10 @@ type ProgressFC = React.FC<ProgressProps>;
 const Progress: ProgressFC = () => {
   const { y } = useWindowScroll();
   const { height } = useWindowSize();
-  const ratio = Math.min(
-    100,
-    (y / (window.document.body.scrollHeight - height)) * 100
-  );
+  const ratio =
+    typeof window !== "undefined"
+      ? Math.min(100, (y / (window.document.body.scrollHeight - height)) * 100)
+      : 0;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 h-1">

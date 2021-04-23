@@ -1,17 +1,11 @@
 import { getRootPath } from "./getRootPath";
-import { getConfigPath, ConfigPathOptions } from "./getConfigPath";
+import { getConfigPath } from "./getConfigPath";
 
-export { ConfigPathOptions };
-
-export interface Path {
-  root: () => string;
-  config: (module: string, options?: ConfigPathOptions) => string;
-}
-
-/**
- * Path
- */
-export const Path: Path = {
-  root: getRootPath,
-  config: getConfigPath,
+export const Path = {
+  get rootPath(): string {
+    return getRootPath();
+  },
+  get configPath(): string {
+    return getConfigPath();
+  },
 };

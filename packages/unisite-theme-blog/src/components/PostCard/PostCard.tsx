@@ -63,9 +63,12 @@ const PostCard: PostCardFC = ({
       </div>
       <div className="flex items-center justify-between mt-4">
         <Link to={postPath}>
-          <Button>
+          <Button className="group">
             <span className="mr-1">立即阅读</span>
-            <ArrowRight theme="two-tone" />
+            <ArrowRight
+              className="group-hover:animate-bounce-r"
+              theme="two-tone"
+            />
           </Button>
         </Link>
         <div className="flex items-center">
@@ -84,7 +87,9 @@ const PostCard: PostCardFC = ({
       </div>
       {column ? (
         <div className="flex flex-row items-center bg-gray-100 mt-4 p-3 rounded-lg shadow-inner dark:bg-true-gray-800">
-          <span className="text-sm text-gray-500">阅读专栏：</span>
+          <span className="text-sm text-gray-500 dark:text-true-gray-500">
+            阅读专栏：
+          </span>
           <Link
             className="text-gray-900 font-medium cursor-pointer hover:underline hover:text-opacity-80 dark:text-gray-100"
             to={columnPath}

@@ -12,12 +12,8 @@
     ]
   },
   "scripts": {
-    "dev:site": "",
-    "dev:example:blog": "npm -C examples/theme-blog run serve",
-    "dev:example:doc": "",
-    "dev:example:book": "",
-    "build:site": "",
-    "deploy:site": "",
+    "start:blog-example": "npm -C examples/theme-blog run start",
+    "build:blog-example": "npm -C examples/theme-blog run build",
     "clean": "npm run clean:cache && rimraf {.,site}/node_modules {packages,examples}/*/node_modules",
     "clean:cache": "rimraf {.,.site}/{.cache,public} {packages,examples}/*/{.cache,public}"
   },

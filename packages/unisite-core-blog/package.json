@@ -35,7 +35,6 @@
     "gatsby-source-filesystem": "^3.3.0",
     "gatsby-transformer-sharp": "^3.3.0",
     "joi": "^17.4.0",
-    "js-yaml": "^4.0.0",
     "json-to-graphql-query": "^2.0.0",
     "katex": "^0.13.2",
     "lodash": "^4.17.21",
