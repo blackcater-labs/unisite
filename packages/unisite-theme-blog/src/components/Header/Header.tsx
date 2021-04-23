@@ -26,8 +26,6 @@ const Header: HeaderFC = () => {
   `);
   const { bar, nav: items } = get(data, "unisiteThemeBlogConfig.header") || {};
 
-  console.log("data:", data);
-
   return (
     <>
       <HeaderTip closable={bar?.closable}>

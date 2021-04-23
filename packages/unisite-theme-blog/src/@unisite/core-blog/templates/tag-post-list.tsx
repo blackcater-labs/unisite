@@ -24,8 +24,6 @@ function TagPostListPage(props: TagPostListPageProps): React.ReactElement {
   const tag = props.data.tag;
   const posts = props.data.posts?.nodes || [];
 
-  console.log("props:", props);
-
   return (
     <DefaultLayout>
       <div className="max-w-6xl mx-auto px-6 py-8">

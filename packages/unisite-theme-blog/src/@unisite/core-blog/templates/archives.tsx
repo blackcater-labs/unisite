@@ -46,8 +46,6 @@ function ArchivesPage(props: ArchivesPageProps): React.ReactElement {
     [posts]
   );
 
-  console.log("groups:", groups, posts);
-
   return (
     <DefaultLayout>
       <div className="max-w-4xl mx-auto px-6 py-8">

@@ -23,8 +23,6 @@ type PageContext = {
 type ColumnDetailPage = PageProps<PageData, PageContext>;
 
 function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
-  console.log("props:", props);
-
   const { column, contents } = props.data;
   const cover = getImage(column.cover);
   const authors = column.authors || [];

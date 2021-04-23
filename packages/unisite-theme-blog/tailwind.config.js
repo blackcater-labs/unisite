@@ -2,7 +2,11 @@ const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: [],
+  purge: [
+    "./node_modules/@unisite/theme-blog/src/**/*.{js,jsx,ts,tsx,css,less}",
+    "./components/**/*.{js,jsx,ts,tsx,css,less}",
+    "./pages/**/*.{js,jsx,ts,tsx,css,less}",
+  ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
