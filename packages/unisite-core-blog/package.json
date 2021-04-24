@@ -40,7 +40,7 @@
     "lodash": "^4.17.21",
     "prismjs": "^1.23.0",
     "puppeteer": "^8.0.0",
-    "rehype-katex": "^3.1.0",
+    "rehype-katex": "^5.0.0",
     "remark-math": "^3.0.1",
     "smoothscroll-polyfill": "^0.4.4"
   }
