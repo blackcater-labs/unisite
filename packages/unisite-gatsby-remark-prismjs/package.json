@@ -9,7 +9,7 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "parse-numeric-range": "^1.2.0",
-    "unist-util-visit": "^2.0.3"
+    "unist-util-visit": "^3.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
