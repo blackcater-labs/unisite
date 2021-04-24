@@ -11,5 +11,5 @@ module.exports = async function getTags({ graphql }) {
   });
   const raw = await graphql(query);
 
-  return get(raw, "data.allTag.nodes");
+  return get(raw, "data.allTag.nodes") || [];
 };

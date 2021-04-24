@@ -11,5 +11,5 @@ module.exports = async function getCategories({ graphql }) {
   });
   const raw = await graphql(query);
 
-  return get(raw, "data.allCategory.nodes");
+  return get(raw, "data.allCategory.nodes") || [];
 };

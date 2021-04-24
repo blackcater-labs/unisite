@@ -11,5 +11,5 @@ module.exports = async function getUsers({ graphql }) {
   });
   const raw = await graphql(query);
 
-  return get(raw, "data.allUser.nodes");
+  return get(raw, "data.allUser.nodes") || [];
 };

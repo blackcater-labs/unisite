@@ -11,5 +11,5 @@ module.exports = async function getColumns({ graphql }) {
   });
   const raw = await graphql(query);
 
-  return get(raw, "data.allColumn.nodes");
+  return get(raw, "data.allColumn.nodes") || [];
 };

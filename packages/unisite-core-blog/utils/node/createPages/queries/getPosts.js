@@ -1,5 +1,5 @@
 const { jsonToGraphQLQuery: j2q, EnumType } = require("json-to-graphql-query");
-const { merge, get, defaults } = require("lodash");
+const { get, defaults } = require("lodash");
 
 module.exports = async function getPosts({
   graphql,
@@ -43,7 +43,8 @@ module.exports = async function getPosts({
   );
   const raw = await graphql(query);
 
-  return edges
-    ? get(raw, `data.${type}.edges`)
-    : get(raw, `data.${type}.nodes`);
+  return (
+    (edges ? get(raw, `data.${type}.edges`) : get(raw, `data.${type}.nodes`)) ||
+    []
+  );
 };

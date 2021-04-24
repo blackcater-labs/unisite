@@ -15,5 +15,5 @@ module.exports = async function getContents({ graphql, type, filter }) {
   });
   const raw = await graphql(query);
 
-  return get(raw, `data.${type}.nodes`);
+  return get(raw, `data.${type}.nodes`) || [];
 };

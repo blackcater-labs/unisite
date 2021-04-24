@@ -6,6 +6,7 @@ module.exports = {
     "./node_modules/@unisite/theme-blog/src/**/*.{js,jsx,ts,tsx,css,less}",
     "./components/**/*.{js,jsx,ts,tsx,css,less}",
     "./pages/**/*.{js,jsx,ts,tsx,css,less}",
+    "./src/**/*.{js,jsx,ts,tsx,css,less}",
   ],
   darkMode: "class", // or 'media' or 'class'
   theme: {

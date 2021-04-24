@@ -20,9 +20,7 @@ module.exports = async function createPaginPages(arr, createPage, options) {
     contextPaginBuilder: null,
     map: {},
   });
-  const total = Math.ceil(arr.length / pageSize);
-
-  if (total <= 0) return;
+  const total = Math.max(Math.ceil(arr.length / pageSize), 1);
 
   const getPath = async (i, { pathBuilder, path, pathPrefix }) =>
     pathBuilder

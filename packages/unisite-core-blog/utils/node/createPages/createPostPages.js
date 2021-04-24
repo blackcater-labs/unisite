@@ -8,8 +8,13 @@ module.exports = async function createPostPages({ actions, graphql }, options) {
     "../../../src/templates/post-list.tsx"
   );
   const posts = await getPosts({ graphql, edges: true });
+  const drafts = await getPosts({
+    graphql,
+    edges: true,
+    filter: { draft: { eq: true } },
+  });
 
-  await createDetailPages(posts, createPage, {
+  await createDetailPages([...drafts, ...posts], createPage, {
     pathPrefix: options.postPrefix,
     pathBuilder: async ({ node }) => node?.slug || "",
     component: postTemplate,
