@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0-alpha.0
+
+### Minor Changes
+
+- first alpha vesrion
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 

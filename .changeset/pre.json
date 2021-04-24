@@ -1,0 +1,20 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@unisite/example-theme-blog": "0.0.0",
+    "@unisite/example-theme-doc": "0.0.0",
+    "unisite": "0.0.0",
+    "@unisite/core-blog": "0.0.2",
+    "@unisite/core-doc": "0.0.0",
+    "@unisite/gatsby-plugin-dark-mode": "0.0.0",
+    "@unisite/gatsby-remark-prismjs": "0.0.0",
+    "@unisite/theme-blog": "0.0.3",
+    "@unisite/theme-doc": "0.0.0",
+    "@unisite/utils": "0.0.2",
+    "@unisite/site": "0.0.0"
+  },
+  "changesets": [
+    "clever-beers-exist"
+  ]
+}
