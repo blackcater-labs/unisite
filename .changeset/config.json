@@ -2,9 +2,9 @@
   "$schema": "https://unpkg.com/@changesets/config@1.6.0/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "linked": [],
+  "linked": [["@unisite/core-blog", "@unisite/theme-blog"]],
   "access": "public",
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": ["@unisite/example-*", "@unisite/site"]
 }

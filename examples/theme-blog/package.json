@@ -1,5 +1,6 @@
 {
   "name": "@unisite/example-theme-blog",
+  "version": "0.0.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -22,6 +23,5 @@
   },
   "devDependencies": {
     "rimraf": "^3.0.2"
-  },
-  "version": null
+  }
 }
