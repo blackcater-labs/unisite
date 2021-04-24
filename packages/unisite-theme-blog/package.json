@@ -1,6 +1,6 @@
 {
   "name": "@unisite/theme-blog",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A theme for blog.",
   "main": "index.js",
   "repository": {
@@ -27,8 +27,8 @@
     "@types/mdx-js__react": "^1.5.3",
     "@types/react-transition-group": "^4.4.1",
     "@unisite/core-blog": "workspace:*",
-    "@unisite/utils": "workspace:*",
     "@unisite/gatsby-plugin-dark-mode": "workspace:*",
+    "@unisite/utils": "workspace:*",
     "autoprefixer": "^10.2.5",
     "babel-plugin-import": "^1.13.3",
     "babel-preset-gatsby": "^1.2.0",
@@ -42,8 +42,5 @@
     "react-use": "^17.2.3",
     "store2": "^2.12.0",
     "tailwindcss": "^2.1.1"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

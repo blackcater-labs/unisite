@@ -1,4 +1,5 @@
 {
+  "name": "@unisite/site",
   "private": true,
   "repository": {
     "type": "git",

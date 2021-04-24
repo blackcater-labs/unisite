@@ -21,8 +21,5 @@
     "blackcater"
   ],
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+  "license": "MIT"
 }

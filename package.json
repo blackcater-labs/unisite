@@ -18,6 +18,7 @@
     "clean:cache": "rimraf {.,.site}/{.cache,public} {packages,examples}/*/{.cache,public}"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.16.0",
     "@unisite/core-blog": "workspace:*",
     "@unisite/gatsby-plugin-dark-mode": "workspace:*",
     "@unisite/gatsby-remark-prismjs": "workspace:*",
