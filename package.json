@@ -20,12 +20,12 @@
     "release:next": "pnpm publish -r --tag next --registry https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.16.0",
+    "@changesets/cli": "2.16.0",
     "@unisite/core-blog": "workspace:*",
     "@unisite/gatsby-plugin-dark-mode": "workspace:*",
     "@unisite/gatsby-remark-prismjs": "workspace:*",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.2.3"
+    "prettier": "2.2.1",
+    "rimraf": "3.0.2",
+    "typescript": "4.2.4"
   }
 }
