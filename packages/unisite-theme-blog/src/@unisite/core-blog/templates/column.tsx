@@ -5,6 +5,7 @@ import type { Category, Tag, Column, ColumnContent } from "@unisite/core-blog";
 
 import DefaultLayout from "../../../layouts/DefaultLayout";
 import Card from "../../../components/Card";
+import AspectRatio from "../../../components/AspectRatio";
 import { Tabs, TabItem } from "../../../components/Tabs";
 import { MDXCard } from "../../../components/MDXContent";
 import type { PageProps } from "../../../utils";
@@ -39,9 +40,9 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
             <div className="flex flex-row items-center">
               {cover ? (
                 <div className="mr-8 w-32 bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg">
-                  <div className="aspect-w-3 aspect-h-4">
+                  <AspectRatio ratio={300 / 424}>
                     <GatsbyImage image={cover} alt={column.title} />
-                  </div>
+                  </AspectRatio>
                 </div>
               ) : null}
               <div className="flex flex-1 flex-col">
@@ -204,7 +205,7 @@ export const query = graphql`
         childImageSharp {
           gatsbyImageData(
             width: 300
-            height: 400
+            aspectRatio: 0.707
             placeholder: BLURRED
             formats: [AUTO, WEBP]
           )

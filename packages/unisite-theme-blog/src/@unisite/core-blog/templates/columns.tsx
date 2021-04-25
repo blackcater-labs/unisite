@@ -27,7 +27,7 @@ function ColumnsPage(props: ColumnsPageProps): React.ReactElement {
             专栏
           </span>
           <span className="ml-4 text-sm text-gray-700 dark:text-gray-300">
-            共 {columns.length} 篇
+            共 {columns.length} 册
           </span>
         </div>
         <div className="grid grid-cols-12">
@@ -61,7 +61,7 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData(
               width: 300
-              aspectRatio: 0.75
+              aspectRatio: 0.707
               placeholder: BLURRED
               formats: [AUTO, WEBP]
             )

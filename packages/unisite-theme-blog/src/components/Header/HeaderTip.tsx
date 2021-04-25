@@ -17,7 +17,7 @@ const HeaderTip: HeaderTipFC = ({ closable = false, children }) => {
   if (isClosed) return null;
 
   return (
-    <div className="bg-gray-700 py-2 dark:bg-gray-300">
+    <div className="bg-gray-900 py-2 dark:bg-gray-100">
       <div className="max-w-6xl mx-auto px-6 flex flex-row justify-between items-center text-white dark:text-gray-900">
         <div>{children}</div>
         {closable ? (

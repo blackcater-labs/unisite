@@ -10,18 +10,16 @@
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
   "scripts": {
-    "clean": "rimraf .cache public",
+    "clean": "gatsby clean",
     "start": "npm run dev",
     "dev": "npm run clean && gatsby develop",
     "build": "npm run clean && gatsby build"
   },
   "dependencies": {
     "@unisite/theme-blog": "workspace:*",
-    "gatsby": "^3.3.0",
+    "gatsby": "^3.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "devDependencies": {
-    "rimraf": "^3.0.2"
-  }
+  "devDependencies": {}
 }

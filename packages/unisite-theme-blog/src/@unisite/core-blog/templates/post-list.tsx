@@ -7,6 +7,7 @@ import PostCard from "../../../components/PostCard";
 import { SearchCard, StatisticCard } from "../../../components/Aside";
 import ThemeSwitch from "../../../components/ThemeSwitch";
 import type { PageProps } from "../../../utils";
+import { isDev } from "../../../utils";
 
 type PageData = {
   drafts: {
@@ -30,7 +31,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
       <div className="max-w-6xl mx-auto px-6 py-8">
         <section className="grid grid-cols-12">
           <div className="col-start-1 col-span-8 space-y-8">
-            {process.env.NODE_ENV !== "production"
+            {isDev
               ? drafts.map((draft) => <PostCard {...draft} key={draft.id} />)
               : null}
             {posts.map((post) => (

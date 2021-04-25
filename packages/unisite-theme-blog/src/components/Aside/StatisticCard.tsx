@@ -17,13 +17,13 @@ type StatisticCardFC = React.FC<StatisticCardProps>;
 function useStatisticData() {
   const data = useStaticQuery(graphql`
     query useStatisticDataQuery {
-      allPost {
+      allPost(filter: { draft: { ne: true } }) {
         totalCount
       }
       allColumn {
         totalCount
       }
-      allTag {
+      allTag(filter: { postCount: { gt: 0 } }) {
         totalCount
       }
     }
