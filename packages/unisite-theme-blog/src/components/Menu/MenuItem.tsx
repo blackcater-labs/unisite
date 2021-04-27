@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 import cls from "classnames";
 
+import Link from "../Link";
 import type { FC2 } from "../../types";
 
 type MenuItemProps = {

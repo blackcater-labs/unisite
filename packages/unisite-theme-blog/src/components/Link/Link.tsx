@@ -14,7 +14,7 @@ const Link = ({ to, children, ...props }: LinkProps) => {
   }
 
   return (
-    <a href={to} target="_blank" ref="noopener noreferrer" {...props}>
+    <a href={to} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
   );

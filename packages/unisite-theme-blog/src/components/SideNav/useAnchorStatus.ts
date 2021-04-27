@@ -41,6 +41,8 @@ export function useAnchorStatus(
       }
     }
 
+    i = Math.min(i, scrollTops.length - 1);
+
     if (i < 0 || !headings[i]) {
       setActives({});
     } else {

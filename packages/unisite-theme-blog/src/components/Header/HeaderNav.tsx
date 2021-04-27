@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
 
+import Link from "../Link";
 import Dropdown from "../Dropdown";
 import Menu from "../Menu";
 import Button from "../Button";
