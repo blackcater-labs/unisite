@@ -32,6 +32,7 @@ module.exports = async function createUserPages({ actions, graphql }, options) {
         0: { path: join(options.userPrefix, kebabCase(user.uid)) },
       },
       contextPaginBuilder: async (data) => ({
+        user: user.id,
         posts: data.map((item) => item.id),
       }),
     });
