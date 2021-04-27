@@ -15,6 +15,7 @@
     "@unisite/site": "0.0.0"
   },
   "changesets": [
-    "clever-beers-exist"
+    "clever-beers-exist",
+    "young-onions-impress"
   ]
 }
