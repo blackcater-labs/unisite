@@ -45,33 +45,61 @@ function UserPostListPage(props: UserPostListPageProps): React.ReactElement {
               </div>
               {user?.description ? (
                 <div className="mt-2 text-gray-700 dark:text-gray-300">
-                  {user.description}
+                  {user?.description}
                 </div>
               ) : null}
               <div className="mt-4 space-x-2">
                 {user?.github_url ? (
-                  <SocialBtn to={user?.github_url} type="github" />
+                  <SocialBtn key="github" to={user?.github_url} type="github" />
                 ) : null}
                 {user?.bilibili_url ? (
-                  <SocialBtn to={user?.github_url} type="bilibili" />
+                  <SocialBtn
+                    key="bilibili"
+                    to={user?.github_url}
+                    type="bilibili"
+                  />
                 ) : null}
                 {user?.leetcode_url ? (
-                  <SocialBtn to={user?.github_url} type="leetcode" />
+                  <SocialBtn
+                    key="leetcode"
+                    to={user?.github_url}
+                    type="leetcode"
+                  />
                 ) : null}
                 {user?.twitter_url ? (
-                  <SocialBtn to={user?.github_url} type="twitter" />
+                  <SocialBtn
+                    key="twitter"
+                    to={user?.github_url}
+                    type="twitter"
+                  />
                 ) : null}
                 {user?.facebook_url ? (
-                  <SocialBtn to={user?.github_url} type="facebook" />
+                  <SocialBtn
+                    key="facebook"
+                    to={user?.github_url}
+                    type="facebook"
+                  />
                 ) : null}
                 {user?.youtube_url ? (
-                  <SocialBtn to={user?.github_url} type="youtube" />
+                  <SocialBtn
+                    key="youtube"
+                    to={user?.github_url}
+                    type="youtube"
+                  />
                 ) : null}
                 {user?.website_url ? (
-                  <SocialBtn to={user?.website_url} type="website" />
+                  <SocialBtn
+                    key="website"
+                    to={user?.website_url}
+                    type="website"
+                  />
                 ) : null}
                 {user?.email ? (
-                  <SocialBtn to={`mailto:${user?.email}`} type="email" />
+                  <SocialBtn
+                    key="email"
+                    to={`mailto:${user?.email}`}
+                    type="email"
+                  />
                 ) : null}
               </div>
             </Card>

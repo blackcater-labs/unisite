@@ -1,9 +1,10 @@
-import React, { Suspense } from "react";
+import React from "react";
+import { GatsbyLinkProps } from "gatsby";
 
 import Link from "../Link";
 import { socials } from "./socials";
 
-type SocialBtnProps = {
+type SocialBtnProps = GatsbyLinkProps<any> & {
   type: string;
 };
 type SocialBtnFC = React.FC<SocialBtnProps>;
@@ -17,23 +18,16 @@ const SocialBtn: SocialBtnFC = ({ type, ...props }) => {
   }>;
 
   return (
-    <Suspense
-      fallback={
-        <span className="inline-block w-6 h-6 rounded-md bg-gray-200 dark:bg-true-gray-700 animate-pulse" />
-      }
+    <Link
+      {...props}
+      className="inline-block w-6 h-6 p-1 rounded-md"
+      style={{
+        color: social?.color,
+        backgroundColor: social?.backgroundColor,
+      }}
     >
-      {/* @ts-ignore */}
-      <Link
-        {...props}
-        className="inline-block w-6 h-6 p-1 rounded-md"
-        style={{
-          color: social?.color,
-          backgroundColor: social?.backgroundColor,
-        }}
-      >
-        <Svg color={social?.color} />
-      </Link>
-    </Suspense>
+      <Svg color={social?.color} />
+    </Link>
   );
 };
 

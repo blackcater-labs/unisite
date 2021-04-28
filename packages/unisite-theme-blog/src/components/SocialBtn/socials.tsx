@@ -1,10 +1,20 @@
 import React from "react";
 
+import SvgFacebook from "./svg/SvgFacebook";
+import SvgTwitter from "./svg/SvgTwitter";
+import SvgGithub from "./svg/SvgGithub";
+import SvgLeetcode from "./svg/SvgLeetcode";
+import SvgWechat from "./svg/SvgWechat";
+import SvgYoutube from "./svg/SvgYoutube";
+import SvgBilibili from "./svg/SvgBilibili";
+import SvgEmail from "./svg/SvgEmail";
+import SvgWebsite from "./svg/SvgWebsite";
+
 type Social = {
   type: string;
   color: string;
   backgroundColor: string;
-  Svg: React.LazyExoticComponent<any>;
+  Svg: React.ComponentType<any>;
 };
 
 export const socials: Social[] = [
@@ -12,54 +22,54 @@ export const socials: Social[] = [
     type: "facebook",
     color: "#ffffff",
     backgroundColor: "#1877f2",
-    Svg: React.lazy(() => import("./svg/SvgFacebook")),
+    Svg: SvgFacebook,
   },
   {
     type: "twitter",
     color: "#ffffff",
     backgroundColor: "#1da1f2",
-    Svg: React.lazy(() => import("./svg/SvgTwitter")),
+    Svg: SvgTwitter,
   },
   {
     type: "github",
     color: "#ffffff",
     backgroundColor: "#181717",
-    Svg: React.lazy(() => import("./svg/SvgGithub")),
+    Svg: SvgGithub,
   },
   {
     type: "leetcode",
     color: "#000000",
     backgroundColor: "#ffa116",
-    Svg: React.lazy(() => import("./svg/SvgLeetcode")),
+    Svg: SvgLeetcode,
   },
   {
     type: "wechat",
     color: "#ffffff",
     backgroundColor: "#07c160",
-    Svg: React.lazy(() => import("./svg/SvgWechat")),
+    Svg: SvgWechat,
   },
   {
     type: "youtube",
     color: "#ffffff",
     backgroundColor: "#ff0000",
-    Svg: React.lazy(() => import("./svg/SvgYoutube")),
+    Svg: SvgYoutube,
   },
   {
     type: "bilibili",
     color: "#ffffff",
     backgroundColor: "#00A1D6",
-    Svg: React.lazy(() => import("./svg/SvgBilibili")),
+    Svg: SvgBilibili,
   },
   {
     type: "email",
     color: "#ffffff",
     backgroundColor: "#ea4335",
-    Svg: React.lazy(() => import("./svg/SvgEmail")),
+    Svg: SvgEmail,
   },
   {
     type: "website",
     color: "#ffffff",
     backgroundColor: "#ff5722",
-    Svg: React.lazy(() => import("./svg/SvgWebsite")),
+    Svg: SvgWebsite,
   },
 ];

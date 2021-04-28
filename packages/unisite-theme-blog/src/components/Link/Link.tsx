@@ -4,7 +4,7 @@ import { Link as GatsbyLink, GatsbyLinkProps } from "gatsby";
 type LinkProps = GatsbyLinkProps<any>;
 
 const Link = ({ to, children, ...props }: LinkProps) => {
-  if (to[0] === "/") {
+  if (to?.[0] === "/") {
     return (
       // @ts-ignore
       <GatsbyLink to={to} {...props}>
