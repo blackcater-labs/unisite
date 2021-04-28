@@ -30,16 +30,19 @@ function UserPostListPage(props: UserPostListPageProps): React.ReactElement {
   return (
     <DefaultLayout>
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-12">
-          <div className="col-start-1 col-span-8 space-y-8">
+        <section className="grid grid-cols-1 md:grid-cols-12">
+          <div className="md:hidden mb-4 space-y-4">
+            <SearchCard />
+          </div>
+          <div className="space-y-4 md:space-y-8 md:col-start-1 md:col-span-7 lg:col-start-1 lg:col-span-8">
             <Card>
               <div className="flex flex-row items-center">
                 <GatsbyImage
-                  className="mr-2 hidden w-10 h-10 rounded-full sm:block"
+                  className="mr-4 hidden w-10 h-10 rounded-full sm:block"
                   image={getImage(user?.avatar)!}
                   alt="avatar"
                 />
-                <span className="px-2 text-lg text-gray-900 font-semibold dark:text-gray-100">
+                <span className="mr-2 text-lg text-gray-900 font-semibold dark:text-gray-100">
                   {user?.name}
                 </span>
               </div>
@@ -107,14 +110,14 @@ function UserPostListPage(props: UserPostListPageProps): React.ReactElement {
               <PostCard {...post} key={post.id} />
             ))}
           </div>
-          <div className="ml-8 col-start-9 col-span-4">
+          <div className="hidden md:block md:col-start-8 md:col-span-5 lg:col-start-9 lg:col-span-4 ml-8">
             <nav className="sticky top-20 space-y-8">
               <SearchCard />
               <StatisticCard />
               <ThemeSwitch />
             </nav>
           </div>
-        </div>
+        </section>
       </div>
     </DefaultLayout>
   );

@@ -70,8 +70,11 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
           />
         </div>
       ) : null}
-      <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-12">
-        <div ref={contentRef} className="col-start-1 col-span-9 space-y-8">
+      <div className="max-w-6xl mx-auto py-4 md:px-6 md:py-8 grid grid-cols-1 md:grid-cols-12">
+        <div
+          ref={contentRef}
+          className="md:col-start-1 md:col-span-9 space-y-4"
+        >
           <Card>
             <div className="mb-4 flex items-center justify-between">
               <span className={cls(["text-sm", dateColor])}>{dateLabel}</span>
@@ -92,12 +95,12 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
           </Card>
           <MDXCard>{post.body!}</MDXCard>
         </div>
-        <div className="ml-8 col-start-10 col-span-3">
+        <div className="hidden md:block ml-8 col-start-10 col-span-3">
           <SideNav className="sticky top-12" headings={post.headings || []} />
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-6 pb-8 grid grid-cols-12">
-        <div className="col-start-1 col-span-9 space-y-8">
+      <div className="max-w-6xl mx-auto md:px-6 md:pb-8 grid grid-cols-1 md:grid-cols-12">
+        <div className="space-y-4 md:space-y-8 md:col-start-1 md:col-span-9">
           <Card>
             <div className="mb-4 text-xl text-gray-900 font-medium dark:text-gray-100">
               作者
