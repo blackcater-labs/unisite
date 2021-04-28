@@ -1,5 +1,11 @@
 # @unisite/core-blog
 
+## 0.1.0-alpha.2
+
+### Minor Changes
+
+- Support mobile device.
+
 ## 0.1.0-alpha.1
 
 ### Patch Changes

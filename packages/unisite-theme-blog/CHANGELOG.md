@@ -1,5 +1,18 @@
 # @unisite/theme-blog
 
+## 0.1.0-alpha.2
+
+### Minor Changes
+
+- Support mobile device.
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @unisite/gatsby-plugin-dark-mode@0.1.0-alpha.1
+  - @unisite/core-blog@0.1.0-alpha.2
+
 ## 0.1.0-alpha.1
 
 ### Patch Changes
