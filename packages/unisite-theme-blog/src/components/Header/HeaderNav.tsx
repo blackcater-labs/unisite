@@ -29,7 +29,7 @@ const HeaderNav: HeaderNavFC = ({ items = [] }) => {
           <Link to="/">
             <div className="mr-4 rounded-xl w-10 h-10 bg-gray-400 dark:bg-true-gray-700"></div>
           </Link>
-          <div className="space-x-2 flex flex-row items-center">
+          <div className="hidden md:flex space-x-2 flex-row items-center">
             {(items || []).map(({ title, link, target, items }, idx) => {
               if (!items || items.length === 0)
                 return (

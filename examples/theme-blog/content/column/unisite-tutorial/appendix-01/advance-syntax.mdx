@@ -376,9 +376,11 @@ MDX 对嵌套 Markdown 与 JSX 语法识别有一些[问题](https://github.com/
 ### B 站
 
 ```markdown
-<div class="aspect-w-16 aspect-w-9">
-  <iframe width="100%" height="100%" src="//player.bilibili.com/player.html?aid=840488687&bvid=BV1m54y1Q7eQ&cid=182078162&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-</div>
+<AspectRatio ratio={16 / 9}>
+
+<iframe width="100%" height="100%" src="//player.bilibili.com/player.html?aid=840488687&bvid=BV1m54y1Q7eQ&cid=182078162&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" />
+
+</AspectRatio>
 ```
 
 <details open>
@@ -386,20 +388,20 @@ MDX 对嵌套 Markdown 与 JSX 语法识别有一些[问题](https://github.com/
 
 <Example>
 
-<div class="aspect-w-16 aspect-h-9">
-  <iframe
-    width="100%"
-    height="100%"
-    src="//player.bilibili.com/player.html?aid=840488687&bvid=BV1m54y1Q7eQ&cid=182078162&page=1"
-    scrolling="no"
-    border="0"
-    frameborder="no"
-    framespacing="0"
-    allowfullscreen="true"
-  >
-    {" "}
-  </iframe>
-</div>
+<AspectRatio ratio={16 / 9}>
+
+<iframe
+  width="100%"
+  height="100%"
+  src="//player.bilibili.com/player.html?aid=840488687&bvid=BV1m54y1Q7eQ&cid=182078162&page=1"
+  scrolling="no"
+  border="0"
+  frameborder="no"
+  framespacing="0"
+  allowfullscreen="true"
+/>
+
+</AspectRatio>
 
 </Example>
 

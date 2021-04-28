@@ -1,3 +1,4 @@
-import ThemeToggler from "./ThemeToggler";
-
-export { ThemeToggler };
+export * from "./ThemeContext";
+export * from "./ThemeProvider";
+export * from "./useTheme";
+export * from "./types";

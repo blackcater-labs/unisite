@@ -11,7 +11,7 @@ const Card: CardFC = ({ hoverable = false, className, children }) => {
   return (
     <div
       className={cls([
-        "w-full px-8 py-6 transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm dark:bg-true-gray-900",
+        "w-full p-4 md:px-8 md:py-6 transform duration-300 ease-in-out bg-white rounded-2xl shadow-sm dark:bg-true-gray-900",
         hoverable ? "hover:shadow-md" : "",
         className,
       ])}

@@ -17,6 +17,7 @@ import {
   Bilibili,
   NeteaseMusic,
 } from "../src/components/MDX";
+import AspectRatio from "../src/components/AspectRatio";
 
 export const wrapRootElement = ({ element }) => {
   return (
@@ -27,7 +28,7 @@ export const wrapRootElement = ({ element }) => {
         blockquote: Blockquote,
         pre: CodeBlock,
         table: Table,
-        //  Extended Components
+        // Extended Components
         Link,
         Tag,
         Aside,
@@ -41,6 +42,8 @@ export const wrapRootElement = ({ element }) => {
         CodePen,
         CodeSandbox,
         Gist,
+        // Common Components
+        AspectRatio,
         ...components,
       }}
     >

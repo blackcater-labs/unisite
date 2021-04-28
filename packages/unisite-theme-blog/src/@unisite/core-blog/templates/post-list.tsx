@@ -28,9 +28,13 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
 
   return (
     <DefaultLayout>
-      <div className="max-w-6xl mx-auto px-6 py-8">
-        <section className="grid grid-cols-12">
-          <div className="col-start-1 col-span-8 space-y-8">
+      <div className="max-w-6xl mx-auto p-4 md:px-6 md:py-8">
+        <section className="grid grid-cols-1 md:grid-cols-12">
+          <div className="md:hidden mb-4 space-y-4">
+            <ThemeSwitch />
+            <SearchCard />
+          </div>
+          <div className="space-y-4 md:space-y-8 md:col-start-1 md:col-span-7 lg:col-start-1 lg:col-span-8">
             {isDev
               ? drafts.map((draft) => <PostCard {...draft} key={draft.id} />)
               : null}
@@ -38,7 +42,7 @@ function PostListPage(props: PostListPageProps): React.ReactElement {
               <PostCard {...post} key={post.id} />
             ))}
           </div>
-          <div className="ml-8 col-start-9 col-span-4">
+          <div className="hidden md:block md:col-start-8 md:col-span-5 lg:col-start-9 lg:col-span-4 ml-8">
             <nav className="sticky top-20 space-y-8">
               <SearchCard />
               <StatisticCard />

@@ -12,6 +12,10 @@ module.exports = () => {
           ],
         },
       },
+      {
+        resolve: "gatsby-plugin-compile-es6-packages",
+        options: { modules: ["@unisite/gatsby-plugin-dark-mode"] },
+      },
     ],
   };
 };
