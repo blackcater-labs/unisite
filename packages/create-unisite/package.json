@@ -1,12 +1,12 @@
 {
-  "name": "@unisite/utils",
-  "version": "0.1.0-alpha.1",
-  "description": "Utils for core packages.",
+  "name": "create-unisite",
+  "version": "0.0.0",
+  "description": "Create unisite project.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
     "repository": "git@github.com:blackcater/unisite.git",
-    "directory": "packages/unisite-utils"
+    "directory": "packages/create-unisite"
   },
   "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
   "license": "MIT",
