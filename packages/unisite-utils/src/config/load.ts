@@ -21,6 +21,7 @@ function parse<T extends any>(filePath: string): T | undefined {
 }
 
 function parseJS<T extends any>(filePath: string): T {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   return require(filePath);
 }
 

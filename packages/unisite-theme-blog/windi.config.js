@@ -1,17 +1,22 @@
-const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
+import UnisiteWindiCSS from "@unisite/windicss";
+// @ts-check - enable TS check for js file
+import { defineConfig } from "windicss/helpers";
+import defaultTheme from "windicss/defaultTheme";
 
-module.exports = {
-  purge: [
-    "./node_modules/@unisite/theme-blog/src/**/*.{js,jsx,ts,tsx,css,less}",
-    "./components/**/*.{js,jsx,ts,tsx,css,less}",
-    "./pages/**/*.{js,jsx,ts,tsx,css,less}",
-    "./src/**/*.{js,jsx,ts,tsx,css,less}",
-  ],
+export default defineConfig({
+  extract: {
+    include: [
+      "./node_modules/@unisite/core-blog/src/**/*",
+      "./node_modules/@unisite/theme-blog/src/**/*",
+      "./src/**/*",
+      "./components/**/*",
+      "./pages/**/*",
+      "./contents/**/*",
+    ],
+  },
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
-      colors: { "true-gray": colors.trueGray },
       maxHeight: {
         "(screen-12)": "calc(100vh - 3rem)",
         "(screen-16)": "calc(100vh - 4rem)",
@@ -80,5 +85,5 @@ module.exports = {
       animation: ["hover", "group-hover"],
     },
   },
-  plugins: [require("@tailwindcss/ui"), require("@tailwindcss/aspect-ratio")],
-};
+  plugins: [UnisiteWindiCSS({})],
+});

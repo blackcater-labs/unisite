@@ -8,7 +8,7 @@
     "repository": "git@github.com:blackcater/unisite.git",
     "directory": "packages/unisite-core-doc"
   },
-  "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
+  "author": "Elon Tang <blackcater@blackcater.dev> (https://www.blackcater.com)",
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^3.0.0",

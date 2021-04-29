@@ -1,13 +1,13 @@
-export type Category = {
+export interface Category {
   id: string;
   cid: string;
   name: string;
   columns: Column[];
   posts: Post[];
   postCount: number;
-};
+}
 
-export type Tag = {
+export interface Tag {
   id: string;
   tid: string;
   name: string;
@@ -15,20 +15,20 @@ export type Tag = {
   columns: Column[];
   posts: Post[];
   postCount: number;
-};
+}
 
-export type Chapter = {
+export interface Chapter {
   title: string;
   link?: string;
   sections?: Section[];
-};
+}
 
-export type Section = {
+export interface Section {
   title: string;
   link?: string;
-};
+}
 
-export type Column = {
+export interface Column {
   id: string;
   cid: string;
   title: string;
@@ -39,9 +39,9 @@ export type Column = {
   authors: User[];
   posts: ColumnPost[];
   chapters: Chapter[];
-};
+}
 
-export type SocialLinks = {
+export interface SocialLinks {
   // website
   website_url: string;
   // opensource
@@ -78,7 +78,7 @@ export type SocialLinks = {
   origin_url: string;
   uplay_url: string;
   wegame_url: string;
-};
+}
 
 export type User = SocialLinks & {
   id: string;
@@ -99,29 +99,29 @@ export type Group = User & {
   members: User[];
 };
 
-export type Heading = {
+export interface Heading {
   value: string;
   depth: number;
-};
+}
 
-export type TOCItem = {
+export interface TOCItem {
   url?: string;
   title?: string;
   item: TOCItem[];
-};
+}
 
-export type Content = {
+export interface Content {
   id: string;
   type: string;
   body: string;
   rawBody: string;
-};
+}
 
 export type ColumnContent = Content & {
   column: Column;
 };
 
-export type Post = {
+export interface Post {
   id: string;
   title: string;
   cover: any;
@@ -140,7 +140,7 @@ export type Post = {
   categories: Category[];
   tags: Tag[];
   authors: User[];
-};
+}
 
 export type BlogPost = Post & {};
 
@@ -148,7 +148,7 @@ export type ColumnPost = Post & {
   column: Column;
 };
 
-export type UnisiteCoreBlogConfig = {
+export interface UnisiteCoreBlogConfig {
   tagPrefix: string;
   tagListPrefix: string;
   userPrefix: string;
@@ -160,4 +160,4 @@ export type UnisiteCoreBlogConfig = {
   postPrefix: string;
   postListPrefix: string;
   archivesPrefix: string;
-};
+}

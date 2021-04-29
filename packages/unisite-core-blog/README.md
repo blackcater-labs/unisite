@@ -39,7 +39,7 @@ In default, the information of `User` can be configured in `user.yaml` file. For
   name: "Elon Tang"
   avatar: "user/blackcater.png" # relative path
   description: "Completion is more important than perfection!"
-  email: "blackcater2015@gmail.com"
+  email: "blackcater@blackcater.dev"
   website_url: "https://www.blackcater.com"
   github_url: "https://www.github.com/blackcater"
   # You also can set other social links.

@@ -7,7 +7,7 @@
     "url": "git@github.com:blackcater/unisite.git",
     "directory": "site"
   },
-  "author": "Elon Tang <blackcater2015@gmail.com> (https://www.blackcater.com)",
+  "author": "Elon Tang <blackcater@blackcater.dev> (https://www.blackcater.com)",
   "license": "MIT",
   "dependencies": {
     "@unisite/theme-doc": "^0.0.0"

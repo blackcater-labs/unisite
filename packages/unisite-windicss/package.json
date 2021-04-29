@@ -1,0 +1,42 @@
+{
+  "name": "@unisite/windicss",
+  "version": "0.0.0",
+  "description": "Plugin for windicss.",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "repository": {
+    "type": "git",
+    "repository": "git@github.com:blackcater/unisite.git",
+    "directory": "packages/unisite-windicss"
+  },
+  "homepage": "https://unisite.blackcater.org",
+  "keywords": [
+    "unisite",
+    "windicss",
+    "windicss-plugin",
+    "blackcater"
+  ],
+  "author": "Elon Tang <blackcater@blackcater.dev> (https://www.blackcater.com)",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "clean": "rimraf lib",
+    "dev": "npm run clean && npm run build:lib -- --watch",
+    "build": "npm run clean && npm run build:lib -- --minify",
+    "build:lib": "tsup src/index.ts --format esm,cjs,iife --dts -d lib"
+  },
+  "peerDependencies": {
+    "windicss": ">=2 <3"
+  },
+  "dependencies": {
+    "@windicss/animations": "^1.0.8",
+    "@windicss/plugin-interaction-variants": "^1.0.0",
+    "@windicss/plugin-scrollbar": "^1.2.3",
+    "@windicss/plugin-heropatterns": "^0.0.8"
+  },
+  "devDependencies": {
+    "tsup": "^4.10.1",
+    "typescript": "^4.2.4",
+    "windicss": "^2.5.14"
+  }
+}

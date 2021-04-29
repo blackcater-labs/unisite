@@ -31,3 +31,6 @@ public/
 
 # env
 *.local
+
+# vite
+dist/

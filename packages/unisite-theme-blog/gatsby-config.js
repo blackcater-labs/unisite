@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = () => {
   return {
     plugins: [
@@ -6,10 +8,14 @@ module.exports = () => {
       {
         resolve: "gatsby-plugin-postcss",
         options: {
-          postCssPlugins: [
-            require("autoprefixer"),
-            require("tailwindcss")(require("./tailwind.config")),
-          ],
+          postCssPlugins: [require("autoprefixer")],
+        },
+      },
+      {
+        resolve: "gatsby-plugin-windicss",
+        options: {
+          // root: __dirname,
+          config: path.resolve(__dirname, "windi.config.js"),
         },
       },
       {

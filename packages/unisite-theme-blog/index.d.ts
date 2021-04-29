@@ -1,22 +1,22 @@
 export * from "@unisite/core-blog";
 export * from "./src/types";
 
-export type UnisiteThemeBlogConfig = {
+export interface UnisiteThemeBlogConfig {
   header?: {
     bar?: {
       text?: string;
       closable?: boolean;
     };
-    nav?: {
+    nav?: Array<{
       title?: string;
       link?: string;
       target?: string;
-      items?: {
+      items?: Array<{
         title?: string;
         subTitle?: string;
         link?: string;
         target?: string;
-      }[];
-    }[];
+      }>;
+    }>;
   };
-};
+}

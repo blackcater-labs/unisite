@@ -1,9 +1,9 @@
 import type { ReactChild } from "react";
 
-export type PageProps<
+export interface PageProps<
   Data extends Record<string, any> = any,
   Context extends Record<string, any> = any
-> = {
+> {
   path: string;
   uri: string;
   params: Record<string, any>;
@@ -24,4 +24,4 @@ export type PageProps<
   data: Data;
   pageContext: Context;
   children?: ReactChild;
-};
+}

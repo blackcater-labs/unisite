@@ -51,7 +51,7 @@ users:
     name: "Elon Tang"
     avatar: "content/user/blackcater.png"
     description: "God helps those who help themselves."
-    email: "blackcater2015@gmail.com"
+    email: "blackcater@blackcater.dev"
     website_url: "https://www.blackcater.com"
     github_url: "https://www.github.com/blackcater"
   - id: "unisite"

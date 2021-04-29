@@ -5,13 +5,13 @@ import type { Heading2 } from "./type";
 
 export function useAnchorStatus(
   headings: Heading2[],
-  offset: number = 45
+  offset = 45
 ): Record<string, boolean> {
   const [actives, setActives] = useState({});
   const { y } = useWindowScroll();
   const { height } = useWindowSize();
   const tY = useThrottle(y, 300);
-  const [scrollTops, setScrollTops] = useState<[number, number][]>([]);
+  const [scrollTops, setScrollTops] = useState<Array<[number, number]>>([]);
 
   useEffect(() => {
     const current = document.documentElement.scrollTop;
