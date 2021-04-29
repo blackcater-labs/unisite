@@ -1,6 +1,6 @@
 {
   "name": "@unisite/theme-blog",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "A theme for blog.",
   "main": "index.js",
   "repository": {

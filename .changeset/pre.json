@@ -12,9 +12,13 @@
     "@unisite/theme-blog": "0.0.3",
     "@unisite/theme-doc": "0.0.0",
     "@unisite/utils": "0.0.2",
-    "@unisite/site": "0.0.0"
+    "@unisite/site": "0.0.0",
+    "create-unisite": "0.0.0",
+    "@unisite/ui": "0.0.0",
+    "@unisite/windicss": "0.0.0"
   },
   "changesets": [
+    "chilly-parrots-begin",
     "clever-beers-exist",
     "fluffy-ties-battle",
     "quiet-apples-check",

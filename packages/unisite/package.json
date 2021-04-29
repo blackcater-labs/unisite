@@ -1,6 +1,6 @@
 {
   "name": "unisite",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "Gatsby + Themes = Unisite.️",
   "main": "lib/index.js",
   "repository": {
@@ -29,7 +29,6 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "26.0.23",
     "@types/node": "15.0.1",

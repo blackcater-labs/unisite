@@ -1,6 +1,6 @@
 {
   "name": "@unisite/windicss",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "Plugin for windicss.",
   "main": "lib/index.js",
   "module": "lib/index.mjs",
@@ -30,9 +30,9 @@
   },
   "dependencies": {
     "@windicss/animations": "^1.0.8",
+    "@windicss/plugin-heropatterns": "^0.0.8",
     "@windicss/plugin-interaction-variants": "^1.0.0",
-    "@windicss/plugin-scrollbar": "^1.2.3",
-    "@windicss/plugin-heropatterns": "^0.0.8"
+    "@windicss/plugin-scrollbar": "^1.2.3"
   },
   "devDependencies": {
     "tsup": "4.10.1",

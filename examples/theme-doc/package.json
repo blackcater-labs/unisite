@@ -10,6 +10,6 @@
   "author": "Elon Tang <blackcater@blackcater.dev> (https://www.blackcater.com)",
   "license": "MIT",
   "dependencies": {
-    "@unisite/theme-doc": "^0.0.0"
+    "@unisite/theme-doc": "^0.0.1-alpha.0"
   }
 }
