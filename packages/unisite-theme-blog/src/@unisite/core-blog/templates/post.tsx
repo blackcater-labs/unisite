@@ -62,7 +62,7 @@ function PostDetailPage(props: PostDetailPageProps): React.ReactElement {
   return (
     <DefaultLayout>
       {cover ? (
-        <div className="h-96 overflow-hidden">
+        <div className="h-32 md:h-48 lg:h-72 xl:h-96  overflow-hidden">
           <GatsbyImage
             className="w-full h-full"
             image={cover}

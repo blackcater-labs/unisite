@@ -70,8 +70,8 @@ const SideNav: SideNavFC = ({ className, headings }) => {
                 "pl-6": item.depth === startDepth + 2,
               },
               anchorStatus[item.hash]
-                ? "text-gray-900 dark:text-gray-100"
-                : "text-gray-500 dark:text-true-gray-500",
+                ? "font-medium text-gray-900 dark:text-gray-100"
+                : "text-gray-400 dark:text-true-gray-500",
             ])}
             onClick={() => handleJumpTo(item)}
           >

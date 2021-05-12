@@ -1,19 +1,19 @@
-import UnisiteWindiCSS from "@unisite/windicss";
 // @ts-check - enable TS check for js file
+import UnisiteWindiCSS from "@unisite/windicss";
 import { defineConfig } from "windicss/helpers";
 import defaultTheme from "windicss/defaultTheme";
 
 export default defineConfig({
-  extract: {
-    include: [
-      "./node_modules/@unisite/core-blog/src/**/*",
-      "./node_modules/@unisite/theme-blog/src/**/*",
-      "./src/**/*",
-      "./components/**/*",
-      "./pages/**/*",
-      "./contents/**/*",
-    ],
-  },
+  // extract: {
+  //   include: [
+  //     "./node_modules/@unisite/core-blog/src/**/*",
+  //     "./node_modules/@unisite/theme-blog/src/**/*",
+  //     "./src/**/*",
+  //     "./components/**/*",
+  //     "./pages/**/*",
+  //     "./contents/**/*",
+  //   ],
+  // },
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {

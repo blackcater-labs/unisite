@@ -15,6 +15,16 @@ module.exports = () => {
         resolve: "gatsby-plugin-windicss",
         options: {
           // root: __dirname,
+          scan: {
+            dirs: [
+              "./node_modules/@unisite/core-blog/src",
+              "./node_modules/@unisite/theme-blog/src",
+              "./src",
+              "./components",
+              "./pages",
+              "./contents",
+            ],
+          },
           config: path.resolve(__dirname, "windi.config.js"),
         },
       },
