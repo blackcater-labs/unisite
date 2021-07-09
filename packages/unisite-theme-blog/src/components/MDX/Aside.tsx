@@ -3,12 +3,12 @@ import cls from "classnames";
 
 import { prefix } from "./_utils";
 
-type AsideProps = {
+interface AsideProps {
   className?: string;
   color?: string;
   type?: string;
   header?: string;
-};
+}
 
 type AsideFC = React.FC<AsideProps>;
 

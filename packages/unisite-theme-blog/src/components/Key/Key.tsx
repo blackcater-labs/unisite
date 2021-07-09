@@ -1,9 +1,9 @@
 import React from "react";
 import cls from "classnames";
 
-type KeyProps = {
+interface KeyProps {
   className?: string;
-};
+}
 
 type KeyFC = React.FC<KeyProps>;
 

@@ -45,8 +45,8 @@ module.exports = async function createMdxNode(
 
   if (error) {
     reporter.panic(
-      chalk.red.bold("frontmatter is not validate") +
-        `\n    ${error.name} ${error.message}`
+      `${chalk.red.bold("frontmatter is not validate") 
+        }\n    ${error.name} ${error.message}`
     );
     return;
   }

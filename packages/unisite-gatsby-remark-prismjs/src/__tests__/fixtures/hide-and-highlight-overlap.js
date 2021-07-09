@@ -2,6 +2,7 @@
 // highlight-range{5-7,9}
 import * as React from 'react'
 import { render } from "react-dom"
+
 ReactDOM.render(
   <div>
     <ul>

@@ -1,7 +1,7 @@
 import React from "react";
 import cls from "classnames";
 
-type IconButtonProps = { className?: string };
+interface IconButtonProps { className?: string }
 type IconButtonFC = React.FC<IconButtonProps>;
 
 const IconButton: IconButtonFC = ({ className, children }) => {

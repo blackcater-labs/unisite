@@ -3,9 +3,9 @@ import { useClickAway } from "react-use";
 
 import Transition from "../Transition";
 
-type DropdownProps = {
+interface DropdownProps {
   overlay?: React.ReactElement;
-};
+}
 type DropdownFC = React.FC<DropdownProps>;
 
 const Dropdown: DropdownFC = ({ overlay, children }) => {

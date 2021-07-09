@@ -3,9 +3,9 @@ import cls from "classnames";
 
 import { prefix } from "./_utils";
 
-type ExampleProps = {
+interface ExampleProps {
   className?: string;
-};
+}
 
 type ExampleFC = React.FC<ExampleProps>;
 

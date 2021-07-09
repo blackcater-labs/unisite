@@ -8,12 +8,12 @@ import { SearchCard, StatisticCard } from "../../../components/Aside";
 import ThemeSwitch from "../../../components/ThemeSwitch";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   users: {
     nodes: User[];
   };
-};
-type PageContext = {};
+}
+interface PageContext {}
 type UsersPageProps = PageProps<PageData, PageContext>;
 
 function UsersPage(props: UsersPageProps): React.ReactElement {

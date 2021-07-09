@@ -3,7 +3,7 @@ import cls from "classnames";
 
 import IconButton from "./IconButton";
 
-type ButtonProps = { className?: string };
+interface ButtonProps { className?: string }
 type ButtonFC = React.FC<ButtonProps> & {
   Icon: typeof IconButton;
 };

@@ -14,18 +14,18 @@ import {
 
 import { prefix } from "./_utils";
 
-type CodeBlockProps = {
+interface CodeBlockProps {
   className?: string;
   "data-options"?: string;
-};
+}
 
 type CodeBlockFC = React.FC<CodeBlockProps>;
 
-type CodeBlockOptions = {
+interface CodeBlockOptions {
   header?: string;
   filename?: string;
   collapsed?: string;
-};
+}
 
 function useOptions(str?: string): CodeBlockOptions {
   return useMemo(() => JSON.parse(str || "{}"), [str]);
@@ -54,7 +54,7 @@ const CodeBlock: CodeBlockFC = ({ className, children, ...props }) => {
   const header = options.header || options.filename;
   const contentRef = useRef<HTMLPreElement>(null);
   const { ok, copy } = useClipboard();
-  const [collapsed, setCollapsed] = useState(options["collapsed"] === "true");
+  const [collapsed, setCollapsed] = useState(options.collapsed === "true");
   const handleCollapse = useCallback(() => setCollapsed((state) => !state), []);
 
   return (

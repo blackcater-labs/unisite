@@ -6,12 +6,12 @@ import DefaultLayout from "../../../layouts/DefaultLayout";
 import { useCategoryPath } from "../../../utils";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   categories: {
     nodes: Category[];
   };
-};
-type PageContext = {};
+}
+interface PageContext {}
 type CategoriesPageProps = PageProps<PageData, PageContext>;
 
 const CategoryItem = ({ cid, name }: Category) => {

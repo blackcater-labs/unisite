@@ -9,17 +9,17 @@ import Button from "../Button";
 
 import { useColumnPath, usePostPath, useUserPath } from "../../utils";
 
-type PostCardProps = {
+interface PostCardProps {
   draft: boolean;
   title: string;
   excerpt: string;
   slug: string;
   published_at?: string;
   updated_at?: string;
-  authors?: { id: string; uid: string; name: string; avatar: any }[];
-  tags?: { tid: string; name: string }[];
+  authors?: Array<{ id: string; uid: string; name: string; avatar: any }>;
+  tags?: Array<{ tid: string; name: string }>;
   column?: { cid: string; title: string };
-};
+}
 type PostCardFC = React.FC<PostCardProps>;
 
 const PostCard: PostCardFC = ({

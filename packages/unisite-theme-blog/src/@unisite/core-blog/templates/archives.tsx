@@ -10,14 +10,14 @@ import { usePostPath } from "../../../utils";
 type PostData = Post & {
   date_str: string;
 };
-type PageData = {
+interface PageData {
   posts: {
     nodes: PostData[];
   };
-};
-type PageContext = {
+}
+interface PageContext {
   posts?: string[];
-};
+}
 type ArchivesPageProps = PageProps<PageData, PageContext>;
 
 function PostItem({ title, slug, date_str }: PostData) {

@@ -4,13 +4,13 @@ import cls from "classnames";
 import Link from "../Link";
 import type { FC2 } from "../../types";
 
-type MenuItemProps = {
+interface MenuItemProps {
   title?: React.ReactChild;
   subTitle?: React.ReactChild;
   avatar?: React.ReactChild;
   link?: string;
   target?: string;
-};
+}
 type MenuItemFC = FC2<MenuItemProps>;
 
 const MenuItem: MenuItemFC = ({ title, subTitle, avatar, link, target }) => {

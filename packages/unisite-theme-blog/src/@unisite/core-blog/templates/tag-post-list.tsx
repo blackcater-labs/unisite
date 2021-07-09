@@ -8,20 +8,20 @@ import { SearchCard, StatisticCard } from "../../../components/Aside";
 import ThemeSwitch from "../../../components/ThemeSwitch";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   tag: Tag;
   posts: {
     nodes: Post[];
   };
-};
-type PageContext = {
+}
+interface PageContext {
   tag: string;
   posts: string[];
-};
+}
 type TagPostListPageProps = PageProps<PageData, PageContext>;
 
 function TagPostListPage(props: TagPostListPageProps): React.ReactElement {
-  const tag = props.data.tag;
+  const {tag} = props.data;
   const posts = props.data.posts?.nodes || [];
 
   return (

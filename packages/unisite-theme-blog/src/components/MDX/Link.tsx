@@ -4,10 +4,10 @@ import { Share as IconShare } from "@icon-park/react";
 
 import { prefix } from "./_utils";
 
-type LinkProps = {
+interface LinkProps {
   className?: string;
   showIcon?: boolean;
-};
+}
 
 type LinkFC = React.FC<LinkProps>;
 

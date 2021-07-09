@@ -1,12 +1,12 @@
 import React from "react";
 import cls from "classnames";
 
-type TabItemProps = {
+interface TabItemProps {
   tabKey: string;
   tab: React.ReactChild;
   active?: boolean;
   onClick?: () => void;
-};
+}
 type TabItemFC = React.FC<TabItemProps>;
 
 const TabItem: TabItemFC = ({ tab, active, onClick }) => {

@@ -3,9 +3,9 @@ import { Close as IconClose } from "@icon-park/react";
 
 import { store } from "../../utils/store";
 
-type HeaderTipProps = {
+interface HeaderTipProps {
   closable?: boolean;
-};
+}
 
 type HeaderTipFC = React.FC<HeaderTipProps>;
 

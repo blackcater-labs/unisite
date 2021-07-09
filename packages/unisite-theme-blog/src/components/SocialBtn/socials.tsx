@@ -10,12 +10,12 @@ import SvgBilibili from "./svg/SvgBilibili";
 import SvgEmail from "./svg/SvgEmail";
 import SvgWebsite from "./svg/SvgWebsite";
 
-type Social = {
+interface Social {
   type: string;
   color: string;
   backgroundColor: string;
   Svg: React.ComponentType<any>;
-};
+}
 
 export const socials: Social[] = [
   {

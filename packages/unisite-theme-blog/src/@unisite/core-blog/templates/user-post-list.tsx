@@ -11,20 +11,20 @@ import ThemeSwitch from "../../../components/ThemeSwitch";
 import SocialBtn from "../../../components/SocialBtn";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   user: User;
   posts: {
     nodes: Post[];
   };
-};
-type PageContext = {
+}
+interface PageContext {
   user: string;
   posts: string[];
-};
+}
 type UserPostListPageProps = PageProps<PageData, PageContext>;
 
 function UserPostListPage(props: UserPostListPageProps): React.ReactElement {
-  const user = props.data.user;
+  const {user} = props.data;
   const posts = props.data.posts?.nodes || [];
 
   return (

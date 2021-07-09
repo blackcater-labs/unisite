@@ -6,11 +6,11 @@ import HeaderTip from "./HeaderTip";
 import HeaderNav from "./HeaderNav";
 import HeaderCategoryNav from "./HeaderCategoryNav";
 
-type HeaderProps = {
+interface HeaderProps {
   layout?: "absolute" | "sticky" | "autoHidden";
   // dark?: boolean;
   // transparent?: boolean;
-};
+}
 type HeaderFC = React.FC<HeaderProps>;
 
 const Header: HeaderFC = () => {

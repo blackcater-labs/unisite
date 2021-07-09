@@ -3,10 +3,10 @@ import cls from "classnames";
 
 import { prefix } from "./_utils";
 
-type HighlightProps = {
+interface HighlightProps {
   className?: string;
   color?: string;
-};
+}
 
 type HighlightFC = React.FC<HighlightProps>;
 

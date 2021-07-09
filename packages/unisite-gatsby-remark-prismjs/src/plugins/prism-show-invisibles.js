@@ -52,7 +52,7 @@ module.exports = (language = `javascript`) => {
         const inside = {}
         tokens[name] = {
           pattern: value,
-          inside: inside,
+          inside,
         }
         addInvisibles(inside)
         break
@@ -79,7 +79,7 @@ module.exports = (language = `javascript`) => {
    * @param {Object} grammar
    */
   function addInvisibles(grammar) {
-    if (!grammar || grammar[`tab`]) {
+    if (!grammar || grammar.tab) {
       return
     }
 
@@ -95,7 +95,7 @@ module.exports = (language = `javascript`) => {
       /* eslint-enable no-redeclare */
       if (grammar.hasOwnProperty(name) && !invisibles[name]) {
         if (name === `rest`) {
-          addInvisibles(grammar[`rest`])
+          addInvisibles(grammar.rest)
         } else {
           handleToken(grammar, name)
         }
@@ -103,7 +103,7 @@ module.exports = (language = `javascript`) => {
     }
   }
 
-  Prism.hooks.add(`before-highlight`, function (env) {
+  Prism.hooks.add(`before-highlight`, (env) => {
     addInvisibles(env.grammar)
   })
   // prism-show-invisibles.js:end

@@ -8,12 +8,12 @@ import { SearchCard, StatisticCard } from "../../../components/Aside";
 import ThemeSwitch from "../../../components/ThemeSwitch";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   columns: {
     nodes: Column[];
   };
-};
-type PageContext = {};
+}
+interface PageContext {}
 type ColumnsPageProps = PageProps<PageData, PageContext>;
 
 function ColumnsPage(props: ColumnsPageProps): React.ReactElement {

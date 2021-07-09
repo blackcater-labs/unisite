@@ -8,21 +8,21 @@ import { SearchCard, StatisticCard } from "../../../components/Aside";
 import ThemeSwitch from "../../../components/ThemeSwitch";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   category: Category;
   posts: {
     nodes: Post[];
   };
-};
-type PageContext = {
+}
+interface PageContext {
   posts?: string[];
-};
+}
 type CategoryPostListPageProps = PageProps<PageData, PageContext>;
 
 function CategoryPostListPage(
   props: CategoryPostListPageProps
 ): React.ReactElement {
-  const category = props.data.category;
+  const {category} = props.data;
   const posts = props.data.posts?.nodes || [];
 
   return (

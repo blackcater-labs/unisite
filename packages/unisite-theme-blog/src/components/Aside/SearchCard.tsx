@@ -5,7 +5,7 @@ import Card from "../Card";
 import Button from "../Button";
 import Key from "../Key";
 
-type SearchCardProps = {};
+interface SearchCardProps {}
 
 type SearchCardFC = React.FC<SearchCardProps>;
 

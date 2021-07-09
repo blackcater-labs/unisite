@@ -11,16 +11,16 @@ import { MDXCard } from "../../../components/MDXContent";
 import type { PageProps } from "../../../utils";
 import { useCategoryPath, useTagPath } from "../../../utils";
 
-type PageData = {
+interface PageData {
   column: Column;
   contents: {
     nodes: ColumnContent[];
   };
-};
-type PageContext = {
+}
+interface PageContext {
   id: string;
   contents: string[];
-};
+}
 type ColumnDetailPage = PageProps<PageData, PageContext>;
 
 function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
@@ -30,7 +30,7 @@ function ColumnDetailPage(props: ColumnDetailPage): React.ReactElement {
   const categories = column.categories || [];
   const tags = column.tags || [];
   const intro = contents.nodes.filter((node) => node.type === "intro")[0]?.body;
-  const chapters = column.chapters;
+  const {chapters} = column;
 
   return (
     <DefaultLayout>

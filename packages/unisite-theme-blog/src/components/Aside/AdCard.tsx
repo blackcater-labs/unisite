@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "../Card";
 
-type AdCardProps = {};
+interface AdCardProps {}
 
 type AdCardFC = React.FC<AdCardProps>;
 

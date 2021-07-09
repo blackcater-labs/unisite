@@ -29,11 +29,9 @@ module.exports = async function createPaginPages(arr, createPage, options) {
           { i, pageSize },
           arr
         )
-      : path
-      ? path
-      : i === 0
+      : path || (i === 0
       ? pathPrefix
-      : join(pathPrefix, `${i}`);
+      : join(pathPrefix, `${i}`));
 
   const getContext = async (i, { context, contextBuilder }) =>
     contextBuilder

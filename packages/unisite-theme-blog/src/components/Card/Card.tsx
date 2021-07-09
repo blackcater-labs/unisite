@@ -1,10 +1,10 @@
 import React from "react";
 import cls from "classnames";
 
-type CardProps = {
+interface CardProps {
   hoverable?: boolean;
   className?: string;
-};
+}
 type CardFC = React.FC<CardProps>;
 
 const Card: CardFC = ({ hoverable = false, className, children }) => {

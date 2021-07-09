@@ -3,10 +3,10 @@ import cls from "classnames";
 
 import { prefix } from "./_utils";
 
-type TagProps = {
+interface TagProps {
   className?: string;
   color?: string;
-};
+}
 
 type TagFC = React.FC<TagProps>;
 

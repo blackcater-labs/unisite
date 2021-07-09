@@ -10,17 +10,17 @@ import ThemeSwitch from "../../../components/ThemeSwitch";
 import type { PageProps } from "../../../utils";
 import { isDev } from "../../../utils";
 
-type PageData = {
+interface PageData {
   drafts: {
     nodes: Post[];
   };
   posts: {
     nodes: Post[];
   };
-};
-type PageContext = {
+}
+interface PageContext {
   posts?: string[];
-};
+}
 type PostListPageProps = PageProps<PageData, PageContext>;
 
 function PostListPage(props: PostListPageProps): React.ReactElement {

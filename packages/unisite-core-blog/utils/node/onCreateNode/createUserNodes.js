@@ -53,8 +53,8 @@ module.exports = async function createUserNodes(
 
   if (error) {
     reporter.panic(
-      chalk.red.bold("Configuration of user is invalid") +
-        `\n    ${error.name} ${error.message}`
+      `${chalk.red.bold("Configuration of user is invalid") 
+        }\n    ${error.name} ${error.message}`
     );
     return;
   }

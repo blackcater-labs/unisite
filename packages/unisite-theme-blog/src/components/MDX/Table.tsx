@@ -3,9 +3,9 @@ import cls from "classnames";
 
 import { prefix } from "./_utils";
 
-type TableProps = {
+interface TableProps {
   className?: string;
-};
+}
 
 type TableFC = React.FC<TableProps>;
 

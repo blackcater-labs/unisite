@@ -2,11 +2,11 @@ import React from "react";
 
 import { FC2 } from "../../../types";
 
-type NeteaseMusicProps = {
+interface NeteaseMusicProps {
   id: string;
   autoPlay?: boolean;
   size?: "small" | "default";
-};
+}
 type NeteaseMusicFC = FC2<NeteaseMusicProps>;
 
 const NeteaseMusic: NeteaseMusicFC = ({
@@ -18,10 +18,10 @@ const NeteaseMusic: NeteaseMusicFC = ({
     <div>
       <iframe
         // @ts-ignore
-        frameborder="no"
+        frameBorder="no"
         border="0"
-        marginwidth="0"
-        marginheight="0"
+        marginWidth="0"
+        marginHeight="0"
         width="330"
         height={size === "small" ? "52" : "86"}
         src={`//music.163.com/outchain/player?type=2&id=${id}&auto=${

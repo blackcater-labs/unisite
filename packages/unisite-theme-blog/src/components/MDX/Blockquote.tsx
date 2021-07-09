@@ -4,9 +4,9 @@ import { Quote as IconQuote } from "@icon-park/react";
 
 import { prefix } from "./_utils";
 
-type BlockquoteProps = {
+interface BlockquoteProps {
   className?: string;
-};
+}
 
 type BlockquoteFC = React.FC<BlockquoteProps>;
 

@@ -7,10 +7,10 @@ import type { FC2 } from "../../types";
 import { useHeading2s } from "./useHeading2s";
 import { useAnchorStatus } from "./useAnchorStatus";
 
-type SideNavProps = {
+interface SideNavProps {
   className?: string;
   headings: Heading[];
-};
+}
 
 type SideNavFC = FC2<SideNavProps>;
 

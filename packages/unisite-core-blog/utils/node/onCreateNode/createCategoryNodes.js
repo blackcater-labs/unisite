@@ -20,8 +20,8 @@ module.exports = async function createCategoryNodes(
 
   if (error) {
     reporter.panic(
-      chalk.red.bold("Configuration of category is invalid") +
-        `\n    ${error.name} ${error.message}`
+      `${chalk.red.bold("Configuration of category is invalid") 
+        }\n    ${error.name} ${error.message}`
     );
     return;
   }

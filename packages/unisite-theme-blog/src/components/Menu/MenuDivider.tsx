@@ -2,7 +2,7 @@ import React from "react";
 
 import type { FC2 } from "../../types";
 
-type MenuDividerProps = {};
+interface MenuDividerProps {}
 type MenuDividerFC = FC2<MenuDividerProps>;
 
 const MenuDivider: MenuDividerFC = () => {

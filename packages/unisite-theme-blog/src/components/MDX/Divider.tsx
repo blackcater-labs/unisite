@@ -4,9 +4,9 @@ import cls from "classnames";
 import { prefix } from "./_utils";
 import type { FC2 } from "../../types";
 
-type DividerProps = {
+interface DividerProps {
   className?: string;
-};
+}
 
 type DividerFC = FC2<DividerProps>;
 

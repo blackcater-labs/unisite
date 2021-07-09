@@ -1,4 +1,5 @@
-import React, { Component } from "react" // highlight-line
+import React, { Component } from "react"
+ // highlight-line
 export default class Counter extends Component {
   /* highlight-start */
   state = {

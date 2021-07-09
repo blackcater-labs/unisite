@@ -52,7 +52,7 @@ describe(`extend/add prism language`, () => {
 
     expect(Prism.languages[request.extend]).toBeDefined()
     expect(Prism.languages[request.extend]).toHaveProperty(`flexc_keyword`)
-    expect(Prism.languages[request.extend][`flexc_keyword`]).toEqual(
+    expect(Prism.languages[request.extend].flexc_keyword).toEqual(
       request.definition.flexc_keyword
     )
   })
@@ -68,7 +68,7 @@ describe(`extend/add prism language`, () => {
 
     expect(Prism.languages[request.extend]).toBeDefined()
     expect(Prism.languages[request.extend]).toHaveProperty(`flexc_keyword`)
-    expect(Prism.languages[request.extend][`flexc_keyword`]).toEqual(
+    expect(Prism.languages[request.extend].flexc_keyword).toEqual(
       request.definition.flexc_keyword
     )
   })
@@ -89,7 +89,7 @@ describe(`extend/add prism language`, () => {
     const languagesAfterLoaded = Object.keys(Prism.languages)
     expect(Prism.languages).toHaveProperty(request.language)
     expect(languagesAfterLoaded.length).toBe(languagesBeforeLoaded.length + 1)
-    expect(Prism.languages[request.language][`flexc_keyword`]).toEqual(
+    expect(Prism.languages[request.language].flexc_keyword).toEqual(
       request.definition.flexc_keyword
     )
   })
@@ -109,7 +109,7 @@ describe(`extend/add prism language`, () => {
     const languagesAfterLoaded = Object.keys(Prism.languages)
     expect(Prism.languages).toHaveProperty(request.language)
     expect(languagesAfterLoaded.length).toBe(languagesBeforeLoaded.length + 1)
-    expect(Prism.languages[request.language][`flexc_keyword`]).toEqual(
+    expect(Prism.languages[request.language].flexc_keyword).toEqual(
       request.definition.flexc_keyword
     )
   })
@@ -131,13 +131,13 @@ describe(`extend/add prism language`, () => {
 
     const languagesBeforeLoaded = Object.keys(Prism.languages)
     expect(Prism.languages).not.toHaveProperty(`flexc3`)
-    expect(Prism.languages[`c`]).not.toHaveProperty(`new_token`)
+    expect(Prism.languages.c).not.toHaveProperty(`new_token`)
 
     loadLanguageExtension(request)
 
     const languagesAfterLoaded = Object.keys(Prism.languages)
     expect(Prism.languages).toHaveProperty(`flexc3`)
     expect(languagesAfterLoaded.length).toBe(languagesBeforeLoaded.length + 1)
-    expect(Prism.languages[`c`]).toHaveProperty(`new_token`)
+    expect(Prism.languages.c).toHaveProperty(`new_token`)
   })
 })

@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-type TabsProps = {
+interface TabsProps {
   defaultActiveKey?: string;
   onChange?: (activeKey: string) => void;
-};
+}
 type TabsFC = React.FC<TabsProps>;
 
 const Tabs: TabsFC = ({ defaultActiveKey, children }) => {

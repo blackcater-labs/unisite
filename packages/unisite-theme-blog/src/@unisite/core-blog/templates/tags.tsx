@@ -6,12 +6,12 @@ import DefaultLayout from "../../../layouts/DefaultLayout";
 import { useTagPath } from "../../../utils";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   tags: {
     nodes: Tag[];
   };
-};
-type PageContext = {};
+}
+interface PageContext {}
 type TagsPageProps = PageProps<PageData, PageContext>;
 
 const TagItem = ({ tid, name }: Tag) => {

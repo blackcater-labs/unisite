@@ -10,7 +10,7 @@ import {
   useTagListPath,
 } from "../../utils";
 
-type StatisticCardProps = {};
+interface StatisticCardProps {}
 
 type StatisticCardFC = React.FC<StatisticCardProps>;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useWindowScroll, useWindowSize } from "react-use";
 
-type ProgressProps = {};
+interface ProgressProps {}
 
 type ProgressFC = React.FC<ProgressProps>;
 

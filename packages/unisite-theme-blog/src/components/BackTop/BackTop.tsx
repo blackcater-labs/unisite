@@ -5,9 +5,9 @@ import { Rocket as IconRocket } from "@icon-park/react";
 
 import type { FC2 } from "../../types";
 
-type BackTopProps = {
+interface BackTopProps {
   className?: string;
-};
+}
 
 type BackTopFC = FC2<BackTopProps>;
 

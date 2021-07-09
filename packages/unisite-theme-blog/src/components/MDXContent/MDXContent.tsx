@@ -2,10 +2,10 @@ import React from "react";
 import cls from "classnames";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-type MDXContentProps = {
+interface MDXContentProps {
   className?: string;
   children?: any;
-};
+}
 
 const MDXContent = React.forwardRef<HTMLDivElement, MDXContentProps>(
   ({ className, children }, forwardRef) => {

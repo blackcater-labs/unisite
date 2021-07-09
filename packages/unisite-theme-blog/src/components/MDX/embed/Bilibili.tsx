@@ -1,7 +1,7 @@
 import React from "react";
 import { FC2 } from "../../../types";
 
-type BilibiliProps = {
+interface BilibiliProps {
   bvId: string;
   // 跳转到视频某时刻，单位秒
   t?: number;
@@ -11,7 +11,7 @@ type BilibiliProps = {
   wide?: boolean;
   // 是否显示弹幕
   danmaku?: boolean;
-};
+}
 type BilibiliFC = FC2<BilibiliProps>;
 
 const Bilibili: BilibiliFC = ({

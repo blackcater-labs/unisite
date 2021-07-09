@@ -1,6 +1,6 @@
 import React from "react";
 
-type FooterProps = {};
+interface FooterProps {}
 type FooterFC = React.FC<FooterProps>;
 
 const Footer: FooterFC = () => {

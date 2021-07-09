@@ -14,16 +14,16 @@ import { MDXCard } from "../../../components/MDXContent";
 import { usePostPath, useTagPath } from "../../../utils";
 import type { PageProps } from "../../../utils";
 
-type PageData = {
+interface PageData {
   post: Partial<BlogPost>;
   previousPost?: Partial<BlogPost>;
   nextPost?: Partial<BlogPost>;
-};
-type PageContext = {
+}
+interface PageContext {
   id: string;
   nextId?: string;
   previousId?: string;
-};
+}
 type PostDetailPageProps = PageProps<PageData, PageContext>;
 
 function TagItem({ tid, name }: Tag) {

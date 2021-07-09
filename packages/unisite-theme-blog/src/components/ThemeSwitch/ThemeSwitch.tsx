@@ -2,7 +2,7 @@ import React from "react";
 import { Sun as IconSun, Moon as IconMoon } from "@icon-park/react";
 import { useTheme } from "@unisite/gatsby-plugin-dark-mode";
 
-type ThemeSwitchProps = {};
+interface ThemeSwitchProps {}
 type ThemeSwitchFC = React.FC<ThemeSwitchProps>;
 
 const ThemeSwitch: ThemeSwitchFC = () => {

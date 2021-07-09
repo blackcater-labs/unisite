@@ -21,8 +21,8 @@ module.exports = async function createTagNodes(
 
   if (error) {
     reporter.panic(
-      chalk.red.bold("Configuration of tag is invalid") +
-        `\n    ${error.name} ${error.message}`
+      `${chalk.red.bold("Configuration of tag is invalid") 
+        }\n    ${error.name} ${error.message}`
     );
     return;
   }

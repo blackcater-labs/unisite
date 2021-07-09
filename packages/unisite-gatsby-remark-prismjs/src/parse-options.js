@@ -6,7 +6,7 @@ module.exports = (language) => {
   }
   if (language.split(`{`).length > 1) {
     const [splitLanguage, ...options] = language.split(`{`);
-    let customOptions = {};
+    const customOptions = {};
     let highlightLines = [];
     let outputLines = [];
     let showLineNumbersLocal = false;

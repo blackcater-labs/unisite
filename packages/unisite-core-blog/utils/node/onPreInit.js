@@ -12,7 +12,7 @@ module.exports = (_, options) => {
     FS.mkdirSync(contentPath);
   }
 
-  const configPath = Path.configPath;
+  const {configPath} = Path;
 
   if (!configPath) {
     FS.createFileSync(

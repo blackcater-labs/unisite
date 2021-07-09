@@ -1,3 +1,3 @@
 // highlight-start
-var a = "b"
-return a + "hello world"
+const a = "b"
+return `${a  }hello world`

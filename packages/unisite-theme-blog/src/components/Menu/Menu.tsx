@@ -4,9 +4,9 @@ import cls from "classnames";
 import MenuItem from "./MenuItem";
 import MenuDivider from "./MenuDivider";
 
-type MenuProps = {
+interface MenuProps {
   className?: string;
-};
+}
 type MenuFC = React.FC<MenuProps> & {
   Item: typeof MenuItem;
   Divider: typeof MenuDivider;

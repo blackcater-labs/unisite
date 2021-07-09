@@ -5,7 +5,7 @@ import { Right as IconRight } from "@icon-park/react";
 
 import { useCategoryPath, useCategoryListPath } from "../../utils";
 
-type HeaderCategoryNavProps = {};
+interface HeaderCategoryNavProps {}
 
 type HeaderCategoryNavFC = React.FC<HeaderCategoryNavProps>;
 
@@ -44,11 +44,11 @@ function useStaticData() {
   };
 }
 
-type NavItemProps = {
+interface NavItemProps {
   cid: string;
   name: string;
   postCount: number;
-};
+}
 
 function NavItem({ cid, name, postCount }: NavItemProps) {
   const categoryPath = useCategoryPath(cid);
