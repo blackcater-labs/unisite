@@ -14,8 +14,8 @@
   "scripts": {
     "start:blog-example": "npm -C examples/theme-blog run start",
     "build:blog-example": "npm -C examples/theme-blog run build",
-    "clean": "npm run clean:cache && rimraf {.,site}/node_modules {packages,examples}/*/node_modules",
-    "clean:cache": "rimraf {.,.site}/{.cache,public} {packages,examples}/*/{.cache,public}",
+    "clean": "rimraf {.,.site}/{.cache,public} {packages,examples}/*/{.cache,public}",
+    "clean:all": "npm run clean:cache && rimraf {.,site}/node_modules {packages,examples}/*/node_modules",
     "lint": "npm run eslint && npm run prettier",
     "eslint": "eslint './packages/**/*.{json,js,jsx,ts,tsx}' --fix",
     "prettier": "prettier './packages/**/*.{json,js,jsx,ts,tsx,md,mdx,css,html}' --write",
