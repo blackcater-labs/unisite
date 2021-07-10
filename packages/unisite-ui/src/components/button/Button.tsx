@@ -1,11 +1,10 @@
 import React from "react";
+import { Button as MButton, ButtonProps as MButtonProps } from "@mantine/core";
 
-interface ButtonProps {
-  children?: React.ReactChild;
-}
+type ButtonProps = MButtonProps;
 
-const Button = ({ children }: ButtonProps) => {
-  return <button className="px-4 py-2">{children}</button>;
+const Button = ({ children, ...rest }: ButtonProps) => {
+  return <MButton {...rest}>{children}</MButton>;
 };
 
 export type { ButtonProps };

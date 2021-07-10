@@ -12,6 +12,7 @@
     ]
   },
   "scripts": {
+    "start:ui": "npm -C packages/unisite-ui run dev",
     "start:blog-example": "npm -C examples/theme-blog run start",
     "build:blog-example": "npm -C examples/theme-blog run build",
     "clean": "rimraf {.,.site}/{.cache,public} {packages,examples}/*/{.cache,public}",

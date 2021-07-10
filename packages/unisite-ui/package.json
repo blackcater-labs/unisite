@@ -19,19 +19,32 @@
   "scripts": {
     "prepare": "cross-env NODE_ENV=production npm run build",
     "clean": "rimraf lib",
-    "dev": "npm run clean && npm run build:lib -- --watch",
-    "build": "npm run clean && npm run build:lib -- --minify",
-    "build:lib": "tsup src/index.ts --format esm,cjs,iife --dts -d lib"
+    "dev": "start-storybook -p 6006",
+    "build": ""
   },
   "peerDependencies": {
     "react": ">=16 <18",
     "react-dom": ">=16 <18"
   },
+  "dependencies": {
+    "@mantine/core": "2.0.2",
+    "@mantine/hooks": "2.0.2",
+    "react-jss": "10.7.1"
+  },
   "devDependencies": {
+    "@storybook/addon-actions": "6.3.4",
+    "@storybook/addon-docs": "6.3.4",
+    "@storybook/addon-essentials": "6.3.4",
+    "@storybook/addon-links": "6.3.4",
+    "@storybook/addon-postcss": "2.0.0",
+    "@storybook/addon-storysource": "6.3.4",
+    "@storybook/react": "6.3.4",
     "@types/react": "17.0.14",
     "@types/react-dom": "17.0.9",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "storybook": "6.3.4",
+    "storybook-dark-mode": "1.0.8",
     "tsup": "4.12.5",
     "typescript": "4.3.5"
   }
